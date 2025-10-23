@@ -1,0 +1,16 @@
+# Replit
+.replit
+.config/
+.upm/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
