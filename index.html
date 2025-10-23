@@ -1056,6 +1056,166 @@
             color: var(--primary);
         }
 
+        /* Before & After Section */
+        .before-after {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #faf9ff 0%, #fff5f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .before-after::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(160, 108, 213, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .before-after-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .before-column,
+        .after-column {
+            position: relative;
+        }
+
+        .column-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .column-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .before-column .column-header h3 {
+            color: #e74c3c;
+        }
+
+        .before-column .column-header h3::after {
+            content: '😔';
+            margin-left: 10px;
+        }
+
+        .after-column .column-header h3 {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .after-column .column-header h3::after {
+            content: '✨';
+            margin-left: 10px;
+            -webkit-text-fill-color: initial;
+        }
+
+        .column-header p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .transformation-quote {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .transformation-quote:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .before-column .transformation-quote {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .after-column .transformation-quote {
+            border-left: 4px solid var(--primary);
+        }
+
+        .transformation-quote p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .transformation-quote .quote-author {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .divider-arrow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--primary);
+            background: var(--white);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(160, 108, 213, 0.3);
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .before-after-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .divider-arrow {
+                left: 50%;
+                top: auto;
+                bottom: -100px;
+                transform: translate(-50%, 0) rotate(90deg);
+            }
+
+            .column-header h3 {
+                font-size: 1.6rem;
+            }
+
+            .transformation-quote p {
+                font-size: 1rem;
+            }
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
@@ -2170,7 +2330,9 @@
             <div class="container">
                 <div class="section-title">
                     <h2 id="emotional-heading">You Don't Want to Force Faith — You Want to Awaken It.</h2>
-                    <p>The journey every Muslim mother recognizes</p>
+                    <p>Every day either cements faith or breaks it in your child's heart
+
+</p>
                 </div>
                 <div class="message-content">
                     <p>For over a decade, I've helped mothers who before the shift felt..</p>
@@ -2339,6 +2501,97 @@
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
                             <div class="cta-ribbon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before & After Section -->
+        <section class="before-after" aria-labelledby="before-after-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="before-after-heading">The Transformation Is Real</h2>
+                    <p>See how mothers who MADE THE SHIFT TO THE NEXT STAGE, went from struggling and worried to confident and at peace</p>
+                </div>
+                
+                <div class="before-after-container">
+                    <!-- Before Column -->
+                    <div class="before-column">
+                        <div class="column-header">
+                            <h3>Before</h3>
+                            <p>The struggle was real...</p>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"I used to remind them again and again… but nothing lasted."</p>
+                            <div class="quote-author">— Saddia Masood</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"I had little hope that anything could change."</p>
+                            <div class="quote-author">— Maryam Ahmed</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"Every day I worried — am I losing their heart?"</p>
+                            <div class="quote-author">— Saadya</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"I was restless, always rushing, never at peace."</p>
+                            <div class="quote-author">— Sr Ayesha</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"I felt guilty and unsure… too soft, they drift; too firm, they shut down."</p>
+                            <div class="quote-author">— Umm Hani</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"I wanted to help them love Allah, but I didn't know how."</p>
+                            <div class="quote-author">— Quarrat Al-Ayn</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Arrow Divider -->
+                    <div class="divider-arrow">→</div>
+                    
+                    <!-- After Column -->
+                    <div class="after-column">
+                        <div class="column-header">
+                            <h3>After</h3>
+                            <p>Real change, real peace</p>
+                        </div>
+                        
+                      
+                        
+                        <div class="transformation-quote">
+                            <p>"My daughter prays on time now — no nagging at all."</p>
+                            <div class="quote-author">— Saddia Masood</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"Even my kids woke me up for Fajr. I think it's a miracle."</p>
+                            <div class="quote-author">— Maryam Ahmed</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"Now I feel calm and sure. I know what to do — and I'm not afraid."</p>
+                            <div class="quote-author">— Saadya</div>
+                        </div>
+                          <div class="transformation-quote">
+                            <p>"My son woke up for Fajr on his own — and he was proud."</p>
+                            <div class="quote-author">— Aisha Sufi</div>
+                        </div>
+                        <div class="transformation-quote">
+                            <p>"Before it was chaos; now there's peace in our home."</p>
+                            <div class="quote-author">— Umm Hani</div>
+                        </div>
+                        
+                        <div class="transformation-quote">
+                            <p>"She's confident, kind, and stands up for justice. The pressure is gone."</p>
+                            <div class="quote-author">— Quarrat Al-Ayn</div>
                         </div>
                     </div>
                 </div>
