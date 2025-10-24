@@ -14,3 +14,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Analytics Config (contains secret token)
+js/analytics-config.js

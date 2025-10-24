@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for registering for The Shift - Your journey to transforming your child's Islamic journey begins now.">
-    <title>Thank You - The Shift Challenge</title>
+    <meta name="description" content="Thank you for registering for The Shift. Check your email and complete these important next steps.">
+    <meta name="keywords" content="Islamic parenting, Muslim mother, child's Islamic journey, Islamic education, Muslim family">
+    <meta name="author" content="The Shift">
+    <meta property="og:title" content="The Shift - Thank You for Registering">
+    <meta property="og:description" content="Thank you for registering for The Shift. Check your email and complete these important next steps.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theshift.example.com/thank-you">
+    <title>The Shift - Thank You for Registering</title>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #a06cd5;
@@ -21,7 +28,10 @@
             --light-bg: #faf9ff;
             --white: #ffffff;
             --gradient: linear-gradient(135deg, #a06cd5, #ff9eb5);
-            --success: #28a745;
+            --kids-gradient: linear-gradient(135deg, #ff6b6b, #feca57);
+            --kids-bg: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --kids-fun: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --urgency-color: #e74c3c;
         }
 
         * {
@@ -35,7 +45,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            background: linear-gradient(to bottom, #faf9ff, var(--white));
+            background-color: var(--white);
         }
 
         h1, h2, h3, h4 {
@@ -50,16 +60,36 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-dark);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header Styles */
         header {
             background: var(--white);
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-content {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -70,14 +100,15 @@
             text-decoration: none;
         }
 
-        /* Thank You Section */
-        .thank-you-section {
-            padding: 80px 0;
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(to bottom, #faf9ff, var(--white));
             position: relative;
             overflow: hidden;
         }
 
-        .thank-you-section::before {
+        .hero::before {
             content: "";
             position: absolute;
             top: -100px;
@@ -89,10 +120,10 @@
             z-index: 0;
         }
 
-        .thank-you-section::after {
+        .hero::after {
             content: "";
             position: absolute;
-            bottom: -100px;
+            bottom: -50px;
             left: -100px;
             width: 300px;
             height: 300px;
@@ -101,286 +132,375 @@
             z-index: 0;
         }
 
-        .thank-you-content {
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, rgba(160, 108, 213, 0.1), rgba(255, 158, 181, 0.1));
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .success-message p {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .success-message .highlight {
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .no-replay-reminder {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--urgency-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .no-replay-reminder p {
+            margin: 0;
+            color: var(--urgency-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .event-details {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(160, 108, 213, 0.1);
+        }
+
+        .event-details h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .event-details-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .event-detail-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .event-detail-item i {
+            color: var(--primary);
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .event-detail-item strong {
+            margin-right: 5px;
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 80px 0;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .steps::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(160, 108, 213, 0.05);
+            z-index: 0;
+        }
+
+        .steps::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 158, 181, 0.05);
+            z-index: 0;
+        }
+
+        .steps-content {
             position: relative;
             z-index: 1;
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        .section-title {
             text-align: center;
-        }
-
-        .success-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 30px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: var(--white);
-            animation: scaleIn 0.5s ease-out;
-        }
-
-        @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .thank-you-title {
-            font-size: 3rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .thank-you-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Steps Section */
-        .next-steps {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 15px 35px rgba(160, 108, 213, 0.15);
             margin-bottom: 50px;
         }
 
-        .next-steps h2 {
-            font-size: 2rem;
+        .section-title h2 {
+            font-size: 2.8rem;
             color: var(--primary-dark);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step-card {
-            background: var(--light-bg);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
+            margin-bottom: 15px;
             position: relative;
+            display: inline-block;
         }
 
-        .step-card:hover {
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .step-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(160, 108, 213, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .step-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(160, 108, 213, 0.2);
+            box-shadow: 0 20px 40px rgba(160, 108, 213, 0.15);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
             background: var(--gradient);
             color: var(--white);
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             font-weight: 700;
-            margin: 0 auto 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
 
-        .step-card h3 {
-            font-size: 1.3rem;
+        .step-title {
+            font-size: 1.8rem;
             color: var(--primary-dark);
-            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        .step-card p {
+        .step-content {
+            padding-left: 55px;
+        }
+
+        .step-description {
+            font-size: 1.1rem;
             color: var(--text-light);
-            font-size: 1rem;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
 
-        /* Calendar Section */
-        .calendar-section {
-            background: linear-gradient(135deg, rgba(160, 108, 213, 0.1), rgba(255, 158, 181, 0.1));
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 50px;
-        }
-
-        .calendar-section h3 {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .calendar-buttons {
+        .checkbox-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .calendar-btn {
-            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--white);
-            color: var(--primary-dark);
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(160, 108, 213, 0.2);
-            border: 2px solid transparent;
+            margin-bottom: 20px;
+            position: relative;
         }
 
-        .calendar-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(160, 108, 213, 0.3);
-            border-color: var(--primary);
+        .checkbox-container input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+            accent-color: var(--primary);
         }
 
-        .calendar-icon {
-            font-size: 1.2rem;
-        }
-
-        /* Share Section */
-        .share-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(160, 108, 213, 0.15);
-            margin-bottom: 50px;
-        }
-
-        .share-section h3 {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .share-subtitle {
-            color: var(--text-light);
-            text-align: center;
-            margin-bottom: 30px;
+        .checkbox-container label {
             font-size: 1.1rem;
-        }
-
-        .share-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            color: var(--white);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .share-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .share-btn.facebook {
-            background: #1877f2;
-        }
-
-        .share-btn.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .share-btn.whatsapp {
-            background: #25d366;
-        }
-
-        .share-btn.tiktok {
-            background: #000000;
-        }
-
-        .share-btn.pinterest {
-            background: #e60023;
-        }
-
-        .share-btn.twitter {
-            background: #1da1f2;
-        }
-
-        .share-icon {
-            font-size: 1.2rem;
-        }
-
-        /* Event Details */
-        .event-details {
-            background: linear-gradient(135deg, rgba(160, 108, 213, 0.05), rgba(255, 158, 181, 0.05));
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        .event-details h4 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .event-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .info-item {
-            text-align: center;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .info-value {
             color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-calendar {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(160, 108, 213, 0.3);
+        }
+
+        .btn-calendar:hover, .btn-calendar:focus {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(160, 108, 213, 0.4);
+            outline: none;
+        }
+
+        .btn-calendar i {
+            margin-right: 10px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover, .btn-whatsapp:focus {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            outline: none;
+        }
+
+        .btn-whatsapp i {
+            margin-right: 10px;
+        }
+
+        .btn-community {
+            display: inline-flex;
+            align-items: center;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(160, 108, 213, 0.3);
+        }
+
+        .btn-community:hover, .btn-community:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(160, 108, 213, 0.4);
+            outline: none;
+        }
+
+        .btn-community i {
+            margin-right: 10px;
+        }
+
+        .hadith-box {
+            background: rgba(160, 108, 213, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .hadith-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .hadith-source {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: normal;
         }
 
         /* Footer */
@@ -416,171 +536,306 @@
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
+        .social-links a:hover, .social-links a:focus {
             color: var(--secondary);
+            outline: none;
+        }
+
+        /* Thumbs Up Animation */
+        .thumbs-up {
+            position: absolute;
+            font-size: 2.5rem;
+            z-index: 1000;
+            pointer-events: none;
+            animation: flyUp 2s ease-out forwards;
+        }
+
+        @keyframes flyUp {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120px) scale(0.8);
+                opacity: 0;
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .thank-you-title {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .thank-you-subtitle {
-                font-size: 1.2rem;
+            .hero p {
+                font-size: 1.1rem;
             }
 
-            .next-steps {
-                padding: 30px 20px;
+            .step-title {
+                font-size: 1.5rem;
             }
 
-            .calendar-section,
-            .share-section {
-                padding: 30px 20px;
+            .step-content {
+                padding-left: 30px;
+            }
+
+            .button-group {
+                flex-direction: column;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 20px;
             }
+
+            .event-details-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .success-message {
+                max-width: 90%;
+            }
         }
 
-        /* Confetti */
-        .confetti {
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 20px rgba(245, 87, 108, 0.5);
+            }
+            100% {
+                box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Fixed Scroll Down Arrow on Side */
+        .scroll-indicator {
             position: fixed;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            z-index: 9999;
-            pointer-events: none;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 8px 30px rgba(160, 108, 213, 0.4);
         }
 
-        @keyframes confetti-fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
+        .scroll-indicator:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 40px rgba(160, 108, 213, 0.6);
+        }
+
+        .scroll-indicator i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            animation: bounceDown 2s ease-in-out infinite;
+            display: block;
+        }
+
+        @keyframes bounceDown {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(15px);
+            }
+            60% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Keep visible on mobile, just adjust size */
+        @media (max-width: 768px) {
+            .scroll-indicator {
+                right: 15px;
+                padding: 15px;
+            }
+            
+            .scroll-indicator i {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Fixed Scroll Indicator -->
+    <div class="scroll-indicator" onclick="window.scrollTo({top: document.querySelector('.steps').offsetTop - 80, behavior: 'smooth'})">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">The Shift</a>
+                <a href="#" class="logo">The Shift</a>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <!-- Thank You Section -->
-        <section class="thank-you-section">
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
-                <div class="thank-you-content">
-                    <div class="success-icon">✓</div>
-                    <h1 class="thank-you-title">You're In! 🎉</h1>
-                    <p class="thank-you-subtitle">Alhamdulillah! Your journey to transforming your child's Islamic journey begins now.</p>
-
+                <div class="hero-content">
+                    <span class="tag">REGISTRATION COMPLETE</span>
+                    <h1 id="hero-heading">Congratulations. You have taken the first step forwards towards <span>The Shift</span></h1>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message">
+                        <p>May Allah (swt) <span class="highlight">reward you for your commitment </span>. Please check your email for confirmation details.</p>
+                    </div>
+                    
+                    <div class="no-replay-reminder">
+                        <p><i class="fas fa-exclamation-circle"></i> <strong>Important:</strong> This challenge has no replays. Make sure to attend live!</p>
+                    </div>
+                    
+                    <p>We're excited to have you on this transformative journey. Below are your next steps to ensure you get the most out of this experience.</p>
+                    
                     <!-- Event Details -->
                     <div class="event-details">
-                        <h4>Challenge Details</h4>
-                        <div class="event-info">
-                            <div class="info-item">
-                                <div class="info-label">📅 Dates</div>
-                                <div class="info-value">November 9-11, 2023</div>
+                        <h3>Event Details</h3>
+                        <div class="event-details-content">
+                            <div class="event-detail-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span><strong>Date:</strong> December 6-7, 2025</span>
                             </div>
-                            <div class="info-item">
-                                <div class="info-label">🕐 Time</div>
-                                <div class="info-value">11:00 AM EST Daily</div>
+                            <div class="event-detail-item">
+                                <i class="far fa-clock"></i>
+                                <span><strong>Time:</strong> 11:00 AM EST / 3:00 PM UK Time</span>
                             </div>
-                            <div class="info-item">
-                                <div class="info-label">⏱️ Duration</div>
-                                <div class="info-value">3 Days</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Next Steps -->
-                    <div class="next-steps">
-                        <h2>What Happens Next?</h2>
-                        <div class="steps-container">
-                            <div class="step-card">
-                                <div class="step-number">1</div>
-                                <h3>Check Your Email</h3>
-                                <p>We've sent you a confirmation email with all the details. Please check your inbox (and spam folder just in case!).</p>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-number">2</div>
-                                <h3>Add to Calendar</h3>
-                                <p>Mark the dates in your calendar so you don't miss this life-changing challenge!</p>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-number">3</div>
-                                <h3>Spread the Word</h3>
-                                <p>Help other mothers transform their children's relationship with Islam by sharing this challenge!</p>
+                            <div class="event-detail-item">
+                                <i class="fas fa-globe"></i>
+                                <span><strong>Platform:</strong> Online (Zoom)</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Calendar Buttons -->
-                    <div class="calendar-section">
-                        <h3>📅 Add to Your Calendar</h3>
-                        <p style="text-align: center; color: var(--text-light); margin-bottom: 20px;">Choose your preferred calendar app:</p>
-                        <div class="calendar-buttons">
-                            <a href="#" class="calendar-btn" id="google-calendar">
-                                <span class="calendar-icon">📆</span>
-                                Google Calendar
-                            </a>
-                            <a href="#" class="calendar-btn" id="apple-calendar">
-                                <span class="calendar-icon">🍎</span>
-                                Apple Calendar
-                            </a>
-                            <a href="#" class="calendar-btn" id="outlook-calendar">
-                                <span class="calendar-icon">📧</span>
-                                Outlook
-                            </a>
-                            <a href="#" class="calendar-btn" id="yahoo-calendar">
-                                <span class="calendar-icon">📮</span>
-                                Yahoo
-                            </a>
-                            <a href="#" class="calendar-btn" id="ical-download">
-                                <span class="calendar-icon">📥</span>
-                                Download .ics
-                            </a>
+        <!-- Steps Section -->
+        <section class="steps" aria-labelledby="steps-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="steps-heading">Your Next Steps</h2>
+                    <p>Complete these three important steps to prepare for The Shift Challenge</p>
+                </div>
+                
+                <div class="steps-content">
+                    <!-- Step 1 -->
+                    <div class="step-box">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Mark Your Calendar</h3>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">Add The Shift to your calendar so you don't miss any of the valuable sessions.</p>
+                            
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="calendar-check">
+                                <label for="calendar-check">I've added The Shift to my calendar</label>
+                            </div>
+                            
+                            <div class="button-group">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Shift+Free+3-Day+Challenge&dates=20251206T160000Z/20251207T170000Z&details=Join+The+Shift+Challenge+-+A+transformative+3-day+journey+for+Muslim+mothers.+Check+your+email+for+Zoom+link.&location=Online+(Zoom)" target="_blank" class="btn-calendar">
+                                    <i class="far fa-calendar-plus"></i> Add to Google Calendar
+                                </a>
+                                <a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20251206T160000Z%0ADTEND:20251207T170000Z%0ASUMMARY:The Shift Free 3-Day Challenge%0ADESCRIPTION:Join The Shift Challenge - A transformative 3-day journey for Muslim mothers.%0ALOCATION:Online (Zoom)%0AEND:VEVENT%0AEND:VCALENDAR" download="the-shift-challenge.ics" class="btn-calendar">
+                                    <i class="far fa-calendar-check"></i> Add to iCal
+                                </a>
+                                <a href="https://outlook.office.com/calendar/0/deeplink/compose?subject=The+Shift+Free+3-Day+Challenge&startdt=2025-12-06T16:00:00Z&enddt=2025-12-07T17:00:00Z&body=Join+The+Shift+Challenge+-+A+transformative+3-day+journey+for+Muslim+mothers.&location=Online+(Zoom)" target="_blank" class="btn-calendar">
+                                    <i class="far fa-calendar-alt"></i> Add to Outlook
+                                </a>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Share Section -->
-                    <div class="share-section">
-                        <h3>💝 Share The Shift Challenge</h3>
-                        <p class="share-subtitle">Help other Muslim mothers discover this transformative journey</p>
-                        <div class="share-buttons">
-                            <a href="#" class="share-btn facebook" id="share-facebook">
-                                <span class="share-icon">📘</span>
-                                Facebook
-                            </a>
-                            <a href="#" class="share-btn instagram" id="share-instagram">
-                                <span class="share-icon">📷</span>
-                                Instagram
-                            </a>
-                            <a href="#" class="share-btn whatsapp" id="share-whatsapp">
-                                <span class="share-icon">💬</span>
-                                WhatsApp
-                            </a>
-                            <a href="#" class="share-btn tiktok" id="share-tiktok">
-                                <span class="share-icon">🎵</span>
-                                TikTok
-                            </a>
-                            <a href="#" class="share-btn pinterest" id="share-pinterest">
-                                <span class="share-icon">📌</span>
-                                Pinterest
-                            </a>
-                            <a href="#" class="share-btn twitter" id="share-twitter">
-                                <span class="share-icon">🐦</span>
-                                Twitter
-                            </a>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-box">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">Share and Spread the Word</h3>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">Help other mothers benefit from this transformative experience by sharing with your friends and family.</p>
+                            
+                            <div class="hadith-box">
+                                <p>"Whoever guides someone to goodness will have a reward like the one who does it."</p>
+                                <div class="hadith-source">- Sahih Muslim</div>
+                            </div>
+                            
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="share-check">
+                                <label for="share-check">I've shared The Shift with others</label>
+                            </div>
+                            
+                            <div class="button-group">
+                                <a href="https://wa.me/?text=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge!%20Join%20me%20on%20Dec%206-7%20at%2011AM%20EST%20for%20a%20transformative%20journey.%20Register%20here:%20https://yourwebsite.com" target="_blank" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com&quote=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge!%20Join%20me%20Dec%206-7!" target="_blank" class="btn-calendar">
+                                    <i class="fab fa-facebook"></i> Share on Facebook
+                                </a>
+                                <a href="mailto:?subject=Join%20me%20for%20The%20Shift%20Challenge!&body=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge%20-%20a%20transformative%20journey%20for%20Muslim%20mothers.%0D%0A%0D%0AEvent%3A%20Dec%206-7%2C%202025%0D%0ATime%3A%2011AM%20EST%20%2F%203PM%20UK%0D%0A%0D%0AJoin%20me!%20Register%20here%3A%20https%3A%2F%2Fyourwebsite.com" class="btn-calendar">
+                                    <i class="fas fa-envelope"></i> Share via Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-box">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Join Our Village</h3>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">Connect with a supportive community of mothers on a similar journey. Our village provides ongoing support, resources, and friendship.</p>
+                            
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="community-check">
+                                <label for="community-check">I've joined The Shift Mothers Community</label>
+                            </div>
+                            
+                            <div class="button-group">
+                                <a href="#" class="btn-community">
+                                    <i class="fas fa-users"></i> Join Our Mothers Community
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -592,7 +847,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="index.html" class="footer-logo">The Shift</a>
+                <a href="#" class="footer-logo">The Shift</a>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook">Facebook</a>
                     <a href="#" aria-label="Instagram">Instagram</a>
@@ -606,153 +861,144 @@
         </div>
     </footer>
 
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
-        // Event details
-        const eventTitle = "The Shift Challenge - Transform Your Child's Islamic Journey";
-        const eventDescription = "Join the 3-day free challenge to help your children develop genuine love for Islam and prayer.";
-        const eventLocation = "Online (Link will be sent via email)";
-        const startDate = "2023-11-09T11:00:00";
-        const endDate = "2023-11-11T12:30:00";
-        
-        // Format dates for calendar
-        function formatDateForCalendar(date) {
-            return date.replace(/[-:]/g, '').split('.')[0] + 'Z';
-        }
-
-        // Google Calendar
-        document.getElementById('google-calendar').addEventListener('click', function(e) {
-            e.preventDefault();
-            const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}&dates=${formatDateForCalendar(startDate)}/${formatDateForCalendar(endDate)}`;
-            window.open(googleUrl, '_blank');
-        });
-
-        // Outlook Calendar
-        document.getElementById('outlook-calendar').addEventListener('click', function(e) {
-            e.preventDefault();
-            const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventTitle)}&body=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}&startdt=${startDate}&enddt=${endDate}`;
-            window.open(outlookUrl, '_blank');
-        });
-
-        // Yahoo Calendar
-        document.getElementById('yahoo-calendar').addEventListener('click', function(e) {
-            e.preventDefault();
-            const yahooUrl = `https://calendar.yahoo.com/?v=60&title=${encodeURIComponent(eventTitle)}&desc=${encodeURIComponent(eventDescription)}&st=${formatDateForCalendar(startDate)}&et=${formatDateForCalendar(endDate)}&in_loc=${encodeURIComponent(eventLocation)}`;
-            window.open(yahooUrl, '_blank');
-        });
-
-        // Apple Calendar & iCal Download
-        function generateICS() {
-            const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//The Shift//EN
-BEGIN:VEVENT
-UID:${Date.now()}@theshift.com
-DTSTAMP:${formatDateForCalendar(new Date().toISOString())}
-DTSTART:${formatDateForCalendar(startDate)}
-DTEND:${formatDateForCalendar(endDate)}
-SUMMARY:${eventTitle}
-DESCRIPTION:${eventDescription}
-LOCATION:${eventLocation}
-STATUS:CONFIRMED
-SEQUENCE:0
-END:VEVENT
-END:VCALENDAR`;
+        // Slow, spread out confetti falling from top to bottom
+        window.addEventListener('load', function() {
+            // Create a gentle, widespread confetti effect
+            var duration = 8000; // Longer duration
+            var animationEnd = Date.now() + duration;
+            var defaults = { 
+                startVelocity: 2,    // Very slow initial velocity
+                spread: 360,        // Maximum spread
+                ticks: 300,        // More ticks for longer animation
+                zIndex: 0,
+                gravity: 0.3,      // Very low gravity for slow fall
+                scalar: 1.5,       // Larger particles
+                decay: 0.99        // Slow decay
+            };
             
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.setAttribute('download', 'the-shift-challenge.ics');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        document.getElementById('apple-calendar').addEventListener('click', function(e) {
-            e.preventDefault();
-            generateICS();
-        });
-
-        document.getElementById('ical-download').addEventListener('click', function(e) {
-            e.preventDefault();
-            generateICS();
-        });
-
-        // Share functionality
-        const shareUrl = window.location.origin + '/index.html';
-        const shareText = "I just registered for The Shift Challenge! Join me in transforming our children's relationship with Islam. 🌟";
-
-        // Facebook
-        document.getElementById('share-facebook').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
-        });
-
-        // Instagram (opens Instagram app on mobile or web on desktop)
-        document.getElementById('share-instagram').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('To share on Instagram:\n1. Take a screenshot of this page\n2. Open Instagram\n3. Create a new story or post\n4. Add the screenshot and tag us!');
-        });
-
-        // WhatsApp
-        document.getElementById('share-whatsapp').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(`https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`, '_blank');
-        });
-
-        // TikTok
-        document.getElementById('share-tiktok').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('To share on TikTok:\n1. Create a video about The Shift Challenge\n2. Use hashtags: #TheShift #IslamicParenting #MuslimMom\n3. Add the link in your bio!');
-        });
-
-        // Pinterest
-        document.getElementById('share-pinterest').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl)}&description=${encodeURIComponent(shareText)}`, '_blank');
-        });
-
-        // Twitter
-        document.getElementById('share-twitter').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank');
-        });
-
-        // Confetti effect on page load
-        function createConfetti() {
-            const colors = ['#a06cd5', '#ff9eb5', '#7ce0f7', '#ffd700', '#ff6b9d', '#c77dff'];
-            const confettiCount = 150;
-
-            for (let i = 0; i < confettiCount; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    
-                    // Random properties
-                    const left = Math.random() * 100;
-                    const animationDuration = 2 + Math.random() * 3;
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    const size = 5 + Math.random() * 10;
-                    const delay = Math.random() * 0.5;
-                    
-                    confetti.style.left = left + '%';
-                    confetti.style.backgroundColor = color;
-                    confetti.style.width = size + 'px';
-                    confetti.style.height = size + 'px';
-                    confetti.style.animation = `confetti-fall ${animationDuration}s linear ${delay}s forwards`;
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                    
-                    document.body.appendChild(confetti);
-                    
-                    // Remove confetti after animation
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, (animationDuration + delay) * 1000);
-                }, i * 30);
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
             }
-        }
+            
+            // Create confetti bursts across the entire width
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+                
+                // Create fewer bursts at different positions
+                for (var i = 0; i < 2; i++) {
+                    // Random x position across the entire width
+                    var xPos = Math.random();
+                    
+                    confetti(Object.assign({}, defaults, {
+                        particleCount: 10,  // Reduced from 30 to 10
+                        angle: randomInRange(85, 95),  // Nearly straight down
+                        spread: randomInRange(200, 360), // Maximum spread
+                        origin: { 
+                            x: xPos,                    // Random x position
+                            y: 0                        // Start from top
+                        },
+                        colors: ['#a06cd5', '#ff9eb5', '#7ce0f7', '#feca57', '#ff6b6b']
+                    }));
+                }
+                
+            }, 250); // Less frequent bursts
+        });
 
-        // Trigger confetti on page load
-        window.addEventListener('load', createConfetti);
+        // Thumbs up animation when checkbox is checked
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Create multiple thumbs up emojis
+                    for (let i = 0; i < 3; i++) {
+                        setTimeout(() => {
+                            const thumbsUp = document.createElement('div');
+                            thumbsUp.className = 'thumbs-up';
+                            thumbsUp.textContent = '👍';
+                            
+                            // Position it at the checkbox with some randomness
+                            const rect = this.getBoundingClientRect();
+                            const randomX = rect.left + (Math.random() * 30 - 15);
+                            const randomY = rect.top + (Math.random() * 15 - 7);
+                            
+                            thumbsUp.style.left = randomX + 'px';
+                            thumbsUp.style.top = randomY + 'px';
+                            
+                            // Add to body
+                            document.body.appendChild(thumbsUp);
+                            
+                            // Remove after animation completes
+                            setTimeout(() => {
+                                thumbsUp.remove();
+                            }, 2000);
+                        }, i * 150); // Stagger the thumbs up
+                    }
+                    
+                    // Trigger extra confetti
+                    confetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#a06cd5', '#ff9eb5', '#7ce0f7', '#feca57', '#ff6b6b']
+                    });
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Observe all step boxes
+        document.querySelectorAll('.step-box').forEach(box => {
+            box.style.opacity = 0;
+            box.style.transform = 'translateY(20px)';
+            box.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(box);
+        });
     </script>
+    
+    <!-- Visitor Tracking Scripts -->
+    <script src="js/analytics-config.js"></script>
+    <script src="js/tracker.js"></script>
 </body>
 </html>

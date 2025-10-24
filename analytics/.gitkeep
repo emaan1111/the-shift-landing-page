@@ -1,0 +1,9 @@
+# Analytics Data Storage
+
+This folder stores visitor analytics data in JSON format.
+
+Each day's data is stored in a separate file named `visits-YYYY-MM-DD.json`.
+
+The data is automatically created by the tracker script when visitors come to your website.
+
+**Note:** This folder needs to exist in your GitHub repository for the tracker to work.
