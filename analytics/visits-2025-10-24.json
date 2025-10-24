@@ -3064,5 +3064,22 @@
     "event": "button_click",
     "buttonName": "Yes, I Want to Join The Shift Free 3-Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T09:53:02.015Z",
+    "event": "page_visit",
+    "sessionId": "session_1761299581901_vkbgd7z8o",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+    "screenWidth": 1280,
+    "screenHeight": 720,
+    "language": "en-US",
+    "hookVariant": "B",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "Mumbai",
+    "region": "Maharashtra",
+    "timezone": "Asia/Kolkata"
   }
 ]
