@@ -3181,5 +3181,12 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T10:04:33.879Z",
+    "event": "button_click",
+    "buttonName": "Yes, I Want to Join The Shift Free 3-Day Challenge",
+    "referrer": "Direct"
   }
 ]
