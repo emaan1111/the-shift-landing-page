@@ -518,5 +518,12 @@
     "event": "page_exit",
     "sessionId": "session_1761341106139_148x9qrx5",
     "duration": 15
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T21:31:59.800Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
