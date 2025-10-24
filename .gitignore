@@ -31,6 +31,9 @@ Thumbs.db
 # Analytics Config (contains secret token)
 js/analytics-config.js
 
+# Server file with API keys
+server.py
+
 # ClickFunnels Config (contains API key)
 js/clickfunnels-config.js
 server.py
