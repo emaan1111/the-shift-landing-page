@@ -33,5 +33,12 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T18:12:40.300Z",
+    "event": "page_exit",
+    "sessionId": "session_1761329552361_ez1vj3z1e",
+    "duration": 8
   }
 ]
