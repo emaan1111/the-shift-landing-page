@@ -530,12 +530,16 @@
     <script src="js/analytics-config.js"></script>
     
     <script>
-        const GITHUB_CONFIG = typeof ANALYTICS_CONFIG !== 'undefined'
-            ? ANALYTICS_CONFIG
+        const GITHUB_CONFIG = typeof ANALYTICS_CONFIG === 'object'
+            ? {
+                owner: ANALYTICS_CONFIG.owner,
+                repo: ANALYTICS_CONFIG.repo,
+                token: ANALYTICS_CONFIG.token || '',
+                branch: ANALYTICS_CONFIG.branch || 'main'
+            }
             : {
                 owner: 'emaan1111',
                 repo: 'the-shift-landing-page',
-                // Provide a token via js/analytics-config.js (ignored by git)
                 token: '',
                 branch: 'main'
             };
@@ -593,6 +597,14 @@
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
+
+                if (listResponse.status === 404) {
+                    loading.style.display = 'none';
+                    updateStatusMessage('No analytics data found yet. Once the tracker logs visits, this dashboard will populate automatically.', 'info');
+                    error.style.display = 'block';
+                    error.textContent = 'No analytics data available yet.';
+                    return;
+                }
 
                 if (!listResponse.ok) {
                     throw new Error('Failed to load analytics data. Make sure you have created your GitHub token and added it to both tracker.js and analytics.html');
