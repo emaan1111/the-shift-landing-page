@@ -3736,5 +3736,22 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T13:57:47.062Z",
+    "event": "page_visit",
+    "sessionId": "session_1761314267058_gnx6aweh2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+    "screenWidth": 1280,
+    "screenHeight": 720,
+    "language": "en-US",
+    "hookVariant": "A",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "Mumbai",
+    "region": "Maharashtra",
+    "timezone": "Asia/Kolkata"
   }
 ]
