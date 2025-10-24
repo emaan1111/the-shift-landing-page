@@ -59,6 +59,71 @@
             padding: 0 20px;
         }
 
+        /* Petal Animation */
+        .petal-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 5;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .petal-lane {
+            position: relative;
+            width: 18%;
+            max-width: 180px;
+            height: 100%;
+        }
+
+        .petal {
+            position: absolute;
+            top: -12vh;
+            width: 18px;
+            height: 24px;
+            background: radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 192, 203, 0.95) 55%, rgba(255, 182, 193, 0.9) 100%);
+            border-radius: 60% 40% 65% 35%;
+            opacity: 0;
+            animation-name: petal-fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transform-origin: center;
+            filter: drop-shadow(0 4px 8px rgba(255, 182, 193, 0.25));
+            will-change: transform, opacity;
+        }
+
+        .petal::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), transparent 70%);
+            border-radius: inherit;
+        }
+
+        @keyframes petal-fall {
+            0% {
+                transform: translate3d(0, -5vh, 0) rotateX(0deg) rotateZ(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translate3d(var(--horizontal-shift, 0), 115vh, 0) rotateX(360deg) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .petal-container {
+                display: none;
+            }
+            .petal {
+                animation: none !important;
+            }
+        }
+
         /* Skip to content link for accessibility */
         .skip-link {
             position: absolute;
@@ -2839,6 +2904,12 @@
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
+    <!-- Floating Petals -->
+    <div class="petal-container" aria-hidden="true">
+        <div class="petal-lane petal-lane-left"></div>
+        <div class="petal-lane petal-lane-right"></div>
+    </div>
+    
     <!-- Header -->
     <header>
         <div class="container">
@@ -2857,7 +2928,7 @@
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <span class="tag">TRANSFORMATION CHALLENGE</span>
+                    <span class="tag">FOR MUSLIM MOTHERS</span>
                     <h1 id="hero-heading">You are <span>JUST ONE SHIFT</span> away</h1>
                     
                     <!-- Highlighted Message -->
@@ -3643,6 +3714,58 @@ Jazakallahu khairan </p>
     </footer>
 
     <script>
+        // Floating petals when page loads
+        (function initPetals() {
+            const container = document.querySelector('.petal-container');
+            if (!container) {
+                return;
+            }
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                container.remove();
+                return;
+            }
+
+            const lanes = Array.from(container.querySelectorAll('.petal-lane'));
+            if (!lanes.length) {
+                container.remove();
+                return;
+            }
+
+            const petalsPerLane = 12;
+            const colors = [
+                'rgba(255, 192, 203, 0.9)',
+                'rgba(255, 182, 193, 0.95)',
+                'rgba(255, 204, 213, 0.9)'
+            ];
+
+            const createPetal = (lane, laneIndex) => {
+                const petal = document.createElement('span');
+                petal.className = 'petal';
+                const size = 10 + Math.random() * 16;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size + 6}px`;
+                petal.style.left = `${(Math.random() * 65).toFixed(2)}%`;
+                const baseDelay = Math.random() * 10;
+                petal.style.animationDelay = `${baseDelay.toFixed(2)}s`;
+                const duration = 24 + Math.random() * 14;
+                petal.style.animationDuration = `${duration.toFixed(2)}s`;
+                const lateralShift = (laneIndex === 0 ? -9 : 9) + (Math.random() * 8 - 4);
+                petal.style.setProperty('--horizontal-shift', `${lateralShift.toFixed(2)}vw`);
+                petal.style.background = `radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.85) 0%, ${colors[Math.floor(Math.random() * colors.length)]} 55%, rgba(255, 192, 203, 0.85) 100%)`;
+                lane.appendChild(petal);
+            };
+
+            lanes.forEach((lane, laneIndex) => {
+                for (let i = 0; i < petalsPerLane; i++) {
+                    const spawnDelay = 350 * i + Math.random() * 1600;
+                    setTimeout(() => {
+                        createPetal(lane, laneIndex);
+                    }, spawnDelay);
+                }
+            });
+        })();
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
