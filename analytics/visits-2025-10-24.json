@@ -2769,5 +2769,12 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T09:36:03.558Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
