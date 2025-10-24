@@ -4,6 +4,19 @@
 .upm/
 .cache/
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pythonlibs/
+venv/
+ENV/
+env/
+*.egg-info/
+.pytest_cache/
+
 # OS
 .DS_Store
 Thumbs.db
