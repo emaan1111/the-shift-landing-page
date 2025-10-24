@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #a06cd5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover { background: #8a4fb8; }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Analytics Tracker Test</h1>
+    
+    <div id="status" class="status info">
+        Click the button below to test your analytics tracker...
+    </div>
+
+    <button onclick="testTracker()">Test Tracker Now</button>
+
+    <div id="details" style="margin-top: 20px;"></div>
+
+    <script src="js/analytics-config.js"></script>
+    <script>
+        async function testTracker() {
+            const statusDiv = document.getElementById('status');
+            const detailsDiv = document.getElementById('details');
+            
+            statusDiv.className = 'status info';
+            statusDiv.innerHTML = '⏳ Testing... Please wait...';
+            detailsDiv.innerHTML = '';
+
+            try {
+                // Check if config is loaded
+                if (typeof ANALYTICS_CONFIG === 'undefined') {
+                    throw new Error('ANALYTICS_CONFIG not loaded. Make sure js/analytics-config.js exists.');
+                }
+
+                const config = ANALYTICS_CONFIG;
+                
+                // Check if token is set
+                if (config.token === 'YOUR_GITHUB_TOKEN') {
+                    throw new Error('GitHub token not configured. Please add your token to js/analytics-config.js');
+                }
+
+                statusDiv.innerHTML = '⏳ Step 1/3: Config loaded ✓<br>⏳ Step 2/3: Testing GitHub API access...';
+
+                // Test GitHub API access
+                const testUrl = `https://api.github.com/repos/${config.owner}/${config.repo}`;
+                const testResponse = await fetch(testUrl, {
+                    headers: {
+                        'Authorization': `token ${config.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!testResponse.ok) {
+                    const errorText = await testResponse.text();
+                    throw new Error(`GitHub API error (${testResponse.status}): ${errorText}`);
+                }
+
+                statusDiv.innerHTML = '⏳ Step 1/3: Config loaded ✓<br>✅ Step 2/3: GitHub API access working ✓<br>⏳ Step 3/3: Creating test analytics file...';
+
+                // Create test data
+                const testData = {
+                    page: '/test',
+                    timestamp: new Date().toISOString(),
+                    event: 'test_event',
+                    referrer: 'Test',
+                    userAgent: navigator.userAgent,
+                    screenWidth: window.screen.width,
+                    screenHeight: window.screen.height,
+                    language: navigator.language
+                };
+
+                // Try to create analytics file
+                const filename = `analytics/test-${Date.now()}.json`;
+                const createUrl = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${filename}`;
+                
+                const content = btoa(JSON.stringify([testData], null, 2));
+                
+                const createResponse = await fetch(createUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${config.token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Test analytics data',
+                        content: content,
+                        branch: config.branch
+                    })
+                });
+
+                if (!createResponse.ok) {
+                    const errorData = await createResponse.json();
+                    throw new Error(`Failed to create file: ${errorData.message || createResponse.statusText}`);
+                }
+
+                const result = await createResponse.json();
+
+                statusDiv.className = 'status success';
+                statusDiv.innerHTML = `
+                    ✅ Step 1/3: Config loaded ✓<br>
+                    ✅ Step 2/3: GitHub API access working ✓<br>
+                    ✅ Step 3/3: Test file created ✓<br><br>
+                    <strong>🎉 Success! Your tracker is working!</strong>
+                `;
+
+                detailsDiv.innerHTML = `
+                    <h3>✅ Test Results:</h3>
+                    <p><strong>Test file created:</strong> <a href="${result.content.html_url}" target="_blank">${filename}</a></p>
+                    <p>Your analytics tracker is properly configured and can write to GitHub!</p>
+                    <p><strong>Next steps:</strong></p>
+                    <ol>
+                        <li>Visit your landing pages (index.html, thank-you.html, upsell.html)</li>
+                        <li>Click some buttons</li>
+                        <li>Check the analytics/ folder in your repo</li>
+                        <li>View your dashboard at analytics.html</li>
+                    </ol>
+                `;
+
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = `❌ <strong>Error:</strong> ${error.message}`;
+                
+                detailsDiv.innerHTML = `
+                    <h3>🔧 Troubleshooting:</h3>
+                    <pre>${error.stack || error.message}</pre>
+                    <p><strong>Common fixes:</strong></p>
+                    <ul>
+                        <li>Make sure js/analytics-config.js has your actual GitHub token</li>
+                        <li>Check that your token has "repo" permissions</li>
+                        <li>Verify the analytics/ folder exists in your GitHub repo</li>
+                        <li>Check browser console (F12) for more details</li>
+                    </ul>
+                `;
+                
+                console.error('Tracker test error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

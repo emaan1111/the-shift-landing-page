@@ -1998,6 +1998,117 @@
             outline: none;
         }
 
+        /* Registration Form */
+        .registration-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(160, 108, 213, 0.1);
+        }
+
+        .form-check {
+            margin-bottom: 20px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .form-check input[type="checkbox"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .form-check label {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 30px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(160, 108, 213, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(160, 108, 213, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -2216,6 +2327,26 @@
                 padding: 12px 30px;
             }
 
+            .registration-form {
+                padding: 25px 20px;
+                margin: 30px auto;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+
             .footer-content {
                 flex-direction: column;
                 gap: 20px;
@@ -2270,9 +2401,130 @@
         .glow {
             animation: glow 3s ease-in-out infinite;
         }
+
+        /* Social Proof Notification */
+        .social-proof-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateX(-400px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 280px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .social-proof-notification.show {
+            transform: translateX(0);
+        }
+
+        .social-proof-icon {
+            display: none;
+        }
+
+        .social-proof-content {
+            flex: 1;
+        }
+
+        .social-proof-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .social-proof-location {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .social-proof-message {
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 3px;
+        }
+
+        .social-proof-close {
+            cursor: pointer;
+            color: #999;
+            font-size: 1rem;
+            flex-shrink: 0;
+            padding: 2px;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .social-proof-close:hover {
+            color: #333;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1da1f2;
+            color: white;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            font-size: 0.65rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-proof-notification {
+                left: 10px;
+                right: 10px;
+                max-width: calc(100% - 20px);
+                bottom: 10px;
+                padding: 8px 12px;
+            }
+            
+            .social-proof-name {
+                font-size: 0.85rem;
+            }
+            
+            .social-proof-location,
+            .social-proof-message {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Social Proof Notification -->
+    <div class="social-proof-notification" id="socialProof">
+        <div class="social-proof-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="social-proof-content">
+            <div class="social-proof-name">
+                <span id="proofName">Loading...</span>
+                <span class="verified-badge"><i class="fas fa-check"></i></span>
+            </div>
+            <div class="social-proof-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="proofLocation">Loading...</span>
+            </div>
+            <div class="social-proof-message">Just registered for The Shift Challenge!</div>
+        </div>
+        <div class="social-proof-close" onclick="hideSocialProof()">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -2981,6 +3233,80 @@ Jazakallahu khairan </p>
             </div>
         </section>
 
+        <!-- Final CTA with Registration Form -->
+        <section class="final-cta" id="register" aria-labelledby="register-heading">
+            <div class="container">
+                <h2 id="register-heading" style="font-size: 2.5rem; margin-bottom: 20px;">Secure Your Spot Now</h2>
+                <p>Join hundreds of mothers who have transformed their children's relationship with Islam. This challenge is completely free, but spaces are limited.</p>
+                
+                <!-- Registration Form -->
+                <div class="registration-form">
+                    <form id="shift-registration-form">
+                        <div class="form-group">
+                            <label for="reg-name">Your Name *</label>
+                            <input type="text" id="reg-name" name="name" required aria-required="true" placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-email">Email Address *</label>
+                            <input type="email" id="reg-email" name="email" required aria-required="true" placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required aria-required="true">
+                                <option value="">Select Country</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="India">India</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Lebanon">Lebanon</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Yes, I Want to Join The Shift Free 3-Day Challenge</button>
+                        
+                        <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
+                    </form>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 1rem; opacity: 0.9;">
+                    <strong>📅 November 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong><br>
+                    <span style="font-size: 0.9rem;">2-hour transformative sessions each day</span>
+                </p>
+            </div>
+        </section>
+
        
     </main>
 
@@ -2997,7 +3323,7 @@ Jazakallahu khairan </p>
                 </div>
             </div>
             <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
-                © 2023 The Shift. All rights reserved.
+                © 2025 The Shift. All rights reserved.
             </p>
         </div>
     </footer>
@@ -3119,8 +3445,272 @@ Jazakallahu khairan </p>
         window.addEventListener('load', startCountdown);
     </script>
     
+    <!-- Personalization Script -->
+    <script>
+        // Personalize hero heading with name from URL parameter
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name') || 
+                        urlParams.get('first_name') || 
+                        urlParams.get('firstname');
+            
+            if (name) {
+                const heroHeading = document.getElementById('hero-heading');
+                if (heroHeading) {
+                    // Capitalize first letter of name
+                    const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+                    heroHeading.innerHTML = `${capitalizedName}, you are <span>JUST ONE SHIFT</span> away`;
+                }
+            }
+        })();
+    </script>
+    
+    <!-- Social Proof Ticker Script -->
+    <script>
+        let visitorQueue = [];
+        let currentIndex = 0;
+        let isShowingProof = false;
+        let proofInterval;
+
+        // Function to hide social proof notification
+        function hideSocialProof() {
+            const notification = document.getElementById('socialProof');
+            notification.classList.remove('show');
+        }
+
+        // Function to show social proof notification
+        function showSocialProof(visitor) {
+            if (isShowingProof) return;
+            
+            isShowingProof = true;
+            const notification = document.getElementById('socialProof');
+            const nameElement = document.getElementById('proofName');
+            const locationElement = document.getElementById('proofLocation');
+            
+            // Capitalize name
+            const displayName = visitor.name.charAt(0).toUpperCase() + visitor.name.slice(1);
+            nameElement.textContent = displayName;
+            
+            // Show location with country
+            const location = visitor.city && visitor.country 
+                ? `${visitor.city}, ${visitor.country}` 
+                : visitor.country || 'Unknown Location';
+            locationElement.textContent = location;
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    isShowingProof = false;
+                }, 500); // Wait for animation to complete
+            }, 5000);
+        }
+
+        // Function to cycle through visitors
+        function cycleVisitors() {
+            if (visitorQueue.length === 0) return;
+            
+            showSocialProof(visitorQueue[currentIndex]);
+            currentIndex = (currentIndex + 1) % visitorQueue.length;
+        }
+
+        // Function to fetch analytics data from GitHub
+        async function fetchRecentVisitors() {
+            try {
+                const owner = ANALYTICS_CONFIG.owner;
+                const repo = ANALYTICS_CONFIG.repo;
+                const token = ANALYTICS_CONFIG.token;
+                
+                // Get list of analytics files (last 30 days)
+                const filesUrl = `https://api.github.com/repos/${owner}/${repo}/contents/analytics`;
+                const filesResponse = await fetch(filesUrl, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (!filesResponse.ok) {
+                    console.error('Failed to fetch analytics files');
+                    return;
+                }
+                
+                const files = await filesResponse.json();
+                const jsonFiles = files.filter(f => f.name.endsWith('.json'));
+                
+                // Sort by date (most recent first) and get last 7 days
+                const sortedFiles = jsonFiles
+                    .sort((a, b) => b.name.localeCompare(a.name))
+                    .slice(0, 7);
+                
+                let allVisitors = [];
+                
+                // Fetch data from each file
+                for (const file of sortedFiles) {
+                    try {
+                        const fileResponse = await fetch(file.download_url);
+                        const data = await fileResponse.json();
+                        
+                        // Filter visitors with name and country
+                        const visitors = data.filter(entry => 
+                            entry.event === 'page_visit' && 
+                            entry.name && 
+                            entry.name.trim() !== '' &&
+                            entry.country
+                        );
+                        
+                        allVisitors = allVisitors.concat(visitors);
+                    } catch (err) {
+                        console.error('Error fetching file:', file.name, err);
+                    }
+                }
+                
+                // Sort by timestamp (most recent first) and get last 100
+                visitorQueue = allVisitors
+                    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                    .slice(0, 100);
+                
+                // Start showing notifications if we have visitors
+                if (visitorQueue.length > 0) {
+                    // Show first notification after 3 seconds
+                    setTimeout(() => {
+                        cycleVisitors();
+                        // Then show every 8 seconds (5s visible + 3s gap)
+                        proofInterval = setInterval(cycleVisitors, 8000);
+                    }, 3000);
+                } else {
+                    console.log('No visitors with name and country found');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching recent visitors:', error);
+            }
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            // Wait for analytics-config.js to load
+            if (typeof ANALYTICS_CONFIG !== 'undefined') {
+                fetchRecentVisitors();
+            } else {
+                console.error('Analytics config not loaded');
+            }
+        });
+
+        // Clear interval when leaving page
+        window.addEventListener('beforeunload', () => {
+            if (proofInterval) {
+                clearInterval(proofInterval);
+            }
+        });
+    </script>
+    
+    <!-- Registration Form Handler -->
+    <script>
+        document.getElementById('shift-registration-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const formMessage = document.getElementById('form-message');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Registering...';
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const country = formData.get('country');
+            
+            // Split name into first and last
+            const nameParts = name.trim().split(' ');
+            const firstName = nameParts[0];
+            const lastName = nameParts.slice(1).join(' ');
+            
+            try {
+                // Get detailed geolocation (city)
+                let city = '';
+                try {
+                    const geoResponse = await fetch('https://ipapi.co/json/');
+                    const geoData = await geoResponse.json();
+                    city = geoData.city || '';
+                } catch (err) {
+                    console.log('Could not get geolocation:', err);
+                }
+                
+                // Send to ClickFunnels via backend proxy
+                if (typeof CLICKFUNNELS_CONFIG !== 'undefined') {
+                    const contactData = {
+                        email: email,
+                        firstName: firstName,
+                        lastName: lastName,
+                        country: country,
+                        city: city,
+                        source: 'Registration Form - The Shift Landing Page',
+                        registration_date: new Date().toISOString()
+                    };
+                    
+                    // Use backend proxy to avoid CORS issues
+                    const backendUrl = window.location.origin + '/api/clickfunnels/contact';
+                    const cfResponse = await fetch(backendUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(contactData)
+                    });
+                    
+                    const result = await cfResponse.json();
+                    
+                    if (result.success) {
+                        console.log('✅ Successfully registered in ClickFunnels');
+                        
+                        // Show success message
+                        formMessage.textContent = '🎉 Success! You\'re registered for The Shift Challenge. Check your email for details!';
+                        formMessage.className = 'form-message success';
+                        
+                        // Reset form
+                        this.reset();
+                        
+                        // Redirect to thank you page after 2 seconds
+                        setTimeout(() => {
+                            window.location.href = `thank-you.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}`;
+                        }, 2000);
+                        
+                    } else {
+                        const errorData = result.error || 'Unknown error';
+                        console.error('ClickFunnels error:', errorData);
+                        throw new Error('Registration failed');
+                    }
+                } else {
+                    throw new Error('ClickFunnels configuration not loaded');
+                }
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                formMessage.textContent = '❌ Oops! Something went wrong. Please try again or contact support.';
+                formMessage.className = 'form-message error';
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    </script>
+    
     <!-- Visitor Tracking Scripts -->
     <script src="js/analytics-config.js"></script>
     <script src="js/tracker.js"></script>
+    
+    <!-- ClickFunnels Integration -->
+    <script src="js/clickfunnels-config.js"></script>
+    <script src="js/clickfunnels-integration.js"></script>
 </body>
 </html>
