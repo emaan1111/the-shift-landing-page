@@ -343,18 +343,21 @@
 
         .speaker-avatar {
             flex-shrink: 0;
-            width: 120px;
-            height: 120px;
-            border-radius: 30px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--white);
+            width: 140px;
+            height: 140px;
+            border-radius: 35px;
+            background: rgba(160, 108, 213, 0.1);
             box-shadow: 0 12px 30px rgba(160, 108, 213, 0.35);
-            letter-spacing: 1px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .speaker-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .speaker-details {
@@ -1467,24 +1470,27 @@
         .about-image {
             flex: 0 0 40%;
             min-height: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient);
             position: relative;
+            overflow: hidden;
+            background: rgba(160, 108, 213, 0.1);
         }
 
         .about-image::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M50,5 L95,95 L5,95 Z" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/></svg>') repeat;
-            opacity: 0.4;
+            background: linear-gradient(135deg, rgba(160, 108, 213, 0.15), rgba(255, 158, 181, 0.15));
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 2;
         }
 
-        .profile-icon {
-            font-size: 6rem;
-            color: rgba(255, 255, 255, 0.92);
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
             position: relative;
             z-index: 1;
         }
@@ -2536,10 +2542,9 @@
             }
 
             .speaker-avatar {
-                width: 100px;
-                height: 100px;
-                font-size: 2rem;
-                border-radius: 24px;
+                width: 120px;
+                height: 120px;
+                border-radius: 28px;
                 margin: 0 auto;
             }
 
@@ -2692,7 +2697,7 @@
 
             .about-image {
                 flex: 0 0 auto;
-                min-height: 220px;
+                min-height: 240px;
             }
 
             .about-content {
@@ -2706,10 +2711,6 @@
 
             .stat-item {
                 width: 100%;
-            }
-
-            .profile-icon {
-                font-size: 4rem;
             }
 
             .footer-content {
@@ -3332,6 +3333,7 @@ Jazakallahu khairan </p>
    <!-- Testimonials -->
       
         <!-- Video Testimonials -->
+        <!--
         <section class="video-testimonials" aria-labelledby="video-testimonials-heading">
             <div class="container">
                 <div class="section-title">
@@ -3339,50 +3341,33 @@ Jazakallahu khairan </p>
                     <p>Watch real mothers share their stories</p>
                 </div>
                 <div class="video-testimonials-grid">
-                    <!-- Video Testimonial 1 -->
                     <div class="video-testimonial-card">
                         <div class="video-testimonial-wrapper">
-                            <!-- Replace with actual video embed -->
                             <div class="video-testimonial-placeholder">
                                 <p style="color: var(--text-dark); font-weight: 500;">Video Testimonial</p>
                             </div>
-                            <!-- Example: Uncomment and add your video URL
-                            <iframe src="YOUR_VIDEO_URL" allowfullscreen></iframe>
-                            -->
                         </div>
                         <div class="video-testimonial-info">
                             <h4>Mother's Name</h4>
                             <p>Brief description or location</p>
                         </div>
                     </div>
-
-                    <!-- Video Testimonial 2 -->
                     <div class="video-testimonial-card">
                         <div class="video-testimonial-wrapper">
-                            <!-- Replace with actual video embed -->
                             <div class="video-testimonial-placeholder">
                                 <p style="color: var(--text-dark); font-weight: 500;">Video Testimonial</p>
                             </div>
-                            <!-- Example: Uncomment and add your video URL
-                            <iframe src="YOUR_VIDEO_URL" allowfullscreen></iframe>
-                            -->
                         </div>
                         <div class="video-testimonial-info">
                             <h4>Mother's Name</h4>
                             <p>Brief description or location</p>
                         </div>
                     </div>
-
-                    <!-- Video Testimonial 3 -->
                     <div class="video-testimonial-card">
                         <div class="video-testimonial-wrapper">
-                            <!-- Replace with actual video embed -->
                             <div class="video-testimonial-placeholder">
                                 <p style="color: var(--text-dark); font-weight: 500;">Video Testimonial</p>
                             </div>
-                            <!-- Example: Uncomment and add your video URL
-                            <iframe src="YOUR_VIDEO_URL" allowfullscreen></iframe>
-                            -->
                         </div>
                         <div class="video-testimonial-info">
                             <h4>Mother's Name</h4>
@@ -3392,6 +3377,7 @@ Jazakallahu khairan </p>
                 </div>
             </div>
         </section>
+        -->
 
         <!-- About Me Section -->
         <section class="about-me" aria-labelledby="about-heading">
@@ -3400,8 +3386,8 @@ Jazakallahu khairan </p>
                     <h2 id="about-heading">Meet Your Guide</h2>
                 </div>
                 <div class="about-container">
-                    <div class="about-image" aria-hidden="true">
-                        <i class="fas fa-user-circle profile-icon"></i>
+                    <div class="about-image">
+                        <img src="img/ariba-farheen.jpg" alt="Ustadha Ariba Farheen" loading="lazy">
                     </div>
                     <div class="about-content">
                         <h3 class="about-name">Ustadha Ariba Farheen</h3>
