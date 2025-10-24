@@ -12,5 +12,12 @@
     "event": "page_exit",
     "sessionId": "session_1761329399634_nec7his42",
     "duration": 7
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-24T18:11:21.244Z",
+    "event": "page_exit",
+    "sessionId": "session_1761329477964_7rbvw38h3",
+    "duration": 3
   }
 ]
