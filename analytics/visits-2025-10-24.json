@@ -2486,5 +2486,12 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T09:16:45.047Z",
+    "event": "page_exit",
+    "sessionId": "session_1761293574364_9tgjsln4i",
+    "duration": 8
   }
 ]
