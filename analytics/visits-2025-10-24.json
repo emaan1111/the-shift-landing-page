@@ -29,5 +29,12 @@
     "event": "page_exit",
     "sessionId": "session_1761329258792_5nsj3kee4",
     "duration": 6
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T18:07:51.646Z",
+    "event": "page_exit",
+    "sessionId": "session_1761329258792_5nsj3kee4",
+    "duration": 7
   }
 ]
