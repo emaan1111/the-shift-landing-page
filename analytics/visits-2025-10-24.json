@@ -15,5 +15,12 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T18:07:43.699Z",
+    "event": "page_exit",
+    "sessionId": "session_1761329258792_5nsj3kee4",
+    "duration": 5
   }
 ]
