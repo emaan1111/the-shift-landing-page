@@ -588,5 +588,12 @@
     "event": "page_exit",
     "sessionId": "session_1761344077818_6dv0zgl5n",
     "duration": 51
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-24T22:16:28.430Z",
+    "event": "page_exit",
+    "sessionId": "session_1761344168207_p7r1rs873",
+    "duration": 20
   }
 ]
