@@ -591,12 +591,23 @@
             try {
                 // Get list of analytics files
                 const listUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/analytics`;
-                const listResponse = await fetch(listUrl, {
-                    headers: {
-                        'Authorization': `token ${GITHUB_CONFIG.token}`,
-                        'Accept': 'application/vnd.github.v3+json'
-                    }
-                });
+
+                const authHeaders = {
+                    'Accept': 'application/vnd.github.v3+json'
+                };
+                if (GITHUB_CONFIG.token) {
+                    authHeaders['Authorization'] = `token ${GITHUB_CONFIG.token}`;
+                }
+
+                let listResponse = await fetch(listUrl, { headers: authHeaders });
+
+                if (!listResponse.ok && GITHUB_CONFIG.token) {
+                    // Retry without token in case the repo is public or the token is invalid.
+                    console.warn('Analytics list fetch failed with token, retrying without auth. Status:', listResponse.status);
+                    listResponse = await fetch(listUrl, {
+                        headers: { 'Accept': 'application/vnd.github.v3+json' }
+                    });
+                }
 
                 if (listResponse.status === 404) {
                     loading.style.display = 'none';
@@ -607,7 +618,8 @@
                 }
 
                 if (!listResponse.ok) {
-                    throw new Error('Failed to load analytics data. Make sure you have created your GitHub token and added it to both tracker.js and analytics.html');
+                    const detail = await listResponse.text();
+                    throw new Error(`Failed to load analytics listing: [${listResponse.status}] ${detail || 'Unknown error'}`);
                 }
 
                 const files = await listResponse.json();
@@ -615,10 +627,39 @@
 
                 // Load each file
                 for (const file of files) {
-                    if (file.name.endsWith('.json')) {
-                        const fileResponse = await fetch(file.download_url);
-                        const fileData = await fileResponse.json();
-                        allData.push(...fileData);
+                    if (!file.name.endsWith('.json')) {
+                        continue;
+                    }
+
+                    const headers = {
+                        'Accept': 'application/vnd.github.v3.raw'
+                    };
+
+                    if (GITHUB_CONFIG.token) {
+                        headers['Authorization'] = `token ${GITHUB_CONFIG.token}`;
+                    }
+
+                    let fileResponse = await fetch(file.url, { headers });
+
+                    if (!fileResponse.ok && headers['Authorization']) {
+                        console.warn(`Analytics file fetch for ${file.name} failed with status ${fileResponse.status}. Retrying without token.`);
+                        const fallbackHeaders = { 'Accept': 'application/vnd.github.v3.raw' };
+                        fileResponse = await fetch(file.url, { headers: fallbackHeaders });
+                    }
+
+                    if (!fileResponse.ok) {
+                        const detail = await fileResponse.text();
+                        throw new Error(`Failed to load ${file.name}: [${fileResponse.status}] ${detail}`);
+                    }
+
+                    const fileText = await fileResponse.text();
+                    try {
+                        const fileData = JSON.parse(fileText);
+                        if (Array.isArray(fileData)) {
+                            allData.push(...fileData);
+                        }
+                    } catch (parseError) {
+                        console.error(`Unable to parse analytics file ${file.name}`, parseError);
                     }
                 }
 
