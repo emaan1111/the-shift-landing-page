@@ -293,6 +293,138 @@
             color: var(--text-light);
         }
 
+        /* Speaker Section */
+        .speaker-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(160, 108, 213, 0.08), rgba(255, 158, 181, 0.08));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-section::before,
+        .speaker-section::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.9;
+        }
+
+        .speaker-section::before {
+            width: 380px;
+            height: 380px;
+            top: -160px;
+            right: -140px;
+            background: rgba(160, 108, 213, 0.12);
+        }
+
+        .speaker-section::after {
+            width: 320px;
+            height: 320px;
+            bottom: -140px;
+            left: -120px;
+            background: rgba(255, 158, 181, 0.12);
+        }
+
+        .speaker-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 50px;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            box-shadow: 0 25px 50px rgba(160, 108, 213, 0.15);
+            border-left: 6px solid var(--primary);
+        }
+
+        .speaker-avatar {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(160, 108, 213, 0.35);
+            letter-spacing: 1px;
+        }
+
+        .speaker-details {
+            flex: 1;
+        }
+
+        .speaker-heading {
+            font-size: 2.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .speaker-heading .speaker-role {
+            display: inline-block;
+            background: rgba(160, 108, 213, 0.12);
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .speaker-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .speaker-highlight {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .speaker-highlight::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 10px;
+            background: rgba(160, 108, 213, 0.18);
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        .speaker-bio p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .speaker-cta {
+            margin-top: 30px;
+        }
+
+        .speaker-cta .cta-main {
+            font-size: 1rem;
+            padding: 12px 32px;
+        }
+
         /* Registration Form Styles */
         .registration-form {
             background: var(--white);
@@ -1288,6 +1420,169 @@
             color: var(--text-light);
         }
 
+        /* About Me Section */
+        .about-me {
+            padding: 80px 0;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .about-me::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(160, 108, 213, 0.06);
+            z-index: 0;
+        }
+
+        .about-me::after {
+            content: "";
+            position: absolute;
+            bottom: -110px;
+            left: -120px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(255, 158, 181, 0.06);
+            z-index: 0;
+        }
+
+        .about-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 20px 45px rgba(160, 108, 213, 0.12);
+        }
+
+        .about-image {
+            flex: 0 0 40%;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            position: relative;
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M50,5 L95,95 L5,95 Z" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/></svg>') repeat;
+            opacity: 0.4;
+        }
+
+        .profile-icon {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.92);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .about-name {
+            font-size: 2.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .about-description {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .about-books {
+            margin: 28px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .book-card {
+            padding: 20px 18px;
+            border-radius: 16px;
+            background: rgba(160, 108, 213, 0.08);
+            box-shadow: 0 12px 30px rgba(160, 108, 213, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 158, 181, 0.25);
+            opacity: 0.6;
+        }
+
+        .book-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .book-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .about-mission {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--primary-dark);
+            margin: 26px 0;
+            line-height: 1.7;
+            padding-left: 18px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .book-highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .about-cta {
+            margin-top: 30px;
+        }
+
+        .about-cta .cta-main {
+            font-size: 1rem;
+            padding: 12px 32px;
+        }
+
         /* Video Testimonials */
         .video-testimonials {
             padding: 80px 0;
@@ -2234,6 +2529,39 @@
                 margin: 30px 0;
             }
 
+            .speaker-content {
+                flex-direction: column;
+                padding: 30px 25px;
+                gap: 25px;
+            }
+
+            .speaker-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
+                border-radius: 24px;
+                margin: 0 auto;
+            }
+
+            .speaker-heading {
+                font-size: 2rem;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .speaker-subtitle {
+                text-align: center;
+                font-size: 1.05rem;
+            }
+
+            .speaker-bio p {
+                font-size: 1rem;
+            }
+
+            .speaker-cta {
+                text-align: center;
+            }
+
             .kids-bonus-title {
                 font-size: 2rem;
             }
@@ -2356,6 +2684,32 @@
             .submit-btn {
                 font-size: 1rem;
                 padding: 12px 25px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-image {
+                flex: 0 0 auto;
+                min-height: 220px;
+            }
+
+            .about-content {
+                padding: 30px 25px;
+            }
+
+            .about-stats {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .profile-icon {
+                font-size: 4rem;
             }
 
             .footer-content {
@@ -2587,6 +2941,7 @@
             </div>
         </section>
 
+    
         <!-- Emotional Message Section -->
         <section class="emotional-message" aria-labelledby="emotional-heading">
             <div class="container">
@@ -3033,6 +3388,41 @@ Jazakallahu khairan </p>
                             <h4>Mother's Name</h4>
                             <p>Brief description or location</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-me" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="about-heading">Meet Your Guide</h2>
+                </div>
+                <div class="about-container">
+                    <div class="about-image" aria-hidden="true">
+                        <i class="fas fa-user-circle profile-icon"></i>
+                    </div>
+                    <div class="about-content">
+                        <h3 class="about-name">Ustadha Ariba Farheen</h3>
+                        <p class="about-title">Founder &amp; CEO of Emaan Power</p>
+                        <p class="about-description">
+                            Ariba Farheen is a visionary educator, author, and mentor who has guided more than 111,000 Muslim mothers and children toward a heartfelt love of Allah and His deen.
+                        </p>
+                        <p class="about-description">
+                            Nearly two decades of on-the-ground experience have shown her how to move families beyond reminders and resistance and into connection, ownership, and sincere worship.
+                        </p>
+              <p class="about-description">
+                            Her best-selling book <em class="book-highlight">Discover the power of salah, Power up your salah, , Secrets of Raising Strong Confident Muslims</em> continues to inspire children worldwide to approach worship with excitement and meaning.
+                        </p>
+                        <p class="about-description">
+                            Through programs like The Shift Challenge, Unshakeable Muslims, and The Shepherd's Coaching Roadmap, she equips parents with practical frameworks rooted in prophetic mercy and modern motivation.
+                        </p>
+                       
+                        <div class="about-mission">
+                            Ariba's mission is to raise a generation of unshakeable Muslims who worship from love, lead with responsibility, and walk confidently with Allah.
+                        </div>
+                     
                     </div>
                 </div>
             </div>

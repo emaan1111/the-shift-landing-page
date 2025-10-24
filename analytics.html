@@ -305,6 +305,47 @@
             box-shadow: 0 4px 12px rgba(160, 108, 213, 0.3);
         }
 
+        .filter-controls button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .danger-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+        }
+
+        .danger-button:hover:not(:disabled) {
+            background: #ff5252;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.35);
+        }
+
+        .status-message {
+            display: none;
+            margin: 20px 0;
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .status-message.info {
+            background: rgba(160, 108, 213, 0.12);
+            color: #4a2a7a;
+        }
+
+        .status-message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-message.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -342,6 +383,7 @@
         </div>
 
         <div id="error" style="display: none;"></div>
+        <div id="statusMessage" class="status-message"></div>
 
         <div id="dashboard" style="display: none;">
             <!-- Global Filters -->
@@ -378,9 +420,14 @@
                         <input type="date" id="endDate" style="padding: 8px; border: 2px solid var(--primary); border-radius: 8px;">
                     </div>
                     
-                    <button onclick="loadData()" style="margin-left: auto;">
-                        <i class="fas fa-sync"></i> Refresh Data
-                    </button>
+                    <div style="margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button type="button" id="resetAnalyticsButton" class="danger-button" onclick="resetAnalyticsData()">
+                            <i class="fas fa-trash-alt"></i> Reset Analytics
+                        </button>
+                        <button type="button" onclick="loadData()">
+                            <i class="fas fa-sync"></i> Refresh Data
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -495,6 +542,25 @@
 
         let allData = [];
         const tableState = {};
+        let isResetting = false;
+
+        function updateStatusMessage(message = '', type = 'info') {
+            const status = document.getElementById('statusMessage');
+            if (!status) {
+                return;
+            }
+
+            if (!message) {
+                status.textContent = '';
+                status.className = 'status-message';
+                status.style.display = 'none';
+                return;
+            }
+
+            status.textContent = message;
+            status.className = `status-message ${type}`;
+            status.style.display = 'block';
+        }
 
         function escapeHtml(value) {
             if (value === null || value === undefined) {
@@ -512,6 +578,7 @@
             const loading = document.getElementById('loading');
             const error = document.getElementById('error');
             const dashboard = document.getElementById('dashboard');
+            updateStatusMessage();
 
             loading.style.display = 'block';
             error.style.display = 'none';
@@ -559,6 +626,137 @@
                 error.style.display = 'block';
                 error.className = 'error';
                 error.innerHTML = `<strong>Error:</strong> ${err.message}`;
+            }
+        }
+
+        async function resetAnalyticsData() {
+            if (isResetting) {
+                return;
+            }
+
+            if (!GITHUB_CONFIG.token || GITHUB_CONFIG.token === 'YOUR_GITHUB_TOKEN') {
+                updateStatusMessage('Reset requires a valid GitHub token. Update js/analytics-config.js with a personal access token.', 'error');
+                return;
+            }
+
+            const confirmReset = window.confirm('This will permanently delete all analytics JSON files from GitHub. This cannot be undone. Continue?');
+            if (!confirmReset) {
+                return;
+            }
+
+            const resetButton = document.getElementById('resetAnalyticsButton');
+            const originalButtonContent = resetButton ? resetButton.innerHTML : '';
+
+            try {
+                isResetting = true;
+                if (resetButton) {
+                    resetButton.disabled = true;
+                    resetButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Resetting...';
+                }
+                updateStatusMessage('Resetting analytics data...', 'info');
+
+                const listUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/analytics`;
+                const listResponse = await fetch(listUrl, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_CONFIG.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!listResponse.ok) {
+                    throw new Error('Unable to list analytics files. Check your GitHub token and permissions.');
+                }
+
+                const files = await listResponse.json();
+                const jsonFiles = Array.isArray(files)
+                    ? files.filter(file => file.name && file.name.endsWith('.json'))
+                    : [];
+
+                if (jsonFiles.length === 0) {
+                    updateStatusMessage('No analytics files were found. Data is already clear.', 'success');
+                } else {
+                    for (const file of jsonFiles) {
+                        const deleteResponse = await fetch(file.url, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `token ${GITHUB_CONFIG.token}`,
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                message: 'Reset analytics data',
+                                sha: file.sha,
+                                branch: GITHUB_CONFIG.branch
+                            })
+                        });
+
+                        if (!deleteResponse.ok) {
+                            const errorDetail = await deleteResponse.text();
+                            throw new Error(`Failed to delete ${file.name}. ${errorDetail}`);
+                        }
+                    }
+
+                    updateStatusMessage('All analytics data has been reset. Visit your pages to begin collecting new data.', 'success');
+                }
+
+                allData = [];
+
+                const pageFilter = document.getElementById('globalPageFilter');
+                if (pageFilter) {
+                    pageFilter.value = 'all';
+                }
+
+                const eventFilter = document.getElementById('eventFilter');
+                if (eventFilter) {
+                    eventFilter.value = 'all';
+                }
+
+                const dateRangeFilter = document.getElementById('dateRangeFilter');
+                if (dateRangeFilter) {
+                    dateRangeFilter.value = 'all';
+                }
+
+                const customDateRange = document.getElementById('customDateRange');
+                if (customDateRange) {
+                    customDateRange.style.display = 'none';
+                }
+
+                const startDate = document.getElementById('startDate');
+                if (startDate) {
+                    startDate.value = '';
+                }
+
+                const endDate = document.getElementById('endDate');
+                if (endDate) {
+                    endDate.value = '';
+                }
+
+                populateGlobalPageFilter();
+                displayAnalytics();
+
+                const loading = document.getElementById('loading');
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+
+                const dashboard = document.getElementById('dashboard');
+                if (dashboard) {
+                    dashboard.style.display = 'block';
+                }
+
+                const error = document.getElementById('error');
+                if (error) {
+                    error.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Reset analytics error:', error);
+                updateStatusMessage(`Reset failed: ${error.message}`, 'error');
+            } finally {
+                if (resetButton) {
+                    resetButton.disabled = false;
+                    resetButton.innerHTML = originalButtonContent || '<i class="fas fa-trash-alt"></i> Reset Analytics';
+                }
+                isResetting = false;
             }
         }
 
@@ -962,7 +1160,13 @@
             const worldMap = document.getElementById('worldMap');
             
             if (Object.keys(countries).length === 0) {
-                mapLoading.innerHTML = '<p style="color: #999;">No location data available yet. Visit your pages to start collecting location data!</p>';
+                if (mapLoading) {
+                    mapLoading.style.display = 'block';
+                    mapLoading.innerHTML = '<p style="color: #999;">No location data available yet. Visit your pages to start collecting location data!</p>';
+                }
+                if (worldMap) {
+                    worldMap.style.display = 'none';
+                }
                 return;
             }
 

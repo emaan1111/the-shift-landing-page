@@ -504,57 +504,169 @@
             font-style: normal;
         }
 
-        /* VIP Upgrade */
-        .vip-step {
-            border: 2px solid rgba(160, 108, 213, 0.2);
-            box-shadow: 0 20px 45px rgba(160, 108, 213, 0.15);
+        /* VIP Package */
+        .vip-package {
+            padding: 80px 0;
+            background: var(--white);
+            position: relative;
         }
 
-        .vip-step .step-number {
-            background: var(--urgency-color);
+        .vip-package::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(160, 108, 213, 0.05);
+            z-index: 0;
         }
 
-        .vip-benefits {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 25px;
-            display: grid;
-            gap: 12px;
+        .vip-package::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 158, 181, 0.05);
+            z-index: 0;
         }
 
-        .vip-benefits li {
+        .vip-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(160, 108, 213, 0.05), rgba(255, 158, 181, 0.05));
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(160, 108, 213, 0.1);
+        }
+
+        .vip-features {
             display: flex;
-            align-items: center;
-            font-size: 1rem;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .vip-feature {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(160, 108, 213, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .vip-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(160, 108, 213, 0.15);
+        }
+
+        .vip-feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .vip-feature h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .vip-feature ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .vip-feature li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
             color: var(--text-dark);
         }
 
-        .vip-benefits li::before {
-            content: "✔";
-            color: var(--success-color, #27ae60);
-            margin-right: 10px;
+        .vip-feature li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
             font-weight: 700;
+        }
+
+        .vip-pricing {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .discount-badge {
+            background: var(--urgency-color);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .price-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .original-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .current-price {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .vip-cta {
+            text-align: center;
+            margin-top: 30px;
         }
 
         .btn-vip {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             background: var(--gradient);
             color: var(--white);
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 12px 35px rgba(160, 108, 213, 0.35);
+            box-shadow: 0 10px 30px rgba(160, 108, 213, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .btn-vip i {
+            margin-right: 10px;
         }
 
         .btn-vip:hover,
         .btn-vip:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 40px rgba(160, 108, 213, 0.45);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(160, 108, 213, 0.4);
             outline: none;
         }
 
@@ -566,6 +678,27 @@
             pointer-events: none;
             color: var(--text-light);
             opacity: 0.7;
+        }
+
+        .vip-no-thanks {
+            display: inline-block;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .vip-no-thanks:hover,
+        .vip-no-thanks:focus {
+            color: var(--primary-dark);
+            outline: none;
+        }
+
+        .vip-reminder {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         /* Countdown Timer */
@@ -796,6 +929,28 @@
             .success-message {
                 max-width: 90%;
             }
+
+            .vip-features {
+                flex-direction: column;
+            }
+
+            .price-comparison {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .original-price {
+                font-size: 1.2rem;
+            }
+
+            .current-price {
+                font-size: 1.5rem;
+            }
+
+            .btn-vip {
+                padding: 15px 30px;
+                font-size: 1.05rem;
+            }
         }
 
         /* Animations */
@@ -948,7 +1103,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2 id="steps-heading">Your Next Steps</h2>
-                    <p>Complete these four important steps to prepare for The Shift Challenge</p>
+                    <p>Complete these three important steps to prepare for The Shift Challenge</p>
                 </div>
                 
                 <div class="steps-content">
@@ -1035,45 +1190,79 @@
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
-                    <div class="step-box vip-step">
-                        <div class="step-header">
-                            <div class="step-number">4</div>
-                            <h3 class="step-title">Unlock the VIP Package</h3>
-                        </div>
-                        <div class="step-content">
-                            <p class="step-description">Get lifetime access to every session replay, the exclusive bonus Q&amp;A, and premium resources designed to keep you supported after the challenge ends.</p>
-                            
-                            <ul class="vip-benefits">
-                                <li>Lifetime access to all three moms sessions and the Kids Power session</li>
-                                <li>Downloadable replays so you can revisit breakthroughs anytime</li>
-                                <li>Exclusive 2-hour live Q&amp;A with Ustadha Ariba for personalized guidance</li>
-                                <li>VIP-only bonuses to help you implement lasting change</li>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIP Package Section -->
+        <section class="vip-package" aria-labelledby="vip-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="vip-heading">Introducing the VIP Package!</h2>
+                    <p>Get lifetime access to all session replays + an exclusive bonus Q&amp;A session</p>
+                </div>
+                
+                <div class="vip-content">
+                    <div class="vip-features">
+                        <div class="vip-feature">
+                            <div class="vip-feature-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>Lifetime Access to All Replays</h3>
+                            <p>Never miss a moment. Watch and rewatch as many times as you need.</p>
+                            <ul>
+                                <li>All 3 moms sessions (6+ hours)</li>
+                                <li>Kids power session</li>
+                                <li>Watch on your schedule</li>
+                                <li>Lifetime access - no expiration</li>
+                                <li>Downloadable for offline viewing</li>
                             </ul>
-
-                            <div class="countdown-timer" role="status" aria-live="polite">
-                                <p>⏰ This one-time VIP upgrade expires in:</p>
-                                <div class="timer">
-                                    <div class="time-unit">
-                                        <span class="time-value" id="vipTimerMinutes">10</span>
-                                        <span class="time-label">Minutes</span>
-                                    </div>
-                                    <div class="time-unit">
-                                        <span class="time-value" id="vipTimerSeconds">00</span>
-                                        <span class="time-label">Seconds</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="button-group">
-                                <a href="#" id="vipUpgradeButton" class="btn-vip">
-                                    ✨ Yes! I’m Ready for VIP Access
-                                </a>
-                            </div>
-                            <p class="step-description" style="margin-top: 20px; color: var(--urgency-color); font-weight: 600;">
-                                This is your only chance to secure the VIP upgrade at this price. Once the timer hits zero, it’s gone.
-                            </p>
                         </div>
+                        
+                        <div class="vip-feature">
+                            <div class="vip-feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Exclusive Bonus Q&amp;A Session</h3>
+                            <p>Get your personal questions answered live!</p>
+                            <ul>
+                                <li>2-hour live Q&amp;A with Ustadha Ariba Farheen</li>
+                                <li>Ask about YOUR specific situation</li>
+                                <li>Personalized guidance</li>
+                                <li>Recording included</li>
+                                <li>Limited to upgrade members only</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="vip-pricing">
+                        <div class="discount-badge">76% OFF - Limited Time!</div>
+                        <div class="price-comparison">
+                            <span class="original-price">$197</span>
+                            <span class="current-price">$47</span>
+                        </div>
+                    </div>
+                    
+                    <div class="countdown-timer" role="status" aria-live="polite">
+                        <p>This offer expires in:</p>
+                        <div class="timer">
+                            <div class="time-unit">
+                                <span class="time-value" id="vipTimerMinutes">10</span>
+                                <span class="time-label">Minutes</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="vipTimerSeconds">00</span>
+                                <span class="time-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vip-cta">
+                        <a href="#" id="vipUpgradeButton" class="btn-vip">
+                            <i class="fas fa-star"></i> YES! Give Me VIP Package Access for $47
+                        </a>
+                        <a href="#" class="vip-no-thanks">No thanks, I'll take my chances without replays →</a>
+                        <p class="vip-reminder">Remember: This is your only chance to get the VIP Package with lifetime access to replays and the exclusive Q&amp;A session. Once you leave this page, this offer is gone forever.</p>
                     </div>
                 </div>
             </div>
@@ -1120,7 +1309,7 @@
         const vipUpgradeButton = document.getElementById('vipUpgradeButton');
         const vipTimerMinutes = document.getElementById('vipTimerMinutes');
         const vipTimerSeconds = document.getElementById('vipTimerSeconds');
-        const vipCountdownTimer = document.querySelector('.vip-step .countdown-timer');
+        const vipCountdownTimer = document.querySelector('.vip-package .countdown-timer');
         const vipCountdownMessage = vipCountdownTimer ? vipCountdownTimer.querySelector('p') : null;
         let vipCountdownInterval;
         let vipTimeLeft = 10 * 60;
