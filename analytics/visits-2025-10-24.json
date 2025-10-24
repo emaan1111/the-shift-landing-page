@@ -283,5 +283,12 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-24T05:56:32.367Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge\n                    Limited",
+    "referrer": "Direct"
   }
 ]
