@@ -3702,5 +3702,22 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T13:55:26.774Z",
+    "event": "page_visit",
+    "sessionId": "session_1761314126773_83krm1fpc",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Boardman",
+    "region": "Oregon",
+    "timezone": "America/Los_Angeles"
   }
 ]
