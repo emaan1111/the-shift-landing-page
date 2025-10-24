@@ -1003,5 +1003,12 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T07:58:43.721Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
