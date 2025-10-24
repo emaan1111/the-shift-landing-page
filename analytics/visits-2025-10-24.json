@@ -434,5 +434,12 @@
     "event": "page_exit",
     "sessionId": "session_1761337237007_6kat9dnm7",
     "duration": 64
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T20:26:46.380Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
