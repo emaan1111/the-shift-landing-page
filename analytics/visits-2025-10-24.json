@@ -511,5 +511,12 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-24T21:25:20.760Z",
+    "event": "page_exit",
+    "sessionId": "session_1761341106139_148x9qrx5",
+    "duration": 15
   }
 ]
