@@ -346,6 +346,29 @@
             color: #c62828;
         }
 
+        .token-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background: var(--gradient);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(160, 108, 213, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .token-button:hover,
+        .token-button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(160, 108, 213, 0.35);
+            outline: none;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -384,6 +407,9 @@
 
         <div id="error" style="display: none;"></div>
         <div id="statusMessage" class="status-message"></div>
+        <button id="updateTokenButton" class="token-button" type="button" style="display:none;">
+            <i class="fas fa-key"></i> Update GitHub Token
+        </button>
 
         <div id="dashboard" style="display: none;">
             <!-- Global Filters -->
@@ -544,6 +570,70 @@
                 branch: 'main'
             };
 
+        const TOKEN_STORAGE_KEY = 'shiftAnalyticsTokenOverride';
+        let tokenPromptedThisSession = false;
+
+        function applyTokenOverride(token) {
+            if (typeof token === 'string' && token.trim()) {
+                const cleanToken = token.trim();
+                GITHUB_CONFIG.token = cleanToken;
+                try {
+                    localStorage.setItem(TOKEN_STORAGE_KEY, cleanToken);
+                } catch (err) {
+                    console.warn('Unable to persist analytics token override:', err);
+                }
+                updateStatusMessage('GitHub token updated for this browser session.', 'success');
+                const tokenButton = document.getElementById('updateTokenButton');
+                if (tokenButton) {
+                    tokenButton.style.display = 'inline-flex';
+                }
+                return true;
+            }
+
+            // Clearing token override
+            GITHUB_CONFIG.token = ANALYTICS_CONFIG && ANALYTICS_CONFIG.token ? ANALYTICS_CONFIG.token : '';
+            try {
+                localStorage.removeItem(TOKEN_STORAGE_KEY);
+            } catch (err) {
+                console.warn('Unable to remove analytics token override:', err);
+            }
+            return false;
+        }
+
+        (function initialiseTokenFromStorage() {
+            try {
+                const storedToken = localStorage.getItem(TOKEN_STORAGE_KEY);
+                if (storedToken) {
+                    GITHUB_CONFIG.token = storedToken;
+                    const tokenButton = document.getElementById('updateTokenButton');
+                    if (tokenButton) {
+                        tokenButton.style.display = 'inline-flex';
+                    }
+                }
+            } catch (err) {
+                console.warn('Unable to read stored analytics token override:', err);
+            }
+        })();
+
+        function promptForToken(message = 'Enter a GitHub personal access token (with repo scope):') {
+            const tokenButton = document.getElementById('updateTokenButton');
+            if (tokenButton) {
+                tokenButton.style.display = 'inline-flex';
+            }
+            const input = window.prompt(message, '');
+            if (!input) {
+                updateStatusMessage('Token update cancelled. Current token remains.', 'info');
+                return false;
+            }
+            const updated = applyTokenOverride(input);
+            if (updated) {
+                tokenPromptedThisSession = true;
+                loadData();
+                return true;
+            }
+            return false;
+        }
+
         let allData = [];
         const tableState = {};
         let isResetting = false;
@@ -679,6 +769,12 @@
                 error.style.display = 'block';
                 error.className = 'error';
                 error.innerHTML = `<strong>Error:</strong> ${err.message}`;
+                if (!tokenPromptedThisSession && /401|403|token/i.test(err.message)) {
+                    tokenPromptedThisSession = true;
+                    setTimeout(() => {
+                        promptForToken('GitHub returned an authentication error. Enter a new token with repo scope:');
+                    }, 200);
+                }
             }
         }
 
@@ -716,9 +812,14 @@
                     }
                 });
 
-                if (!listResponse.ok) {
-                    throw new Error('Unable to list analytics files. Check your GitHub token and permissions.');
-                }
+            if (listResponse.status === 401 || listResponse.status === 403) {
+                throw new Error('GitHub rejected the token during reset (401/403). Go to js/analytics-config.js and ensure the token is valid and has repo scope, then reload the page.');
+            }
+
+            if (!listResponse.ok) {
+                const detail = await listResponse.text();
+                throw new Error(`Unable to list analytics files. Status ${listResponse.status}. ${detail}`);
+            }
 
                 const files = await listResponse.json();
                 const jsonFiles = Array.isArray(files)
@@ -729,12 +830,12 @@
                     updateStatusMessage('No analytics files were found. Data is already clear.', 'success');
                 } else {
                     for (const file of jsonFiles) {
-                        const deleteResponse = await fetch(file.url, {
-                            method: 'DELETE',
-                            headers: {
-                                'Authorization': `token ${GITHUB_CONFIG.token}`,
-                                'Accept': 'application/vnd.github.v3+json',
-                                'Content-Type': 'application/json'
+                    const deleteResponse = await fetch(file.url, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `token ${GITHUB_CONFIG.token}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
                             },
                             body: JSON.stringify({
                                 message: 'Reset analytics data',
@@ -742,6 +843,11 @@
                                 branch: GITHUB_CONFIG.branch
                             })
                         });
+
+                        if (deleteResponse.status === 401 || deleteResponse.status === 403) {
+                            const detail = await deleteResponse.text();
+                            throw new Error(`GitHub returned ${deleteResponse.status} while deleting ${file.name}. Your token may be invalid or missing repo permissions. ${detail}`);
+                        }
 
                         if (!deleteResponse.ok) {
                             const errorDetail = await deleteResponse.text();
@@ -1442,6 +1548,14 @@
 
         // Date range filter - show/hide custom date inputs and refresh analytics
         document.addEventListener('DOMContentLoaded', function() {
+            const tokenButton = document.getElementById('updateTokenButton');
+            if (tokenButton) {
+                tokenButton.style.display = 'inline-flex';
+                tokenButton.addEventListener('click', function() {
+                    promptForToken('Enter a GitHub personal access token (repo scope) to manage analytics data:');
+                });
+            }
+
             const dateRangeFilter = document.getElementById('dateRangeFilter');
             const customDateRange = document.getElementById('customDateRange');
             const startDate = document.getElementById('startDate');

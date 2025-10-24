@@ -121,3 +121,7 @@ If you run into issues, check:
 - Browser console (F12) for error messages
 - GitHub repo's `analytics/` folder for data files
 - Make sure your token has the correct permissions
+**If reset fails (401/403):**
+1. GitHub rejected the token. Go to `js/analytics-config.js`, paste a fresh PAT with `repo` scope, save, then hard refresh `analytics.html`.
+2. Make sure you're not blocking the script in the browser (check DevTools → Network for `analytics-config.js`).
+3. Try the reset again once the token test works (open DevTools → Console and run `console.log(ANALYTICS_CONFIG.token)` to confirm).
