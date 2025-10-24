@@ -925,5 +925,21 @@
     "event": "page_exit",
     "sessionId": "session_1761292373290_51h11b9l7",
     "duration": 31
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-24T07:55:02.468Z",
+    "event": "page_visit",
+    "sessionId": "session_1761292502466_b7wg5jr8z",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata"
   }
 ]
