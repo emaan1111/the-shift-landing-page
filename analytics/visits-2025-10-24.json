@@ -3223,5 +3223,17 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T10:09:42.263Z",
+    "event": "page_visit",
+    "sessionId": "session_1761300582071_z286p877u",
+    "referrer": "https://www.facebook.com/",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 2000,
+    "screenHeight": 2000,
+    "language": "en-US",
+    "hookVariant": "B"
   }
 ]
