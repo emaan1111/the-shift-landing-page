@@ -566,5 +566,23 @@
     "event": "button_click",
     "buttonName": "Yes, I Want to Join The Shift Free 3-Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T06:28:58.384Z",
+    "event": "page_visit",
+    "sessionId": "session_1761287338383_vte59tt6u",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "email": "ariba@gmail.com",
+    "name": "Sarah",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata"
   }
 ]
