@@ -5,7 +5,7 @@
 const GITHUB_CONFIG = typeof ANALYTICS_CONFIG !== 'undefined' ? ANALYTICS_CONFIG : {
     owner: 'emaan1111',
     repo: 'the-shift-landing-page',
-    token: 'YOUR_GITHUB_TOKEN',
+    token: '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',
     branch: 'main'
 };
 
