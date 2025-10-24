@@ -36,4 +36,6 @@ server.py
 
 # ClickFunnels Config (contains API key)
 js/clickfunnels-config.js
-server.py
+
+# Tracker with GitHub token
+js/tracker.js
