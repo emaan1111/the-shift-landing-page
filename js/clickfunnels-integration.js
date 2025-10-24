@@ -248,22 +248,19 @@ async function tagVisitIfNeeded(contactData) {
     }
 
     try {
-        const storageKey = `shiftVisitorTagged:${contactData.email.toLowerCase()}`;
-        if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(storageKey)) {
-            return;
-        }
-
         const visitorTags = getVisitorTagIds();
         const result = await sendToClickFunnels(
             { ...contactData, tagIds: visitorTags },
             { tagIds: visitorTags }
         );
 
-        if (result && result.success && typeof sessionStorage !== 'undefined') {
-            sessionStorage.setItem(storageKey, '1');
+        if (result.success) {
+            console.log('✅ Visitor tag applied in ClickFunnels');
+        } else {
+            console.warn('Visitor tagging failed:', result.error);
         }
     } catch (error) {
-        console.warn('Visitor tagging failed:', error);
+        console.warn('Visitor tagging error:', error);
     }
 }
 

@@ -2529,7 +2529,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <span id="proofLocation">Loading...</span>
             </div>
-            <div class="social-proof-message">Just registered for The Shift Challenge!</div>
+            <div class="social-proof-message">is coming to The Shift Live Challenge</div>
         </div>
         <div class="social-proof-close" onclick="hideSocialProof()">
             <i class="fas fa-times"></i>
@@ -2581,7 +2581,7 @@
                         <div class="cta-ribbon"></div>
                     </div>
                     <div class="date-info">
-                        December 6-7, 2025 | 11:00 AM EST / 3:00 PM UK Time
+                        Nov 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily
                     </div>
                 </div>
             </div>
@@ -3173,10 +3173,6 @@ Jazakallahu khairan </p>
                             <span class="current-price">FREE</span>
                         </div>
                         
-                        <div class="donation-info">
-                            <p>With just a <span class="donation-amount">$5 donation for Palestine 🇵🇸</span></p>
-                        </div>
-                        
                         <div class="urgency-message">
                             <p>Spots are limited — and we're closing registration once the seats fill.</p>
                         </div>
@@ -3252,7 +3248,7 @@ Jazakallahu khairan </p>
                 <!-- Registration Form -->
                 <div class="registration-form">
                     <div class="schedule-info">
-                        <strong>📅 November 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong>
+                        <strong>📅 Nov 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong>
                         <span>2-hour transformative sessions each day</span>
                     </div>
                     <form id="shift-registration-form">
@@ -3530,14 +3526,23 @@ Jazakallahu khairan </p>
         // Function to show social proof notification
         function showSocialProof(visitor) {
             if (isShowingProof) return;
-            
+            if (!visitor || !visitor.name) return;
+
+            const rawName = visitor.name.trim();
+            if (!rawName || /@/.test(rawName)) {
+                return;
+            }
+
             isShowingProof = true;
             const notification = document.getElementById('socialProof');
             const nameElement = document.getElementById('proofName');
             const locationElement = document.getElementById('proofLocation');
             
             // Capitalize name
-            const displayName = visitor.name.charAt(0).toUpperCase() + visitor.name.slice(1);
+            const displayName = rawName
+                .split(/\s+/)
+                .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+                .join(' ');
             nameElement.textContent = displayName;
             
             // Show location with country
@@ -3603,13 +3608,18 @@ Jazakallahu khairan </p>
                         const fileResponse = await fetch(file.download_url);
                         const data = await fileResponse.json();
                         
-                        // Filter visitors with name and country
-                        const visitors = data.filter(entry => 
-                            entry.event === 'page_visit' && 
-                            entry.name && 
-                            entry.name.trim() !== '' &&
-                            entry.country
-                        );
+                        // Filter visitors with valid name from upsell/thank-you visits
+                        const visitors = data.filter(entry => {
+                            const hasValidName = entry.name &&
+                                entry.name.trim() !== '' &&
+                                !/@/.test(entry.name);
+                            const visitedRelevantPage = entry.page &&
+                                (entry.page.includes('upsell') || entry.page.includes('thank-you'));
+                            return entry.event === 'page_visit' &&
+                                hasValidName &&
+                                visitedRelevantPage &&
+                                entry.country;
+                        });
                         
                         allVisitors = allVisitors.concat(visitors);
                     } catch (err) {

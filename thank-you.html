@@ -32,6 +32,7 @@
             --kids-bg: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             --kids-fun: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --urgency-color: #e74c3c;
+            --success-color: #27ae60;
         }
 
         * {
@@ -503,6 +504,201 @@
             font-style: normal;
         }
 
+        /* VIP Upgrade */
+        .vip-step {
+            border: 2px solid rgba(160, 108, 213, 0.2);
+            box-shadow: 0 20px 45px rgba(160, 108, 213, 0.15);
+        }
+
+        .vip-step .step-number {
+            background: var(--urgency-color);
+        }
+
+        .vip-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .vip-benefits li {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .vip-benefits li::before {
+            content: "✔";
+            color: var(--success-color, #27ae60);
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .btn-vip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 35px rgba(160, 108, 213, 0.35);
+        }
+
+        .btn-vip:hover,
+        .btn-vip:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(160, 108, 213, 0.45);
+            outline: none;
+        }
+
+        .btn-vip.disabled {
+            background: #ccc;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+            pointer-events: none;
+            color: var(--text-light);
+            opacity: 0.7;
+        }
+
+        /* Countdown Timer */
+        .countdown-timer {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .countdown-timer p {
+            font-size: 1.1rem;
+            color: var(--urgency-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .time-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--urgency-color);
+            background: var(--light-bg);
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+        }
+
+        .time-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* VIP Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 18px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            background: var(--gradient);
+            color: white;
+        }
+
+        .modal-header h2 {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        .modal-body {
+            padding: 0;
+            background: var(--light-bg);
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 650px;
+            border: none;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            font-weight: 700;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            background: white;
+            outline: none;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -752,7 +948,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2 id="steps-heading">Your Next Steps</h2>
-                    <p>Complete these three important steps to prepare for The Shift Challenge</p>
+                    <p>Complete these four important steps to prepare for The Shift Challenge</p>
                 </div>
                 
                 <div class="steps-content">
@@ -838,10 +1034,64 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-box vip-step">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Unlock the VIP Package</h3>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">Get lifetime access to every session replay, the exclusive bonus Q&amp;A, and premium resources designed to keep you supported after the challenge ends.</p>
+                            
+                            <ul class="vip-benefits">
+                                <li>Lifetime access to all three moms sessions and the Kids Power session</li>
+                                <li>Downloadable replays so you can revisit breakthroughs anytime</li>
+                                <li>Exclusive 2-hour live Q&amp;A with Ustadha Ariba for personalized guidance</li>
+                                <li>VIP-only bonuses to help you implement lasting change</li>
+                            </ul>
+
+                            <div class="countdown-timer" role="status" aria-live="polite">
+                                <p>⏰ This one-time VIP upgrade expires in:</p>
+                                <div class="timer">
+                                    <div class="time-unit">
+                                        <span class="time-value" id="vipTimerMinutes">10</span>
+                                        <span class="time-label">Minutes</span>
+                                    </div>
+                                    <div class="time-unit">
+                                        <span class="time-value" id="vipTimerSeconds">00</span>
+                                        <span class="time-label">Seconds</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button-group">
+                                <a href="#" id="vipUpgradeButton" class="btn-vip">
+                                    ✨ Yes! I’m Ready for VIP Access
+                                </a>
+                            </div>
+                            <p class="step-description" style="margin-top: 20px; color: var(--urgency-color); font-weight: 600;">
+                                This is your only chance to secure the VIP upgrade at this price. Once the timer hits zero, it’s gone.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- VIP Upgrade Modal -->
+    <div id="vipModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="vipModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button id="vipModalClose" class="modal-close" type="button" aria-label="Close VIP upgrade popup">&times;</button>
+            <div class="modal-header">
+                <h2 id="vipModalTitle">Complete Your VIP Upgrade</h2>
+            </div>
+            <div class="modal-body">
+                <iframe id="vipCheckoutFrame" src="https://www.emaanpower.com.au/shiftvip1761291772302" title="VIP Upgrade Checkout"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -864,6 +1114,97 @@
     <!-- Confetti Script -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
+        // VIP upgrade modal and countdown
+        const vipModal = document.getElementById('vipModal');
+        const vipModalClose = document.getElementById('vipModalClose');
+        const vipUpgradeButton = document.getElementById('vipUpgradeButton');
+        const vipTimerMinutes = document.getElementById('vipTimerMinutes');
+        const vipTimerSeconds = document.getElementById('vipTimerSeconds');
+        const vipCountdownTimer = document.querySelector('.vip-step .countdown-timer');
+        const vipCountdownMessage = vipCountdownTimer ? vipCountdownTimer.querySelector('p') : null;
+        let vipCountdownInterval;
+        let vipTimeLeft = 10 * 60;
+
+        function openVipModal(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            if (!vipModal) return;
+            vipModal.classList.add('active');
+            vipModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            if (vipModalClose) {
+                vipModalClose.focus();
+            }
+        }
+
+        function closeVipModal() {
+            if (!vipModal) return;
+            vipModal.classList.remove('active');
+            vipModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        function updateVipTimer() {
+            if (!vipTimerMinutes || !vipTimerSeconds) return;
+
+            const minutes = Math.max(0, Math.floor(vipTimeLeft / 60));
+            const seconds = Math.max(0, vipTimeLeft % 60);
+
+            vipTimerMinutes.textContent = minutes.toString().padStart(2, '0');
+            vipTimerSeconds.textContent = seconds.toString().padStart(2, '0');
+
+            if (vipTimeLeft <= 0) {
+                clearInterval(vipCountdownInterval);
+                if (vipUpgradeButton) {
+                    vipUpgradeButton.classList.add('disabled');
+                    vipUpgradeButton.setAttribute('aria-disabled', 'true');
+                    vipUpgradeButton.textContent = 'Offer Expired';
+                    vipUpgradeButton.removeAttribute('href');
+                    vipUpgradeButton.blur();
+                }
+                if (vipCountdownMessage) {
+                    vipCountdownMessage.textContent = '⏰ This VIP upgrade opportunity has expired.';
+                }
+                return;
+            }
+
+            vipTimeLeft--;
+        }
+
+        if (vipUpgradeButton) {
+            vipUpgradeButton.addEventListener('click', (event) => {
+                if (vipUpgradeButton.classList.contains('disabled')) {
+                    event.preventDefault();
+                    return;
+                }
+                openVipModal(event);
+            });
+        }
+
+        if (vipModalClose) {
+            vipModalClose.addEventListener('click', closeVipModal);
+        }
+
+        if (vipModal) {
+            vipModal.addEventListener('click', (event) => {
+                if (event.target === vipModal) {
+                    closeVipModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && vipModal && vipModal.classList.contains('active')) {
+                closeVipModal();
+            }
+        });
+
+        if (vipTimerMinutes && vipTimerSeconds) {
+            updateVipTimer();
+            vipCountdownInterval = setInterval(updateVipTimer, 1000);
+        }
+
         // Slow, spread out confetti falling from top to bottom
         window.addEventListener('load', function() {
             // Create a gentle, widespread confetti effect
