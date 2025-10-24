@@ -1,0 +1,12 @@
+[
+  {
+    "page": "/test",
+    "timestamp": "2025-10-24T05:30:27.896Z",
+    "event": "test_event",
+    "referrer": "Test",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU"
+  }
+]
