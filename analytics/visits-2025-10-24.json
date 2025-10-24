@@ -532,5 +532,12 @@
     "event": "page_exit",
     "sessionId": "session_1761341521055_ezyvwrc8v",
     "duration": 37
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-24T21:37:33.274Z",
+    "event": "page_exit",
+    "sessionId": "session_1761341852586_xjla7qsa0",
+    "duration": 1
   }
 ]
