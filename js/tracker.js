@@ -103,6 +103,10 @@ async function trackPageVisit() {
         language: navigator.language
     };
 
+    if (window.__HOOK_VARIANT__ && window.__HOOK_VARIANT__.id) {
+        data.hookVariant = window.__HOOK_VARIANT__.id;
+    }
+
     // Capture email and name from URL parameters if present
     const email = getURLParameter('email');
     const name = getURLParameter('name');

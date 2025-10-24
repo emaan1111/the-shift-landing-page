@@ -1,12 +1,15 @@
 # ClickFunnels 2.0 Integration Setup
 
 ## Overview
-This integration automatically sends contact information to ClickFunnels 2.0 when visitors land on your pages with email parameters in the URL.
+This integration automatically sends contact information to ClickFunnels 2.0 when visitors land on your pages with email parameters in the URL. Simply landing on the page with `?email=` applies the visitor tag, and clicking any CTA instantly registers the contact (adding the registration tag) and sends them to the upsell flow.
+It uses the ClickFunnels **upsert** endpoint so existing contacts get updated with the latest tags rather than failing with a duplicate-email error.
 
 ## Configuration Complete ✅
 - **API Key**: Configured
 - **Workspace ID**: jxRdRe
 - **Team ID**: JNqzOe
+- **Default Registration Tag**: `List-ShiftRegistered-Nov25`
+- **Visitor Tag**: `List-ShiftVisitiedNov24`
 
 ## How It Works
 
@@ -80,6 +83,12 @@ https://yoursite.com/?email=sarah@example.com&name=Sarah&utm_source=facebook&utm
 3. Check browser console for success message: "✅ Contact sent to ClickFunnels"
 4. Verify contact appears in ClickFunnels 2.0 → Contacts
 
+### CTA Auto-Registration
+- Open the landing page with an email parameter, e.g. `http://localhost:8000/?email=cta-test@example.com`
+- Click any button with the CTA styling (purple "Yes, I want to join..." buttons)
+- You should be redirected straight to the upsell page (`upsell.html`) and see the contact in ClickFunnels with both tags (`List-ShiftVisitiedNov24` + `List-ShiftRegistered-Nov25`). If the email already existed, it will be updated in-place via the upsert call.
+- The visit tag is also applied automatically when the page loads.
+
 ### Check Browser Console
 - **Success**: `✅ Successfully registered contact in ClickFunnels`
 - **No Email**: `No email found in URL parameters. Skipping ClickFunnels sync.`
@@ -120,6 +129,24 @@ window.registerInClickFunnels();
 1. Never commit the config file to GitHub
 2. Use environment variables or server-side API calls for production
 3. Consider implementing server-side proxy for API calls
+
+## Updating Tag IDs
+
+If you change the tag names or create new tags in ClickFunnels, update the IDs in:
+
+1. `js/clickfunnels-config.js`
+   ```javascript
+   const CLICKFUNNELS_CONFIG = {
+       apiKey: 'YOUR_KEY',
+       workspaceId: 'YOUR_WORKSPACE',
+       teamId: 'YOUR_TEAM',
+       tagIds: [/* registration tag ids */],
+       visitorTagIds: [/* visitor tag ids */]
+   };
+   ```
+2. `server.py` (search for `tagIds` and `visitorTagIds`)
+
+Keep the arrays synchronised so the browser and backend apply the same tags.
 
 ## Custom Fields in ClickFunnels
 

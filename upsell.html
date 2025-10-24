@@ -364,6 +364,86 @@
             text-decoration: underline;
         }
 
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 18px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            background: var(--gradient);
+            color: white;
+        }
+
+        .modal-header h2 {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        .modal-body {
+            padding: 0;
+            background: var(--light-bg);
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 650px;
+            border: none;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            font-weight: 700;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            background: white;
+            outline: none;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
         /* Guarantee Section */
         .guarantee-section {
             background: var(--light-bg);
@@ -428,6 +508,14 @@
                 font-size: 1.1rem;
                 width: 100%;
             }
+
+            .modal-content {
+                max-height: 85vh;
+            }
+
+            .modal-body iframe {
+                height: 60vh;
+            }
         }
     </style>
 </head>
@@ -442,9 +530,9 @@
             <div class="content-wrapper">
                 <!-- Header -->
                 <div style="text-align: center;">
-                    <span class="exclusive-badge">🎁 VIP Package - Exclusive Offer!</span>
-                    <h1>Wait! Upgrade to <span>VIP Package</span></h1>
-                    <p class="subtitle">You're just registered for The Shift Challenge... but there's something important you need to know.</p>
+                    <span class="exclusive-badge">Registration Complete</span>
+                    <h1>You are registered to <span>The Shift Challenge</span></h1>
+                    <p class="subtitle">But wait... there's something important you need to know.</p>
                 </div>
 
                 <!-- Important Notice -->
@@ -486,7 +574,7 @@
                             <h3>Exclusive Bonus Q&A Session</h3>
                             <p style="color: var(--text-light); margin-bottom: 15px;">Get your personal questions answered live!</p>
                             <ul>
-                                <li>2-hour live Q&A with Emaan</li>
+                                <li>2-hour live Q&A with Ustadha Ariba Farheen</li>
                                 <li>Ask about YOUR specific situation</li>
                                 <li>Personalized guidance</li>
                                 <li>Recording included</li>
@@ -541,9 +629,24 @@
         </div>
     </div>
 
+    <!-- VIP Upgrade Modal -->
+    <div id="vipModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="vipModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button id="vipModalClose" class="modal-close" type="button" aria-label="Close upgrade popup">&times;</button>
+            <div class="modal-header">
+                <h2 id="vipModalTitle">Complete Your VIP Upgrade</h2>
+            </div>
+            <div class="modal-body">
+                <iframe id="vipCheckoutFrame" src="https://www.emaanpower.com.au/shiftvip1761291772302" title="VIP Upgrade Checkout"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Countdown Timer
         let timeLeft = 600; // 10 minutes in seconds
+        let countdownInterval;
+        let shouldWarnOnUnload = true;
 
         function updateTimer() {
             const minutes = Math.floor(timeLeft / 60);
@@ -554,27 +657,75 @@
             
             if (timeLeft <= 0) {
                 // Redirect to thank you page when timer expires
+                shouldWarnOnUnload = false;
+                clearInterval(countdownInterval);
                 window.location.href = 'thank-you.html';
-            } else {
-                timeLeft--;
+                return;
             }
+
+            timeLeft--;
         }
 
         // Update timer every second
-        setInterval(updateTimer, 1000);
+        countdownInterval = setInterval(updateTimer, 1000);
         updateTimer(); // Initial call
 
         // Handle upgrade button click
+        const vipModal = document.getElementById('vipModal');
+        const closeModalBtn = document.getElementById('vipModalClose');
+        const declineLink = document.querySelector('.decline-link');
+
+        function openVipModal() {
+            if (!vipModal) return;
+            vipModal.classList.add('active');
+            vipModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            if (closeModalBtn) {
+                closeModalBtn.focus();
+            }
+        }
+
+        function closeVipModal() {
+            if (!vipModal) return;
+            vipModal.classList.remove('active');
+            vipModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
         function handleUpgrade(event) {
             event.preventDefault();
-            // Here you would integrate with your payment processor
-            // For now, we'll just redirect to thank you page
-            alert('Payment integration would go here. Redirecting to thank you page...');
-            window.location.href = 'thank-you.html';
+            openVipModal();
         }
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeVipModal);
+        }
+
+        if (vipModal) {
+            vipModal.addEventListener('click', (event) => {
+                if (event.target === vipModal) {
+                    closeVipModal();
+                }
+            });
+        }
+
+        if (declineLink) {
+            declineLink.addEventListener('click', () => {
+                shouldWarnOnUnload = false;
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && vipModal && vipModal.classList.contains('active')) {
+                closeVipModal();
+            }
+        });
 
         // Warn user before leaving
         window.addEventListener('beforeunload', function (e) {
+            if (!shouldWarnOnUnload) {
+                return;
+            }
             e.preventDefault();
             e.returnValue = 'Are you sure you want to leave? This exclusive offer will be lost forever!';
         });

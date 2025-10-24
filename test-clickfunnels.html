@@ -126,9 +126,10 @@
             try {
                 const payload = {
                     contact: {
-                        email: email,
+                        email_address: email,
                         first_name: firstName,
                         last_name: lastName,
+                        tag_ids: [367566],
                         fields: {
                             source: 'Test Page',
                             country: country,
@@ -139,7 +140,7 @@
                 
                 console.log('Sending payload:', JSON.stringify(payload, null, 2));
                 
-                const url = `https://api.myclickfunnels.com/api/v2/workspaces/${CLICKFUNNELS_CONFIG.workspaceId}/contacts`;
+                const url = `https://api.myclickfunnels.com/api/v2/workspaces/${CLICKFUNNELS_CONFIG.workspaceId}/contacts/upsert`;
                 
                 apiDetails.innerHTML = `
                     <strong>Request Details:</strong><br>

@@ -118,20 +118,6 @@
             outline: none;
         }
 
-        .urgency-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--urgency-color);
-            color: white;
-            font-size: 0.65rem;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
-        }
-
         /* Hero Section */
         .hero {
             padding: 150px 0 80px;
@@ -200,9 +186,9 @@
         /* Highlighted Message */
         .highlighted-message {
             position: relative;
-            margin: 40px auto;
+            margin: 24px auto 22px;
             max-width: 900px;
-            padding: 30px;
+            padding: 18px 26px 10px;
             background: var(--white);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(160, 108, 213, 0.15);
@@ -311,7 +297,7 @@
         .registration-form {
             background: var(--white);
             border-radius: 15px;
-            padding: 30px;
+            padding: 24px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 0 auto;
@@ -330,26 +316,51 @@
             opacity: 0.1;
             border-radius: 0 0 0 150px;
         }
+        
+        .registration-form .schedule-info {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(34, 34, 34, 0.06);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            text-align: center;
+            color: var(--primary-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .registration-form .schedule-info strong {
+            display: block;
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .registration-form .schedule-info span {
+            display: block;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
             color: var(--primary-dark);
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px 14px;
             border: 2px solid #e1e1e1;
             border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: border-color 0.3s;
         }
 
@@ -379,9 +390,9 @@
             background: var(--gradient);
             color: var(--white);
             border: none;
-            padding: 15px;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            padding: 12px;
+            border-radius: 45px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -395,7 +406,7 @@
         }
 
         .form-message {
-            margin-top: 20px;
+            margin-top: 16px;
             padding: 15px;
             border-radius: 8px;
             display: none;
@@ -1966,7 +1977,7 @@
 
         /* Final CTA */
         .final-cta {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--gradient);
             text-align: center;
             color: var(--white);
@@ -1975,7 +1986,7 @@
         .final-cta p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             opacity: 0.9;
         }
 
@@ -2535,7 +2546,6 @@
                 <a href="#" class="logo">The Shift</a>
                 <a href="#register" class="cta-header">
                     Join Free Challenge
-                    <span class="urgency-badge">Limited</span>
                 </a>
             </div>
         </div>
@@ -3241,6 +3251,10 @@ Jazakallahu khairan </p>
                 
                 <!-- Registration Form -->
                 <div class="registration-form">
+                    <div class="schedule-info">
+                        <strong>📅 November 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong>
+                        <span>2-hour transformative sessions each day</span>
+                    </div>
                     <form id="shift-registration-form">
                         <div class="form-group">
                             <label for="reg-name">Your Name *</label>
@@ -3294,16 +3308,11 @@ Jazakallahu khairan </p>
                             </select>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Yes, I Want to Join The Shift Free 3-Day Challenge</button>
+                        <button type="submit" class="submit-btn">Register now</button>
                         
                         <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
                     </form>
                 </div>
-                
-                <p style="margin-top: 20px; font-size: 1rem; opacity: 0.9;">
-                    <strong>📅 November 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong><br>
-                    <span style="font-size: 0.9rem;">2-hour transformative sessions each day</span>
-                </p>
             </div>
         </section>
 
@@ -3384,7 +3393,7 @@ Jazakallahu khairan </p>
             setTimeout(() => {
                 // Show success message
                 const formMessage = document.getElementById('form-message');
-                formMessage.textContent = 'Registration successful! Check your email for confirmation details.';
+                formMessage.textContent = 'Registration successful! Redirecting you to your VIP invitation...';
                 formMessage.className = 'form-message success';
                 formMessage.style.display = 'block';
                 
@@ -3394,9 +3403,11 @@ Jazakallahu khairan </p>
                 
                 // Reset form
                 this.reset();
-                
-                // Scroll to message
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Send the user to the upsell page
+                setTimeout(() => {
+                    window.location.href = 'upsell.html';
+                }, 800);
             }, 1500);
         });
 
@@ -3447,21 +3458,59 @@ Jazakallahu khairan </p>
     
     <!-- Personalization Script -->
     <script>
-        // Personalize hero heading with name from URL parameter
+        // Personalize hero heading with name from URL parameter and selected hook variant
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const name = urlParams.get('name') || 
-                        urlParams.get('first_name') || 
-                        urlParams.get('firstname');
-            
-            if (name) {
+            const rawName = urlParams.get('name') ||
+                            urlParams.get('first_name') ||
+                            urlParams.get('firstname');
+
+            if (!rawName) {
+                return;
+            }
+
+            const capitalizedName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+
+            function updateHeading(variant) {
                 const heroHeading = document.getElementById('hero-heading');
-                if (heroHeading) {
-                    // Capitalize first letter of name
-                    const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+                if (!heroHeading) {
+                    return;
+                }
+
+                const activeVariant = variant || window.__HOOK_VARIANT__;
+                if (!activeVariant) {
+                    heroHeading.innerHTML = `${capitalizedName}, you are <span>JUST ONE SHIFT</span> away`;
+                    return;
+                }
+
+                if (activeVariant.includeNameInHeading === false) {
+                    if (activeVariant.heroHeadingHtml) {
+                        heroHeading.innerHTML = activeVariant.heroHeadingHtml;
+                    }
+                    return;
+                }
+
+                if (typeof activeVariant.personalizeHeading === 'function') {
+                    heroHeading.innerHTML = activeVariant.personalizeHeading(capitalizedName);
+                } else {
                     heroHeading.innerHTML = `${capitalizedName}, you are <span>JUST ONE SHIFT</span> away`;
                 }
             }
+
+            function handleVariantApplied(event) {
+                updateHeading(event && event.detail ? event.detail.variant : null);
+                window.removeEventListener('hookVariantApplied', handleVariantApplied);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    updateHeading();
+                });
+            } else {
+                updateHeading();
+            }
+
+            window.addEventListener('hookVariantApplied', handleVariantApplied);
         })();
     </script>
     
@@ -3707,6 +3756,7 @@ Jazakallahu khairan </p>
     
     <!-- Visitor Tracking Scripts -->
     <script src="js/analytics-config.js"></script>
+    <script src="js/hook-ab-testing.js"></script>
     <script src="js/tracker.js"></script>
     
     <!-- ClickFunnels Integration -->
