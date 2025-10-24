@@ -5,5 +5,12 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-24T18:10:06.929Z",
+    "event": "page_exit",
+    "sessionId": "session_1761329399634_nec7his42",
+    "duration": 7
   }
 ]
