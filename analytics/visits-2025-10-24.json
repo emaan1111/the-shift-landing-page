@@ -918,5 +918,12 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-24T07:53:23.945Z",
+    "event": "page_exit",
+    "sessionId": "session_1761292373290_51h11b9l7",
+    "duration": 31
   }
 ]
