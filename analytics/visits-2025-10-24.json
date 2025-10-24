@@ -1655,5 +1655,21 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-24T08:33:02.985Z",
+    "event": "page_visit",
+    "sessionId": "session_1761294782985_i764lqiz2",
+    "referrer": "http://127.0.0.1:5050/?name=ariba,email=sarag@gmail.com",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Seattle",
+    "region": "Washington",
+    "timezone": "America/Los_Angeles"
   }
 ]
