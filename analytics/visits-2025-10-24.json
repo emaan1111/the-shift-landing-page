@@ -2065,5 +2065,21 @@
     "city": "Seattle",
     "region": "Washington",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-24T08:48:59.022Z",
+    "event": "page_visit",
+    "sessionId": "session_1761295739020_abhzz0w00",
+    "referrer": "http://127.0.0.1:5050/upsell.html",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Seattle",
+    "region": "Washington",
+    "timezone": "America/Los_Angeles"
   }
 ]
