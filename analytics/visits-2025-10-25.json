@@ -135,5 +135,17 @@
     "email": "zahra.aziz@gmail.com",
     "name": "Zahra",
     "country": "United States"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T13:20:52.494Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761398413244_elijli690",
+    "sessionId": "session_1761398452494_zztw630vn",
+    "referrer": "https://momsshift.com/upsell.html?email=zahra.aziz%40gmail.com&name=Zahra&country=United%20States",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US"
   }
 ]
