@@ -1008,5 +1008,19 @@
     "screenHeight": 1080,
     "language": "en-US",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:07:14.421Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401234412_4k1wn6cve",
+    "sessionId": "session_1761401234416_51y0rac17",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "saba.zia@adp.com"
   }
 ]
