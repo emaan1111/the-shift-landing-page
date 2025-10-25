@@ -705,5 +705,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:53:40.539Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400420529_4qbl8d18p",
+    "sessionId": "session_1761400420532_fby2hwvc3",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "mariam.javed@nrk.no",
+    "name": "first",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
