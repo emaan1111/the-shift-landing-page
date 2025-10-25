@@ -9,7 +9,7 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
-            ctaText: '[NAME], you are just shift away'
+            ctaText: '[NAME], you are one just shift away'
         },
         {
             id: 'B',
