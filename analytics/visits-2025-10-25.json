@@ -1199,5 +1199,18 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T04:28:00.287Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366335351_prljecn38",
+    "sessionId": "session_1761366480286_ipgsbrn4b",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "B"
   }
 ]
