@@ -2296,5 +2296,18 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "mmu208@nyu.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:59:30.797Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761404370795_61tkcijd7",
+    "sessionId": "session_1761404370795_yvw6dcap7",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 402,
+    "screenHeight": 874,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
