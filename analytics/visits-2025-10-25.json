@@ -2680,5 +2680,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T16:12:16.041Z",
+    "event": "registration",
+    "email": "emaanpower@gmail.com",
+    "name": "Ariba Farheen",
+    "firstName": "Ariba",
+    "lastName": "Farheen",
+    "country": "Australia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
