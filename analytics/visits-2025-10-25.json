@@ -1185,5 +1185,23 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:43:11.185Z",
+    "event": "page_visit",
+    "sessionId": "session_1761370991150_igzbdqtgc",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "lisaramli.09@gmail.com",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Tampines New Town",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
