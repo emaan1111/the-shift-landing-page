@@ -2344,5 +2344,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T15:02:01.960Z",
+    "event": "registration",
+    "email": "sahly_nice@yahoo.com",
+    "name": "Syeda Nure Jannath ",
+    "firstName": "Syeda",
+    "lastName": "Nure Jannath",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
