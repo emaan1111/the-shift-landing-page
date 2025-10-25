@@ -37,5 +37,18 @@
     "event": "button_click",
     "buttonName": "Join Free Mothers Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T20:26:41.781Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761424001779_05kq7gesh",
+    "sessionId": "session_1761424001779_jgzbtu0b4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
