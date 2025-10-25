@@ -153,5 +153,12 @@
     "timezone": "Australia/Perth",
     "country": "Australia",
     "countryCode": "AU"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T20:05:00.883Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
