@@ -1324,5 +1324,18 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "info@masjidtawhid.org"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T14:08:31.386Z",
+    "event": "registration",
+    "email": "sherminnajmal@gmail.com",
+    "name": "Shermin",
+    "firstName": "Shermin",
+    "lastName": "",
+    "country": "United Arab Emirates",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
