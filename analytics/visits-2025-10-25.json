@@ -4502,5 +4502,24 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T18:03:05.930Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761405212682_31a5h7w99",
+    "sessionId": "session_1761415385928_p3u3v9v0z",
+    "referrer": "https://momsshift.com/?name=Momta&email=momta_k@hotmail.co.uk",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "email": "momta_k@hotmail.co.uk",
+    "name": "Momta",
+    "ipAddress": "2600:1900:0:2d02::1200",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
