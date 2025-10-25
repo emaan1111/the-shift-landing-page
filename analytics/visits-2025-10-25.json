@@ -2072,5 +2072,19 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:17:41.667Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401861658_cgo2h8vnk",
+    "sessionId": "session_1761401861658_ew2318eyt",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "ana.adorno@us.abb.com"
   }
 ]
