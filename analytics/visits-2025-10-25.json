@@ -1476,5 +1476,23 @@
     "screenHeight": 400,
     "language": "en-US",
     "email": "deenaqf13@hotmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:54:52.796Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371692726_q4lvzgp1y",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "mmembrouk@slb.com",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Ashburn",
+    "region": "Virginia",
+    "timezone": "America/New_York"
   }
 ]
