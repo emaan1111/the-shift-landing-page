@@ -1951,6 +1951,27 @@
             border-radius: 2px;
         }
 
+        .special-message {
+            background: rgba(255, 158, 181, 0.15);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .special-message p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .special-message p strong {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
         .pricing-box {
             background: var(--white);
             border-radius: 20px;
@@ -2831,6 +2852,7 @@
             color: #555;
             font-size: 0.8rem;
             margin-top: 3px;
+            padding-left: 4px;
         }
 
         .social-proof-close {
@@ -2940,7 +2962,7 @@
                         <div class="cta-ribbon"></div>
                     </div>
                     <div class="date-info">
-                        Nov 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily
+                         Nov 6-8, 2025 | 11:00 AM EST/3 PM UK
                     </div>
                 </div>
             </div>
@@ -3557,6 +3579,11 @@ Jazakallahu khairan </p>
                             <p>Spots are limited — and we're closing registration once the seats fill.</p>
                         </div>
                         
+                        <div class="special-message">
+                            <p><strong>It's Free THIS TIME ONLY</strong> because this message needs to be heard by as many Muslim mothers as possible & fast.</p>
+                            <p>We just ask you to share it with 3 other moms who need this.</p>
+                        </div>
+                        
                         <div class="movement-statement">
                             <p>Because this isn't just another parenting class. It's a <span class="movement-highlight">movement of mothers</span> raising hearts that love Allah by choice.</p>
                         </div>
@@ -3628,8 +3655,8 @@ Jazakallahu khairan </p>
                 <!-- Registration Form -->
                 <div class="registration-form">
                     <div class="schedule-info">
-                        <strong>📅 Nov 6-8, 2025 | 11:00 AM - 1:00 PM EST Daily</strong>
-                        <span>2-hour transformative sessions each day</span>
+                        <strong>Nov 6-8, 2025 | 11:00 AM EST/3 PM UK </strong>
+                        <span>For Dedicated Mothers (Plus One Bonus Session For Kids On Sun)</span>
                     </div>
                     <form id="shift-registration-form">
                         <div class="form-group">
@@ -3695,23 +3722,6 @@ Jazakallahu khairan </p>
        
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <a href="#" class="footer-logo">The Shift</a>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">Facebook</a>
-                    <a href="#" aria-label="Instagram">Instagram</a>
-                    <a href="#" aria-label="Twitter">Twitter</a>
-                    <a href="#" aria-label="YouTube">YouTube</a>
-                </div>
-            </div>
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
-                © 2025 The Shift. All rights reserved.
-            </p>
-        </div>
-    </footer>
 
     <script>
         // Floating petals when page loads
@@ -3803,41 +3813,8 @@ Jazakallahu khairan </p>
             observer.observe(section);
         });
 
-        // Form submission handling
-        document.getElementById('shift-registration-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const formData = new FormData(this);
-            const formValues = Object.fromEntries(formData);
-            
-            // Show loading state
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Registering...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Show success message
-                const formMessage = document.getElementById('form-message');
-                formMessage.textContent = 'Registration successful! Redirecting you to your VIP invitation...';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Reset form
-                this.reset();
-
-                // Send the user to the upsell page
-                setTimeout(() => {
-                    window.location.href = 'upsell.html';
-                }, 800);
-            }, 1500);
-        });
+        // Form submission handling is now done by the ClickFunnels integration script below
+        // (Removed duplicate handler to prevent conflicts)
 
         // Countdown Timer
         function startCountdown() {
@@ -3977,10 +3954,8 @@ Jazakallahu khairan </p>
                 .join(' ');
             nameElement.textContent = displayName;
             
-            // Show location with country
-            const location = visitor.city && visitor.country 
-                ? `${visitor.city}, ${visitor.country}` 
-                : visitor.country || 'Unknown Location';
+            // Show just the country (not city)
+            const location = visitor.country || 'Unknown Location';
             locationElement.textContent = location;
             
             // Show notification
@@ -4003,28 +3978,20 @@ Jazakallahu khairan </p>
             currentIndex = (currentIndex + 1) % visitorQueue.length;
         }
 
-        // Function to fetch analytics data from GitHub
+        // Function to fetch analytics data from GitHub via Flask proxy
         async function fetchRecentVisitors() {
             try {
-                const owner = ANALYTICS_CONFIG.owner;
-                const repo = ANALYTICS_CONFIG.repo;
-                const token = ANALYTICS_CONFIG.token;
+                console.log('🔍 Fetching recent visitors for social proof...');
                 
-                // Get list of analytics files (last 30 days)
-                const filesUrl = `https://api.github.com/repos/${owner}/${repo}/contents/analytics`;
-                const filesResponse = await fetch(filesUrl, {
-                    headers: {
-                        'Authorization': `token ${token}`,
-                        'Accept': 'application/vnd.github.v3+json'
-                    }
-                });
+                // Get list of analytics files via Flask proxy
+                const listResponse = await fetch('/api/github/analytics/list');
                 
-                if (!filesResponse.ok) {
+                if (!listResponse.ok) {
                     console.error('Failed to fetch analytics files');
                     return;
                 }
                 
-                const files = await filesResponse.json();
+                const files = await listResponse.json();
                 const jsonFiles = files.filter(f => f.name.endsWith('.json'));
                 
                 // Sort by date (most recent first) and get last 7 days
@@ -4032,13 +3999,18 @@ Jazakallahu khairan </p>
                     .sort((a, b) => b.name.localeCompare(a.name))
                     .slice(0, 7);
                 
+                console.log(`📁 Found ${sortedFiles.length} recent analytics files`);
+                
                 let allVisitors = [];
                 
-                // Fetch data from each file
+                // Fetch data from each file via Flask proxy
                 for (const file of sortedFiles) {
                     try {
-                        const fileResponse = await fetch(file.download_url);
-                        const data = await fileResponse.json();
+                        const fileResponse = await fetch(`/api/github/analytics/file?url=${encodeURIComponent(file.url)}`);
+                        if (!fileResponse.ok) continue;
+                        
+                        const fileText = await fileResponse.text();
+                        const data = JSON.parse(fileText);
                         
                         // Filter visitors with valid name from upsell/thank-you visits
                         const visitors = data.filter(entry => {
@@ -4059,36 +4031,36 @@ Jazakallahu khairan </p>
                     }
                 }
                 
+                console.log(`👥 Found ${allVisitors.length} total visitors with names`);
+                
                 // Sort by timestamp (most recent first) and get last 100
                 visitorQueue = allVisitors
                     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
                     .slice(0, 100);
                 
-                // Start showing notifications if we have visitors
+                console.log(`✅ Social proof queue ready with ${visitorQueue.length} visitors`);
+                
+                // Show first notification after 3 seconds
                 if (visitorQueue.length > 0) {
-                    // Show first notification after 3 seconds
                     setTimeout(() => {
+                        console.log('🎉 Starting social proof notifications...');
                         cycleVisitors();
                         // Then show every 8 seconds (5s visible + 3s gap)
                         proofInterval = setInterval(cycleVisitors, 8000);
                     }, 3000);
                 } else {
-                    console.log('No visitors with name and country found');
+                    console.log('⚠️ No visitors with name and country found');
                 }
                 
             } catch (error) {
-                console.error('Error fetching recent visitors:', error);
+                console.error('❌ Error fetching recent visitors:', error);
             }
         }
 
         // Initialize when page loads
         window.addEventListener('load', () => {
-            // Wait for analytics-config.js to load
-            if (typeof ANALYTICS_CONFIG !== 'undefined') {
-                fetchRecentVisitors();
-            } else {
-                console.error('Analytics config not loaded');
-            }
+            console.log('🚀 Page loaded, initializing social proof...');
+            fetchRecentVisitors();
         });
 
         // Clear interval when leaving page
@@ -4126,12 +4098,14 @@ Jazakallahu khairan </p>
             const lastName = nameParts.slice(1).join(' ');
             
             try {
-                // Get detailed geolocation (city)
+                // Get detailed geolocation (city) via Flask proxy
                 let city = '';
                 try {
-                    const geoResponse = await fetch('https://ipapi.co/json/');
-                    const geoData = await geoResponse.json();
-                    city = geoData.city || '';
+                    const geoResponse = await fetch('/api/geolocation');
+                    if (geoResponse.ok) {
+                        const geoData = await geoResponse.json();
+                        city = geoData.city || '';
+                    }
                 } catch (err) {
                     console.log('Could not get geolocation:', err);
                 }
@@ -4163,6 +4137,45 @@ Jazakallahu khairan </p>
                     if (result.success) {
                         console.log('✅ Successfully registered in ClickFunnels');
                         
+                        // Backup registration data to GitHub analytics
+                        if (typeof saveToGitHub === 'function') {
+                            const registrationBackup = {
+                                page: '/index.html',
+                                timestamp: new Date().toISOString(),
+                                event: 'registration',
+                                email: email,
+                                name: name,
+                                firstName: firstName,
+                                lastName: lastName,
+                                country: country,
+                                city: city,
+                                source: 'Registration Form - The Shift Landing Page',
+                                clickfunnelsSuccess: true
+                            };
+                            saveToGitHub(registrationBackup).catch(err => 
+                                console.log('GitHub backup failed (not critical):', err)
+                            );
+                        }
+                        
+                        // Also save to local server backup
+                        try {
+                            await fetch('/api/backup/registration', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email: email,
+                                    firstName: firstName,
+                                    lastName: lastName,
+                                    country: country,
+                                    city: city,
+                                    timestamp: new Date().toISOString()
+                                })
+                            });
+                            console.log('✅ Registration backed up to local server');
+                        } catch (backupErr) {
+                            console.log('Local backup failed (not critical):', backupErr);
+                        }
+                        
                         // Show success message
                         formMessage.textContent = '🎉 Success! You\'re registered for The Shift Challenge. Check your email for details!';
                         formMessage.className = 'form-message success';
@@ -4170,9 +4183,9 @@ Jazakallahu khairan </p>
                         // Reset form
                         this.reset();
                         
-                        // Redirect to thank you page after 2 seconds
+                        // Redirect to upsell page after 2 seconds
                         setTimeout(() => {
-                            window.location.href = `thank-you.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}`;
+                            window.location.href = `upsell.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}`;
                         }, 2000);
                         
                     } else {

@@ -4,19 +4,6 @@
 .upm/
 .cache/
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-.pythonlibs/
-venv/
-ENV/
-env/
-*.egg-info/
-.pytest_cache/
-
 # OS
 .DS_Store
 Thumbs.db
@@ -31,11 +18,5 @@ Thumbs.db
 # Analytics Config (contains secret token)
 js/analytics-config.js
 
-# Server file with API keys
-server.py
-
-# ClickFunnels Config (contains API key)
-js/clickfunnels-config.js
-
-# Tracker with GitHub token
-js/tracker.js
+# Local registration backups (contains personal data)
+backups/

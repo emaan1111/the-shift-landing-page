@@ -5,7 +5,7 @@
         {
             id: 'A',
             label: 'Original Hook',
-            tagText: 'TRANSFORMATION CHALLENGE',
+            tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'You are <span>JUST ONE SHIFT</span> away',
             includeNameInHeading: true,
             personalizeHeading(name) {
@@ -16,7 +16,7 @@
         {
             id: 'B',
             label: 'Original Hook',
-            tagText: 'TRANSFORMATION CHALLENGE',
+            tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'You are <span>JUST ONE SHIFT</span> away',
             includeNameInHeading: false,
             highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`

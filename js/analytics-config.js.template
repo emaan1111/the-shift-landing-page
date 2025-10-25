@@ -1,0 +1,10 @@
+// Analytics Configuration Template
+// Copy this file to analytics-config.js and add your GitHub token
+// analytics-config.js is in .gitignore and will not be committed
+
+const ANALYTICS_CONFIG = {
+    owner: 'emaan1111',
+    repo: 'the-shift-landing-page',
+    token: 'YOUR_GITHUB_TOKEN_HERE', // Get from https://github.com/settings/tokens
+    branch: 'main'
+};
