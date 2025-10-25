@@ -297,5 +297,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T23:01:33.620Z",
+    "event": "registration",
+    "email": "danmallamf@gmail.com",
+    "name": "Fatima Danmallam",
+    "firstName": "Fatima",
+    "lastName": "Danmallam",
+    "country": "Nigeria",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761433264339_ea4dyuiu7"
   }
 ]
