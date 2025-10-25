@@ -640,5 +640,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T23:55:22.852Z",
+    "event": "registration",
+    "email": "najihahz@gmail.com",
+    "name": "Najihah",
+    "firstName": "Najihah",
+    "lastName": "",
+    "country": "Malaysia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761436497680_d6yxx3m30"
   }
 ]
