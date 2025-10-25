@@ -3998,5 +3998,12 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T12:52:00.744Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
