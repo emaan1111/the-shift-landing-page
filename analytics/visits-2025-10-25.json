@@ -996,5 +996,18 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:58:10.178Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366317305_mx74u3et1",
+    "sessionId": "session_1761375490177_s928cry1b",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A"
   }
 ]
