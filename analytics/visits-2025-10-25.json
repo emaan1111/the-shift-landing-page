@@ -1217,5 +1217,22 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T05:44:15.780Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371055778_ntt11dkzo",
+    "referrer": "https://momsshift.com/?email=lisaramli.09@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-GB",
+    "email": "lisaramli.09@gmail.com",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Tampines New Town",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
