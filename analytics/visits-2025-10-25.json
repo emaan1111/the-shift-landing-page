@@ -721,5 +721,20 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "mamadoukaira.barry@sascholar.org"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:05:11.393Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401111382_opi9um3ft",
+    "sessionId": "session_1761401111390_l1hzzmbiw",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "s.akhtar059@mybvc.ca",
+    "name": "Samreen"
   }
 ]
