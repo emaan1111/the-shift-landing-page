@@ -267,5 +267,36 @@ def backup_registration():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+@app.route('/api/registrations', methods=['GET'])
+def get_all_registrations():
+    """Get all registrations from backup files"""
+    try:
+        backup_dir = 'backups'
+        all_registrations = []
+        
+        if not os.path.exists(backup_dir):
+            return jsonify([]), 200
+        
+        # Read all registration backup files
+        from glob import glob
+        backup_files = sorted(glob(os.path.join(backup_dir, 'registrations-*.json')))
+        
+        for backup_file in backup_files:
+            try:
+                with open(backup_file, 'r') as f:
+                    registrations = json.load(f)
+                    if isinstance(registrations, list):
+                        all_registrations.extend(registrations)
+            except:
+                pass
+        
+        # Sort by timestamp (newest first)
+        all_registrations.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+        
+        return jsonify(all_registrations), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)

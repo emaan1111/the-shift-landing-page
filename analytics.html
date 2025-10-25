@@ -39,6 +39,10 @@
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 5px 20px rgba(160, 108, 213, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
         .header h1 {
@@ -373,8 +377,15 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
-            <p>The Shift Challenge - Visitor Statistics</p>
+            <div style="flex: 1;">
+                <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
+                <p>The Shift Challenge - Visitor Statistics</p>
+            </div>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="registrations.html" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; border: 2px solid white; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                    <i class="fas fa-list"></i> All Registrations
+                </a>
+            </div>
         </div>
 
         <div id="loading" class="loading">
