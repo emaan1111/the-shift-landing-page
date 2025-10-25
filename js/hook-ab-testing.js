@@ -85,7 +85,10 @@
         // Personalize ctaText with name if available
         let personalizedCtaText = variant.ctaText;
         if (personalizedCtaText && name) {
-            personalizedCtaText = personalizedCtaText.replace('[NAME]', name);
+            personalizedCtaText = personalizedCtaText.replace('[NAME], ', name + ', ');
+        } else if (personalizedCtaText) {
+            // Remove [NAME] and the comma/space if name is not provided
+            personalizedCtaText = personalizedCtaText.replace('[NAME], ', '');
         }
 
         // Store personalized variant info
