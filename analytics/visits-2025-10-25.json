@@ -2309,5 +2309,19 @@
     "screenHeight": 874,
     "language": "en-GB",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:59:58.472Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761404398012_2y3i6qtoe",
+    "sessionId": "session_1761404398273_0tygu6jca",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "mmu208@nyu.edu"
   }
 ]
