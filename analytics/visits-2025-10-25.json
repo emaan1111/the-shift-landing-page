@@ -4566,5 +4566,12 @@
     "timezone": "Australia/Perth",
     "country": "Australia",
     "countryCode": "AU"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:05:34.350Z",
+    "event": "page_exit",
+    "sessionId": "session_1761414663757_7lo9rt9ai",
+    "duration": 38
   }
 ]
