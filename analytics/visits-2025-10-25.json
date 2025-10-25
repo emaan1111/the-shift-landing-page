@@ -1210,5 +1210,12 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:44:14.278Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
