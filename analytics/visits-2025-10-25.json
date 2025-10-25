@@ -471,5 +471,18 @@
     "event": "page_exit",
     "sessionId": "session_1761434165863_ztt5iigeh",
     "duration": 30
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:19:07.289Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761434347279_zivboedds",
+    "sessionId": "session_1761434347279_hkxsn28x0",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
+    "screenWidth": 2560,
+    "screenHeight": 1440,
+    "language": "fr",
+    "hookVariant": "B"
   }
 ]
