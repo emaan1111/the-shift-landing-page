@@ -300,5 +300,19 @@
     "event": "page_exit",
     "sessionId": "session_1761400190828_l5frvcfaa",
     "duration": 2
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:49:53.518Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761377512928_s98zt9ofi",
+    "sessionId": "session_1761400193517_qpukyo1lv",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "name": "ariba"
   }
 ]
