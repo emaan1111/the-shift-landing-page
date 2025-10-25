@@ -3700,5 +3700,12 @@
     "email": "mariyamfouzan22@gmail.com",
     "name": "Mariyam",
     "country": "United Arab Emirates"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T11:33:33.085Z",
+    "event": "page_exit",
+    "sessionId": "session_1761392010429_9sljgotv2",
+    "duration": 3
   }
 ]
