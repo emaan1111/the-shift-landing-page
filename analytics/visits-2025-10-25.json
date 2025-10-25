@@ -2323,5 +2323,12 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "mmu208@nyu.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T15:00:29.679Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
