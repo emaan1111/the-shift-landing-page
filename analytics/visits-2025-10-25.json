@@ -3815,5 +3815,12 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "halema1@hotmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T12:10:10.951Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
