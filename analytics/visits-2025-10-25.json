@@ -2156,5 +2156,19 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "norhayati_bte_ahmad@nhgp.com.sg"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:43:03.330Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761403383299_b1o7ytjwx",
+    "sessionId": "session_1761403383300_t5izb2757",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "fk23486@gmail.com"
   }
 ]
