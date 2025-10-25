@@ -1284,5 +1284,18 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "contact@almadinamasjid.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:24.544Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401304142_tnh7gmc8c",
+    "sessionId": "session_1761401304144_k7zejqzai",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
