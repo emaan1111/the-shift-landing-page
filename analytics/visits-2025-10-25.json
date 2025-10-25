@@ -168,5 +168,19 @@
     "hookVariant": "B",
     "email": "sannehom@msu.edu",
     "name": "Prince"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:57:21.568Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761418641460_6xzwdlsga",
+    "sessionId": "session_1761418641461_c23wmlxut",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "tasbas@med.umich.edu"
   }
 ]
