@@ -1234,5 +1234,21 @@
     "city": "Tampines New Town",
     "region": "Unknown",
     "timezone": "Asia/Singapore"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T05:44:35.365Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371075365_qh65jylhq",
+    "referrer": "https://momsshift.com/upsell.html?email=lisaramli.09%40gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-GB",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Tampines New Town",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
