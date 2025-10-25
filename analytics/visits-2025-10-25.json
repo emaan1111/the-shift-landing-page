@@ -578,5 +578,12 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "galib@tamu.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:52:48.960Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400330569_mac01ufd8",
+    "duration": 22
   }
 ]
