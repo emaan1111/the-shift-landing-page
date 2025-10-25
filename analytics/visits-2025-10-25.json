@@ -950,5 +950,20 @@
     "hookVariant": "B",
     "email": "raheel.shakeel@nokia.com",
     "name": "Raheel"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:07:02.622Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401222542_lbmj0yh91",
+    "sessionId": "session_1761401222546_ynjfxpihz",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "sannehom@msu.edu",
+    "name": "Prince"
   }
 ]
