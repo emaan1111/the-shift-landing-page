@@ -3107,5 +3107,19 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "virgo.rozy@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:40:20.601Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761381620601_cqbaccird",
+    "sessionId": "session_1761381620601_d3iwe16p5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "ar",
+    "hookVariant": "B",
+    "email": "virgo.rozy@gmail.com"
   }
 ]
