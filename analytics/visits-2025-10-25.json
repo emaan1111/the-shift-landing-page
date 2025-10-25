@@ -364,5 +364,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": null
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:03:12.495Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761433392495_v1czdaj71",
+    "sessionId": "session_1761433392495_6votf6yx0",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "email": "zawjatfaheem@yahoo.com",
+    "name": "Sabah",
+    "ipAddress": "2600:1900:0:2d02::3700",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States"
   }
 ]
