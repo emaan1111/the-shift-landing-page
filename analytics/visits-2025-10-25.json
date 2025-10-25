@@ -2914,5 +2914,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T08:10:26.547Z",
+    "event": "registration",
+    "email": "zuleeybal@gmail.com",
+    "name": "Zuleekhah Balogun",
+    "firstName": "Zuleekhah",
+    "lastName": "Balogun",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
