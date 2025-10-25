@@ -446,5 +446,20 @@
     "city": "",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T06:30:40.764Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761373752669_qjhiqxsyn",
+    "sessionId": "session_1761373840763_d46s0c7ip",
+    "referrer": "https://momsshift.com/?email=rizwanavali91@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "email": "rizwanavali91@gmail.com",
+    "name": "rizwana",
+    "country": "United Kingdom"
   }
 ]
