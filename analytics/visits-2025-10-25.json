@@ -575,5 +575,20 @@
     "hookVariant": "B",
     "email": "jumayah.amin@sgx.com",
     "name": "June"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:04:15.024Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401054960_ih4vcrbew",
+    "sessionId": "session_1761401054964_ht4h392i5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "kelma047@uottawa.ca",
+    "name": "Khaled"
   }
 ]
