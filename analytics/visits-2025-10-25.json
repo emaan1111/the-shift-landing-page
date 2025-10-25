@@ -181,5 +181,21 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T00:42:46.228Z",
+    "event": "page_visit",
+    "sessionId": "session_1761352966227_btfky7xb7",
+    "referrer": "https://momsshift.com/?email=nisahlatiff@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 873,
+    "language": "en-US",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Singapore",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
