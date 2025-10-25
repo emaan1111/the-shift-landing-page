@@ -263,5 +263,12 @@
     "city": "Sydney",
     "region": "New South Wales",
     "timezone": "Australia/Sydney"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:44:24.270Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
