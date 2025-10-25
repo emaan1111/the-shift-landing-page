@@ -760,5 +760,25 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "mirsada.kolenovic@abm.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:54:21.824Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400461809_0utcme2e2",
+    "sessionId": "session_1761400461822_8qxi59351",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "mona.zaidi@mackenziehealth.ca",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
