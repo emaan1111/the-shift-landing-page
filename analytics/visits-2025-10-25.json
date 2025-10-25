@@ -461,5 +461,20 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "galib@tamu.edu"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T13:51:59.846Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400259744_r61sf7tso",
+    "sessionId": "session_1761400319843_8su4sggc1",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "email": "asmeeyktn@gmail.com",
+    "name": "Asmau",
+    "country": "Nigeria"
   }
 ]
