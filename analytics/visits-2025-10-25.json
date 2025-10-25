@@ -3877,5 +3877,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T17:11:40.152Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761407912056_l6uh50xnd",
+    "sessionId": "session_1761412300145_mxybv7bxb",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "fatmawatoto6@icloud.com",
+    "name": "Fatma"
   }
 ]
