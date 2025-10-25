@@ -411,5 +411,22 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T01:15:58.157Z",
+    "event": "page_visit",
+    "sessionId": "session_1761354958153_jl5ytwv3b",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-US",
+    "hookVariant": "B",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Columbus",
+    "region": "Ohio",
+    "timezone": "America/New_York"
   }
 ]
