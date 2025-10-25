@@ -328,5 +328,12 @@
     "city": "Sydney",
     "region": "New South Wales",
     "timezone": "Australia/Sydney"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T00:46:04.651Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/upsell.html?email=asmahuss%40hotmail.com"
   }
 ]
