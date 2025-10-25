@@ -3216,5 +3216,19 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "Saudi Arabia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T10:03:30.056Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761386610050_w39jqa32t",
+    "sessionId": "session_1761386610051_k2tegve6e",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "belatariq@outlook.com"
   }
 ]
