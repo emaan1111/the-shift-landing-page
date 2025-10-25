@@ -2212,5 +2212,18 @@
     "email": "fk23486@gmail.com",
     "name": "Faiza",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:51:29.744Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761403889740_fexo4k27q",
+    "sessionId": "session_1761403889740_fm1sz3hru",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 414,
+    "screenHeight": 896,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
