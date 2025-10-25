@@ -1464,5 +1464,17 @@
     "city": "Dubai",
     "region": "Dubai",
     "timezone": "Asia/Dubai"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T05:54:36.027Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371676024_15yc5lcp1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "deenaqf13@hotmail.com"
   }
 ]
