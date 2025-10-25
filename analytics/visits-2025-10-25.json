@@ -2197,5 +2197,20 @@
     "city": "",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T14:43:23.619Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761403383299_b1o7ytjwx",
+    "sessionId": "session_1761403403617_11x7f3016",
+    "referrer": "https://momsshift.com/?email=fk23486@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-US",
+    "email": "fk23486@gmail.com",
+    "name": "Faiza",
+    "country": "United States"
   }
 ]
