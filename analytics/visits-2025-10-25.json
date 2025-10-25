@@ -3151,5 +3151,24 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T16:41:23.809Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761410003154_qgz6axf3h",
+    "sessionId": "session_1761410483808_wbx97ki04",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "ipAddress": "49.36.180.216",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "countryCode": "IN"
   }
 ]
