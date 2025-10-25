@@ -737,69 +737,6 @@
             border: 1px solid #f5c6cb;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: #f9f9f9;
-            border-left: 4px solid var(--primary);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .testimonial-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-initials {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        .author-name {
-            margin: 0;
-            font-weight: 600;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-        }
-
         /* Emotional Message Section */
         .emotional-message {
             padding: 80px 0;
@@ -1550,71 +1487,63 @@
 
         /* Testimonials */
         .testimonials {
-            padding: 60px 0;
+            padding: 80px 0;
             background: var(--white);
-            position: relative;
-            z-index: 2;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: var(--light-bg);
-            border-left: 4px solid var(--primary);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .testimonial-container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        .testimonial {
+            flex: 1;
+            min-width: 300px;
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
         }
 
-        .testimonial-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-dark);
+        .testimonial p {
+            color: var(--text-light);
             margin-bottom: 20px;
             font-style: italic;
-            flex-grow: 1;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
-        .author-initials {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
+        .author-avatar {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--white);
             font-weight: 700;
-            font-size: 0.9rem;
-            margin: 0;
-            flex-shrink: 0;
+            margin-right: 15px;
         }
 
-        .author-name {
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
             margin: 0;
-            font-weight: 600;
-            color: var(--text-dark);
-            font-size: 0.95rem;
+            color: var(--text-light);
         }
 
         /* About Me Section */
@@ -3225,40 +3154,6 @@
         </section>
 
     
-        <!-- Testimonials Section -->
-        <section class="testimonials" aria-labelledby="testimonials-heading">
-            <div class="container">
-                <div class="testimonials-grid">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"I had a little hope in improving our prayers especially fajr but my kids and even me have started to wake up for fajr all of a sudden. Even my kids woke me up for fajr which I think is a miracle."</p>
-                        <div class="testimonial-author">
-                            <p class="author-initials">MA</p>
-                            <p class="author-name">Maryam Ahmed</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Thank you so much, Alhamdulilah my daughter who is going to be 12 this year ma sha allah prays without reminder Alhamdulilah. I love you for the sake of Allah sister."</p>
-                        <div class="testimonial-author">
-                            <p class="author-initials">TK</p>
-                            <p class="author-name">Tahmina Khan</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"I was completely enamoured by the speakers passion. I learnt so much about raising children and don't feel as nervous as I did before the information and assurance was shared."</p>
-                        <div class="testimonial-author">
-                            <p class="author-initials">ZM</p>
-                            <p class="author-name">Nazia</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Emotional Message Section -->
         <section class="emotional-message" aria-labelledby="emotional-heading">
             <div class="container">
