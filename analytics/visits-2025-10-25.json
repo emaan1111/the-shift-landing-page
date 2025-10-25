@@ -167,5 +167,12 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:42:03.940Z",
+    "event": "page_exit",
+    "sessionId": "session_1761352778992_jeh8d3lwn",
+    "duration": 145
   }
 ]
