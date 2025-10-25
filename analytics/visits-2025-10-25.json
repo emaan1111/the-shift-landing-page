@@ -635,5 +635,21 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T03:34:43.052Z",
+    "event": "page_visit",
+    "sessionId": "session_1761363283052_leablg5il",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata"
   }
 ]
