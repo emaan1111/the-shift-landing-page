@@ -79,5 +79,19 @@
     "email": "ruqayatadeleke@gmail.com",
     "name": "Olanipekun",
     "country": "Nigeria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:20:14.339Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761398413244_elijli690",
+    "sessionId": "session_1761398413244_f41cqfaq3",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "zahra.aziz@gmail.com"
   }
 ]
