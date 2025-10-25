@@ -93,5 +93,12 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "zahra.aziz@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:20:18.028Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
