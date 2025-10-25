@@ -806,17 +806,41 @@
             });
             const indexUniqueVisitors = indexUniqueVisitorIds.size;
 
-            // Count registrations (visits to thank-you page or registration button clicks)
-            const thankYouVisits = pageVisits.filter(d => {
-                const page = d.page || '';
-                return page.includes('thank-you') || page.includes('thankyou');
-            });
-            const registrationClicks = buttonClicks.filter(d => {
-                const button = d.buttonName || '';
-                return button.toLowerCase().includes('register') || button.toLowerCase().includes('join');
-            });
-            const totalRegistrations = Math.max(thankYouVisits.length, registrationClicks.length);
+            // Fetch actual registration count from API (deduplicated from local + GitHub)
+            let totalRegistrations = 0;
             
+            fetch('/api/registrations')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Failed to fetch registrations');
+                })
+                .then(registrations => {
+                    totalRegistrations = Array.isArray(registrations) ? registrations.length : 0;
+                    document.getElementById('totalRegistrations').textContent = totalRegistrations;
+                    // Recalculate conversion rate with new registration count
+                    const summaryConversionRate = indexUniqueVisitors > 0 ? ((totalRegistrations / indexUniqueVisitors) * 100).toFixed(1) : 0;
+                    document.getElementById('summaryConversionRate').textContent = summaryConversionRate + '%';
+                })
+                .catch(e => {
+                    console.error('Error fetching registrations:', e);
+                    // Fallback to local analytics counting
+                    const thankYouVisits = pageVisits.filter(d => {
+                        const page = d.page || '';
+                        return page.includes('thank-you') || page.includes('thankyou');
+                    });
+                    const registrationClicks = buttonClicks.filter(d => {
+                        const button = d.buttonName || '';
+                        return button.toLowerCase().includes('register') || button.toLowerCase().includes('join');
+                    });
+                    totalRegistrations = Math.max(thankYouVisits.length, registrationClicks.length);
+                    document.getElementById('totalRegistrations').textContent = totalRegistrations;
+                    const summaryConversionRate = indexUniqueVisitors > 0 ? ((totalRegistrations / indexUniqueVisitors) * 100).toFixed(1) : 0;
+                    document.getElementById('summaryConversionRate').textContent = summaryConversionRate + '%';
+                });
+            
+            // Set initial values that will be updated by API or fallback
             // Calculate conversion rate (registrations / unique visitors of index page)
             const summaryConversionRate = indexUniqueVisitors > 0 ? ((totalRegistrations / indexUniqueVisitors) * 100).toFixed(1) : 0;
 
