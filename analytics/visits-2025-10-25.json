@@ -1678,5 +1678,18 @@
     "screenHeight": 1080,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T14:09:57.607Z",
+    "event": "registration",
+    "email": "burcusevgican@gmail.com",
+    "name": "Burcu Sevgican",
+    "firstName": "Burcu",
+    "lastName": "Sevgican",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
