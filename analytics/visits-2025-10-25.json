@@ -2958,5 +2958,17 @@
     "screenWidth": 393,
     "screenHeight": 852,
     "language": "en-GB"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T08:12:05.616Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761379772018_xthx8mgh3",
+    "sessionId": "session_1761379925616_x17zrf0bb",
+    "referrer": "https://momsshift.com/upsell.html?email=zuleeybal%40gmail.com&name=Zuleekhah&country=United%20Kingdom",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB"
   }
 ]
