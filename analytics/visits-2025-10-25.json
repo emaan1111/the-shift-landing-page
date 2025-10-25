@@ -2693,5 +2693,12 @@
     "city": "Council Bluffs",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T16:12:18.585Z",
+    "event": "page_exit",
+    "sessionId": "session_1761408658397_848bt9y3y",
+    "duration": 27
   }
 ]
