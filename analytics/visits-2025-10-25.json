@@ -65,5 +65,20 @@
     "screenHeight": 1080,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T13:47:49.267Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761393050170_fyd6bvyg8",
+    "sessionId": "session_1761400069265_o0ejeojrq",
+    "referrer": "https://momsshift.com/?email=halema1@hotmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-US",
+    "email": "waseemakram@hotmail.com",
+    "name": "M",
+    "country": "United States"
   }
 ]
