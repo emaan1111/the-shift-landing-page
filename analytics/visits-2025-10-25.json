@@ -684,5 +684,12 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T03:35:18.613Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
