@@ -125,5 +125,23 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:39:38.997Z",
+    "event": "page_visit",
+    "sessionId": "session_1761352778992_jeh8d3lwn",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 873,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "nisahlatiff@gmail.com",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Singapore",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
