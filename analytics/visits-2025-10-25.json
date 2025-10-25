@@ -3355,5 +3355,19 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "belatariq@outlook.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T10:49:38.136Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761389378126_666tei8ai",
+    "sessionId": "session_1761389378127_rmb9ns1tr",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 14; 24117RN76E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.230 Mobile Safari/537.36 OPR/80.1.4244.77335",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "belatariq@outlook.com"
   }
 ]
