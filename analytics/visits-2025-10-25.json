@@ -836,5 +836,19 @@
     "screenHeight": 1080,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:14.795Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401174464_e64yrspbg",
+    "sessionId": "session_1761401174682_y1r4wkitc",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "tasbas@med.umich.edu"
   }
 ]
