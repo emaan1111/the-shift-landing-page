@@ -1404,5 +1404,23 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:53:58.731Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371638703_yn3039ryk",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 883,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "deenaqf13@hotmail.com",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "city": "Dubai",
+    "region": "Dubai",
+    "timezone": "Asia/Dubai"
   }
 ]
