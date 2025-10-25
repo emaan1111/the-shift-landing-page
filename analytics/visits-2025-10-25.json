@@ -498,5 +498,22 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:08:45.899Z",
+    "event": "page_visit",
+    "sessionId": "session_1761368925892_g3kd6clck",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 339,
+    "screenHeight": 753,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "city": "Reading",
+    "region": "England",
+    "timezone": "Europe/London"
   }
 ]
