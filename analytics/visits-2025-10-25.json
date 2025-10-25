@@ -3540,5 +3540,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "smkanakri@bsu.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:19:05.304Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761391145301_si045o3o0",
+    "sessionId": "session_1761391145302_iw07gkzo7",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "asawa1@morgan.edu"
   }
 ]
