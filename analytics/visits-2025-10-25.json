@@ -476,5 +476,12 @@
     "email": "asmeeyktn@gmail.com",
     "name": "Asmau",
     "country": "Nigeria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:52:09.287Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400267235_g52zzynth",
+    "duration": 8
   }
 ]
