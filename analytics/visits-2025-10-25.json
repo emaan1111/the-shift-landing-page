@@ -54,5 +54,12 @@
     "city": "Wylie",
     "region": "Texas",
     "timezone": "America/Chicago"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:34:42.576Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
