@@ -3327,5 +3327,19 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "ebrahim_reyhana@yahoo.com.au"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T10:24:28.388Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761387868067_r4rv6hiin",
+    "sessionId": "session_1761387868303_gf3loc1o5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "sannehom@msu.edu"
   }
 ]
