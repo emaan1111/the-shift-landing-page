@@ -1221,5 +1221,20 @@
     "hookVariant": "A",
     "email": "sherminnajmal@gmail.com",
     "name": "Shermin"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:02.120Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401281824_n8m458dri",
+    "sessionId": "session_1761401282049_f8vwz9hnv",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "sannehom@msu.edu",
+    "name": "Prince"
   }
 ]
