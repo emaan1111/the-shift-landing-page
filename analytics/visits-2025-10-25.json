@@ -160,5 +160,18 @@
     "screenHeight": 824,
     "language": "en-GB",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T21:58:51.835Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761429531834_2gdhd5agc",
+    "sessionId": "session_1761429531834_tze9rfart",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
