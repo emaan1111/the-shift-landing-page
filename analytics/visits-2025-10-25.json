@@ -2619,5 +2619,26 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T15:58:51.405Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761407912056_l6uh50xnd",
+    "sessionId": "session_1761407931403_unuat77cf",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "fatmawatoto6@icloud.com",
+    "name": "Fatma",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
