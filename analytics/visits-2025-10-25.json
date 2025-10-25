@@ -2998,5 +2998,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T08:14:45.878Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761380046733_syqvia244",
+    "sessionId": "session_1761380085877_i6zfc2o2q",
+    "referrer": "https://momsshift.com/?email=asma.hafiz06@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 824,
+    "language": "en-IN",
+    "email": "asma.hafiz06@gmail.com",
+    "name": "Asma",
+    "country": "India"
   }
 ]
