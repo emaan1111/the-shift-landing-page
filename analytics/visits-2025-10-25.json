@@ -106,5 +106,18 @@
     "screenHeight": 1080,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:48:39.791Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400119768_ulp3pixvl",
+    "sessionId": "session_1761400119769_l09qcnp2u",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
