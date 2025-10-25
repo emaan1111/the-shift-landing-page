@@ -208,5 +208,20 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T19:04:39.991Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761398385160_7y6h7ghmp",
+    "sessionId": "session_1761419079933_x5dgawxrf",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 820,
+    "language": "en-US",
+    "email": "ruqayatadeleke@gmail.com",
+    "name": "Olanipekun",
+    "country": "Nigeria"
   }
 ]
