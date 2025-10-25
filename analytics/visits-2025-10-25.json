@@ -312,5 +312,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761433264339_ea4dyuiu7"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:01:36.363Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761433264339_ea4dyuiu7",
+    "sessionId": "session_1761433296360_20c1tqoeg",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 820,
+    "language": "en-US",
+    "email": "danmallamf@gmail.com",
+    "name": "Fatima",
+    "country": "Nigeria"
   }
 ]
