@@ -8,7 +8,7 @@
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From forcing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
+            highlightedMessageHtml: `From pushing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
             ctaText: '[NAME], you are JUST ONE SHIFT away'
         },
         {
@@ -17,7 +17,7 @@
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
+            highlightedMessageHtml: `From pushing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
             ctaText: 'You are JUST ONE ROLE SHIFT away'
         }
     ];
@@ -53,14 +53,26 @@
 
     function applyVariant(variant, name = null) {
         const tagElement = document.querySelector('.hero .tag');
-        const highlightedMessage = document.querySelector('.highlighted-message p');
+        const mainFocusTexts = document.querySelectorAll('.main-focus-text');
+        const heroHeading = document.querySelector('#hero-heading');
 
         if (tagElement && variant.tagText) {
             tagElement.textContent = variant.tagText;
         }
 
-        if (highlightedMessage && variant.highlightedMessageHtml) {
-            highlightedMessage.innerHTML = variant.highlightedMessageHtml;
+        // Update hero heading
+        if (heroHeading && variant.heroHeadingHtml) {
+            heroHeading.innerHTML = variant.heroHeadingHtml;
+        }
+
+        // Update the ending text (the last main-focus-text element)
+        if (mainFocusTexts.length > 0) {
+            const endingText = mainFocusTexts[mainFocusTexts.length - 1];
+            if (variant.highlightedMessageHtml.includes('don\'t seem to care')) {
+                endingText.textContent = '… even if they don\'t seem to care';
+            } else if (variant.highlightedMessageHtml.includes('play games')) {
+                endingText.textContent = '… even if they just want to play games or watch YouTube';
+            }
         }
 
         // Personalize ctaText with name if available
