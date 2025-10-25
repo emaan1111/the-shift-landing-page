@@ -2830,5 +2830,19 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T16:27:01.611Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761409621586_9dooq3t2g",
+    "sessionId": "session_1761409621586_isgdw8qen",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "maryam.fozia.ahmad23@tamu.edu"
   }
 ]
