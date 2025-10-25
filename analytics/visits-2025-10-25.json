@@ -217,5 +217,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T20:06:26.186Z",
+    "event": "registration",
+    "email": "saba648@yahoo.com",
+    "name": "Saba",
+    "firstName": "Saba",
+    "lastName": "",
+    "country": "Canada",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761422752825_ldk5ngzb1"
   }
 ]
