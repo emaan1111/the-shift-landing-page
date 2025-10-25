@@ -2695,5 +2695,12 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:39:45.330Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
