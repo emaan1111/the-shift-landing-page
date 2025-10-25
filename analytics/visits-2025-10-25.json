@@ -655,5 +655,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761436497680_d6yxx3m30"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:55:25.563Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761436497680_d6yxx3m30",
+    "sessionId": "session_1761436525562_rvqfrjayp",
+    "referrer": "https://momsshift.com/?email=najihahz@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "email": "najihahz@gmail.com",
+    "name": "Najihah",
+    "country": "Malaysia"
   }
 ]
