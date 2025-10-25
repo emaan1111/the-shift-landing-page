@@ -3971,5 +3971,25 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T12:52:22.637Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761396742613_zzsf5hbpx",
+    "sessionId": "session_1761396742631_np6zltfsm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:144.0) Gecko/20100101 Firefox/144.0",
+    "screenWidth": 1280,
+    "screenHeight": 720,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "fsurvey15@gmail.com",
+    "ipAddress": "2600:1900:0:2d02::2b00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
