@@ -590,5 +590,20 @@
     "hookVariant": "A",
     "email": "kelma047@uottawa.ca",
     "name": "Khaled"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:04:18.445Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401058433_2wdcow46n",
+    "sessionId": "session_1761401058438_719jj28bm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "hjawaid@uwo.ca",
+    "name": "Hira"
   }
 ]
