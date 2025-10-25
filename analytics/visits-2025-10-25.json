@@ -746,5 +746,23 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T03:45:53.067Z",
+    "event": "page_visit",
+    "sessionId": "session_1761363953061_lv57uj82h",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+    "screenWidth": 414,
+    "screenHeight": 896,
+    "language": "en-CA",
+    "hookVariant": "A",
+    "email": "m.faiqa81@gmail.com",
+    "country": "Canada",
+    "countryCode": "CA",
+    "city": "Montreal",
+    "region": "Quebec",
+    "timezone": "America/Toronto"
   }
 ]
