@@ -3794,5 +3794,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:52:56.863Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
