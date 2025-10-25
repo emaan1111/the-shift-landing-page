@@ -3442,5 +3442,24 @@
     "city": "Council Bluffs",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T11:02:12.859Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761390037156_7fszasq78",
+    "sessionId": "session_1761390132858_mihtb9f10",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "email": "shamse.rahman.ali@nishatec.com",
+    "name": "Shamse",
+    "ipAddress": "2600:1900:0:2d02::2b01",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
