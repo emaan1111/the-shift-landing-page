@@ -98,5 +98,18 @@
     "email": "dr.asma26@gmail.com",
     "name": "ASMA",
     "country": "Australia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T21:29:32.951Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761427772936_ts1jv34t8",
+    "sessionId": "session_1761427772937_bre09ar0u",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
