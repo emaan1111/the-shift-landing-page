@@ -850,5 +850,20 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "tasbas@med.umich.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:16.667Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401176662_hq0ppehvc",
+    "sessionId": "session_1761401176664_7fiyzocf9",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "yali@minaret.vic.edu.au",
+    "name": "Binta"
   }
 ]
