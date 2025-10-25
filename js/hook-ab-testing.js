@@ -9,7 +9,7 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From forcing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
-            ctaText: '[NAME], you are <span class="emphasis">JUST ONE SHIFT</span> away'
+            ctaText: '[NAME], you are JUST ONE SHIFT away'
         },
         {
             id: 'B',
@@ -18,7 +18,7 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
-            ctaText: 'You are <span class="emphasis">JUST ONE ROLE SHIFT</span> away'
+            ctaText: 'You are JUST ONE ROLE SHIFT away'
         }
     ];
 
