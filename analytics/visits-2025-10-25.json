@@ -3148,5 +3148,20 @@
     "city": "Council Bluffs",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T08:40:45.176Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761381617850_j3rxf99zx",
+    "sessionId": "session_1761381645176_9i68xru0y",
+    "referrer": "https://momsshift.com/?email=virgo.rozy@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Brave/1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "email": "virgo.rozy@gmail.com",
+    "name": "Hadiyah",
+    "country": "Saudi Arabia"
   }
 ]
