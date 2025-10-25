@@ -3549,5 +3549,24 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T16:57:35.398Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761410003154_qgz6axf3h",
+    "sessionId": "session_1761411455397_zo62aaisi",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "ipAddress": "49.36.180.216",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "countryCode": "IN"
   }
 ]
