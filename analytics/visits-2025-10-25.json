@@ -1499,5 +1499,19 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:09:08.375Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401348367_xoxrv7g42",
+    "sessionId": "session_1761401348370_rmo8vcxky",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "mustapha.el.jaaba@dnv.com"
   }
 ]
