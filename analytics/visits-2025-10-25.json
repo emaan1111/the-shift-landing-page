@@ -107,5 +107,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T13:20:34.408Z",
+    "event": "registration",
+    "email": "zahra.aziz@gmail.com",
+    "name": "Zahra Aziz",
+    "firstName": "Zahra",
+    "lastName": "Aziz",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
