@@ -576,5 +576,26 @@
     "hookVariant": "B",
     "email": "mmu208@nyu.edu",
     "name": "Malik"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:47:22.799Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761436042557_hsuh7acgf",
+    "sessionId": "session_1761436042630_hi0c58ses",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "mmu208@nyu.edu",
+    "name": "Malik",
+    "ipAddress": "2600:1900:0:2d02::3700",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
