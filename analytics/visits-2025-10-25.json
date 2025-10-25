@@ -2086,5 +2086,19 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "ana.adorno@us.abb.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:18:15.816Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401895368_gywsfyeqr",
+    "sessionId": "session_1761401895643_92m0m00gg",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "ana.adorno@us.abb.com"
   }
 ]
