@@ -342,5 +342,12 @@
     "email": "danmallamf@gmail.com",
     "name": "Fatima",
     "country": "Nigeria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:03:05.919Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
