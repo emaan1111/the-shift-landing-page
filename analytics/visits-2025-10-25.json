@@ -882,5 +882,12 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:35:19.020Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
