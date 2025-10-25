@@ -3526,5 +3526,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "frizvi4@uh.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:19:00.973Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761391140635_w6kpypntn",
+    "sessionId": "session_1761391140635_l1bvzeg1g",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "smkanakri@bsu.edu"
   }
 ]
