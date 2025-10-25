@@ -160,5 +160,12 @@
     "city": "Tiruchengode",
     "region": "Tamil Nadu",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:42:01.632Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
