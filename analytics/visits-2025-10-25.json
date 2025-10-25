@@ -2736,5 +2736,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T07:43:56.947Z",
+    "event": "registration",
+    "email": "draadilapeer@gmail.com",
+    "name": "Aadila Peer",
+    "firstName": "Aadila",
+    "lastName": "Peer",
+    "country": "South Africa",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
