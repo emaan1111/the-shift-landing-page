@@ -5,7 +5,9 @@
         {
             id: 'A',
             label: 'Original Hook',
-            tagText: 'FOR MUSLIM MOTHERS',
+            getTagText(name) {
+                return name ? `For ${name}` : 'FOR MUSLIM MOTHERS';
+            },
             heroHeadingHtml: 'You are <span>JUST ONE SHIFT</span> away',
             includeNameInHeading: true,
             personalizeHeading(name) {
@@ -52,13 +54,17 @@
         return variant;
     }
 
-    function applyVariant(variant) {
+    function applyVariant(variant, name = null) {
         const tagElement = document.querySelector('.hero .tag');
         const heroHeading = document.getElementById('hero-heading');
         const highlightedMessage = document.querySelector('.highlighted-message p');
 
-        if (tagElement && variant.tagText) {
-            tagElement.textContent = variant.tagText;
+        if (tagElement) {
+            if (variant.getTagText && typeof variant.getTagText === 'function') {
+                tagElement.textContent = variant.getTagText(name);
+            } else if (variant.tagText) {
+                tagElement.textContent = variant.tagText;
+            }
         }
 
         if (heroHeading && variant.heroHeadingHtml) {
@@ -86,7 +92,9 @@
     window.__HOOK_VARIANT__ = selectedVariant;
 
     document.addEventListener('DOMContentLoaded', function() {
-        applyVariant(window.__HOOK_VARIANT__);
+        const nameInput = document.getElementById('reg-name');
+        const name = nameInput ? nameInput.value : null;
+        applyVariant(window.__HOOK_VARIANT__, name);
         notifyVariantApplied(window.__HOOK_VARIANT__);
     });
 })();
