@@ -664,5 +664,26 @@
     "hookVariant": "A",
     "email": "kmk374@mail.usask.ca",
     "name": "Kiran"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:53:12.633Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400392622_5g0q191zz",
+    "sessionId": "session_1761400392625_i2xk780h2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "lameez.sieed@omwealth.co.za",
+    "name": "Lameez",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
