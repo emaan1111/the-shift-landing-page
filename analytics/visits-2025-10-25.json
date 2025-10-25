@@ -3762,5 +3762,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T11:50:47.941Z",
+    "event": "registration",
+    "email": "halema1@hotmail.com",
+    "name": "Haleema sadia",
+    "firstName": "Haleema",
+    "lastName": "sadia",
+    "country": "United States",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
