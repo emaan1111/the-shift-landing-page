@@ -245,5 +245,23 @@
     "city": "Hyderabad",
     "region": "Telangana",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:44:14.697Z",
+    "event": "page_visit",
+    "sessionId": "session_1761353054695_z9wt9msbm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "email": "asmahuss@hotmail.com",
+    "country": "Australia",
+    "countryCode": "AU",
+    "city": "Sydney",
+    "region": "New South Wales",
+    "timezone": "Australia/Sydney"
   }
 ]
