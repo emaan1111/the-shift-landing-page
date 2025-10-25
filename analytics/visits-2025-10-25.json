@@ -12,5 +12,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "frizvi4@uh.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:38:39.667Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761399519600_l8cbdcmri",
+    "sessionId": "session_1761399519600_b3joyekby",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 428,
+    "screenHeight": 926,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "belatariq@outlook.com"
   }
 ]
