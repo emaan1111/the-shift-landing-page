@@ -2749,5 +2749,24 @@
     "city": "Council Bluffs",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T07:43:59.725Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761378205051_2w2rh1kwf",
+    "sessionId": "session_1761378239723_6rexdng31",
+    "referrer": "https://momsshift.com/?email=asmal.mooneera@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-CA",
+    "email": "draadilapeer@gmail.com",
+    "name": "Aadila",
+    "ipAddress": "2600:1900:0:2d02::2b00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "South Africa"
   }
 ]
