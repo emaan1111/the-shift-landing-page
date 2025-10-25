@@ -37,5 +37,19 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:34:46.601Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761417286591_cs4fy6v0g",
+    "sessionId": "session_1761417286592_va9yuv2wo",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36 EdgA/141.0.0.0",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "rumana86@hotmail.co.uk"
   }
 ]
