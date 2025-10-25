@@ -816,5 +816,19 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:55:30.469Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400530424_pk6u2x2n0",
+    "sessionId": "session_1761400530432_rznjhjmsk",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "meharoon_nisha@awwa.org.sg"
   }
 ]
