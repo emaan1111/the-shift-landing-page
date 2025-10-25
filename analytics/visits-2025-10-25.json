@@ -504,5 +504,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:52:12.477Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400332445_7k3px0ahm",
+    "sessionId": "session_1761400332465_fmveybepn",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "imrankhan@dpc.edu",
+    "name": "Imran"
   }
 ]
