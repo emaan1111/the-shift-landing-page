@@ -907,5 +907,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "nbegum@theradclyffeschool.co.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:45.399Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401205262_j7xb9og40",
+    "sessionId": "session_1761401205290_u5p72d2ue",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "warsamen@spu.edu"
   }
 ]
