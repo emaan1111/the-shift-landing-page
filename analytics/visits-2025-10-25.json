@@ -701,5 +701,19 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:46:38.475Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366317305_mx74u3et1",
+    "sessionId": "session_1761374798474_c35tpxln4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "name": "ariba"
   }
 ]
