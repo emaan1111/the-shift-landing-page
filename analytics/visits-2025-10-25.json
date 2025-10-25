@@ -111,5 +111,12 @@
     "screenHeight": 854,
     "language": "en-GB",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T21:30:37.539Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
