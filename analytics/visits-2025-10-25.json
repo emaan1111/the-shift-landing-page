@@ -4664,5 +4664,18 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:22:27.501Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761416547360_7wpnwqihy",
+    "sessionId": "session_1761416547361_nze9rpd7t",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 895,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
