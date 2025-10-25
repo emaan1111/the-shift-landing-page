@@ -564,5 +564,19 @@
     "hookVariant": "B",
     "email": "iqbal.mujeeb@akesp.org",
     "name": "Iqbal"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:52:25.573Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400345122_upu7azys8",
+    "sessionId": "session_1761400345405_3q3lmm8a5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "galib@tamu.edu"
   }
 ]
