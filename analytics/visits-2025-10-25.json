@@ -5,5 +5,12 @@
     "event": "page_exit",
     "sessionId": "session_1761351290467_e6jf4hdno",
     "duration": 4
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:26:42.303Z",
+    "event": "page_exit",
+    "sessionId": "session_1761351999602_xqu2xzz1y",
+    "duration": 3
   }
 ]
