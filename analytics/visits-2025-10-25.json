@@ -452,5 +452,12 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T05:01:58.076Z",
+    "event": "page_exit",
+    "sessionId": "session_1761368517250_vccs1uknu",
+    "duration": 1
   }
 ]
