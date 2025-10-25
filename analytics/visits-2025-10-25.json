@@ -1078,5 +1078,20 @@
     "hookVariant": "A",
     "email": "shazia.nooreen@elht.nhs.uk",
     "name": "Shazia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:07:26.566Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401246560_stufr2m4w",
+    "sessionId": "session_1761401246562_kkt85q6fx",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "sannehom@msu.edu",
+    "name": "Prince"
   }
 ]
