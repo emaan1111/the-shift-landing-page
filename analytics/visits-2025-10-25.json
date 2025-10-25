@@ -287,5 +287,12 @@
     "city": "Sydney",
     "region": "New South Wales",
     "timezone": "Australia/Sydney"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:44:33.568Z",
+    "event": "page_exit",
+    "sessionId": "session_1761352890450_b6ny47tzy",
+    "duration": 91
   }
 ]
