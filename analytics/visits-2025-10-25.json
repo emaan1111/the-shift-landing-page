@@ -433,5 +433,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T06:30:38.352Z",
+    "event": "registration",
+    "email": "rizwanavali91@gmail.com",
+    "name": "rizwana Hans",
+    "firstName": "rizwana",
+    "lastName": "Hans",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
