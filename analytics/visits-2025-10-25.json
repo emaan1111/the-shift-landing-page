@@ -1160,5 +1160,17 @@
     "email": "emaanpower@gmail.com",
     "name": "Snigdha",
     "country": "Australia"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T05:41:25.219Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366305180_21stuwm47",
+    "sessionId": "session_1761370885219_w3v5bdcdz",
+    "referrer": "http://localhost:3000/upsell.html?email=emaanpower%40gmail.com&name=Snigdha&country=Australia",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU"
   }
 ]
