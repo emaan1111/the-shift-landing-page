@@ -2274,5 +2274,18 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:30:13.956Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761377088559_blalcmf9s",
+    "sessionId": "session_1761377413955_9k38hjb3z",
+    "referrer": "https://321db0af-5dc4-4f21-af09-8dd8f11e9339-00-11u5kpjldgot0.sisko.replit.dev:3000/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arvk%3A",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A"
   }
 ]
