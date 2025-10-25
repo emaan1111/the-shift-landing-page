@@ -533,5 +533,20 @@
     "event": "page_exit",
     "sessionId": "session_1761434347279_hkxsn28x0",
     "duration": 55
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:20:05.772Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761434347279_zivboedds",
+    "sessionId": "session_1761434405768_sfnwqjvdu",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
+    "screenWidth": 2560,
+    "screenHeight": 1440,
+    "language": "fr",
+    "email": "guesmiakheira@live.fr",
+    "name": "KHEIRA",
+    "country": "France"
   }
 ]
