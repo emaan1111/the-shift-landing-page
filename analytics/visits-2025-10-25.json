@@ -383,5 +383,20 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:15:31.746Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761434131740_clk751427",
+    "sessionId": "session_1761434131741_809mgqlo9",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 370,
+    "screenHeight": 816,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "shabana842@hotmail.com",
+    "name": "Shabana"
   }
 ]
