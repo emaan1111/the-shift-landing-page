@@ -211,5 +211,23 @@
     "event": "page_exit",
     "sessionId": "session_1761352890450_b6ny47tzy",
     "duration": 90
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T00:43:02.779Z",
+    "event": "page_visit",
+    "sessionId": "session_1761352982634_0ozpok0cb",
+    "referrer": "https://momsshift.com/?email=nisahlatiff@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 873,
+    "language": "en-US",
+    "email": "nisahlatiff@gmail.com",
+    "name": "Khairun",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "city": "Singapore",
+    "region": "Unknown",
+    "timezone": "Asia/Singapore"
   }
 ]
