@@ -1183,5 +1183,25 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:00:17.348Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761367826621_5qpboph0k",
+    "sessionId": "session_1761375617325_wp93276uy",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "name": "Ariba",
+    "ipAddress": "49.36.180.216",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "countryCode": "IN"
   }
 ]
