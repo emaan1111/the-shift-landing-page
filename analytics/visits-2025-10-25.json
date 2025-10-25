@@ -3163,5 +3163,12 @@
     "email": "virgo.rozy@gmail.com",
     "name": "Hadiyah",
     "country": "Saudi Arabia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:48:41.211Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
