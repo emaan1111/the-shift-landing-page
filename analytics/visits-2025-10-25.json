@@ -19,5 +19,22 @@
     "event": "page_exit",
     "sessionId": "session_1761352002696_lcpe5k3ij",
     "duration": 3
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T00:26:46.115Z",
+    "event": "page_visit",
+    "sessionId": "session_1761352006114_7t8e3zlwm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata"
   }
 ]
