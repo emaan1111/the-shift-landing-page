@@ -4691,5 +4691,17 @@
     "event": "page_exit",
     "sessionId": "session_1761416547361_nze9rpd7t",
     "duration": 39
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T18:23:32.571Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761416547360_7wpnwqihy",
+    "sessionId": "session_1761416612166_gjbhnt6uc",
+    "referrer": "https://momsshift.com/upsell.html?email=zahrah-29%40hotmail.com&name=Ummuahmed&country=Singapore&variant=A",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 895,
+    "language": "en-GB"
   }
 ]
