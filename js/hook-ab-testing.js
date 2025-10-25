@@ -8,8 +8,8 @@
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From pushing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
-            ctaText: 'Discover how mothers like you made everything easy with ONE ROLE SHIFT that Allah always wanted mothers to make.<br><span class="emphasis">You are JUST One Shift Away</span>'
+            highlightedMessageHtml: `Discover how mothers like you shifted from pushing their children to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> … even if they just want to play games or watch YouTube`,
+            ctaText: '[NAME], you are <span class="emphasis">JUST One Shift Away</span>'
 
         },
         {
@@ -18,8 +18,8 @@
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From pushing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
-            ctaText: 'Discover how mothers like you made everything easy with ONE ROLE SHIFT that Allah always wanted mothers to make.<br><span class="emphasis">You are JUST One Shift Away</span>'
+            highlightedMessageHtml: `Discover how mothers like you shifted from pushing their children to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> … even if they just want to play games or watch YouTube`,
+            ctaText: '<span class="emphasis">You are JUST One Shift Away</span>'
         }
     ];
 
