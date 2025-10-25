@@ -21,5 +21,18 @@
     "email": "emaanpower@gmail.com",
     "name": "Ariba Farheen",
     "country": "Australia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T19:54:30.662Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761377512928_s98zt9ofi",
+    "sessionId": "session_1761422070660_xg4r1xyl8",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A"
   }
 ]
