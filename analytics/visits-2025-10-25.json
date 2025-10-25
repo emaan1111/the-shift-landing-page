@@ -327,5 +327,20 @@
     "email": "danmallamf@gmail.com",
     "name": "Fatima",
     "country": "Nigeria"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:01:41.397Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761433301393_4gvgm8wzv",
+    "sessionId": "session_1761433301394_gnb644no4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "danmallamf@gmail.com",
+    "name": "Fatima",
+    "country": "Nigeria"
   }
 ]
