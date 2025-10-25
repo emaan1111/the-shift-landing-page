@@ -315,5 +315,12 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "mumtaazmajiet@icloud.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:26:28.302Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
