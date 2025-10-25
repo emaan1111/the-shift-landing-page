@@ -91,5 +91,19 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:13:21.326Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761372801166_0ya9mx4gg",
+    "sessionId": "session_1761372801168_ihy5gikzx",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "alvina.afzal@yahoo.com"
   }
 ]
