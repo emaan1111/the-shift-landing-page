@@ -865,5 +865,20 @@
     "hookVariant": "B",
     "email": "yali@minaret.vic.edu.au",
     "name": "Binta"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:21.796Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401181747_6x25wyu8k",
+    "sessionId": "session_1761401181753_fc53q1sp4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "tkhader@uthsc.edu",
+    "name": "Thekrayat"
   }
 ]
