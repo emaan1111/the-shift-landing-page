@@ -51,5 +51,12 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "rumana86@hotmail.co.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:35:21.124Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
