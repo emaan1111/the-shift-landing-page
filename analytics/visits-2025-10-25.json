@@ -3093,5 +3093,19 @@
     "screenHeight": 667,
     "language": "en-GB",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:40:17.851Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761381617850_j3rxf99zx",
+    "sessionId": "session_1761381617850_cbgu1zjee",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Brave/1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "virgo.rozy@gmail.com"
   }
 ]
