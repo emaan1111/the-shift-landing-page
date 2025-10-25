@@ -173,5 +173,12 @@
     "screenHeight": 932,
     "language": "en-GB",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T21:58:55.373Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
