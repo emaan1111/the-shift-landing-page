@@ -147,5 +147,18 @@
     "event": "page_exit",
     "sessionId": "session_1761427772937_bre09ar0u",
     "duration": 88
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T21:32:20.525Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761399089063_idmxh6g82",
+    "sessionId": "session_1761427940360_ogizbcz33",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 824,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
