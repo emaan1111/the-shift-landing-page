@@ -1263,5 +1263,12 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "admin@balhammosque.org"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:18.347Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
