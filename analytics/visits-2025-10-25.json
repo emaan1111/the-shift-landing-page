@@ -272,5 +272,12 @@
     "event": "page_exit",
     "sessionId": "session_1761400181179_5dllybmnv",
     "duration": 7
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:49:50.300Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400188601_yyszgovt2",
+    "duration": 2
   }
 ]
