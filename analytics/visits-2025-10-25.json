@@ -3080,5 +3080,18 @@
     "screenHeight": 400,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:36:17.670Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761381377666_imyw7d51i",
+    "sessionId": "session_1761381377667_atmvn25c6",
+    "referrer": "https://www.google.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_7_12 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/391.0.820341064 Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 667,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
