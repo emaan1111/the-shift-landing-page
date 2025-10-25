@@ -242,5 +242,24 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T19:04:54.270Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761419093680_6ihyc6nrd",
+    "sessionId": "session_1761419094017_jd1t12m2n",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "ipAddress": "2600:1900:0:2d02::1601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
