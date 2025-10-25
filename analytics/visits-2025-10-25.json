@@ -80,5 +80,12 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761417286591_cs4fy6v0g"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:35:38.674Z",
+    "event": "page_exit",
+    "sessionId": "session_1761417286592_va9yuv2wo",
+    "duration": 52
   }
 ]
