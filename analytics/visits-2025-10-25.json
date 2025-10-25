@@ -3197,5 +3197,24 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T08:49:56.669Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761381617850_j3rxf99zx",
+    "sessionId": "session_1761382196669_mdzmiopqr",
+    "referrer": "https://momsshift.com/?email=virgo.rozy@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Brave/1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "email": "virgo.rozy@gmail.com",
+    "name": "Hadiyah",
+    "ipAddress": "2600:1900:0:2d02::2b00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Saudi Arabia"
   }
 ]
