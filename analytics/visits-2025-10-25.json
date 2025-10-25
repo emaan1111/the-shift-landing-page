@@ -1677,5 +1677,24 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:03:55.123Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761372235064_6gpbk7tox",
+    "sessionId": "session_1761372235066_14d0qg0sr",
+    "referrer": "https://www.facebook.com/",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 2000,
+    "screenHeight": 2000,
+    "language": "en-US",
+    "hookVariant": "B",
+    "ipAddress": "34.93.69.11",
+    "city": "Mumbai",
+    "region": "Maharashtra",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "countryCode": "IN"
   }
 ]
