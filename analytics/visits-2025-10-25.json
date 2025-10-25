@@ -312,5 +312,21 @@
     "city": "Tiruchengode",
     "region": "Tamil Nadu",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T00:44:42.199Z",
+    "event": "page_visit",
+    "sessionId": "session_1761353082199_d5nyjl5js",
+    "referrer": "https://momsshift.com/upsell.html?email=asmahuss%40hotmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-AU",
+    "country": "Australia",
+    "countryCode": "AU",
+    "city": "Sydney",
+    "region": "New South Wales",
+    "timezone": "Australia/Sydney"
   }
 ]
