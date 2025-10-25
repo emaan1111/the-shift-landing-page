@@ -293,5 +293,12 @@
     "language": "en-AU",
     "hookVariant": "A",
     "name": "ariba"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:49:52.972Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400190828_l5frvcfaa",
+    "duration": 2
   }
 ]
