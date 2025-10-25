@@ -183,12 +183,60 @@
             outline: none;
         }
 
+        /* Header Styles */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .cta-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(160, 108, 213, 0.3);
+        }
+
+        .cta-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(160, 108, 213, 0.4);
+        }
+
         /* Hero Section */
         .hero {
             padding: 150px 0 80px;
             background: linear-gradient(to bottom, #faf9ff, var(--white));
             position: relative;
             overflow: hidden;
+            z-index: 2;
         }
 
         .hero::before {
@@ -229,7 +277,7 @@
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             letter-spacing: 1px;
         }
 
@@ -350,12 +398,77 @@
             box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
         }
 
+        /* Standalone Message - Main Focus */
+        .standalone-message {
+            position: relative;
+            margin: 30px auto 40px;
+            max-width: 1000px;
+            z-index: 2;
+        }
+
+        .main-focus-text {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            line-height: 1.4;
+            text-align: center;
+            font-weight: 500;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .main-emphasis-text {
+            font-size: 3.2rem;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            text-align: center;
+            font-weight: 700;
+            margin: 15px 0;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .main-emphasis-text::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Mini Heading - Updated */
+        .mini-heading {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            margin-top: 50px;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .mini-heading span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
         .date-info {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 30px;
             color: var(--text-light);
+        }
+
+        .date-info i {
+            margin-right: 10px;
+            color: var(--primary);
         }
 
         /* Speaker Section */
@@ -2882,6 +2995,74 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 12px 0;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo i {
+                font-size: 24px;
+            }
+
+            .cta-header {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .main-focus-text {
+                font-size: 1.8rem;
+            }
+            
+            .main-emphasis-text {
+                font-size: 2.4rem;
+            }
+            
+            .mini-heading {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .cta-main {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .date-info {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .main-focus-text {
+                font-size: 1.5rem;
+            }
+            
+            .main-emphasis-text {
+                font-size: 2rem;
+            }
+            
+            .mini-heading {
+                font-size: 1.4rem;
+            }
+
+            .cta-main {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
             .social-proof-notification {
                 left: 10px;
                 right: 10px;
@@ -2936,10 +3117,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">The Shift</a>
-                <a href="#register" class="cta-header">
-                    Join Free Challenge
+                <a href="#" class="logo">
+                    <i class="fas fa-moon"></i>
+                    The Shift
                 </a>
+                <a href="#register" class="cta-header">Join Free Challenge</a>
             </div>
         </div>
     </header>
@@ -2950,19 +3132,22 @@
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <span class="tag">FOR MUSLIM MOTHERS</span>
-                    <h1 id="hero-heading">You are <span>JUST ONE SHIFT</span> away</h1>
+                    <span class="tag" id="hero-tag">FOR MUSLIM MOTHERS</span>
                     
-                    <!-- Highlighted Message -->
-                    <div class="highlighted-message pulse">
-                        <p>From forcing your child to pray, read Qur'an, & learn Islam — to <span class="emphasis">them wanting it themselves</span>... even if they don't seem to care</p>
+                    <!-- Main Focus Message - Standalone Text -->
+                    <div class="standalone-message">
+                        <h2 class="main-focus-text">From forcing your child to pray, read Qur'an, and learn Islam — to</h2>
+                        <h1 id="hero-heading" class="main-emphasis-text">them wanting it themselves</h1>
+                        <h2 class="main-focus-text">… even if they don't seem to care</h2>
                     </div>
-                    <div class="cta-wrapper">
-                        <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                        <div class="cta-ribbon"></div>
-                    </div>
+                    
+                    <!-- Mini Line -->
+                    <h3 class="mini-heading">You are <span>JUST ONE SHIFT</span> away</h3>
+                    
+                    <a href="#register" class="cta-main">Join The 3-Day Challenge (FREE)</a>
                     <div class="date-info">
-                         Nov 6-8, 2025 | 11:00 AM EST/3 PM UK
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>November 9-11, 2025 | 11:00 AM EST Daily</span>
                     </div>
                 </div>
             </div>
@@ -3904,15 +4089,32 @@ Jazakallahu khairan </p>
 
             function handleVariantApplied(event) {
                 updateHeading(event && event.detail ? event.detail.variant : null);
+                updateMiniHeading(event && event.detail ? event.detail.variant : null);
                 window.removeEventListener('hookVariantApplied', handleVariantApplied);
+            }
+
+            function updateMiniHeading(variant) {
+                const miniHeading = document.querySelector('.mini-heading');
+                if (!miniHeading) {
+                    return;
+                }
+
+                const activeVariant = variant || window.__HOOK_VARIANT__;
+                if (!activeVariant || !activeVariant.ctaText) {
+                    return;
+                }
+
+                miniHeading.textContent = activeVariant.ctaText;
             }
 
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
                     updateHeading();
+                    updateMiniHeading();
                 });
             } else {
                 updateHeading();
+                updateMiniHeading();
             }
 
             window.addEventListener('hookVariantApplied', handleVariantApplied);

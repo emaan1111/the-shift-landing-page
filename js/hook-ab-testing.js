@@ -5,23 +5,20 @@
         {
             id: 'A',
             label: 'Original Hook',
-            getTagText(name) {
-                return name ? `For ${name}` : 'FOR MUSLIM MOTHERS';
-            },
-            heroHeadingHtml: 'You are <span>JUST ONE SHIFT</span> away',
-            includeNameInHeading: true,
-            personalizeHeading(name) {
-                return `${name}, you are <span>JUST ONE SHIFT</span> away`;
-            },
-            highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`
+            tagText: 'FOR MUSLIM MOTHERS',
+            heroHeadingHtml: 'them wanting it themselves',
+            includeNameInHeading: false,
+            highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
+            ctaText: '[NAME], you are just one role shift away'
         },
         {
             id: 'B',
             label: 'Original Hook',
             tagText: 'FOR MUSLIM MOTHERS',
-            heroHeadingHtml: 'You are <span>JUST ONE SHIFT</span> away',
+            heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`
+            highlightedMessageHtml: `From forcing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
+            ctaText: 'You are JUST ONE ROLE SHIFT away'
         }
     ];
 
@@ -56,27 +53,30 @@
 
     function applyVariant(variant, name = null) {
         const tagElement = document.querySelector('.hero .tag');
-        const heroHeading = document.getElementById('hero-heading');
         const highlightedMessage = document.querySelector('.highlighted-message p');
 
-        if (tagElement) {
-            if (variant.getTagText && typeof variant.getTagText === 'function') {
-                tagElement.textContent = variant.getTagText(name);
-            } else if (variant.tagText) {
-                tagElement.textContent = variant.tagText;
-            }
-        }
-
-        if (heroHeading && variant.heroHeadingHtml) {
-            heroHeading.innerHTML = variant.heroHeadingHtml;
+        if (tagElement && variant.tagText) {
+            tagElement.textContent = variant.tagText;
         }
 
         if (highlightedMessage && variant.highlightedMessageHtml) {
             highlightedMessage.innerHTML = variant.highlightedMessageHtml;
         }
 
+        // Personalize ctaText with name if available
+        let personalizedCtaText = variant.ctaText;
+        if (personalizedCtaText && name) {
+            personalizedCtaText = personalizedCtaText.replace('[NAME]', name);
+        }
+
+        // Store personalized variant info
+        const variantCopy = { ...variant, ctaText: personalizedCtaText };
+        
         document.documentElement.setAttribute('data-hook-variant', variant.id);
-        window.__HOOK_VARIANT__ = variant;
+        window.__HOOK_VARIANT__ = variantCopy;
+        
+        // Dispatch event with personalized CTA text available
+        console.log('Applied Variant:', variant.id, 'Personalized CTA:', personalizedCtaText);
     }
 
     function notifyVariantApplied(variant) {
@@ -88,13 +88,39 @@
         }
     }
 
-    const selectedVariant = pickVariant();
+    function getNameFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('name');
+    }
+
+    function getVariantFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('variant');
+    }
+
+    const selectedVariant = (() => {
+        const urlVariant = getVariantFromUrl();
+        if (urlVariant) {
+            const variant = variants.find(item => item.id === urlVariant.toUpperCase());
+            if (variant) {
+                return variant;
+            }
+        }
+        return pickVariant();
+    })();
     window.__HOOK_VARIANT__ = selectedVariant;
 
+    // Get name immediately from URL
+    let visitorName = getNameFromUrl();
+
     document.addEventListener('DOMContentLoaded', function() {
-        const nameInput = document.getElementById('reg-name');
-        const name = nameInput ? nameInput.value : null;
-        applyVariant(window.__HOOK_VARIANT__, name);
+        // If name not in URL, try to get from form input
+        if (!visitorName) {
+            const nameInput = document.getElementById('reg-name');
+            visitorName = nameInput ? nameInput.value : null;
+        }
+        console.log('Hook Script - Variant:', window.__HOOK_VARIANT__.id, 'Name:', visitorName);
+        applyVariant(window.__HOOK_VARIANT__, visitorName);
         notifyVariantApplied(window.__HOOK_VARIANT__);
     });
 })();
