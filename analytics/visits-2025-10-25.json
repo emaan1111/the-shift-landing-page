@@ -1093,5 +1093,19 @@
     "language": "en-GB",
     "hookVariant": "B",
     "name": "Ariba"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:59:56.712Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761375251159_9a6v59fs1",
+    "sessionId": "session_1761375596711_g84xa93b0",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "name": "Ariba"
   }
 ]
