@@ -4534,5 +4534,18 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T18:03:36.198Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761415415794_bpn0s6uej",
+    "sessionId": "session_1761415416060_sgjs1g1h2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
