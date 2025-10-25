@@ -1136,5 +1136,19 @@
     "hookVariant": "B",
     "email": "inquiry@destinlaw.com",
     "name": "CrytoUnwiB"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:07:41.033Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401261017_tctpqp87m",
+    "sessionId": "session_1761401261033_6ajoufd6h",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "syedmohtashem.hyder@ingka.ikea.com"
   }
 ]
