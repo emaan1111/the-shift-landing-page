@@ -4160,5 +4160,20 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T17:40:00.498Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761414000498_z8dwrp3aq",
+    "sessionId": "session_1761414000498_qhjwmpvhl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "fatima.abdulaziz.sule@gmail.com",
+    "name": "Fatima Sule"
   }
 ]
