@@ -530,5 +530,20 @@
     "hookVariant": "A",
     "email": "kristen.hemaidat@smwc.edu",
     "name": "Khadijah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:03:56.804Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401036795_2p9bo62u1",
+    "sessionId": "session_1761401036796_8k10h207b",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "kristen.hemaidat@smwc.edu",
+    "name": "Khadijah"
   }
 ]
