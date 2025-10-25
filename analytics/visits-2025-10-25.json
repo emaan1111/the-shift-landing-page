@@ -84,5 +84,12 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T06:12:58.106Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
