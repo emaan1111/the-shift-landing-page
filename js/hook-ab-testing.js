@@ -8,8 +8,8 @@
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
-            highlightedMessageHtml: `From pushing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
-            ctaText: 'Discover how mothers like you made everything easy in their with ONE ROLE SHIFT that Allah always wanted mothers to make. <span class="emphasis">You are JUST One Shift Away</span>'
+            highlightedMessageHtml: `From pushing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they don't seem to care`,
+            ctaText: 'Discover how mothers like you made everything easy with ONE ROLE SHIFT that Allah always wanted mothers to make.<br><span class="emphasis">You are JUST One Shift Away</span>'
 
         },
         {
@@ -19,7 +19,7 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From pushing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
-            ctaText: 'Discover how mothers like you made everything easy in their with ONE ROLE SHIFT that Allah always wanted mothers to make. <span class="emphasis">You are JUST One Shift Away</span>'
+            ctaText: 'Discover how mothers like you made everything easy with ONE ROLE SHIFT that Allah always wanted mothers to make.<br><span class="emphasis">You are JUST One Shift Away</span>'
         }
     ];
 
@@ -56,6 +56,7 @@
         const tagElement = document.querySelector('.hero .tag');
         const mainFocusTexts = document.querySelectorAll('.main-focus-text');
         const heroHeading = document.querySelector('#hero-heading');
+        const miniHeading = document.querySelector('.mini-heading');
 
         if (tagElement && variant.tagText) {
             tagElement.textContent = variant.tagText;
@@ -74,6 +75,11 @@
             } else if (variant.highlightedMessageHtml.includes('play games')) {
                 endingText.textContent = '… even if they just want to play games or watch YouTube';
             }
+        }
+
+        // Update mini-heading with full CTA text
+        if (miniHeading && variant.ctaText) {
+            miniHeading.innerHTML = variant.ctaText;
         }
 
         // Personalize ctaText with name if available
