@@ -780,5 +780,20 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "tasbas@med.umich.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:03.253Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401163249_3v56ec3bs",
+    "sessionId": "session_1761401163250_yb7rw3y0w",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "nfakier@parliament.gov.za",
+    "name": "Nasreen"
   }
 ]
