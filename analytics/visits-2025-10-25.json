@@ -1270,5 +1270,19 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:23.198Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401303190_jqzkrz2oj",
+    "sessionId": "session_1761401303195_ckjp3io8p",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "contact@almadinamasjid.uk"
   }
 ]
