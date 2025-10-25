@@ -147,5 +147,22 @@
     "event": "page_exit",
     "sessionId": "session_1761372805338_pwq0msqhl",
     "duration": 2
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T06:13:28.295Z",
+    "event": "page_visit",
+    "sessionId": "session_1761372808295_cytyjvmud",
+    "referrer": "https://momsshift.com/?email=emaanpowerteam@gmail.com",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "email": "emaanpowerteam@gmail.com",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "New Delhi",
+    "region": "National Capital Territory of Delhi",
+    "timezone": "Asia/Kolkata"
   }
 ]
