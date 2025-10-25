@@ -626,5 +626,12 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "najihahz@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:55:02.481Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
