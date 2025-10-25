@@ -48,5 +48,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T19:54:51.573Z",
+    "event": "registration",
+    "email": "arfarheen43@gmail.com",
+    "name": "Hira ahmed",
+    "firstName": "Hira",
+    "lastName": "ahmed",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761377512928_s98zt9ofi"
   }
 ]
