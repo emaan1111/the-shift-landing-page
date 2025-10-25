@@ -125,5 +125,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T21:30:58.805Z",
+    "event": "registration",
+    "email": "lizafarzanaakter9@gmail.com",
+    "name": "Farjana Akter Liza",
+    "firstName": "Farjana",
+    "lastName": "Akter Liza",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761427772936_ts1jv34t8"
   }
 ]
