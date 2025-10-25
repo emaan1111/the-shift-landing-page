@@ -1451,5 +1451,18 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "info@stockholmsmoske.se"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:56.788Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401336785_h8dw2onsf",
+    "sessionId": "session_1761401336786_e3i836zw1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
