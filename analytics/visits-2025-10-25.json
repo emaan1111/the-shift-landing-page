@@ -823,5 +823,18 @@
     "hookVariant": "A",
     "email": "rynn.picheh@siemens-healthineers.com",
     "name": "Rynn"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:06:13.333Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401173310_erl8vjh8x",
+    "sessionId": "session_1761401173314_qvcxjjayu",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
