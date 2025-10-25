@@ -1351,5 +1351,20 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "info@islamiskaforbundet.se"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T14:08:33.983Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401313983_m7xar489f",
+    "sessionId": "session_1761401313983_wemhg2r3s",
+    "referrer": "https://momsshift.com/?name=Shermin&email=sherminnajmal@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-IN",
+    "email": "sherminnajmal@gmail.com",
+    "name": "Shermin",
+    "country": "United Arab Emirates"
   }
 ]
