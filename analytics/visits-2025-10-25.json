@@ -449,5 +449,12 @@
     "event": "page_exit",
     "sessionId": "session_1761354958153_jl5ytwv3b",
     "duration": 15
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T01:17:05.286Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
