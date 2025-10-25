@@ -2177,5 +2177,12 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Challenge (FREE)",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:43:19.906Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
