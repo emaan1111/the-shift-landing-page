@@ -2729,5 +2729,12 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:43:55.347Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
