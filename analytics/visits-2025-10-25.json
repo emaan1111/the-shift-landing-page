@@ -376,5 +376,23 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T01:10:47.566Z",
+    "event": "page_visit",
+    "sessionId": "session_1761354647550_s4nxm4byf",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "mehvish123@gmail.com",
+    "country": "Canada",
+    "countryCode": "CA",
+    "city": "Surrey",
+    "region": "British Columbia",
+    "timezone": "America/Vancouver"
   }
 ]
