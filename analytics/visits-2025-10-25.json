@@ -3643,5 +3643,12 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "belatariq@outlook.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:32:26.201Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
