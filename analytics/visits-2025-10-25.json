@@ -3554,5 +3554,25 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "asawa1@morgan.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:19:39.435Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761391178991_hqir6jjhj",
+    "sessionId": "session_1761391179298_pgbdzwniz",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "smkanakri@bsu.edu",
+    "ipAddress": "2600:1900:0:2d02::2b01",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
