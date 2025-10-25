@@ -1441,5 +1441,19 @@
     "language": "en-AU",
     "hookVariant": "A",
     "name": "TestName"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:05:34.986Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366305180_21stuwm47",
+    "sessionId": "session_1761375934985_aibl1zes4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "name": "TestName"
   }
 ]
