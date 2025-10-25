@@ -456,5 +456,22 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T02:07:58.294Z",
+    "event": "page_visit",
+    "sessionId": "session_1761358078292_6maa9he90",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/135.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Ashburn",
+    "region": "Virginia",
+    "timezone": "America/New_York"
   }
 ]
