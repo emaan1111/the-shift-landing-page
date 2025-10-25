@@ -612,5 +612,19 @@
     "hookVariant": "A",
     "email": "frizvi4@uh.edu",
     "name": "Farwa"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T23:54:57.683Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761436497680_d6yxx3m30",
+    "sessionId": "session_1761436497681_sdulytour",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "najihahz@gmail.com"
   }
 ]
