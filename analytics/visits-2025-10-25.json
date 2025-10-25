@@ -80,5 +80,18 @@
     "email": "waseemakram@hotmail.com",
     "name": "M",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:47:49.806Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400069784_wjfcfcdut",
+    "sessionId": "session_1761400069802_gahh4212v",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B"
   }
 ]
