@@ -464,5 +464,12 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T23:17:23.538Z",
+    "event": "page_exit",
+    "sessionId": "session_1761434165863_ztt5iigeh",
+    "duration": 30
   }
 ]
