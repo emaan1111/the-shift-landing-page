@@ -229,5 +229,21 @@
     "city": "Singapore",
     "region": "Unknown",
     "timezone": "Asia/Singapore"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T00:43:03.835Z",
+    "event": "page_visit",
+    "sessionId": "session_1761352983835_eon2josse",
+    "referrer": "https://www.google.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 320,
+    "screenHeight": 480,
+    "language": "en-IN",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "Hyderabad",
+    "region": "Telangana",
+    "timezone": "Asia/Kolkata"
   }
 ]
