@@ -619,5 +619,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "mohamed.said@yarratrams.com.au"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:04:37.658Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401077641_alw4ql7v4",
+    "sessionId": "session_1761401077648_uwd5uwrv1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "nawer@uwindsor.ca"
   }
 ]
