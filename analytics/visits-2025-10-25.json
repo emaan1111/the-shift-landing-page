@@ -764,5 +764,12 @@
     "city": "Montreal",
     "region": "Quebec",
     "timezone": "America/Toronto"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T03:46:03.074Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
