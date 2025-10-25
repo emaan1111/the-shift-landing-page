@@ -120,5 +120,20 @@
     "city": "",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T13:20:36.609Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761398413244_elijli690",
+    "sessionId": "session_1761398436599_k282rclfo",
+    "referrer": "https://momsshift.com/?email=zahra.aziz@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "email": "zahra.aziz@gmail.com",
+    "name": "Zahra",
+    "country": "United States"
   }
 ]
