@@ -269,7 +269,7 @@ def backup_registration():
 
 @app.route('/api/registrations', methods=['GET'])
 def get_all_registrations():
-    """Get all registrations from backup files and GitHub"""
+    """Get all registrations from backup files and GitHub visits"""
     try:
         all_registrations = []
         
@@ -288,7 +288,7 @@ def get_all_registrations():
                 except:
                     pass
         
-        # Then, try to load from GitHub analytics directory
+        # Then, try to load registrations from GitHub visits files
         try:
             config_path = os.path.join('.', 'js', 'analytics-config.js')
             if os.path.exists(config_path):
@@ -315,9 +315,9 @@ def get_all_registrations():
                         if response.status_code == 200:
                             files = response.json()
                             
-                            # Look for registration files
+                            # Look for visits files that may contain registrations
                             for file in files:
-                                if 'registrations' in file['name'].lower():
+                                if 'visits' in file['name'].lower() and file['name'].endswith('.json'):
                                     try:
                                         file_url = file['url']
                                         file_response = requests.get(file_url, headers=headers)
@@ -326,12 +326,22 @@ def get_all_registrations():
                                             if 'content' in file_data:
                                                 import base64
                                                 decoded_content = base64.b64decode(file_data['content']).decode('utf-8')
-                                                registrations = json.loads(decoded_content)
-                                                if isinstance(registrations, list):
-                                                    # Avoid duplicates by checking if this registration already exists
-                                                    for reg in registrations:
-                                                        if not any(r.get('email') == reg.get('email') and r.get('timestamp') == reg.get('timestamp') for r in all_registrations):
-                                                            all_registrations.append(reg)
+                                                visits = json.loads(decoded_content)
+                                                if isinstance(visits, list):
+                                                    # Extract only registration events
+                                                    for visit in visits:
+                                                        if visit.get('event') == 'registration':
+                                                            reg = {
+                                                                'email': visit.get('email'),
+                                                                'firstName': visit.get('firstName'),
+                                                                'lastName': visit.get('lastName'),
+                                                                'country': visit.get('country'),
+                                                                'city': visit.get('city'),
+                                                                'timestamp': visit.get('timestamp')
+                                                            }
+                                                            # Avoid duplicates
+                                                            if not any(r.get('email') == reg.get('email') and r.get('timestamp') == reg.get('timestamp') for r in all_registrations):
+                                                                all_registrations.append(reg)
                                     except:
                                         pass
         except:
@@ -345,7 +355,7 @@ def get_all_registrations():
         unique_registrations = []
         for reg in all_registrations:
             key = (reg.get('email', ''), reg.get('timestamp', ''))
-            if key not in seen:
+            if key not in seen and reg.get('email'):  # Only include if email exists
                 seen.add(key)
                 unique_registrations.append(reg)
         
