@@ -600,5 +600,12 @@
     "hookVariant": "A",
     "email": "{{contact.email_address}}",
     "name": "{{contact.first_name}}"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:52:56.918Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400370344_fznyf0b80",
+    "duration": 3
   }
 ]
