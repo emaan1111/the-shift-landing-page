@@ -899,37 +899,61 @@
                 'B': { visits: 0, registrations: 0, visitors: new Set(), registrants: new Set() }
             };
             
-            // Count page visits and registrations by variant
+            // Count page visits by variant
             filteredData.forEach(event => {
                 const variant = event.hookVariant || 'Unknown';
                 const visitorId = event.visitorId || event.sessionId;
                 
-                if (variant === 'A' || variant === 'B') {
-                    if (event.event === 'page_visit') {
-                        variantStats[variant].visits += 1;
-                        if (visitorId) variantStats[variant].visitors.add(visitorId);
-                    }
-                    
-                    // Count registrations (thank-you page visits or registration button clicks)
-                    if (event.event === 'page_visit' && event.page && event.page.includes('thank-you')) {
-                        variantStats[variant].registrations += 1;
-                        if (visitorId) variantStats[variant].registrants.add(visitorId);
-                    }
-                    if (event.event === 'registration' || (event.email && event.event === 'page_visit')) {
-                        variantStats[variant].registrations += 1;
-                        if (visitorId) variantStats[variant].registrants.add(visitorId);
-                    }
+                if ((variant === 'A' || variant === 'B') && event.event === 'page_visit') {
+                    variantStats[variant].visits += 1;
+                    if (visitorId) variantStats[variant].visitors.add(visitorId);
                 }
             });
             
-            // Update stat cards
+            // Fetch deduplicated registrations from API and assign to variants
+            fetch('/api/registrations')
+                .then(response => response.ok ? response.json() : [])
+                .then(registrations => {
+                    // For each registration, find its variant from the local analytics data
+                    registrations.forEach(reg => {
+                        const regEmail = reg.email;
+                        // Find matching events in filteredData to get variant info
+                        const matchingEvents = filteredData.filter(e => e.email === regEmail);
+                        if (matchingEvents.length > 0) {
+                            const variant = matchingEvents[0].hookVariant || 'Unknown';
+                            if (variant === 'A' || variant === 'B') {
+                                if (!variantStats[variant].registrants.has(regEmail)) {
+                                    variantStats[variant].registrations += 1;
+                                    variantStats[variant].registrants.add(regEmail);
+                                }
+                            }
+                        }
+                    });
+                    
+                    // Update stat cards
+                    for (const variant of ['A', 'B']) {
+                        const stats = variantStats[variant];
+                        const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
+                        
+                        document.getElementById(`variant${variant}Conversion`).textContent = convRate + '%';
+                        document.getElementById(`variant${variant}Registrations`).textContent = stats.registrations;
+                        document.getElementById(`variant${variant}Visits`).textContent = stats.visits;
+                    }
+                })
+                .catch(e => {
+                    console.error('Error fetching registrations for variants:', e);
+                    // Fallback: show visit counts only
+                    for (const variant of ['A', 'B']) {
+                        const stats = variantStats[variant];
+                        document.getElementById(`variant${variant}Registrations`).textContent = 0;
+                        document.getElementById(`variant${variant}Visits`).textContent = stats.visits;
+                        document.getElementById(`variant${variant}Conversion`).textContent = '—';
+                    }
+                });
+            
+            // Set initial visit values
             for (const variant of ['A', 'B']) {
-                const stats = variantStats[variant];
-                const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
-                
-                document.getElementById(`variant${variant}Conversion`).textContent = convRate + '%';
-                document.getElementById(`variant${variant}Registrations`).textContent = stats.registrations;
-                document.getElementById(`variant${variant}Visits`).textContent = stats.visits;
+                document.getElementById(`variant${variant}Visits`).textContent = variantStats[variant].visits;
             }
             
             // Populate A/B Test table

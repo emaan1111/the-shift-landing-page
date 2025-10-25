@@ -4380,7 +4380,11 @@ Jazakallahu khairan </p>
                     if (result.success) {
                         console.log('✅ Successfully registered in ClickFunnels');
                         
-                        // Backup registration data to GitHub analytics
+                        // Get variant from window object
+                        const hookVariant = window.__HOOK_VARIANT__ ? window.__HOOK_VARIANT__.id : 'Unknown';
+                        const visitorId = localStorage.getItem('visitorId');
+                        
+                        // Backup registration data to GitHub analytics WITH VARIANT
                         if (typeof saveToGitHub === 'function') {
                             const registrationBackup = {
                                 page: '/index.html',
@@ -4393,7 +4397,9 @@ Jazakallahu khairan </p>
                                 country: country,
                                 city: city,
                                 source: 'Registration Form - The Shift Landing Page',
-                                clickfunnelsSuccess: true
+                                clickfunnelsSuccess: true,
+                                hookVariant: hookVariant,
+                                visitorId: visitorId
                             };
                             saveToGitHub(registrationBackup).catch(err => 
                                 console.log('GitHub backup failed (not critical):', err)
@@ -4411,6 +4417,7 @@ Jazakallahu khairan </p>
                                     lastName: lastName,
                                     country: country,
                                     city: city,
+                                    hookVariant: hookVariant,
                                     timestamp: new Date().toISOString()
                                 })
                             });
@@ -4419,6 +4426,11 @@ Jazakallahu khairan </p>
                             console.log('Local backup failed (not critical):', backupErr);
                         }
                         
+                        // Save variant and user info to localStorage for thank-you/upsell pages
+                        localStorage.setItem('hookVariant', hookVariant);
+                        localStorage.setItem('userEmail', email);
+                        localStorage.setItem('firstName', firstName);
+                        
                         // Show success message
                         formMessage.textContent = '🎉 Success! You\'re registered for The Shift Challenge. Check your email for details!';
                         formMessage.className = 'form-message success';
@@ -4426,9 +4438,9 @@ Jazakallahu khairan </p>
                         // Reset form
                         this.reset();
                         
-                        // Redirect to upsell page after 2 seconds
+                        // Redirect to upsell page after 2 seconds WITH VARIANT
                         setTimeout(() => {
-                            window.location.href = `upsell.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}`;
+                            window.location.href = `upsell.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}&variant=${encodeURIComponent(hookVariant)}`;
                         }, 2000);
                         
                     } else {
