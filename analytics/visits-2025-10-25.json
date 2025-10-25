@@ -3741,5 +3741,12 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "halema1@hotmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:49:54.432Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
