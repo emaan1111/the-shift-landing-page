@@ -1440,5 +1440,12 @@
     "city": "Dubai",
     "region": "Dubai",
     "timezone": "Asia/Dubai"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:54:30.243Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
