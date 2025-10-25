@@ -515,5 +515,18 @@
     "city": "Reading",
     "region": "England",
     "timezone": "Europe/London"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:10:48.856Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761366305180_21stuwm47",
+    "sessionId": "session_1761369048855_5zomjfsy0",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-AU",
+    "hookVariant": "A"
   }
 ]
