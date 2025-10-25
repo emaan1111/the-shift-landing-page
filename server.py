@@ -269,31 +269,87 @@ def backup_registration():
 
 @app.route('/api/registrations', methods=['GET'])
 def get_all_registrations():
-    """Get all registrations from backup files"""
+    """Get all registrations from backup files and GitHub"""
     try:
-        backup_dir = 'backups'
         all_registrations = []
         
-        if not os.path.exists(backup_dir):
-            return jsonify([]), 200
+        # First, load from local backups
+        backup_dir = 'backups'
+        if os.path.exists(backup_dir):
+            from glob import glob
+            backup_files = sorted(glob(os.path.join(backup_dir, 'registrations-*.json')))
+            
+            for backup_file in backup_files:
+                try:
+                    with open(backup_file, 'r') as f:
+                        registrations = json.load(f)
+                        if isinstance(registrations, list):
+                            all_registrations.extend(registrations)
+                except:
+                    pass
         
-        # Read all registration backup files
-        from glob import glob
-        backup_files = sorted(glob(os.path.join(backup_dir, 'registrations-*.json')))
-        
-        for backup_file in backup_files:
-            try:
-                with open(backup_file, 'r') as f:
-                    registrations = json.load(f)
-                    if isinstance(registrations, list):
-                        all_registrations.extend(registrations)
-            except:
-                pass
+        # Then, try to load from GitHub analytics directory
+        try:
+            config_path = os.path.join('.', 'js', 'analytics-config.js')
+            if os.path.exists(config_path):
+                with open(config_path, 'r') as f:
+                    content = f.read()
+                    import re
+                    token_match = re.search(r"token:\s*['\"]([^'\"]+)['\"]", content)
+                    owner_match = re.search(r"owner:\s*['\"]([^'\"]+)['\"]", content)
+                    repo_match = re.search(r"repo:\s*['\"]([^'\"]+)['\"]", content)
+                    
+                    if token_match and owner_match and repo_match:
+                        token = token_match.group(1)
+                        owner = owner_match.group(1)
+                        repo = repo_match.group(1)
+                        
+                        # Fetch list of files from GitHub
+                        url = f"https://api.github.com/repos/{owner}/{repo}/contents/analytics"
+                        headers = {
+                            'Authorization': f'token {token}',
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                        
+                        response = requests.get(url, headers=headers)
+                        if response.status_code == 200:
+                            files = response.json()
+                            
+                            # Look for registration files
+                            for file in files:
+                                if 'registrations' in file['name'].lower():
+                                    try:
+                                        file_url = file['url']
+                                        file_response = requests.get(file_url, headers=headers)
+                                        if file_response.status_code == 200:
+                                            file_data = file_response.json()
+                                            if 'content' in file_data:
+                                                import base64
+                                                decoded_content = base64.b64decode(file_data['content']).decode('utf-8')
+                                                registrations = json.loads(decoded_content)
+                                                if isinstance(registrations, list):
+                                                    # Avoid duplicates by checking if this registration already exists
+                                                    for reg in registrations:
+                                                        if not any(r.get('email') == reg.get('email') and r.get('timestamp') == reg.get('timestamp') for r in all_registrations):
+                                                            all_registrations.append(reg)
+                                    except:
+                                        pass
+        except:
+            pass
         
         # Sort by timestamp (newest first)
         all_registrations.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
         
-        return jsonify(all_registrations), 200
+        # Remove duplicates based on email and timestamp
+        seen = set()
+        unique_registrations = []
+        for reg in all_registrations:
+            key = (reg.get('email', ''), reg.get('timestamp', ''))
+            if key not in seen:
+                seen.add(key)
+                unique_registrations.append(reg)
+        
+        return jsonify(unique_registrations), 200
         
     except Exception as e:
         return jsonify({'error': str(e)}), 500

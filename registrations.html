@@ -390,21 +390,33 @@
         // Load registrations from server
         async function loadRegistrations() {
             try {
+                // Try to load from GitHub first (via the analytics API endpoints)
+                let registrations = [];
+                
+                // Try fetching from local server which combines both sources
                 const response = await fetch('/api/registrations');
                 if (!response.ok) throw new Error('Failed to load registrations');
                 
-                allRegistrations = await response.json();
-                filteredRegistrations = [...allRegistrations];
+                registrations = await response.json();
                 
-                updateStats();
-                renderTable();
-                setupEventListeners();
-                
-                document.getElementById('loading').style.display = 'none';
-                if (filteredRegistrations.length === 0) {
-                    document.getElementById('noData').style.display = 'block';
-                } else {
-                    document.getElementById('tableWrapper').style.display = 'block';
+                // If we got data, use it
+                if (registrations && registrations.length > 0) {
+                    allRegistrations = registrations;
+                    filteredRegistrations = [...allRegistrations];
+                    
+                    updateStats();
+                    renderTable();
+                    setupEventListeners();
+                    
+                    document.getElementById('loading').style.display = 'none';
+                    if (filteredRegistrations.length === 0) {
+                        document.getElementById('noData').style.display = 'block';
+                    } else {
+                        document.getElementById('tableWrapper').style.display = 'block';
+                    }
+                    
+                    const lastUpdated = new Date().toLocaleString();
+                    document.getElementById('lastUpdated').textContent = `Last updated: ${lastUpdated}`;
                 }
             } catch (error) {
                 console.error('Error loading registrations:', error);
