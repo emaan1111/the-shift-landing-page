@@ -3857,5 +3857,19 @@
     "screenHeight": 926,
     "language": "en-IN",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T12:45:35.285Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761396335281_4tpz895rp",
+    "sessionId": "session_1761396335282_jazvdq6re",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "qunfethachc@kfshrc.edu.sa"
   }
 ]
