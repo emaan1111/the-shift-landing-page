@@ -649,5 +649,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:53:04.353Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400384321_ebdqw04x5",
+    "sessionId": "session_1761400384321_w2d8dm8ii",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "kmk374@mail.usask.ca",
+    "name": "Kiran"
   }
 ]
