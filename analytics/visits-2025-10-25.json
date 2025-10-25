@@ -1203,5 +1203,12 @@
     "city": "Tampines New Town",
     "region": "Unknown",
     "timezone": "Asia/Singapore"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T05:43:33.016Z",
+    "event": "button_click",
+    "buttonName": "Join Free Challenge",
+    "referrer": "Direct"
   }
 ]
