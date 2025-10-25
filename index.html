@@ -3919,6 +3919,47 @@ Jazakallahu khairan </p>
         })();
     </script>
     
+    <!-- Auto-populate Form Fields from URL Parameters -->
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            const name = urlParams.get('name') || 
+                         urlParams.get('first_name') || 
+                         urlParams.get('firstname');
+            const country = urlParams.get('country');
+
+            function populateForm() {
+                if (email) {
+                    const emailInput = document.getElementById('reg-email');
+                    if (emailInput) {
+                        emailInput.value = decodeURIComponent(email);
+                    }
+                }
+
+                if (name) {
+                    const nameInput = document.getElementById('reg-name');
+                    if (nameInput) {
+                        nameInput.value = decodeURIComponent(name);
+                    }
+                }
+
+                if (country) {
+                    const countrySelect = document.getElementById('country');
+                    if (countrySelect) {
+                        countrySelect.value = decodeURIComponent(country);
+                    }
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', populateForm);
+            } else {
+                populateForm();
+            }
+        })();
+    </script>
+    
     <!-- Social Proof Ticker Script -->
     <script>
         let visitorQueue = [];
