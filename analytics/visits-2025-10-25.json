@@ -3670,5 +3670,20 @@
     "city": "",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T11:33:04.608Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761391936774_rm92b6kz6",
+    "sessionId": "session_1761391984577_t8q8w567c",
+    "referrer": "https://momsshift.com/?email=belatariq@outlook.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 869,
+    "language": "en-GB",
+    "email": "mariyamfouzan22@gmail.com",
+    "name": "Mariyam",
+    "country": "United Arab Emirates"
   }
 ]
