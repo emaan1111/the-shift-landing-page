@@ -319,5 +319,12 @@
     "language": "en-AU",
     "email": "emaanpower@gmail.com",
     "name": "Ayesha"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T04:59:52.190Z",
+    "event": "page_exit",
+    "sessionId": "session_1761368384053_2jpwxxgib",
+    "duration": 8
   }
 ]
