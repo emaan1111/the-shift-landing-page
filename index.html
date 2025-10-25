@@ -1485,6 +1485,93 @@
             }
         }
 
+        /* Top Testimonials Section */
+        .top-testimonials {
+            padding: 60px 0;
+            background: var(--white);
+            position: relative;
+            z-index: 2;
+            border-bottom: 1px solid rgba(160, 108, 213, 0.1);
+        }
+
+        .top-testimonial-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .top-testimonial {
+            flex: 1;
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(160, 108, 213, 0.1);
+        }
+
+        .top-testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(160, 108, 213, 0.2);
+        }
+
+        .testimonial-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+        }
+
+        .top-testimonial p {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+            padding-left: 40px;
+            position: relative;
+            z-index: 1;
+            font-size: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(160, 108, 213, 0.1);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
@@ -3148,6 +3235,54 @@
                     <div class="date-info">
                         <i class="fas fa-calendar-alt"></i>
                         <span>November 9-11, 2025 | 11:00 AM EST/3 PM UK | LIVE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section - After Hero -->
+        <section class="top-testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Transformations Happening Now</h2>
+                    <p>Hear from mothers who've already made The Shift</p>
+                </div>
+                <div class="top-testimonial-container">
+                    <div class="top-testimonial">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"I had a little hope in improving our prayers especially fajr but my kids and even me have started to wake up for fajr all of a sudden. Even my kids woke me up for fajr which I think is a miracle."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MA</div>
+                            <div class="author-info">
+                                <h4>Maryam Ahmed</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-testimonial">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Thank you so much, Alhamdulilah my daughter who is going to be 12 this year ma sha allah prays without reminder Alhamdulilah . I love you for the sake of Allah sister."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TK</div>
+                            <div class="author-info">
+                                <h4>Tahmina Khan</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-testimonial">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"I was completely enamoured by the speakers passion. I learnt so much about raising children and don't feel as nervous as I did before the information and assurance was shared."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ZM</div>
+                            <div class="author-info">
+                                <h4>Nazia</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
