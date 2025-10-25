@@ -89,5 +89,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "Australia"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T19:55:36.337Z",
+    "event": "page_exit",
+    "sessionId": "session_1761422097759_s1cnbydbx",
+    "duration": 39
   }
 ]
