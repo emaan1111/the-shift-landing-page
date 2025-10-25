@@ -428,5 +428,12 @@
     "city": "Columbus",
     "region": "Ohio",
     "timezone": "America/New_York"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T01:16:03.742Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
