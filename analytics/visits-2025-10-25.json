@@ -2970,5 +2970,19 @@
     "screenWidth": 393,
     "screenHeight": 852,
     "language": "en-GB"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:14:06.736Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761380046733_syqvia244",
+    "sessionId": "session_1761380046734_7svbieu0j",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 824,
+    "language": "en-IN",
+    "hookVariant": "A",
+    "email": "asma.hafiz06@gmail.com"
   }
 ]
