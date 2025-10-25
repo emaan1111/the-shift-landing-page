@@ -830,5 +830,12 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "meharoon_nisha@awwa.org.sg"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T13:56:38.623Z",
+    "event": "page_exit",
+    "sessionId": "session_1761400193517_qpukyo1lv",
+    "duration": 21
   }
 ]
