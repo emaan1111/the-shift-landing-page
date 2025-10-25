@@ -101,5 +101,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:00:16.116Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761400816116_x03jl5901",
+    "sessionId": "session_1761400816116_qe4rpsokf",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "gaber.h_win@gemsedu.com",
+    "name": "Gaber",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
