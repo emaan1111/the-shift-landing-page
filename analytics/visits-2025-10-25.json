@@ -235,5 +235,20 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T22:47:41.842Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761432461838_s2rl0iwxf",
+    "sessionId": "session_1761432461838_xren2cdmm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "jumayah.amin@sgx.com",
+    "name": "June"
   }
 ]
