@@ -9,7 +9,9 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `Discover how mothers like you shifted from pushing their children to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> … even if they just want to play games or watch YouTube`,
-            ctaText: '[NAME], you are <span class="emphasis">JUST One Shift Away</span>'
+            ctaText: '[NAME], you are JUST ',
+            ctaTextNoName: 'You are JUST ',
+            ctaEmphasisText: 'One Shift Away'
 
         },
         {
@@ -19,7 +21,8 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `Discover how mothers like you shifted from pushing their children to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> … even if they just want to play games or watch YouTube`,
-            ctaText: '<span class="emphasis">You are JUST One Shift Away</span>'
+            ctaText: 'You are JUST ',
+            ctaEmphasisText: 'One Shift Away'
         }
     ];
 
@@ -79,21 +82,25 @@
 
         // Personalize ctaText with name if available
         let personalizedCtaText = variant.ctaText;
-        if (personalizedCtaText && name) {
-            // Replace [NAME], with actual name
-            personalizedCtaText = personalizedCtaText.replace('[NAME],', name + ',');
-        } else if (personalizedCtaText && personalizedCtaText.includes('[NAME],')) {
-            // Remove [NAME], if name is not provided
-            personalizedCtaText = personalizedCtaText.replace('[NAME], ', '');
+        if (variant.id === 'A') {
+            // For Variant A, use appropriate text based on name presence
+            if (name) {
+                personalizedCtaText = personalizedCtaText.replace('[NAME],', name + ',');
+            } else {
+                personalizedCtaText = variant.ctaTextNoName;
+            }
         }
+        
+        // Build final CTA with emphasis styling
+        let finalCtaHtml = personalizedCtaText + '<span class="emphasis">' + variant.ctaEmphasisText + '</span>';
 
-        // Update mini-heading with personalized CTA text
+        // Update mini-heading with personalized CTA text (as HTML)
         if (miniHeading) {
-            miniHeading.innerHTML = personalizedCtaText;
+            miniHeading.innerHTML = finalCtaHtml;
         }
 
         // Store personalized variant info
-        const variantCopy = { ...variant, ctaText: personalizedCtaText };
+        const variantCopy = { ...variant, ctaText: finalCtaHtml };
         
         document.documentElement.setAttribute('data-hook-variant', variant.id);
         window.__HOOK_VARIANT__ = variantCopy;
