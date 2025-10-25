@@ -3135,5 +3135,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T08:40:41.790Z",
+    "event": "registration",
+    "email": "virgo.rozy@gmail.com",
+    "name": "Hadiyah",
+    "firstName": "Hadiyah",
+    "lastName": "",
+    "country": "Saudi Arabia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
