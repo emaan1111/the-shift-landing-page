@@ -172,5 +172,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T13:49:27.843Z",
+    "event": "registration",
+    "email": "Fatimah.sharif@hotmail.co.uk",
+    "name": "Fatimah",
+    "firstName": "Fatimah",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
