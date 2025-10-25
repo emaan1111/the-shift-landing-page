@@ -3121,5 +3121,12 @@
     "language": "ar",
     "hookVariant": "B",
     "email": "virgo.rozy@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:40:29.473Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
