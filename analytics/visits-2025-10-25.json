@@ -3461,5 +3461,23 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T11:03:10.749Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761390037156_7fszasq78",
+    "sessionId": "session_1761390190748_z5itrx2sx",
+    "referrer": "https://momsshift.com/upsell.html?email=shamse.rahman.ali%40nishatec.com&name=Shamse&country=United%20Kingdom",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "ipAddress": "2600:1900:0:2d02::2b01",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
