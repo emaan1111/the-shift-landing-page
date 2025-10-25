@@ -771,5 +771,22 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T03:46:03.933Z",
+    "event": "page_visit",
+    "sessionId": "session_1761363963932_i9mrcf1z2",
+    "referrer": "https://momsshift.com/?email=m.faiqa81@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+    "screenWidth": 414,
+    "screenHeight": 896,
+    "language": "en-CA",
+    "email": "m.faiqa81@gmail.com",
+    "country": "Canada",
+    "countryCode": "CA",
+    "city": "Montreal",
+    "region": "Quebec",
+    "timezone": "America/Toronto"
   }
 ]
