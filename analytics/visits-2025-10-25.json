@@ -2984,5 +2984,12 @@
     "language": "en-IN",
     "hookVariant": "A",
     "email": "asma.hafiz06@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T08:14:17.701Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Challenge (FREE)",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
