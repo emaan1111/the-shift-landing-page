@@ -3271,5 +3271,19 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T10:18:03.945Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761387483943_ceaw1trq2",
+    "sessionId": "session_1761387483943_zp8uhs806",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "jumayah.amin@sgx.com"
   }
 ]
