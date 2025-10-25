@@ -570,5 +570,22 @@
     "city": "New Delhi",
     "region": "National Capital Territory of Delhi",
     "timezone": "Asia/Kolkata"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T03:33:50.859Z",
+    "event": "page_visit",
+    "sessionId": "session_1761363230858_ras7tbqxl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "country": "United States",
+    "countryCode": "US",
+    "city": "Santa Clara",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
   }
 ]
