@@ -1310,5 +1310,19 @@
     "screenHeight": 864,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:29.649Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401309598_wdo87fprn",
+    "sessionId": "session_1761401309603_8ev6b8ewu",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "info@masjidtawhid.org"
   }
 ]
