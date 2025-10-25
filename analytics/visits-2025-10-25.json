@@ -2184,5 +2184,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T14:43:21.353Z",
+    "event": "registration",
+    "email": "fk23486@gmail.com",
+    "name": "Faiza Zeeshan ",
+    "firstName": "Faiza",
+    "lastName": "Zeeshan",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
