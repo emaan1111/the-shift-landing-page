@@ -9,7 +9,8 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From pushing your child to <span class="emphasis">pray, read Qur'an, and learn Islam </span>— to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
-            ctaText: '[NAME], you are JUST ONE SHIFT away'
+            ctaText: 'Discover how mothers like you made everything easy in their with ONE ROLE SHIFT that Allah always wanted mothers to make. <span class="emphasis">You are JUST One Shift Away</span>'
+
         },
         {
             id: 'B',
@@ -18,7 +19,7 @@
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
             highlightedMessageHtml: `From pushing your child to pray, read Qur'an, and learn Islam — to <span class="emphasis">them wanting it themselves</span> ... even if they just want to play games or watch YouTube`,
-            ctaText: 'You are JUST ONE ROLE SHIFT away'
+            ctaText: 'Discover how mothers like you made everything easy in their with ONE ROLE SHIFT that Allah always wanted mothers to make. <span class="emphasis">You are JUST One Shift Away</span>'
         }
     ];
 
