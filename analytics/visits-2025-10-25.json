@@ -1590,5 +1590,17 @@
     "region": "Maharashtra",
     "timezone": "Asia/Kolkata",
     "country": "Australia"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T05:58:33.055Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761371891225_8xr6uty0o",
+    "sessionId": "session_1761371913043_u4rtg6oxk",
+    "referrer": "https://321db0af-5dc4-4f21-af09-8dd8f11e9339-00-11u5kpjldgot0.sisko.replit.dev/upsell.html?email=arfa%40gmail.com&name=Hira&country=Australia",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU"
   }
 ]
