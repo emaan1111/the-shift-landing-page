@@ -1691,5 +1691,20 @@
     "city": "",
     "source": "Registration Form - The Shift Landing Page",
     "clickfunnelsSuccess": true
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T14:09:59.798Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401336785_h8dw2onsf",
+    "sessionId": "session_1761401399798_vt554lsgf",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "email": "burcusevgican@gmail.com",
+    "name": "Burcu",
+    "country": "United States"
   }
 ]
