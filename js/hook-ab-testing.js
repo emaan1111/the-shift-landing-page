@@ -77,19 +77,19 @@
             }
         }
 
-        // Update mini-heading with full CTA text
-        if (miniHeading && variant.ctaText) {
-            miniHeading.innerHTML = variant.ctaText;
-        }
-
         // Personalize ctaText with name if available
         let personalizedCtaText = variant.ctaText;
         if (personalizedCtaText && name) {
             // Replace [NAME], with actual name
             personalizedCtaText = personalizedCtaText.replace('[NAME],', name + ',');
-        } else if (personalizedCtaText && personalizedCtaText.includes('[NAME]')) {
-            // Remove [NAME], (with space after comma) if name is not provided
+        } else if (personalizedCtaText && personalizedCtaText.includes('[NAME],')) {
+            // Remove [NAME], if name is not provided
             personalizedCtaText = personalizedCtaText.replace('[NAME], ', '');
+        }
+
+        // Update mini-heading with personalized CTA text
+        if (miniHeading) {
+            miniHeading.innerHTML = personalizedCtaText;
         }
 
         // Store personalized variant info
