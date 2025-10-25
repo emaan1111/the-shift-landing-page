@@ -1422,5 +1422,20 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "nbk@tda.education"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:08:46.860Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401326848_fd8e3j96q",
+    "sessionId": "session_1761401326854_lmpt39aly",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "raiya.hashmi@transport.nsw.gov.au",
+    "name": "Raiya"
   }
 ]
