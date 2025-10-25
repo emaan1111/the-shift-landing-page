@@ -1447,5 +1447,22 @@
     "event": "button_click",
     "buttonName": "Join Free Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-25T05:54:31.706Z",
+    "event": "page_visit",
+    "sessionId": "session_1761371671706_auyv24jw7",
+    "referrer": "https://momsshift.com/?email=deenaqf13@hotmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 883,
+    "language": "en-GB",
+    "email": "deenaqf13@hotmail.com",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "city": "Dubai",
+    "region": "Dubai",
+    "timezone": "Asia/Dubai"
   }
 ]
