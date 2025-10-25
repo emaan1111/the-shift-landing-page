@@ -1721,5 +1721,18 @@
     "hookVariant": "A",
     "email": "nejat1381@hotmail.com",
     "name": "Um Adam"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:10:01.697Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401401678_mkqrf0tm0",
+    "sessionId": "session_1761401401680_xz3g609dl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
