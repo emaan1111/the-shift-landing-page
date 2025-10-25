@@ -692,5 +692,20 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "keatingsamicm@si.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T14:05:05.141Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761401105122_5694tq14m",
+    "sessionId": "session_1761401105130_v8yp1eyux",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "rizwan.kaiser@nhs.net",
+    "name": "Farah"
   }
 ]
