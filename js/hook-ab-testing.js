@@ -4,7 +4,7 @@
     const variants = [
         {
             id: 'A',
-            label: 'Original Hook',
+            label: 'Variant A - Don\'t Seem to Care',
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,
@@ -13,7 +13,7 @@
         },
         {
             id: 'B',
-            label: 'Original Hook',
+            label: 'Variant B - Games/YouTube',
             tagText: 'FOR MUSLIM MOTHERS',
             heroHeadingHtml: 'them wanting it themselves',
             includeNameInHeading: false,

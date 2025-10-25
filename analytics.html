@@ -910,6 +910,11 @@
                 }
             });
             
+            // Set initial visit values
+            for (const variant of ['A', 'B']) {
+                document.getElementById(`variant${variant}Visits`).textContent = variantStats[variant].visits;
+            }
+            
             // Fetch deduplicated registrations from API and assign to variants
             fetch('/api/registrations')
                 .then(response => response.ok ? response.json() : [])
@@ -937,59 +942,66 @@
                         
                         document.getElementById(`variant${variant}Conversion`).textContent = convRate + '%';
                         document.getElementById(`variant${variant}Registrations`).textContent = stats.registrations;
-                        document.getElementById(`variant${variant}Visits`).textContent = stats.visits;
+                    }
+                    
+                    // NOW populate A/B Test table with correct data
+                    const tbody = document.getElementById('abTestTable');
+                    tbody.innerHTML = '';
+                    
+                    for (const variant of ['A', 'B']) {
+                        const stats = variantStats[variant];
+                        const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
+                        
+                        // Determine status
+                        let status = '—';
+                        if (stats.visits < 10) {
+                            status = '<span style="color: #999;">Collecting data...</span>';
+                        } else if (variantStats['A'].visits > 0 && variantStats['B'].visits > 0) {
+                            const rateA = variantStats['A'].registrations / variantStats['A'].visits * 100;
+                            const rateB = variantStats['B'].registrations / variantStats['B'].visits * 100;
+                            if (variant === 'A' && rateA > rateB) {
+                                status = '<span style="color: green; font-weight: bold;">🏆 Winner</span>';
+                            } else if (variant === 'B' && rateB > rateA) {
+                                status = '<span style="color: green; font-weight: bold;">🏆 Winner</span>';
+                            }
+                        }
+                        
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><strong>Variant ${variant}</strong></td>
+                            <td>${stats.visits}</td>
+                            <td>${stats.registrations}</td>
+                            <td><strong>${convRate}%</strong></td>
+                            <td>${stats.visitors.size}</td>
+                            <td>${stats.registrants.size}</td>
+                            <td>${status}</td>
+                        `;
+                        tbody.appendChild(row);
                     }
                 })
                 .catch(e => {
                     console.error('Error fetching registrations for variants:', e);
                     // Fallback: show visit counts only
+                    const tbody = document.getElementById('abTestTable');
+                    tbody.innerHTML = '';
                     for (const variant of ['A', 'B']) {
                         const stats = variantStats[variant];
                         document.getElementById(`variant${variant}Registrations`).textContent = 0;
-                        document.getElementById(`variant${variant}Visits`).textContent = stats.visits;
                         document.getElementById(`variant${variant}Conversion`).textContent = '—';
+                        
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><strong>Variant ${variant}</strong></td>
+                            <td>${stats.visits}</td>
+                            <td>0</td>
+                            <td><strong>—</strong></td>
+                            <td>${stats.visitors.size}</td>
+                            <td>0</td>
+                            <td>—</td>
+                        `;
+                        tbody.appendChild(row);
                     }
                 });
-            
-            // Set initial visit values
-            for (const variant of ['A', 'B']) {
-                document.getElementById(`variant${variant}Visits`).textContent = variantStats[variant].visits;
-            }
-            
-            // Populate A/B Test table
-            const tbody = document.getElementById('abTestTable');
-            tbody.innerHTML = '';
-            
-            for (const variant of ['A', 'B']) {
-                const stats = variantStats[variant];
-                const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
-                
-                // Determine status
-                let status = '—';
-                if (stats.visits < 10) {
-                    status = '<span style="color: #999;">Collecting data...</span>';
-                } else if (variantStats['A'].visits > 0 && variantStats['B'].visits > 0) {
-                    const rateA = variantStats['A'].registrations / variantStats['A'].visits * 100;
-                    const rateB = variantStats['B'].registrations / variantStats['B'].visits * 100;
-                    if (variant === 'A' && rateA > rateB) {
-                        status = '<span style="color: green; font-weight: bold;">🏆 Winner</span>';
-                    } else if (variant === 'B' && rateB > rateA) {
-                        status = '<span style="color: green; font-weight: bold;">🏆 Winner</span>';
-                    }
-                }
-                
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><strong>Variant ${variant}</strong></td>
-                    <td>${stats.visits}</td>
-                    <td>${stats.registrations}</td>
-                    <td><strong>${convRate}%</strong></td>
-                    <td>${stats.visitors.size}</td>
-                    <td>${stats.registrants.size}</td>
-                    <td>${status}</td>
-                `;
-                tbody.appendChild(row);
-            }
         }
 
         function populateGlobalDateFilter() {
