@@ -2502,5 +2502,25 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T15:14:00.839Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761405240821_xnf36nlmx",
+    "sessionId": "session_1761405240821_uvrdlmwqq",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 388,
+    "screenHeight": 861,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "asrasidnab@hotmail.com",
+    "ipAddress": "2600:1900:0:2d02::601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
