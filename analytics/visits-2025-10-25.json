@@ -51,5 +51,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T13:20:08.798Z",
+    "event": "registration",
+    "email": "ruqayatadeleke@gmail.com",
+    "name": "Olanipekun",
+    "firstName": "Olanipekun",
+    "lastName": "",
+    "country": "Nigeria",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
