@@ -370,6 +370,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Location</th>
+                            <th>Variant</th>
                             <th>Date</th>
                         </tr>
                     </thead>
@@ -482,12 +483,14 @@
                 const email = reg.email || reg.emailAddress || 'N/A';
                 const location = reg.city ? `${reg.city}, ${reg.country}` : (reg.country || 'N/A');
                 const timestamp = reg.timestamp ? new Date(reg.timestamp).toLocaleDateString() : 'N/A';
+                const variant = reg.variant || 'N/A';
                 
                 row.innerHTML = `
                     <td>${start + index + 1}</td>
                     <td class="name">${name || 'N/A'}</td>
                     <td><a href="mailto:${email}" class="email">${email}</a></td>
                     <td class="location">${location}</td>
+                    <td><strong style="color: var(--primary);">${variant}</strong></td>
                     <td class="timestamp">${timestamp}</td>
                 `;
                 tbody.appendChild(row);
@@ -541,13 +544,14 @@
         // Export to CSV
         function exportToCSV() {
             const csv = [
-                ['Name', 'Email', 'Phone', 'City', 'Country', 'Date'],
+                ['Name', 'Email', 'Phone', 'City', 'Country', 'Variant', 'Date'],
                 ...filteredRegistrations.map(r => [
                     `${r.firstName || ''} ${r.lastName || ''}`,
                     r.email || r.emailAddress || '',
                     r.phone || '',
                     r.city || '',
                     r.country || '',
+                    r.variant || '',
                     r.timestamp ? new Date(r.timestamp).toLocaleDateString() : ''
                 ])
             ];
