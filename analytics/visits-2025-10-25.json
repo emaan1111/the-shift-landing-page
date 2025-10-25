@@ -3657,5 +3657,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T11:33:01.696Z",
+    "event": "registration",
+    "email": "mariyamfouzan22@gmail.com",
+    "name": "Mariyam Fouzan",
+    "firstName": "Mariyam",
+    "lastName": "Fouzan",
+    "country": "United Arab Emirates",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
