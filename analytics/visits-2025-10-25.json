@@ -3615,5 +3615,19 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "tasbas@med.umich.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T11:28:36.546Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761391716036_d039to7nq",
+    "sessionId": "session_1761391716354_jcdw2qpuk",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "tasbas@med.umich.edu"
   }
 ]
