@@ -294,5 +294,23 @@
     "event": "page_exit",
     "sessionId": "session_1761352890450_b6ny47tzy",
     "duration": 91
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-25T00:44:35.148Z",
+    "event": "page_visit",
+    "sessionId": "session_1761353075084_5997nkmvb",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 385,
+    "screenHeight": 854,
+    "language": "en-IN",
+    "email": "akifasamreen7@gmail.com",
+    "name": "Akifa",
+    "country": "India",
+    "countryCode": "IN",
+    "city": "Tiruchengode",
+    "region": "Tamil Nadu",
+    "timezone": "Asia/Kolkata"
   }
 ]
