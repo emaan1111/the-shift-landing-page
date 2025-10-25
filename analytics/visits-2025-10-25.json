@@ -2842,5 +2842,18 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-25T07:53:38.035Z",
+    "event": "registration",
+    "email": "rubinaharun@yahoo.com",
+    "name": "Rubina Akhter",
+    "firstName": "Rubina",
+    "lastName": "Akhter",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true
   }
 ]
