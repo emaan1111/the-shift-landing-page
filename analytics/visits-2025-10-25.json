@@ -2487,5 +2487,12 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-25T07:35:15.700Z",
+    "event": "page_exit",
+    "sessionId": "session_1761377712640_x16t5rsx4",
+    "duration": 3
   }
 ]
