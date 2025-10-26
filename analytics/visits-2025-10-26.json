@@ -616,5 +616,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T07:00:15.642Z",
+    "event": "registration",
+    "email": "nmarkouchi@yahoo.com",
+    "name": "Naima",
+    "firstName": "Naima",
+    "lastName": "",
+    "country": "Netherlands",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761461886939_650p9eblw"
   }
 ]
