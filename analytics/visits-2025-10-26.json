@@ -650,5 +650,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "Netherlands"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T07:02:23.046Z",
+    "event": "page_exit",
+    "sessionId": "session_1761462018134_imlgz35k4",
+    "duration": 125
   }
 ]
