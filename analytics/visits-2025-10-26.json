@@ -2387,5 +2387,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761521371693_erhgvx43s"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-26T23:30:07.193Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761521371693_erhgvx43s",
+    "sessionId": "session_1761521407166_qftljq3sm",
+    "referrer": "https://momsshift.com/?email=marwabazan@hotmail.com&name=Marwa",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-GB",
+    "email": "marwabazan@hotmail.com",
+    "name": "Marwa",
+    "country": "Canada"
   }
 ]
