@@ -31,6 +31,11 @@
             --kids-bg: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             --kids-fun: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --urgency-color: #e74c3c;
+            /* Button styles */
+            --button-gradient: linear-gradient(135deg, #ff416c, #ff4b2b);
+            --button-hover-gradient: linear-gradient(135deg, #ff4b2b, #ff6060);
+            --button-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
+            --button-hover-shadow: 0 12px 35px rgba(255, 65, 108, 0.6);
         }
 
         * {
@@ -165,21 +170,21 @@
         }
 
         .cta-header {
-            background: var(--gradient);
+            background: var(--button-gradient);
             color: var(--white);
             padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(160, 108, 213, 0.3);
+            box-shadow: var(--button-shadow);
             position: relative;
             overflow: hidden;
         }
 
         .cta-header:hover, .cta-header:focus {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(160, 108, 213, 0.4);
+            box-shadow: var(--button-hover-shadow);
             outline: none;
         }
 
@@ -3284,6 +3289,7 @@
                     <h3 class="mini-heading">You are <span>JUST ONE SHIFT</span> away</h3>
                     
                     <a href="#register" class="cta-main">Join The 3-Day Mothers Challenge (FREE)</a>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                     <div class="date-info">
                         <i class="fas fa-calendar-alt"></i>
                         <span>November 6-8, 2025 | 11:00 AM EST/3 PM UK | LIVE</span>
@@ -3495,7 +3501,7 @@ the one where your child sees Islam not as a rule, but as a relationship.</p>
                     <div class="message-cta">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                            <div class="cta-ribbon"></div>
+                            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                         </div>
                     </div>
                 </div>
@@ -3561,7 +3567,7 @@ the one where your child sees Islam not as a rule, but as a relationship.</p>
                     <div class="checklist-cta">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                            <div class="cta-ribbon"></div>
+                            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                         </div>
                     </div>
                 </div>
@@ -3595,7 +3601,7 @@ the one where your child sees Islam not as a rule, but as a relationship.</p>
                     <div class="kids-cta">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                            <div class="cta-ribbon"></div>
+                            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                         </div>
                     </div>
                 </div>
@@ -3945,7 +3951,7 @@ Jazakallahu khairan </p>
                     <div class="advice-cta">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                            <div class="cta-ribbon"></div>
+                            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                         </div>
                     </div>
                 </div>
@@ -3975,7 +3981,7 @@ Jazakallahu khairan </p>
                     <div class="urgency-cta-simple">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
-                            <div class="cta-ribbon"></div>
+                            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px;">Limited Availability</p>
                         </div>
                         <p class="urgency-note">The window to shape their heart is open now. Don't let it close.</p>
                     </div>
