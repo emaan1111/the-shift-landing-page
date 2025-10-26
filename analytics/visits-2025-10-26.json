@@ -89,5 +89,12 @@
     "event": "button_click",
     "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:07:51.640Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
