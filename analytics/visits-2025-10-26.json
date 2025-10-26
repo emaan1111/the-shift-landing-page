@@ -1632,5 +1632,20 @@
     "hookVariant": "A",
     "email": "marwa.hussein@sruc.ac.uk",
     "name": "Marwa"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:31:43.782Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761514303777_r0xgarnfs",
+    "sessionId": "session_1761514303779_4e6ugfcwg",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "dayga.sheriff@scahalifax.com",
+    "name": "Dayga"
   }
 ]
