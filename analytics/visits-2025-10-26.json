@@ -2461,5 +2461,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:45:58.068Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761522358061_zi1rhvwf0",
+    "sessionId": "session_1761522358062_hvao150x1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "hamidakhodabocus@gmail.com",
+    "name": "Hamida"
   }
 ]
