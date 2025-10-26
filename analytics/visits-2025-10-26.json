@@ -540,5 +540,12 @@
     "hookVariant": "A",
     "email": "nassrine_rifia@hotmail.fr",
     "name": "Soriya"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:32:26.297Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
