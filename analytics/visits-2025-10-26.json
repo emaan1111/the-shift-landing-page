@@ -1767,5 +1767,20 @@
     "hookVariant": "A",
     "email": "abdussnu@kean.edu",
     "name": "Nuri"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:50:01.084Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761515401071_p4hrbc1dd",
+    "sessionId": "session_1761515401081_r23v5cx40",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "samar.hameed@nhs.net",
+    "name": "Samar"
   }
 ]
