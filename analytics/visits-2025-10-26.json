@@ -1893,5 +1893,12 @@
     "hookVariant": "B",
     "email": "asma_elmhassani@hotmail.com",
     "name": "Asma"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T22:00:22.060Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
