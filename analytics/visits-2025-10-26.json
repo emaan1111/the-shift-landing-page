@@ -1277,5 +1277,12 @@
     "screenHeight": 900,
     "language": "it-IT",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T05:45:16.917Z",
+    "event": "page_exit",
+    "sessionId": "session_1761457379659_j50vjskk6",
+    "duration": 137
   }
 ]
