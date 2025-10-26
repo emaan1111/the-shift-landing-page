@@ -525,5 +525,20 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:32:09.367Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761460329362_ho72mr13g",
+    "sessionId": "session_1761460329363_no12kerpj",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 869,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "nassrine_rifia@hotmail.fr",
+    "name": "Soriya"
   }
 ]
