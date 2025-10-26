@@ -1,0 +1,22 @@
+[
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T01:03:34.135Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761440614110_3hhf96bod",
+    "sessionId": "session_1761440614113_kugtns49b",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36 EdgA/141.0.0.0",
+    "screenWidth": 385,
+    "screenHeight": 854,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "email": "ebrahim_reyhana@yahoo.com.au",
+    "ipAddress": "2600:1900:0:2d02::3700",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
+  }
+]
