@@ -1120,5 +1120,18 @@
     "email": "zlauratu@yahoo.com",
     "name": "Lauratu",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T12:19:01.088Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761481140934_a8aqj3ghf",
+    "sessionId": "session_1761481140935_cwx1x9i4c",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
