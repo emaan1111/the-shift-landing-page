@@ -1279,5 +1279,18 @@
     "email": "zawjatfaheem@yahoo.com",
     "name": "Sabah",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T16:35:33.869Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761496533864_ap9uib379",
+    "sessionId": "session_1761496533865_6bjtq0p2v",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/136.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "B"
   }
 ]
