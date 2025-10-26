@@ -1311,5 +1311,19 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T17:32:04.886Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761499924866_ww5bvh3s3",
+    "sessionId": "session_1761499924869_4ge4271ms",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "tanzintanuza@gmail.com"
   }
 ]
