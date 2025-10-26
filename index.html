@@ -2999,6 +2999,60 @@
             animation: glow 3s ease-in-out infinite;
         }
 
+        /* Headline emphasis animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes scaleWidth {
+            0%, 100% {
+                width: 80px;
+                opacity: 0.6;
+            }
+            50% {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes subtleShimmer {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.85;
+            }
+        }
+
+        .shimmer-text {
+            animation: subtleShimmer 2.5s ease-in-out infinite;
+        }
+
+        .headline-glow {
+            animation: shimmerShine 3s infinite, glow 3s ease-in-out infinite;
+            background: linear-gradient(90deg, var(--white), rgba(255, 255, 255, 0.8), var(--white));
+            background-size: 1000px 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         /* Social Proof Notification */
         .social-proof-notification {
             position: fixed;
@@ -3301,7 +3355,7 @@
                     </div>
                 </div>
                 <div class="message-content">
-                    <p>For two decades, I've helped mothers who before the shift felt..</p>
+                    <p>For two decades  , I've helped mothers who before the shift felt..</p>
                     
                     <!-- Mother's Quote Box -->
                     <div class="mother-quote">
@@ -3314,6 +3368,13 @@
                     <p>That quiet ache when you whisper, "Salah time," for the fifth time — and they still don't move. </p> 
                         <p> When you see them scroll on their phone instead of picking up the Qur'an.</p>
                   
+                         <p>You wonder, </p>
+            
+   <div class="pull-quote">
+              "Will they still pray when I'm not there to remind them?"
+                    </div>
+
+
                     <p>You don't want to pressure or threaten them.</p>
                     <p>You just want them to <span class="emotional-highlight">love Allah on their own</span> — to pray because their heart wants to, not because you keep saying it.</p>
                     <p>But when they sigh, drag their feet, or ask,<span class="emotional-highlight">"Why do I have to?"</span>  something inside you breaks.</p>
@@ -3324,22 +3385,23 @@
                         "Why did I say it like that?" <br/>"That's not how I wanted them to learn."
                     </div>
 
-                    <p>You see the blank look on their face, the distance in their eyes — and your heart sinks.</p>
                     <p>They are good kids.</p>
-                    <p>But you can feel it — they're doing it for you, not for Him and you know that won't last</p>
                  
-                     <p>You wonder, </p>
-                     <!-- Super Highlighted Box 1 -->
-                    <div class="super-highlight standout-1">
-                        <p>"Will they still pray when I'm not there to remind them?"</p>
-                    </div>
-
-        
                     <p>Deep down, you know — it's not about more reminders.</p>
                     <p>It's about motivating their heart.</p>
-                    <p>But right now, you can't seem to find the way in.</p>
+
+                    <div style="text-align: center; margin: 60px auto; padding: 40px 30px; position: relative; max-width: 900px; animation: slideInUp 0.8s ease-out forwards; opacity: 0; background: linear-gradient(135deg, rgba(231, 76, 60, 0.08), rgba(255, 107, 107, 0.08)); border-radius: 25px; border: 2px solid rgba(231, 76, 60, 0.2);">
+                        <!-- Animated accent line top -->
+                        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #e74c3c; border-radius: 2px; animation: scaleWidth 1.5s ease-in-out infinite;"></div>
+                        
+                        <h2 style="font-size: 2.6rem; color: #e74c3c; line-height: 1.4; font-weight: 700; margin: 0; font-family: 'Playfair Display', serif; animation: bounce 3s ease-in-out infinite;">They don't need more nagging.<br/><span style="font-size: 2.8rem; display: block; margin-top: 10px;">They need a mother who <span style="text-decoration: underline wavy; text-decoration-color: #e74c3c; text-decoration-thickness: 3px; text-underline-offset: 6px;">knows how hearts change</span>.</span></h2>
+                    </div>
+
+                 <p><span class="emotional-highlight">It’s something The Shift shows you — how to become the mother who truly understands how hearts change.</span></p>
+                    <p>Right now, you may be stuck in the old way...trying to find how to motivate their hearts.</p>
+
                     <p>You've tried everything — gentle, firm, patient.</p>
-                    <p>You've read, listened, being a good role model.</p>
+                    <p>You've read, listened, been a good role model.</p>
                     <p>Nothing sticks.</p>
                     <p>And sometimes you remember your own childhood — learning Islam with love, but also pressure and fear.</p>
                     <p><span class="emotional-highlight">You promised your kids would learn it differently.</span></p>
@@ -3363,41 +3425,104 @@
                         <p>It's your invitation to the next stage of motherhood. Because your child is growing — and so must YOU.</p>
                     </div>
 
+
+                    <p>The stage of reminders has ended.</p>
+
+                    <p>The stage of motivation is beginning.</p>
+                      <p>Now, they need someone who doesn't just tell them what's right — but helps them want it.</p>
+
+                     <p>  <span class="emotional-highlight">This is where mothers either rise into their purpose — or completely lose their relationship with their children and draw them away from Allah(swt)   </span></p>
+                 <p>Because if you keep trying the old way, it will keep frustrating you and your child.</p>
+            
+
+                    <p><span class="emotional-highlight">This isn't about being a "good role model."</span></p>
+                    <p>That's not enough anymore.</p>
+
+     <!-- Super Highlighted Box 1 -->
+             
+                    <div class="solution-box glow">
+                        <p> It's time to become the mother whose words don’t just feel like a lecture but — they light up the heart.
+                        </p>
+                    </div>
+    <p>A mother who doesn’t just correct behavior — but creates belief.</p>
+
+    <p> This is the stage of motherhood that few reach —
+the one where your child sees Islam not as a rule, but as a relationship.</p>
+    <p> And it starts here — with The Shift.</p>
+
                     <div style="display: flex; justify-content: center; margin: 40px 0;">
                         <div style="max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(160, 108, 213, 0.15);">
                             <img src="img/ariba-speech.jpg" alt="Instructor giving speech" style="width: 100%; height: auto; display: block;">
                         </div>
                     </div>
 
-                    <p>After 8 they step into the next stage of their life.</p>
+                    
+                       <div class="solution-box glow" style="margin: 60px auto; max-width: 900px;">
+                        <h2 class="shimmer-text" style="font-size: 2.6rem; line-height: 1.4; font-weight: 700; margin: 0; font-family: 'Poppins', sans-serif; color: var(--white);">This is your moment to step into that higher role.<br/><span style="font-size: 2rem; display: block; margin-top: 15px; font-weight: 600; color: var(--white);">Not the tired, doubting version of you —<br/>but the calm, confident, faith-filled mother Allah created you to be.</span></h2>
+                    </div>
+                    
+                 
 
-                    <p>When they were little, they needed to be managed. </p>
-                    <p>Now, they need to be moved.</p>
-                
-                    <p>Moved in a way that awakens faith from within.</p>
-                    <p>They need someone who doesn't just tell them what's right — but helps them want it.</p>
-                    <p><span class="emotional-highlight">This isn't about being a "good role model."</span></p>
-                    <p>That's not enough anymore.</p>
+                    <div style="max-width: 800px; margin: 50px auto; padding: 0 20px; font-size: 1.1rem; line-height: 1.8; color: var(--text-dark);">
+                        <p style="font-size: 1.3rem; color: var(--primary-dark); font-weight: 600; margin-bottom: 30px;">In this 3-day live challenge, you'll discover how mothers like you made the shift:</p>
+                        
+                        <div style="margin: 25px 0; padding-left: 20px; border-left: 4px solid var(--primary);">
+                            <p style="margin: 12px 0;"><strong>🌙 From reminding to motivating.</strong></p>
+                            <p style="margin: 12px 0;"><strong>💖 From frustration to peaceful confidence.</strong></p>
+                            <p style="margin: 12px 0;"><strong>🕊️ From pushing faith on their child — to awakening it from within.</strong></p>
+                        </div>
 
-     <!-- Super Highlighted Box 1 -->
-                    <div class="super-highlight standout-2">
-                        <p>It's about SHIFTING into the NEXT STAGE, THE NEW ROLE,  Allah designed for you all along</p>
+                        <p style="font-size: 1.2rem; color: var(--primary-dark); font-weight: 600; margin-top: 35px; margin-bottom: 20px;">You'll walk away knowing how to:</p>
+                        
+                        <div style="margin: 20px 0; padding-left: 20px;">
+                            <p style="margin: 12px 0;">✓ Speak so their heart listens.</p>
+                            <p style="margin: 12px 0;">✓ Help them pray because they want to.</p>
+                            <p style="margin: 12px 0;">✓ Guide them with love — not pressure.</p>
+                        </div>
+
+                        <p style="margin-top: 35px; color: var(--text-dark);">And when that happens, something beautiful unfolds:</p>
+                        <div style="background: linear-gradient(135deg, rgba(160, 108, 213, 0.08), rgba(255, 158, 181, 0.08)); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid var(--primary);">
+                            <p style="margin: 10px 0;"><strong>Your home feels lighter.</strong></p>
+                            <p style="margin: 10px 0;"><strong>You feel calmer.</strong></p>
+                            <p style="margin: 10px 0;"><strong>And your child begins to turn to Allah — on their own.</strong></p>
+                        </div>
+
+                        <p style="font-size: 1.3rem; color: var(--primary-dark); font-weight: 700; margin-top: 35px; margin-bottom: 20px; text-align: center;">This is what The Shift is about.</p>
+                        <p style="font-size: 1.2rem; color: var(--text-dark); text-align: center; margin-bottom: 15px;">Not more effort.</p>
+                        <p style="font-size: 1.2rem; color: var(--primary-dark); font-weight: 600; text-align: center; line-height: 1.6;">Just a new way — the way Allah designed for you all along.</p>
                     </div>
 
-                    <p>Because when a mother steps into that role — her words carry power, her home feels lighter, her guilt turns to peace.</p>
-                    <p>And her child doesn't just obey — they choose.</p>
-                    <p></p>
-                    
-                    <!-- Super Highlighted Box 1 -->
-                      <p><span class="emotional-highlight">No matter how strong the world's pull feels, no influence is stronger than a mother walking in the role Allah created her for.</p>
-                 
-                   
-                  
+          
 
                     <div class="message-cta">
                         <div class="cta-wrapper">
                             <a href="#register" class="cta-main">Yes, I want to join The Shift Free 3 Day Challenge</a>
                             <div class="cta-ribbon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warning/Cost of Staying Same Section -->
+        <section style="padding: 80px 0; background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(255, 107, 107, 0.05)); position: relative;">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+                    <div style="background: var(--white); border-radius: 20px; padding: 60px 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border-left: 5px solid #e74c3c;">
+                        <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 30px; line-height: 1.4; font-weight: 700;">And if you don't make that shift…</h2>
+                        
+                        <div style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 30px;">
+                            <p style="margin-bottom: 20px;">Life keeps rushing on. The gap grows wider. And one day, you'll realize your child still prays — but their heart no longer does.</p>
+                            
+                            <p style="margin-bottom: 20px;">They'll know the rules of Islam, but not the love of it.</p>
+                            
+                            <p style="margin-bottom: 30px; font-weight: 600; color: var(--primary-dark);">That's the cost of staying the same.</p>
+                            
+                            <p style="margin-bottom: 25px;">And you know it — because it's already what you're fighting against every day.</p>
+                            
+                            <p style="font-size: 1.2rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 30px; padding: 25px; background: linear-gradient(135deg, rgba(160, 108, 213, 0.08), rgba(255, 158, 181, 0.08)); border-radius: 15px; margin: 30px 0;">But it doesn't have to be this way.</p>
+                            
+                            <p style="font-size: 1.2rem; color: var(--text-dark); font-weight: 600; line-height: 1.6;">A single choice can open a new chapter for you and your child.</p>
                         </div>
                     </div>
                 </div>
@@ -4428,6 +4553,11 @@ Jazakallahu khairan </p>
     
     <!-- Registration Form Handler -->
     <script>
+        // Track form submissions to prevent double-submit
+        let lastSubmitEmail = null;
+        let lastSubmitTime = null;
+        const SUBMIT_DEBOUNCE_MS = 3000; // Prevent same email within 3 seconds
+        
         document.getElementById('shift-registration-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -4435,17 +4565,30 @@ Jazakallahu khairan </p>
             const formMessage = document.getElementById('form-message');
             const originalBtnText = submitBtn.textContent;
             
+            // Get form data early for validation
+            const formData = new FormData(this);
+            const email = formData.get('email').trim().toLowerCase();
+            const name = formData.get('name');
+            const country = formData.get('country');
+            
+            // Double-submit protection: Check if same email was just submitted
+            if (lastSubmitEmail === email && lastSubmitTime && (Date.now() - lastSubmitTime) < SUBMIT_DEBOUNCE_MS) {
+                console.warn('⚠️  Double-submit attempt detected. Form submission blocked.');
+                formMessage.textContent = '⏳ Your registration is already being processed. Please wait...';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                return; // Don't submit again
+            }
+            
+            // Mark this submission
+            lastSubmitEmail = email;
+            lastSubmitTime = Date.now();
+            
             // Disable submit button and show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Registering...';
             formMessage.style.display = 'none';
             formMessage.className = 'form-message';
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const country = formData.get('country');
             
             // Split name into first and last
             const nameParts = name.trim().split(' ');
@@ -4568,6 +4711,10 @@ Jazakallahu khairan </p>
                 console.error('Registration error:', error);
                 formMessage.textContent = '❌ Oops! Something went wrong. Please try again or contact support.';
                 formMessage.className = 'form-message error';
+                
+                // Reset submission tracking on error to allow retry
+                lastSubmitEmail = null;
+                lastSubmitTime = null;
                 
                 // Re-enable button
                 submitBtn.disabled = false;

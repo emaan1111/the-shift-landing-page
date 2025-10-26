@@ -350,14 +350,34 @@ def get_all_registrations():
         # Sort by timestamp (newest first)
         all_registrations.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
         
-        # Remove duplicates based on email and timestamp
+        # Remove duplicates based on email, name, and date (ignoring time)
+        # This handles cases where the same registration is saved multiple times
+        # (e.g., to both GitHub analytics and local backup with slightly different timestamps)
+        from datetime import datetime as dt
+        
         seen = set()
         unique_registrations = []
+        
         for reg in all_registrations:
-            key = (reg.get('email', ''), reg.get('timestamp', ''))
-            if key not in seen and reg.get('email'):  # Only include if email exists
+            if not reg.get('email'):  # Skip if no email
+                continue
+            
+            email = reg.get('email', '').lower().strip()
+            full_name = f"{reg.get('firstName', '')} {reg.get('lastName', '')}".strip().lower()
+            
+            # Extract date only (YYYY-MM-DD) from timestamp to avoid second-level differences
+            timestamp_str = reg.get('timestamp', '')
+            date_only = timestamp_str[:10] if timestamp_str else ''
+            
+            # Create a deduplication key: email + name + date (ignoring exact time)
+            key = (email, full_name, date_only)
+            
+            if key not in seen:
                 seen.add(key)
                 unique_registrations.append(reg)
+            else:
+                # Duplicate found - log it for debugging
+                print(f'⚠️  Duplicate registration removed: {email} ({full_name}) on {date_only}')
         
         return jsonify(unique_registrations), 200
         
