@@ -1488,5 +1488,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761506525087_rtiz4o5ov"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T19:22:35.064Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761506525087_rtiz4o5ov",
+    "sessionId": "session_1761506555059_v56y2yd62",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-US",
+    "email": "sidraasghar11@gmail.com",
+    "name": "Sidra",
+    "ipAddress": "2600:1900:0:2d02::3200",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
