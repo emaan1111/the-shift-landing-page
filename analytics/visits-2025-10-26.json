@@ -2212,5 +2212,26 @@
     "hookVariant": "B",
     "email": "kWQcHVz@nypEc.Dv",
     "name": "qSTWbWS"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:15:53.314Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761520481514_1xzveun6y",
+    "sessionId": "session_1761520553268_zaxmxp75w",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-IE",
+    "hookVariant": "B",
+    "email": "dechaib@yahoo.ie",
+    "name": "Dagmara",
+    "ipAddress": "2600:1900:0:2d02::3001",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
