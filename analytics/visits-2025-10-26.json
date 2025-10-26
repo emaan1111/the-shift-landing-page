@@ -65,5 +65,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T01:29:05.841Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761442113979_2aozo4q8g",
+    "sessionId": "session_1761442145838_7n35qpriy",
+    "referrer": "https://momsshift.com/?email=jjde.5533@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "email": "jjde.5533@gmail.com",
+    "name": "JDE",
+    "country": "United Kingdom"
   }
 ]
