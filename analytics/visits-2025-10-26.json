@@ -2645,5 +2645,19 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "s1saeedi@ryerson.ca"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:59:16.608Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761523156604_ylks7g5nc",
+    "sessionId": "session_1761523156605_nc26hcs58",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
+    "screenWidth": 1024,
+    "screenHeight": 1024,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "s1saeedi@torontomu.ca"
   }
 ]
