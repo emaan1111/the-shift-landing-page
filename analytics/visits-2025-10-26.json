@@ -483,5 +483,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T06:28:27.440Z",
+    "event": "registration",
+    "email": "faiza.naseem1984@yahoo.com",
+    "name": "Faiza Naseem",
+    "firstName": "Faiza",
+    "lastName": "Naseem",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761460056140_v7l6hqo14"
   }
 ]
