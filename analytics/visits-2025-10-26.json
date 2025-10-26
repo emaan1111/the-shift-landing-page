@@ -1473,5 +1473,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T19:22:32.663Z",
+    "event": "registration",
+    "email": "sidraasghar11@gmail.com",
+    "name": "Sidra Asghar",
+    "firstName": "Sidra",
+    "lastName": "Asghar",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761506525087_rtiz4o5ov"
   }
 ]
