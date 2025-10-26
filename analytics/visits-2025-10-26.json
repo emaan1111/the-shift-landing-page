@@ -1827,5 +1827,20 @@
     "hookVariant": "A",
     "email": "rehanask@al-madinah.school.nz",
     "name": "Rehana"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:53:54.519Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761515634403_b5lfw10yv",
+    "sessionId": "session_1761515634441_c4c385sdy",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "rehanask@al-madinah.school.nz",
+    "name": "Rehana"
   }
 ]
