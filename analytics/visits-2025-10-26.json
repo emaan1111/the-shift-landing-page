@@ -11,5 +11,12 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T05:54:18.588Z",
+    "event": "page_exit",
+    "sessionId": "session_1761458056682_rbs31fat7",
+    "duration": 2
   }
 ]
