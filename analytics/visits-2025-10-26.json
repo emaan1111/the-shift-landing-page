@@ -733,5 +733,18 @@
     "screenHeight": 844,
     "language": "nl-NL",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T07:42:07.112Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761463218350_0hbspn3mt",
+    "sessionId": "session_1761464527109_vnkd3wlvs",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "nl-NL",
+    "hookVariant": "B"
   }
 ]
