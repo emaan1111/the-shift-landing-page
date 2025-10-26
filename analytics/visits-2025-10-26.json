@@ -2631,5 +2631,19 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=kalsom1985@gmail.com&name=Kalsom%20mat%20saleh"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:57:45.996Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761523065973_7vpf8cpa4",
+    "sessionId": "session_1761523065974_me5iinxl2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
+    "screenWidth": 1024,
+    "screenHeight": 1024,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "s1saeedi@ryerson.ca"
   }
 ]
