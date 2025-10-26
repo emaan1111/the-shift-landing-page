@@ -1446,5 +1446,18 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Arab Emirates"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T19:22:05.094Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761506525087_rtiz4o5ov",
+    "sessionId": "session_1761506525088_feut6ru87",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
