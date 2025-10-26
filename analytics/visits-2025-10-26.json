@@ -935,5 +935,12 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T10:17:08.358Z",
+    "event": "page_exit",
+    "sessionId": "session_1761473804074_7w3faqjfi",
+    "duration": 24
   }
 ]
