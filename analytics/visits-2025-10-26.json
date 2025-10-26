@@ -1544,5 +1544,18 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T20:43:54.245Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761511434241_y26pfhamv",
+    "sessionId": "session_1761511434242_tejar8epd",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
+    "screenWidth": 1024,
+    "screenHeight": 1024,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
