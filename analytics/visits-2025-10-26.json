@@ -218,5 +218,12 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:12:42.498Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
