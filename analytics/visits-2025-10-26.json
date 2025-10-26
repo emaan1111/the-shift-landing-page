@@ -1048,5 +1048,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761477373779_u4yem2vkm"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T11:18:31.296Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761477373779_u4yem2vkm",
+    "sessionId": "session_1761477511295_hoc4jd7g9",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "email": "bilkisum@hotmail.com",
+    "name": "Bilkisu",
+    "country": "United Kingdom"
   }
 ]
