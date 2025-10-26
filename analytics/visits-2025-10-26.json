@@ -401,5 +401,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761411933753_g5xzl3915"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T03:32:37.077Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761411933753_g5xzl3915",
+    "sessionId": "session_1761449557065_3i5o1ktyq",
+    "referrer": "http://127.0.0.1:3000/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "email": "arfarheen43@gmail.com",
+    "name": "Hira",
+    "country": "Australia"
   }
 ]
