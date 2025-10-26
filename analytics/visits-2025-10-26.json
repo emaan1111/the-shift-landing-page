@@ -1752,5 +1752,20 @@
     "hookVariant": "A",
     "email": "quadir@uwindsor.ca",
     "name": "Khadija"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:49:33.464Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761515373452_jw9bkejyq",
+    "sessionId": "session_1761515373456_1fa8y1i75",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "abdussnu@kean.edu",
+    "name": "Nuri"
   }
 ]
