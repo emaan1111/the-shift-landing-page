@@ -1961,5 +1961,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T22:03:10.185Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761516190175_04z6o5zx7",
+    "sessionId": "session_1761516190179_muesrj5tg",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "asma_elmhassani@hotmail.com",
+    "name": "Asma",
+    "ipAddress": "2600:1900:0:2d02::2401",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
