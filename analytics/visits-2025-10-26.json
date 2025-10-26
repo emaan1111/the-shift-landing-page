@@ -1526,5 +1526,23 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-26T20:40:12.842Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761379772018_xthx8mgh3",
+    "sessionId": "session_1761511212842_vy90x2moh",
+    "referrer": "https://momsshift.com/upsell.html?email=zuleeybal%40gmail.com&name=Zuleekhah&country=United%20Kingdom",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "ipAddress": "2600:1900:0:2d02::2401",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
