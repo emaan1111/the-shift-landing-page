@@ -2505,5 +2505,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T23:47:11.470Z",
+    "event": "registration",
+    "email": "hamidakhodabocus@gmail.com",
+    "name": "Hamida",
+    "firstName": "Hamida",
+    "lastName": "",
+    "country": "Canada",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761522358061_zi1rhvwf0"
   }
 ]
