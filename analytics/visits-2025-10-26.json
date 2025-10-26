@@ -1152,5 +1152,12 @@
     "timezone": "Asia/Kolkata",
     "country": "India",
     "countryCode": "IN"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T12:27:56.125Z",
+    "event": "page_exit",
+    "sessionId": "session_1761481447738_9u9t74fm0",
+    "duration": 12
   }
 ]
