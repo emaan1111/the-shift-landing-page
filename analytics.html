@@ -211,7 +211,7 @@
             background: var(--light);
             border-radius: 8px;
             position: relative;
-            height: 400px;
+            min-height: 250px;
         }
         
         .chart-container canvas {
@@ -438,38 +438,6 @@
                     <div class="icon"><i class="fas fa-percentage"></i></div>
                     <div class="number" id="summaryConversionRate">0%</div>
                     <div class="label">Conversion Rate</div>
-                </div>
-            </div>
-
-            <!-- Page Views -->
-            <div class="section">
-                <h2><i class="fas fa-file-alt"></i> Page Views</h2>
-                <div class="chart-container">
-                    <div class="bar-chart" id="pageViewsChart"></div>
-                </div>
-            </div>
-
-            <!-- Button Clicks -->
-            <div class="section">
-                <h2><i class="fas fa-hand-pointer"></i> Popular Buttons</h2>
-                <div class="chart-container">
-                    <div class="bar-chart" id="buttonClicksChart"></div>
-                </div>
-            </div>
-
-            <!-- Traffic Sources -->
-            <div class="section">
-                <h2><i class="fas fa-external-link-alt"></i> Traffic Sources</h2>
-                <div class="chart-container">
-                    <div class="bar-chart" id="referrersChart"></div>
-                </div>
-            </div>
-
-            <!-- Index Page Visits by Country -->
-            <div class="section">
-                <h2><i class="fas fa-globe"></i> Index Page Visits by Country</h2>
-                <div class="chart-container">
-                    <div class="bar-chart" id="countryChart"></div>
                 </div>
             </div>
 
@@ -888,38 +856,6 @@
 
             // Populate filters (use filteredData)
             populateFilters();
-
-            // Page views chart
-            const pageViews = {};
-            pageVisits.forEach(item => {
-                const page = item.page || '/';
-                pageViews[page] = (pageViews[page] || 0) + 1;
-            });
-            displayBarChart('pageViewsChart', pageViews);
-
-            // Button clicks chart
-            const buttonStats = {};
-            buttonClicks.forEach(item => {
-                const button = item.buttonName || 'Unknown';
-                buttonStats[button] = (buttonStats[button] || 0) + 1;
-            });
-            displayBarChart('buttonClicksChart', buttonStats);
-
-            // Referrers chart
-            const referrers = {};
-            data.forEach(item => {
-                const ref = item.referrer === 'Direct' ? 'Direct' : new URL(item.referrer || 'Direct', 'https://example.com').hostname;
-                referrers[ref] = (referrers[ref] || 0) + 1;
-            });
-            displayBarChart('referrersChart', referrers);
-
-            // Index page visits by country
-            const countryStats = {};
-            indexVisits.forEach(item => {
-                const country = item.country || 'Unknown';
-                countryStats[country] = (countryStats[country] || 0) + 1;
-            });
-            displayBarChart('countryChart', countryStats);
 
             // A/B Test: Hook Variants
             displayABTestResults(pageVisits);
