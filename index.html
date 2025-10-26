@@ -4680,9 +4680,9 @@ Jazakallahu khairan </p>
                         // Reset form
                         this.reset();
                         
-                        // Redirect to upsell page after 2 seconds WITH VARIANT
+                        // Redirect to thank you page after 2 seconds WITH VARIANT
                         setTimeout(() => {
-                            window.location.href = `upsell.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}&variant=${encodeURIComponent(hookVariant)}`;
+                            window.location.href = `thank-you.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}&variant=${encodeURIComponent(hookVariant)}`;
                         }, 2000);
                         
                     } else {
