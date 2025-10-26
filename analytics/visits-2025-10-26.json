@@ -1842,5 +1842,26 @@
     "hookVariant": "A",
     "email": "rehanask@al-madinah.school.nz",
     "name": "Rehana"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:54:15.415Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761515655407_hov602g14",
+    "sessionId": "session_1761515655409_6p8600c3u",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "rehanask@al-madinah.school.nz",
+    "name": "Rehana",
+    "ipAddress": "2600:1900:0:2d02::2401",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
