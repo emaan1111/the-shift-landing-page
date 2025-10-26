@@ -2520,5 +2520,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761522358061_zi1rhvwf0"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-26T23:47:14.479Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761522358061_zi1rhvwf0",
+    "sessionId": "session_1761522434459_p5gow0gr3",
+    "referrer": "https://momsshift.com/?email=hamidakhodabocus@gmail.com&name=Hamida",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-US",
+    "email": "hamidakhodabocus@gmail.com",
+    "name": "Hamida",
+    "country": "Canada"
   }
 ]
