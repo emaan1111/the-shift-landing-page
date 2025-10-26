@@ -1677,5 +1677,20 @@
     "hookVariant": "B",
     "email": "fatmah.alsharif@unh.edu",
     "name": "Fatima"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:38:53.933Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761514733835_ahqu9id71",
+    "sessionId": "session_1761514733840_sglvf1kro",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "lunver@caminowellbeing.ca",
+    "name": "Leyla"
   }
 ]
