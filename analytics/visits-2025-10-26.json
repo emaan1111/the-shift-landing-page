@@ -1707,5 +1707,20 @@
     "hookVariant": "B",
     "email": "fatmah.alsharif@unh.edu",
     "name": "Fatima"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T21:39:54.819Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761514794814_o9091fx6y",
+    "sessionId": "session_1761514794816_3t9wn44ly",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "fatmah.alsharif@unh.edu",
+    "name": "Fatima"
   }
 ]
