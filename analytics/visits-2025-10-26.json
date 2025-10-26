@@ -858,5 +858,24 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "ebrahim_reyhana@yahoo.com.au"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T09:58:46.876Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761398385160_7y6h7ghmp",
+    "sessionId": "session_1761472726860_x442732pq",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 820,
+    "language": "en-US",
+    "email": "ruqayatadeleke@gmail.com",
+    "name": "Olanipekun",
+    "ipAddress": "2600:1900:0:2d02::3201",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Nigeria"
   }
 ]
