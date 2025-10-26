@@ -1045,5 +1045,24 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T05:15:33.618Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761455733615_bsxoaqiwq",
+    "sessionId": "session_1761455733616_9yy5j6b5n",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenWidth": 1440,
+    "screenHeight": 900,
+    "language": "it-IT",
+    "hookVariant": "A",
+    "ipAddress": "2600:1900:0:2d02::2601",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
