@@ -844,5 +844,19 @@
     "screenWidth": 390,
     "screenHeight": 844,
     "language": "en-GB"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T09:48:23.787Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761472103786_7ywktkvnj",
+    "sessionId": "session_1761472103786_7fo8fmqoz",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "ebrahim_reyhana@yahoo.com.au"
   }
 ]
