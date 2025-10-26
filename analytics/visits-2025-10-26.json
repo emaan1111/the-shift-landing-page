@@ -2103,5 +2103,20 @@
     "hookVariant": "A",
     "email": "frizvi4@uh.edu",
     "name": "Farwa"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T22:38:38.683Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761518318494_6r4jjn8i6",
+    "sessionId": "session_1761518318560_2xnhssl6l",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "frizvi4@uh.edu",
+    "name": "Farwa"
   }
 ]
