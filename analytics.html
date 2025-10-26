@@ -938,7 +938,7 @@
                     // Update stat cards
                     for (const variant of ['A', 'B']) {
                         const stats = variantStats[variant];
-                        const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
+                        const convRate = stats.visitors.size > 0 ? (stats.registrations / stats.visitors.size * 100).toFixed(1) : 0;
                         
                         document.getElementById(`variant${variant}Conversion`).textContent = convRate + '%';
                         document.getElementById(`variant${variant}Registrations`).textContent = stats.registrations;
@@ -950,15 +950,15 @@
                     
                     for (const variant of ['A', 'B']) {
                         const stats = variantStats[variant];
-                        const convRate = stats.visits > 0 ? (stats.registrations / stats.visits * 100).toFixed(1) : 0;
+                        const convRate = stats.visitors.size > 0 ? (stats.registrations / stats.visitors.size * 100).toFixed(1) : 0;
                         
                         // Determine status
                         let status = '—';
-                        if (stats.visits < 10) {
+                        if (stats.visitors.size < 10) {
                             status = '<span style="color: #999;">Collecting data...</span>';
-                        } else if (variantStats['A'].visits > 0 && variantStats['B'].visits > 0) {
-                            const rateA = variantStats['A'].registrations / variantStats['A'].visits * 100;
-                            const rateB = variantStats['B'].registrations / variantStats['B'].visits * 100;
+                        } else if (variantStats['A'].visitors.size > 0 && variantStats['B'].visitors.size > 0) {
+                            const rateA = variantStats['A'].registrations / variantStats['A'].visitors.size * 100;
+                            const rateB = variantStats['B'].registrations / variantStats['B'].visitors.size * 100;
                             if (variant === 'A' && rateA > rateB) {
                                 status = '<span style="color: green; font-weight: bold;">🏆 Winner</span>';
                             } else if (variant === 'B' && rateB > rateA) {
