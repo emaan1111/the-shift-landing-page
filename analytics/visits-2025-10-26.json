@@ -779,5 +779,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T09:21:30.984Z",
+    "event": "registration",
+    "email": "adeebarani@hotmail.co.uk",
+    "name": "Adeeba Rani",
+    "firstName": "Adeeba",
+    "lastName": "Rani",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761470358477_heeskqj8m"
   }
 ]
