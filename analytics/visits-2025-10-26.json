@@ -1244,5 +1244,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T14:54:09.798Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
