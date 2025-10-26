@@ -2491,5 +2491,12 @@
     "hookVariant": "A",
     "email": "hamidakhodabocus@gmail.com",
     "name": "Hamida"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:46:43.899Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
