@@ -576,5 +576,24 @@
     "event": "page_exit",
     "sessionId": "session_1761460329363_no12kerpj",
     "duration": 27
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:51:55.555Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761461515553_krktt0f3a",
+    "sessionId": "session_1761461515553_06j6zyzzt",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.3",
+    "screenWidth": 1280,
+    "screenHeight": 1696,
+    "language": "en-US",
+    "hookVariant": "B",
+    "ipAddress": "2600:1900:0:2d02::3201",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
