@@ -2157,5 +2157,24 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T22:43:32.736Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761411933753_g5xzl3915",
+    "sessionId": "session_1761518612736_8waogeajt",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "ipAddress": "103.107.196.134",
+    "city": "Perth",
+    "region": "Western Australia",
+    "timezone": "Australia/Perth",
+    "country": "Australia",
+    "countryCode": "AU"
   }
 ]
