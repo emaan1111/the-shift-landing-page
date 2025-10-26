@@ -2584,5 +2584,12 @@
     "hookVariant": "B",
     "email": "kalsom1985@gmail.com",
     "name": "Kalsom mat saleh"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:54:09.174Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
