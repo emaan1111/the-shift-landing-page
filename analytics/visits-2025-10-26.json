@@ -631,5 +631,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761461886939_650p9eblw"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T07:00:18.138Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761461886939_650p9eblw",
+    "sessionId": "session_1761462018134_imlgz35k4",
+    "referrer": "https://momsshift.com/?name=Naima&email=nmarkouchi@yahoo.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "nl-NL",
+    "email": "nmarkouchi@yahoo.com",
+    "name": "Naima",
+    "ipAddress": "2600:1900:0:2d02::3201",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Netherlands"
   }
 ]
