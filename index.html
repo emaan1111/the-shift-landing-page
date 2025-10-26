@@ -322,7 +322,7 @@
         }
 
         .highlighted-message::before {
-            content: """;
+            content: '"';
             position: absolute;
             top: -20px;
             left: 20px;
@@ -828,7 +828,7 @@
 
         .message-content .pull-quote::before,
         .message-content .pull-quote::after {
-            content: """;
+            content: '"';
             font-size: 3rem;
             position: absolute;
             color: rgba(160, 108, 213, 0.2);
@@ -841,7 +841,7 @@
         }
 
         .message-content .pull-quote::after {
-            content: """;
+            content: '"';
             bottom: -30px;
             right: 0;
         }
@@ -2095,7 +2095,7 @@
 
         .fear-quote::before,
         .fear-quote::after {
-            content: """;
+            content: '"';
             position: absolute;
             font-size: 1.8rem;
             color: rgba(160, 108, 213, 0.2);
@@ -2108,7 +2108,7 @@
         }
 
         .fear-quote::after {
-            content: """;
+            content: '"';
             bottom: -15px;
             right: -10px;
         }
@@ -4765,90 +4765,95 @@ Jazakallahu khairan </p>
                     };
                     
                     // Use backend proxy to avoid CORS issues
+                    // Send asynchronously without awaiting
                     const backendUrl = window.location.origin + '/api/clickfunnels/contact';
-                    const cfResponse = await fetch(backendUrl, {
+                    fetch(backendUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(contactData)
+                    })
+                    .then(cfResponse => cfResponse.json())
+                    .then(result => {
+                        if (result.success) {
+                            console.log('✅ Successfully registered in ClickFunnels');
+                        } else {
+                            console.error('❌ ClickFunnels registration failed:', result.error);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('❌ Error submitting to ClickFunnels:', err);
                     });
                     
-                    const result = await cfResponse.json();
+                    // Get variant from window object
+                    const hookVariant = window.__HOOK_VARIANT__ ? window.__HOOK_VARIANT__.id : 'Unknown';
+                    const visitorId = localStorage.getItem('visitorId');
                     
-                    if (result.success) {
-                        console.log('✅ Successfully registered in ClickFunnels');
-                        
-                        // Get variant from window object
-                        const hookVariant = window.__HOOK_VARIANT__ ? window.__HOOK_VARIANT__.id : 'Unknown';
-                        const visitorId = localStorage.getItem('visitorId');
-                        
-                        // Backup registration data to GitHub analytics WITH VARIANT
-                        if (typeof saveToGitHub === 'function') {
-                            const registrationBackup = {
-                                page: '/index.html',
-                                timestamp: new Date().toISOString(),
-                                event: 'registration',
-                                email: email,
-                                name: name,
-                                firstName: firstName,
-                                lastName: lastName,
-                                country: country,
-                                city: city,
-                                source: 'Registration Form - The Shift Landing Page',
-                                clickfunnelsSuccess: true,
-                                hookVariant: hookVariant,
-                                visitorId: visitorId
-                            };
-                            saveToGitHub(registrationBackup).catch(err => 
-                                console.log('GitHub backup failed (not critical):', err)
-                            );
-                        }
-                        
-                        // Also save to local server backup
-                        try {
-                            await fetch('/api/backup/registration', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({
-                                    email: email,
-                                    firstName: firstName,
-                                    lastName: lastName,
-                                    country: country,
-                                    city: city,
-                                    hookVariant: hookVariant,
-                                    timestamp: new Date().toISOString()
-                                })
-                            });
-                            console.log('✅ Registration backed up to local server');
-                        } catch (backupErr) {
-                            console.log('Local backup failed (not critical):', backupErr);
-                        }
-                        
-                        // Save variant and user info to localStorage for thank-you/upsell pages
-                        localStorage.setItem('hookVariant', hookVariant);
-                        localStorage.setItem('userEmail', email);
-                        localStorage.setItem('firstName', firstName);
-                        
-                        // Show success message
-                        formMessage.textContent = '🎉 Success! You\'re registered for The Shift Challenge. Check your email for details!';
-                        formMessage.className = 'form-message success';
-                        
-                        // Reset form
-                        this.reset();
-                        
-                        // Redirect to thank you page after 2 seconds WITH VARIANT
-                        setTimeout(() => {
-                            window.location.href = `thank-you.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}&variant=${encodeURIComponent(hookVariant)}`;
-                        }, 2000);
-                        
-                    } else {
-                        const errorData = result.error || 'Unknown error';
-                        console.error('ClickFunnels error:', errorData);
-                        throw new Error('Registration failed');
+                    // Save variant and user info to localStorage for thank-you/upsell pages
+                    localStorage.setItem('hookVariant', hookVariant);
+                    localStorage.setItem('userEmail', email);
+                    localStorage.setItem('firstName', firstName);
+                    
+                    // Send backups asynchronously (fire-and-forget)
+                    // Backup registration data to GitHub analytics WITH VARIANT (async, no await)
+                    if (typeof saveToGitHub === 'function') {
+                        const registrationBackup = {
+                            page: '/index.html',
+                            timestamp: new Date().toISOString(),
+                            event: 'registration',
+                            email: email,
+                            name: name,
+                            firstName: firstName,
+                            lastName: lastName,
+                            country: country,
+                            city: city,
+                            source: 'Registration Form - The Shift Landing Page',
+                            clickfunnelsSuccess: true,
+                            hookVariant: hookVariant,
+                            visitorId: visitorId
+                        };
+                        saveToGitHub(registrationBackup).catch(err => 
+                            console.log('GitHub backup failed (not critical):', err)
+                        );
                     }
+                    
+                    // Save to local server backup (async, no await)
+                    fetch('/api/backup/registration', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email: email,
+                            firstName: firstName,
+                            lastName: lastName,
+                            country: country,
+                            city: city,
+                            hookVariant: hookVariant,
+                            timestamp: new Date().toISOString()
+                        })
+                    }).then(() => {
+                        console.log('✅ Registration backed up to local server');
+                    }).catch(backupErr => {
+                        console.log('Local backup failed (not critical):', backupErr);
+                    });
+                    
+                    // Show success message immediately
+                    formMessage.textContent = '🎉 Success! You\'re registered for The Shift Challenge. Check your email for details!';
+                    formMessage.className = 'form-message success';
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Redirect to thank you page after 2 seconds WITH VARIANT
+                    setTimeout(() => {
+                        window.location.href = `thank-you.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName)}&country=${encodeURIComponent(country)}&variant=${encodeURIComponent(hookVariant)}`;
+                    }, 2000);
                 } else {
-                    throw new Error('ClickFunnels configuration not loaded');
+                    // ClickFunnels config not loaded
+                    formMessage.textContent = '❌ Configuration error. Please try again.';
+                    formMessage.className = 'form-message error';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
                 }
                 
             } catch (error) {
