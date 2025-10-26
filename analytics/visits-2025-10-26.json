@@ -1006,5 +1006,18 @@
     "screenHeight": 846,
     "language": "en-NZ",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T11:16:13.781Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761477373779_u4yem2vkm",
+    "sessionId": "session_1761477373779_e371c7lc5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
