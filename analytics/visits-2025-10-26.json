@@ -2041,5 +2041,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T22:14:33.085Z",
+    "event": "registration",
+    "email": "dwer@gmail.com",
+    "name": "Ariba Farheen",
+    "firstName": "Ariba",
+    "lastName": "Farheen",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761377512928_s98zt9ofi"
   }
 ]
