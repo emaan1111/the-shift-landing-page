@@ -210,6 +210,12 @@
             padding: 20px;
             background: var(--light);
             border-radius: 8px;
+            position: relative;
+            height: 400px;
+        }
+        
+        .chart-container canvas {
+            max-height: 350px;
         }
 
         .bar-chart {
@@ -373,6 +379,8 @@
             }
         }
     </style>
+    <!-- Chart.js for line charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -465,6 +473,14 @@
                 </div>
             </div>
 
+            <!-- Visits Per Hour Chart -->
+            <div class="section">
+                <h2><i class="fas fa-chart-line"></i> Visits Per Hour</h2>
+                <div class="chart-container">
+                    <canvas id="visitsPerHourChart" style="max-height: 400px;"></canvas>
+                </div>
+            </div>
+
             <!-- A/B Test: Hook Variants -->
             <div class="section">
                 <h2><i class="fas fa-flask"></i> A/B Test: Hook Variants</h2>
@@ -483,6 +499,11 @@
                             <span id="variantBRegistrations">0</span> registrations / <span id="variantBVisits">0</span> visits
                         </div>
                     </div>
+                </div>
+                <div class="table-actions">
+                    <button onclick="exportTableToCSV('abTestTable', 'ab-test-variants')" class="table-export">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
                 </div>
                 <div style="overflow-x: auto; margin-top: 20px;">
                     <table class="data-table">
@@ -518,6 +539,9 @@
                         <option value="button_click">Button Clicks</option>
                     </select>
                     <button onclick="loadData()"><i class="fas fa-sync"></i> Refresh</button>
+                    <button onclick="exportTableToCSV('recentActivity', 'recent-activity')" class="table-export" style="margin-left: auto;">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
                 </div>
                 <div style="overflow-x: auto;">
                     <table class="data-table">
@@ -534,6 +558,11 @@
                         </thead>
                         <tbody id="recentActivity"></tbody>
                     </table>
+                </div>
+                <div class="table-pagination">
+                    <button class="pagination-button" id="prevActivityBtn" onclick="previousActivityPage()"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span class="pagination-info" id="activityPageInfo">Page 1</span>
+                    <button class="pagination-button" id="nextActivityBtn" onclick="nextActivityPage()"><i class="fas fa-chevron-right"></i> Next</button>
                 </div>
             </div>
         </div>
@@ -561,6 +590,13 @@
         let filteredData = []; // Data after global date filter
         const tableState = {};
         let isResetting = false;
+        
+        // Pagination state
+        const paginationState = {
+            activityCurrentPage: 1,
+            activityRowsPerPage: 20,
+            activityTotalRows: 0
+        };
 
         function applyGlobalFilter() {
             const globalDateFilter = document.getElementById('globalDateFilter').value;
@@ -887,6 +923,9 @@
 
             // A/B Test: Hook Variants
             displayABTestResults(pageVisits);
+            
+            // Visits Per Hour Chart
+            displayVisitsPerHourChart();
 
             // Recent activity table
             displayRecentActivity(true);
@@ -1281,9 +1320,21 @@
                 });
             }
 
-            const recent = filtered.slice(-50).reverse();
+            const allRecent = filtered.slice().reverse(); // All rows
+            paginationState.activityTotalRows = allRecent.length;
+            
+            // Calculate pagination
+            const startIdx = (paginationState.activityCurrentPage - 1) * paginationState.activityRowsPerPage;
+            const endIdx = startIdx + paginationState.activityRowsPerPage;
+            const pageData = allRecent.slice(startIdx, endIdx);
+            
+            // Update pagination buttons
+            document.getElementById('prevActivityBtn').disabled = paginationState.activityCurrentPage === 1;
+            document.getElementById('nextActivityBtn').disabled = endIdx >= allRecent.length;
+            const totalPages = Math.ceil(allRecent.length / paginationState.activityRowsPerPage) || 1;
+            document.getElementById('activityPageInfo').textContent = `Page ${paginationState.activityCurrentPage} of ${totalPages} (${allRecent.length} total)`;
 
-            tbody.innerHTML = recent.map(item => {
+            tbody.innerHTML = pageData.map(item => {
                 const date = new Date(item.timestamp);
                 const timeStr = date.toLocaleString();
                 const event = item.event === 'button_click' ? '🖱️ Click' : '👁️ Visit';
@@ -1306,15 +1357,116 @@
                 `;
             }).join('');
 
-            if (recent.length === 0) {
+            if (pageData.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #999;">No data matches the selected filters</td></tr>';
             }
         }
 
-        // Event filters
-        document.getElementById('eventFilter').addEventListener('change', displayRecentActivity);
-        document.getElementById('pageFilter').addEventListener('change', displayRecentActivity);
-        document.getElementById('dateFilter').addEventListener('change', displayRecentActivity);
+        function previousActivityPage() {
+            if (paginationState.activityCurrentPage > 1) {
+                paginationState.activityCurrentPage--;
+                displayRecentActivity();
+                document.querySelector('.data-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function nextActivityPage() {
+            const totalPages = Math.ceil(paginationState.activityTotalRows / paginationState.activityRowsPerPage);
+            if (paginationState.activityCurrentPage < totalPages) {
+                paginationState.activityCurrentPage++;
+                displayRecentActivity();
+                document.querySelector('.data-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function displayVisitsPerHourChart() {
+            const pageVisits = filteredData.filter(d => d.event === 'page_visit');
+            
+            // Group by hour
+            const visitsPerHour = {};
+            pageVisits.forEach(visit => {
+                const date = new Date(visit.timestamp);
+                const hour = date.getHours();
+                const hourKey = `${hour.toString().padStart(2, '0')}:00`;
+                visitsPerHour[hourKey] = (visitsPerHour[hourKey] || 0) + 1;
+            });
+            
+            // Create sorted hours array
+            const hours = [];
+            for (let i = 0; i < 24; i++) {
+                const hourKey = i.toString().padStart(2, '0') + ':00';
+                hours.push(hourKey);
+            }
+            
+            // Get data for chart
+            const chartData = hours.map(h => visitsPerHour[h] || 0);
+            
+            // Try to use Chart.js if available, otherwise use simple SVG
+            const canvas = document.getElementById('visitsPerHourChart');
+            if (!canvas) return;
+            
+            try {
+                // Check if Chart.js is loaded
+                if (typeof Chart !== 'undefined') {
+                    const ctx = canvas.getContext('2d');
+                    if (window.visitsPerHourChartInstance) {
+                        window.visitsPerHourChartInstance.destroy();
+                    }
+                    
+                    window.visitsPerHourChartInstance = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: hours,
+                            datasets: [{
+                                label: 'Visits per Hour',
+                                data: chartData,
+                                borderColor: '#a06cd5',
+                                backgroundColor: 'rgba(160, 108, 213, 0.1)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.4,
+                                pointBackgroundColor: '#a06cd5',
+                                pointBorderColor: '#fff',
+                                pointBorderWidth: 2,
+                                pointRadius: 5,
+                                pointHoverRadius: 7
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: true, position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: { stepSize: 1 }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    // Fallback: Show simple bar chart
+                    displayBarChart('visitsPerHourChart', Object.fromEntries(
+                        hours.map((h, i) => [h, chartData[i]])
+                    ));
+                }
+            } catch (e) {
+                console.error('Error creating chart:', e);
+            }
+        }
+
+        // Event filters - reset pagination when filters change
+        ['eventFilter', 'pageFilter', 'dateFilter'].forEach(id => {
+            const elem = document.getElementById(id);
+            if (elem) {
+                elem.addEventListener('change', () => {
+                    paginationState.activityCurrentPage = 1;
+                    displayRecentActivity();
+                });
+            }
+        });
 
         // Load data on page load
         loadData();
