@@ -80,5 +80,12 @@
     "email": "jjde.5533@gmail.com",
     "name": "JDE",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T01:29:54.565Z",
+    "event": "page_exit",
+    "sessionId": "session_1761442145838_7n35qpriy",
+    "duration": 49
   }
 ]
