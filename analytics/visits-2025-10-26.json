@@ -2358,5 +2358,12 @@
     "hookVariant": "B",
     "email": "marwabazan@hotmail.com",
     "name": "Marwa"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:29:56.991Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
