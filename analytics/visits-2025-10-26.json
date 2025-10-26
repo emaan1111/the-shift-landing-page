@@ -2402,5 +2402,24 @@
     "email": "marwabazan@hotmail.com",
     "name": "Marwa",
     "country": "Canada"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-26T23:30:10.767Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761521410763_n2t3f8sg1",
+    "sessionId": "session_1761521410764_0s4ae2i29",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "marwabazan@hotmail.com",
+    "name": "Marwa",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Canada"
   }
 ]
