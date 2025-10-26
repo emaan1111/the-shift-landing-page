@@ -1507,5 +1507,24 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T19:22:37.157Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761506557153_ez1qrngps",
+    "sessionId": "session_1761506557154_f4s8hztjc",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "sidraasghar11@gmail.com",
+    "name": "Sidra",
+    "ipAddress": "2600:1900:0:2d02::3200",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
