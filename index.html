@@ -4192,33 +4192,10 @@ Jazakallahu khairan </p>
         });
 
         // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -100px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections (skip first 3 sections for immediate visibility)
-        document.querySelectorAll('section').forEach((section, index) => {
-            if (index < 3) {
-                // First 3 sections (hero, top-testimonials, emotional-message) visible immediately
-                section.style.opacity = 1;
-                section.style.transform = 'translateY(0)';
-            } else {
-                // Other sections appear on scroll
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            }
+        // All sections appear immediately - no scroll delay
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 1;
+            section.style.transform = 'translateY(0)';
         });
 
         // Form submission handling is now done by the ClickFunnels integration script below
