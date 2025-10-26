@@ -1427,5 +1427,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761506452338_dx5s8v3gv"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-26T19:21:24.945Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761506452338_dx5s8v3gv",
+    "sessionId": "session_1761506484942_dpli39bph",
+    "referrer": "https://momsshift.com/?name=Mehaboob&email=mehaboob.unnisa@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 444,
+    "screenHeight": 978,
+    "language": "en-AE",
+    "email": "mehaboob.unnisa@gmail.com",
+    "name": "Mehaboob",
+    "ipAddress": "2600:1900:0:2d02::3200",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Arab Emirates"
   }
 ]
