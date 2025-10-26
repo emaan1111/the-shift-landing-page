@@ -2591,5 +2591,12 @@
     "event": "button_click",
     "buttonName": "Join Free Mothers Challenge",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:54:20.125Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
