@@ -512,5 +512,18 @@
     "event": "page_exit",
     "sessionId": "session_1761459382969_c73ffz3nw",
     "duration": 94
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T06:29:03.710Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761377512928_s98zt9ofi",
+    "sessionId": "session_1761460143709_2oxo8a67n",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A"
   }
 ]
