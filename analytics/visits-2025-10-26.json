@@ -2296,5 +2296,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": null
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-26T23:21:47.119Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761520907119_yx56u5q7a",
+    "sessionId": "session_1761520907119_cyme2j8sw",
+    "referrer": "https://momsshift.com/?email=aliyasmin201@gmail.com&name=jaz",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "email": "aliyasmin201@gmail.com",
+    "name": "jaz",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
