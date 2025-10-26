@@ -1377,5 +1377,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T19:20:52.345Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761506452338_dx5s8v3gv",
+    "sessionId": "session_1761506452339_gfn12d9so",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 444,
+    "screenHeight": 978,
+    "language": "en-AE",
+    "hookVariant": "B",
+    "email": "mehaboob.unnisa@gmail.com",
+    "name": "Mehaboob",
+    "ipAddress": "2600:1900:0:2d02::3200",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
