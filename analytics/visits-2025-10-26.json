@@ -122,5 +122,18 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "maryam.fozia.ahmad23@tamu.edu"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T01:46:57.678Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761416547360_7wpnwqihy",
+    "sessionId": "session_1761443217669_sd9ogcroe",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 393,
+    "screenHeight": 895,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
