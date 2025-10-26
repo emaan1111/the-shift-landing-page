@@ -742,30 +742,7 @@
             padding: 80px 0;
             background: var(--light-bg);
             position: relative;
-        }
-
-        .emotional-message::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(255, 158, 181, 0.1);
-            z-index: 0;
-        }
-
-        .emotional-message::after {
-            content: "";
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(124, 224, 247, 0.1);
-            z-index: 0;
+            contain: layout style paint;
         }
 
         .message-content {
@@ -776,7 +753,9 @@
             background: var(--white);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            will-change: contents;
+            contain: layout style paint;
         }
 
         .message-content p {
@@ -3350,8 +3329,8 @@
 </p>
                 </div>
                 <div style="display: flex; justify-content: center; margin: 40px 0;">
-                    <div style="max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(160, 108, 213, 0.15);">
-                        <img src="img/zoom-ariba.png" alt="Instructor speaking on video call" style="width: 100%; height: auto; display: block;">
+                    <div style="max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(160, 108, 213, 0.15); aspect-ratio: 1; contain: layout style paint;">
+                        <img src="img/zoom-ariba.png" alt="Instructor speaking on video call" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                     </div>
                 </div>
                 <div class="message-content">
@@ -3451,8 +3430,8 @@ the one where your child sees Islam not as a rule, but as a relationship.</p>
     <p> And it starts here — with The Shift.</p>
 
                     <div style="display: flex; justify-content: center; margin: 40px 0;">
-                        <div style="max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(160, 108, 213, 0.15);">
-                            <img src="img/ariba-speech.jpg" alt="Instructor giving speech" style="width: 100%; height: auto; display: block;">
+                        <div style="max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(160, 108, 213, 0.15); aspect-ratio: 1; contain: layout style paint;">
+                            <img src="img/ariba-speech.jpg" alt="Instructor giving speech" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                         </div>
                     </div>
 
@@ -3835,7 +3814,7 @@ Jazakallahu khairan </p>
                 </div>
                 <div class="about-container">
                     <div class="about-image">
-                        <img src="img/ariba-farheen.jpg" alt="Ustadha Ariba Farheen" loading="lazy">
+                        <img src="img/ariba-farheen.jpg" alt="Ustadha Ariba Farheen">
                     </div>
                     <div class="about-content">
                         <h3 class="about-name">Ustadha Ariba Farheen</h3>
@@ -4227,12 +4206,19 @@ Jazakallahu khairan </p>
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        // Observe all sections (skip first 3 sections for immediate visibility)
+        document.querySelectorAll('section').forEach((section, index) => {
+            if (index < 3) {
+                // First 3 sections (hero, top-testimonials, emotional-message) visible immediately
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            } else {
+                // Other sections appear on scroll
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            }
         });
 
         // Form submission handling is now done by the ClickFunnels integration script below
