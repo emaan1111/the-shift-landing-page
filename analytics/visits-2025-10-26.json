@@ -2476,5 +2476,20 @@
     "hookVariant": "A",
     "email": "hamidakhodabocus@gmail.com",
     "name": "Hamida"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-26T23:46:38.784Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761522358061_zi1rhvwf0",
+    "sessionId": "session_1761522398783_norq4p5a3",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "hamidakhodabocus@gmail.com",
+    "name": "Hamida"
   }
 ]
