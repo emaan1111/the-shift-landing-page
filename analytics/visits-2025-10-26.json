@@ -1210,5 +1210,20 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-26T14:51:49.038Z",
+    "event": "registration",
+    "email": "khoulashafqat72@gmail.com",
+    "name": "Khoula Shafqat",
+    "firstName": "Khoula",
+    "lastName": "Shafqat",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": null
   }
 ]
