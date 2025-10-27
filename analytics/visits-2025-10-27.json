@@ -6168,5 +6168,19 @@
     "email": "zay_jaymali@hotmail.com",
     "name": "Zeynep",
     "country": "Canada"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T20:53:40.617Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547581364_cewbvpafc",
+    "sessionId": "session_1761598420560_tfkuw816h",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "s_koli@hotmail.co.uk"
   }
 ]
