@@ -270,5 +270,20 @@
     "email": "rehanashah817@gmail.com",
     "name": "Rehana",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T00:58:06.321Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761525896524_vjaghcqiz",
+    "sessionId": "session_1761526686270_429rno9qo",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-MY",
+    "hookVariant": "A",
+    "email": "sf_solehah@yahoo.com.my",
+    "name": "sharifah"
   }
 ]
