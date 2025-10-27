@@ -5758,5 +5758,12 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "knazerism@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T11:57:05.825Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
