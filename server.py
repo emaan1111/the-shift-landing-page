@@ -12,6 +12,9 @@ CORS(app)  # Enable CORS for all routes
 # Initialize database on startup
 database.init_db()
 
+# Geolocation cache to prevent rate limiting
+geolocation_cache = {}
+
 # ClickFunnels Configuration
 CLICKFUNNELS_CONFIG = {
     'apiKey': '7A8agApD4eXUESHF-ikrWlCF-k7IEjtTd7auzmiRbZ0',
@@ -223,13 +226,30 @@ def delete_analytics_file():
 def get_geolocation():
     """Proxy endpoint for geolocation API to avoid CORS issues"""
     try:
+        # Get client IP address
+        client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+        if client_ip:
+            client_ip = client_ip.split(',')[0].strip()
+        
+        # Check cache first
+        if client_ip in geolocation_cache:
+            return jsonify(geolocation_cache[client_ip]), 200
+        
+        # Make API call if not in cache
         response = requests.get('https://ipapi.co/json/', timeout=5)
         if response.status_code == 200:
-            return jsonify(response.json()), 200
+            data = response.json()
+            # Cache the result
+            geolocation_cache[client_ip] = data
+            return jsonify(data), 200
         else:
-            return jsonify({'error': 'Failed to fetch geolocation'}), response.status_code
+            # Return a default response on rate limit or error
+            default_data = {'city': 'Unknown', 'country': 'Unknown', 'error': 'Rate limited'}
+            return jsonify(default_data), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        # Return a default response on exception
+        default_data = {'city': 'Unknown', 'country': 'Unknown', 'error': str(e)}
+        return jsonify(default_data), 200
 
 @app.route('/api/backup/registration', methods=['POST'])
 def backup_registration():
@@ -408,4 +428,4 @@ def manage_registration(registration_id):
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
