@@ -6028,5 +6028,24 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:26:05.304Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761377088559_blalcmf9s",
+    "sessionId": "session_1761567965288_rckg47i7u",
+    "referrer": "https://321db0af-5dc4-4f21-af09-8dd8f11e9339-00-11u5kpjldgot0.sisko.replit.dev:3000/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arjh%3A",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "ipAddress": "34.100.243.193",
+    "city": "Mumbai",
+    "region": "Maharashtra",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "countryCode": "IN"
   }
 ]
