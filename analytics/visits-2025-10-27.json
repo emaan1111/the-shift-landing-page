@@ -5034,5 +5034,24 @@
     "hookVariant": "A",
     "email": "nardefa179@gmail.com",
     "name": "Naressa"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T10:03:30.335Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761559166164_ctuehgrub",
+    "sessionId": "session_1761559410305_fjxxxhpgt",
+    "referrer": "https://momsshift.com/?email=wida3232@gmail.com&name=",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 320,
+    "screenHeight": 694,
+    "language": "en-GB",
+    "email": "wida3232@gmail.com",
+    "name": "Ammarah",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
