@@ -5947,5 +5947,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T12:24:00.413Z",
+    "event": "registration",
+    "email": "sabina.wazeer@outlook.com",
+    "name": "Sabina Wazeer",
+    "firstName": "Sabina",
+    "lastName": "Wazeer",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761567787770_lr82of8po"
   }
 ]
