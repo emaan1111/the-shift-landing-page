@@ -5817,5 +5817,20 @@
     "hookVariant": "A",
     "email": "wasimacis_@hotmail.co.uk",
     "name": "Wasima"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:13:26.104Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567206101_2ogeq3f7s",
+    "sessionId": "session_1761567206101_rb74acj7r",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 320,
+    "screenHeight": 693,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "alamiatia@gmail.com",
+    "name": "Atia"
   }
 ]
