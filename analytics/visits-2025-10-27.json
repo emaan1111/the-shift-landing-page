@@ -4049,5 +4049,12 @@
     "hookVariant": "B",
     "email": "bernie_1@live.com",
     "name": "Bea"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:06:01.371Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
