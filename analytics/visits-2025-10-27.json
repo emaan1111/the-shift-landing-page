@@ -5876,5 +5876,12 @@
     "hookVariant": "B",
     "email": "am_olola@yahoo.com",
     "name": "Fadumo"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:18:53.591Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
