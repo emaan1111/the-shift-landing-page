@@ -5981,5 +5981,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United States"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T12:25:20.909Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/"
   }
 ]
