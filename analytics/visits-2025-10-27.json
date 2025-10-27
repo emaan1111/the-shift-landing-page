@@ -3996,5 +3996,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761550293493_m01epnhx4"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:33:53.740Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761550433738_28ylsql0j",
+    "sessionId": "session_1761550433738_z5lr3un7k",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
