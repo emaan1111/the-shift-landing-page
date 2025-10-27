@@ -3858,5 +3858,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T07:29:46.087Z",
+    "event": "registration",
+    "email": "sammy2011@live.co.uk",
+    "name": "Sameen",
+    "firstName": "Sameen",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761550156613_upslfyqo8"
   }
 ]
