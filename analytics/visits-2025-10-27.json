@@ -3429,5 +3429,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:48:27.410Z",
+    "event": "registration",
+    "email": "rubykhan13@hotmail.co.uk",
+    "name": "Robina",
+    "firstName": "Robina",
+    "lastName": "",
+    "country": "United Arab Emirates",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761547674183_3ch91jul2"
   }
 ]
