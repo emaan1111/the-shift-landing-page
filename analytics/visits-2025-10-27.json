@@ -4990,5 +4990,12 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=ayshasiddiqa2914@gmail.com&name=Aysha"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:03:00.348Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
