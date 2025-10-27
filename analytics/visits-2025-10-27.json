@@ -2641,5 +2641,18 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:51:56.107Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544161294_p9ttwmlui",
+    "sessionId": "session_1761544316097_looosbjtp",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 846,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
