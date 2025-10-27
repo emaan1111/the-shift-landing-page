@@ -1780,5 +1780,20 @@
     "hookVariant": "A",
     "email": "olia.ali@mssm.edu",
     "name": "Olia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:02:09.752Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541329733_4v4v0puia",
+    "sessionId": "session_1761541329736_s0xi1zvbu",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "nesha20m@uregina.ca",
+    "name": "Nesha"
   }
 ]
