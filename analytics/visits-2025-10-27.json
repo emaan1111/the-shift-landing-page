@@ -4209,5 +4209,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T08:13:48.603Z",
+    "event": "registration",
+    "email": "ushuma789@hotmail.com",
+    "name": "Umme",
+    "firstName": "Umme",
+    "lastName": "",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761552802882_ejzcyll49"
   }
 ]
