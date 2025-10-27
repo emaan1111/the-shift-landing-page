@@ -2836,5 +2836,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:56:13.984Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544555261_f0mqzgwow",
+    "sessionId": "session_1761544573984_ehqhk6nq3",
+    "referrer": "https://momsshift.com/?email=farirsha@gmail.com&name=Fareeda",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-IN",
+    "email": "farirsha@gmail.com",
+    "name": "Fareeda",
+    "country": "United Arab Emirates"
   }
 ]
