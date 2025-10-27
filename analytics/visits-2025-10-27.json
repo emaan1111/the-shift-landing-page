@@ -1033,5 +1033,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T03:38:48.943Z",
+    "event": "registration",
+    "email": "mystars_1027@yahoo.com",
+    "name": "Maryam",
+    "firstName": "Maryam",
+    "lastName": "",
+    "country": "Pakistan",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761536223271_vg0heeda3"
   }
 ]
