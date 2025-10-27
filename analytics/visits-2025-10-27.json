@@ -1012,5 +1012,12 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T03:38:19.222Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
