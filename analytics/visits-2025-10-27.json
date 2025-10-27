@@ -1795,5 +1795,20 @@
     "hookVariant": "B",
     "email": "nesha20m@uregina.ca",
     "name": "Nesha"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:04:36.780Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541476765_5lz47hjee",
+    "sessionId": "session_1761541476771_hdivid8yf",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "sjshargr@bradford.ac.uk",
+    "name": "Sophie"
   }
 ]
