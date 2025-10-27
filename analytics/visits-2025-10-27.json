@@ -921,5 +921,19 @@
     "language": "en-US",
     "hookVariant": "B",
     "email": "saeed.mujeed@baueruae.ae"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T03:07:22.785Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761534442548_gh6f5t5my",
+    "sessionId": "session_1761534442625_ap4qm35im",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "saeed.mujeed@baueruae.ae"
   }
 ]
