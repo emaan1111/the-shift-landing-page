@@ -5920,5 +5920,18 @@
     "email": "am_olola@yahoo.com",
     "name": "Olaide",
     "country": "Other"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:23:07.770Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567787770_lr82of8po",
+    "sessionId": "session_1761567787770_90mi4yme3",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 402,
+    "screenHeight": 874,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
