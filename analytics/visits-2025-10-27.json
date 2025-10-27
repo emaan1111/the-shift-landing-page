@@ -4631,5 +4631,20 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=sanagatta@yahoo.com&name=Sana"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:02:21.220Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761555741217_vo3a1tlhu",
+    "sessionId": "session_1761555741217_0js2ghpgl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 440,
+    "screenHeight": 956,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "irfanshireen4@gmail.com",
+    "name": "Shireen"
   }
 ]
