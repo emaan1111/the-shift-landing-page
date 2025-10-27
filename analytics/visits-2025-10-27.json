@@ -5832,5 +5832,12 @@
     "hookVariant": "A",
     "email": "alamiatia@gmail.com",
     "name": "Atia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:13:34.328Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
