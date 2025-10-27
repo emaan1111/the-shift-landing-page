@@ -2938,5 +2938,19 @@
     "email": "khadeejagoussat@gmail.com",
     "name": "Khadidja",
     "country": "Oman"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:08:45.243Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761545325240_d89bdbcly",
+    "sessionId": "session_1761545325240_nqe6lnrcl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1280,
+    "screenHeight": 720,
+    "language": "en-ZA",
+    "hookVariant": "A",
+    "email": "washiela@live.com"
   }
 ]
