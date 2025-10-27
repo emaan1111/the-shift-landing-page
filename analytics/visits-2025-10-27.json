@@ -3407,5 +3407,20 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:48:16.913Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547505291_8l64p7fsk",
+    "sessionId": "session_1761547696907_3l5z4290x",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-NZ",
+    "hookVariant": "A",
+    "email": "fawziyyah.rafiq@gmail.com",
+    "name": "Fawziyyah"
   }
 ]
