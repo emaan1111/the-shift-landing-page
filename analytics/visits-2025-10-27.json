@@ -91,5 +91,24 @@
     "email": "mannansana@icloud.com",
     "name": "sana",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T00:00:00.015Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761523200011_um8huipsf",
+    "sessionId": "session_1761523200012_khkq9os37",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.207 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    "screenWidth": 412,
+    "screenHeight": 732,
+    "language": "en-US",
+    "hookVariant": "A",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
