@@ -1832,5 +1832,20 @@
     "hookVariant": "B",
     "email": "galiema.gool@det.nsw.edu.au",
     "name": "Galiema"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:11:13.189Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541873133_moguxkovl",
+    "sessionId": "session_1761541873136_cnl6q0mne",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "olia.ali@mssm.edu",
+    "name": "Olia"
   }
 ]
