@@ -1171,5 +1171,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T04:01:56.652Z",
+    "event": "registration",
+    "email": "hwilson88@proton.me",
+    "name": "Harry Wilson",
+    "firstName": "Harry",
+    "lastName": "Wilson",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761537685732_h2rhpc4zv"
   }
 ]
