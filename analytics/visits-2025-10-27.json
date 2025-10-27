@@ -2793,5 +2793,12 @@
     "screenHeight": 852,
     "language": "nb-NO",
     "hookVariant": "B"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:53:26.626Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/"
   }
 ]
