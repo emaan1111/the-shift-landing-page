@@ -3499,5 +3499,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:51:05.814Z",
+    "event": "registration",
+    "email": "middy-99@hotmail.com",
+    "name": "Kalsoom",
+    "firstName": "Kalsoom",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761547833849_wb3c2vrtg"
   }
 ]
