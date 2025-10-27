@@ -1847,5 +1847,20 @@
     "hookVariant": "A",
     "email": "olia.ali@mssm.edu",
     "name": "Olia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:11:37.964Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541897950_aiztmzpny",
+    "sessionId": "session_1761541897957_i7kius8qu",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "tariq112@uwindsor.ca",
+    "name": "Sara"
   }
 ]
