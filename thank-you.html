@@ -1662,7 +1662,16 @@ Here's the link to reserve a FREE spot ${referralUrl}`;
                     
                     const referralFacebookBtn = document.getElementById('referralFacebookBtn');
                     if (referralFacebookBtn) {
-                        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent('I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 for 2-hour sessions daily!')}`;
+                        const facebookMessage = `Assalam aleykum sister,
+
+I found this FREE 3 Day Challenge for moms that I am sure you'll love.
+
+It's about how mothers like us shifted from PUSHING their children to pray, read Qur'an, and learn Islam to them wanting it themselves… even if they just want to play games or watch YouTube. Taught by Ustadha Ariba Farheen, who has 20 years exp in helping families
+
+It gave me so much hope, and ways to save our kids from the fitna…so I thought of you.
+
+Here's the link to reserve a FREE spot`;
+                        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent(facebookMessage)}`;
                         referralFacebookBtn.href = facebookUrl;
                         referralFacebookBtn.onclick = function(e) {
                             e.preventDefault();
