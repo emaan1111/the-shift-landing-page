@@ -5559,5 +5559,12 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "lamia-x@hotmail.co.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T11:01:31.065Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
