@@ -620,5 +620,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:14:37.747Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761531277745_h1iobqktl",
+    "sessionId": "session_1761531277745_sms12krv3",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "shomaila.nawaz83@gmail.com",
+    "name": "N/A",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
