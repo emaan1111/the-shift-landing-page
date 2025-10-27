@@ -4872,5 +4872,25 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:47:49.640Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761558469624_343zzbwd7",
+    "sessionId": "session_1761558469626_4mxb20mgn",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "mursheedamia@gmail.com",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
