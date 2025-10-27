@@ -2981,5 +2981,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761545325240_d89bdbcly"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T06:09:30.346Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761545325240_d89bdbcly",
+    "sessionId": "session_1761545370335_dxz3v50d6",
+    "referrer": "https://momsshift.com/?email=washiela@live.com",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1280,
+    "screenHeight": 720,
+    "language": "en-ZA",
+    "email": "washiela@live.com",
+    "name": "Washiela",
+    "country": "South Africa"
   }
 ]
