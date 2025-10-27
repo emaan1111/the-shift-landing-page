@@ -4610,5 +4610,12 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T08:58:57.706Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/?email=sanagatta@yahoo.com&name=Sana"
   }
 ]
