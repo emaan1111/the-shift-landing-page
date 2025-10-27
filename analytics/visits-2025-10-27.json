@@ -4391,5 +4391,25 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "India"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:38:40.498Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761554320498_jclvdbjir",
+    "sessionId": "session_1761554320498_lp2r8dvlh",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 402,
+    "screenHeight": 874,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "aishamalik03@hotmail.co.uk",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
