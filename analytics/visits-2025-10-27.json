@@ -1511,5 +1511,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T04:48:31.733Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761540511731_c22sbt9fd",
+    "sessionId": "session_1761540511731_uv9eukki6",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 428,
+    "screenHeight": 926,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "alikhadra452@gmail.com",
+    "name": "Khadra",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
