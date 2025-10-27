@@ -3463,5 +3463,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Arab Emirates"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T06:49:49.490Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/?email=rubykhan13@hotmail.co.uk&name=Robina"
   }
 ]
