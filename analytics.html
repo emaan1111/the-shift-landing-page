@@ -878,10 +878,20 @@
                 const hours = hoursMap[globalDateFilter];
                 const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
                 
+                console.log(`Filtering for ${globalDateFilter}:`);
+                console.log('Current time:', now.toISOString());
+                console.log('Cutoff time:', cutoffTime.toISOString());
+                console.log('Total items in allData:', allData.length);
+                
                 filteredData = allData.filter(d => {
                     const itemTime = new Date(d.timestamp);
                     return itemTime >= cutoffTime;
                 });
+                
+                console.log('Filtered items:', filteredData.length);
+                if (filteredData.length > 0) {
+                    console.log('Sample filtered timestamp:', filteredData[0].timestamp);
+                }
             } else {
                 // Date-based filtering
                 filteredData = allData.filter(d => {
@@ -1095,10 +1105,24 @@
                     if (Array.isArray(registrations)) {
                         // Apply date filter to registrations if a specific date is selected
                         if (globalDateFilter !== 'all') {
-                            registrations = registrations.filter(reg => {
-                                const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
-                                return regDate === globalDateFilter;
-                            });
+                            if (globalDateFilter === '1h' || globalDateFilter === '6h' || globalDateFilter === '24h') {
+                                // Time-based filtering for registrations
+                                const now = new Date();
+                                const hoursMap = { '1h': 1, '6h': 6, '24h': 24 };
+                                const hours = hoursMap[globalDateFilter];
+                                const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
+                                
+                                registrations = registrations.filter(reg => {
+                                    const regTime = new Date(reg.timestamp || reg.created_at);
+                                    return regTime >= cutoffTime;
+                                });
+                            } else {
+                                // Date-based filtering for registrations
+                                registrations = registrations.filter(reg => {
+                                    const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                                    return regDate === globalDateFilter;
+                                });
+                            }
                         }
                         totalRegistrations = registrations.length;
                     }
@@ -1640,10 +1664,24 @@
                     // Apply global date filter to registrations if needed
                     const globalDateFilter = document.getElementById('globalDateFilter').value;
                     if (globalDateFilter !== 'all') {
-                        registrations = registrations.filter(reg => {
-                            const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
-                            return regDate === globalDateFilter;
-                        });
+                        if (globalDateFilter === '1h' || globalDateFilter === '6h' || globalDateFilter === '24h') {
+                            // Time-based filtering for registrations
+                            const now = new Date();
+                            const hoursMap = { '1h': 1, '6h': 6, '24h': 24 };
+                            const hours = hoursMap[globalDateFilter];
+                            const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
+                            
+                            registrations = registrations.filter(reg => {
+                                const regTime = new Date(reg.timestamp || reg.created_at);
+                                return regTime >= cutoffTime;
+                            });
+                        } else {
+                            // Date-based filtering for registrations
+                            registrations = registrations.filter(reg => {
+                                const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                                return regDate === globalDateFilter;
+                            });
+                        }
                     }
                     
                     // Group registrations by date
