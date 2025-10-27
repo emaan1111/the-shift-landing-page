@@ -1055,5 +1055,24 @@
     "event": "page_exit",
     "sessionId": "session_1761536223271_lzfevr7d1",
     "duration": 68
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T03:38:41.837Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761536223271_vg0heeda3",
+    "sessionId": "session_1761536321834_pe565j5kp",
+    "referrer": "https://momsshift.com/?email=maryam.mushtaq@vu.edu.pk&name=Maryam",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "email": "mystars_1027@yahoo.com",
+    "name": "Maryam",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Pakistan"
   }
 ]
