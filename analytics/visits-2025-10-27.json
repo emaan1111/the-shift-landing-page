@@ -3816,5 +3816,12 @@
     "hookVariant": "A",
     "email": "mayada_agha@outlook.com",
     "name": "Mayada"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:28:39.744Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
