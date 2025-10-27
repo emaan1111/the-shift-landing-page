@@ -1605,5 +1605,20 @@
     "email": "alikhadra452@gmail.com",
     "name": "Khadra",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T04:49:56.420Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761540596420_vsc9min4x",
+    "sessionId": "session_1761540596420_kjkmt2vy4",
+    "referrer": "https://momsshift.com/?email=sharmeenzak@yahoo.com&name=",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-US",
+    "email": "sharmeenzak@yahoo.com",
+    "name": "Sharmeen",
+    "country": "United Arab Emirates"
   }
 ]
