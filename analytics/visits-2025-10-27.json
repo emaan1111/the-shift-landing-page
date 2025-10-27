@@ -5772,5 +5772,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T11:57:27.255Z",
+    "event": "registration",
+    "email": "knazerism@gmail.com",
+    "name": "Khatera ",
+    "firstName": "Khatera",
+    "lastName": "",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": null
   }
 ]
