@@ -2750,5 +2750,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:53:04.310Z",
+    "event": "registration",
+    "email": "bintesakeenah3@gmail.com",
+    "name": "Abida Anjum",
+    "firstName": "Abida",
+    "lastName": "Anjum",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761544161294_p9ttwmlui"
   }
 ]
