@@ -5134,5 +5134,20 @@
     "screenHeight": 896,
     "language": "en-GB",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:07:49.203Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761559669196_xo46ijfy5",
+    "sessionId": "session_1761559669197_2fqf5qn9c",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "shukrafazal@yahoo.ca",
+    "name": "Shukra"
   }
 ]
