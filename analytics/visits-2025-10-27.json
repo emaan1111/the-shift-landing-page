@@ -2548,5 +2548,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:51:02.998Z",
+    "event": "registration",
+    "email": "spak_paks@yahoo.com",
+    "name": "Sumaira",
+    "firstName": "Sumaira",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": null
   }
 ]
