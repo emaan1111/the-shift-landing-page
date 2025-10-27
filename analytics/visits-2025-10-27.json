@@ -5178,5 +5178,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T10:08:08.312Z",
+    "event": "registration",
+    "email": "shukrafazal@yahoo.ca",
+    "name": "Shukra",
+    "firstName": "Shukra",
+    "lastName": "",
+    "country": "Canada",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761559669196_xo46ijfy5"
   }
 ]
