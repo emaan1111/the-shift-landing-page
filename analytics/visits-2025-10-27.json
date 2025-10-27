@@ -641,5 +641,18 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T02:15:18.015Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761531318011_um8huipsf",
+    "sessionId": "session_1761531318012_khkq9os37",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.207 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    "screenWidth": 412,
+    "screenHeight": 732,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
