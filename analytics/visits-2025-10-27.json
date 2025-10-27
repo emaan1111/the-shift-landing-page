@@ -565,5 +565,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761531081367_fxriacpsz"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T02:11:53.744Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761531081367_fxriacpsz",
+    "sessionId": "session_1761531113732_mt3ejvqm5",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-MY",
+    "email": "salsabella.asmuni@gmail.com",
+    "name": "Nur",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Malaysia"
   }
 ]
