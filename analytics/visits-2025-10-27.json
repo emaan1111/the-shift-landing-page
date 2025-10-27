@@ -4150,5 +4150,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761552548922_85tlej7am"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T08:09:39.722Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552548922_85tlej7am",
+    "sessionId": "session_1761552579720_m79jn623z",
+    "referrer": "https://momsshift.com/?email=robila.mughal@gmail.com",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "email": "robila.mughal@gmail.com",
+    "name": "Robila",
+    "country": "United Kingdom"
   }
 ]
