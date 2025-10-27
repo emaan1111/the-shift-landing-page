@@ -5313,5 +5313,24 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T10:36:21.713Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761561309235_p8cg5grf3",
+    "sessionId": "session_1761561381682_dhqvc2uxo",
+    "referrer": "https://momsshift.com/?email=ayeshaikhlef@gmail.com&name=A",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 432,
+    "screenHeight": 960,
+    "language": "en-GB",
+    "email": "4aishaaisha@gmail.com",
+    "name": "A",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
