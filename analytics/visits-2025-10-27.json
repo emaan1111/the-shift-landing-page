@@ -4135,5 +4135,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T08:09:37.142Z",
+    "event": "registration",
+    "email": "robila.mughal@gmail.com",
+    "name": "Robila",
+    "firstName": "Robila",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761552548922_85tlej7am"
   }
 ]
