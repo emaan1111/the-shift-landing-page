@@ -4411,5 +4411,12 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:38:42.958Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
