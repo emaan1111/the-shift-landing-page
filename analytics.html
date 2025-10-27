@@ -730,6 +730,30 @@
                 </div>
             </div>
 
+            <!-- Conversion Rate Over Time -->
+            <div class="section">
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-chart-line"></i> Conversion Rate Over Time</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="filter-controls">
+                        <select id="conversionDateRange" onchange="displayConversionChart()">
+                            <option value="1h">Last 1 Hour</option>
+                            <option value="6h">Last 6 Hours</option>
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7">Last 7 Days</option>
+                            <option value="14">Last 14 Days</option>
+                            <option value="30" selected>Last 30 Days</option>
+                            <option value="all">All Time</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <div id="conversionChart" style="position: relative; height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Button Clicks -->
             <div class="section">
                 <h2 onclick="toggleSection(this)">
@@ -847,7 +871,19 @@
             
             if (globalDateFilter === 'all') {
                 filteredData = allData;
+            } else if (globalDateFilter === '1h' || globalDateFilter === '6h' || globalDateFilter === '24h') {
+                // Time-based filtering
+                const now = new Date();
+                const hoursMap = { '1h': 1, '6h': 6, '24h': 24 };
+                const hours = hoursMap[globalDateFilter];
+                const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
+                
+                filteredData = allData.filter(d => {
+                    const itemTime = new Date(d.timestamp);
+                    return itemTime >= cutoffTime;
+                });
             } else {
+                // Date-based filtering
                 filteredData = allData.filter(d => {
                     const itemDate = new Date(d.timestamp).toISOString().split('T')[0];
                     return itemDate === globalDateFilter;
@@ -1094,11 +1130,57 @@
             document.getElementById('totalRegistrations').textContent = '...';
             document.getElementById('summaryConversionRate').textContent = '...';
 
+            // Calculate Engagement Metrics
+            // Share buttons: WhatsApp, Facebook, Twitter, etc.
+            const shareButtonClicks = buttonClicks.filter(d => {
+                const button = (d.buttonName || d.button_name || '').toLowerCase();
+                return button.includes('share') || button.includes('whatsapp') || button.includes('facebook') || button.includes('twitter');
+            });
+            const uniqueShareClickers = new Set();
+            shareButtonClicks.forEach(click => {
+                const visitorId = click.visitorId || click.visitor_id || click.sessionId || click.session_id;
+                if (visitorId) uniqueShareClickers.add(visitorId);
+            });
+            document.getElementById('uniqueShareClickers').textContent = uniqueShareClickers.size;
+            const shareClickRate = indexUniqueVisitors > 0 ? ((uniqueShareClickers.size / indexUniqueVisitors) * 100).toFixed(1) : 0;
+            document.getElementById('shareClickRate').textContent = shareClickRate + '%';
+
+            // Community button clicks
+            const communityButtonClicks = buttonClicks.filter(d => {
+                const button = (d.buttonName || d.button_name || '').toLowerCase();
+                return button.includes('community');
+            });
+            const uniqueCommunityClickers = new Set();
+            communityButtonClicks.forEach(click => {
+                const visitorId = click.visitorId || click.visitor_id || click.sessionId || click.session_id;
+                if (visitorId) uniqueCommunityClickers.add(visitorId);
+            });
+            document.getElementById('uniqueCommunityClickers').textContent = uniqueCommunityClickers.size;
+            const communityClickRate = indexUniqueVisitors > 0 ? ((uniqueCommunityClickers.size / indexUniqueVisitors) * 100).toFixed(1) : 0;
+            document.getElementById('communityClickRate').textContent = communityClickRate + '%';
+
+            // Calendar button clicks
+            const calendarButtonClicks = buttonClicks.filter(d => {
+                const button = (d.buttonName || d.button_name || '').toLowerCase();
+                return button.includes('calendar');
+            });
+            const uniqueCalendarClickers = new Set();
+            calendarButtonClicks.forEach(click => {
+                const visitorId = click.visitorId || click.visitor_id || click.sessionId || click.session_id;
+                if (visitorId) uniqueCalendarClickers.add(visitorId);
+            });
+            document.getElementById('uniqueCalendarClickers').textContent = uniqueCalendarClickers.size;
+            const calendarClickRate = indexUniqueVisitors > 0 ? ((uniqueCalendarClickers.size / indexUniqueVisitors) * 100).toFixed(1) : 0;
+            document.getElementById('calendarClickRate').textContent = calendarClickRate + '%';
+
             // Populate filters (use filteredData)
             populateFilters();
 
             // Display hourly chart
             displayHourlyChart();
+
+            // Display conversion rate chart
+            displayConversionChart();
 
             // Button clicks chart
             const buttonStats = {};
@@ -1268,6 +1350,9 @@
             
             const globalDateFilter = document.getElementById('globalDateFilter');
             globalDateFilter.innerHTML = '<option value="all">All Time</option>';
+            globalDateFilter.innerHTML += '<option value="1h">Last 1 Hour</option>';
+            globalDateFilter.innerHTML += '<option value="6h">Last 6 Hours</option>';
+            globalDateFilter.innerHTML += '<option value="24h">Last 24 Hours</option>';
             Array.from(dates).sort().reverse().forEach(date => {
                 const option = document.createElement('option');
                 option.value = date;
@@ -1315,6 +1400,9 @@
             // Populate hourly date filter
             const hourlyDateFilter = document.getElementById('hourlyDateFilter');
             hourlyDateFilter.innerHTML = '<option value="all">All Dates</option>';
+            hourlyDateFilter.innerHTML += '<option value="1h">Last 1 Hour</option>';
+            hourlyDateFilter.innerHTML += '<option value="6h">Last 6 Hours</option>';
+            hourlyDateFilter.innerHTML += '<option value="24h">Last 24 Hours</option>';
             Array.from(dates).sort().reverse().forEach(date => {
                 const option = document.createElement('option');
                 option.value = date;
@@ -1521,6 +1609,252 @@
             });
         }
 
+        function displayConversionChart() {
+            const container = document.getElementById('conversionChart');
+            const dateRange = parseInt(document.getElementById('conversionDateRange').value);
+            
+            // Get index page visits grouped by date
+            const indexVisits = filteredData.filter(item => {
+                const page = item.page || '/';
+                return (page === '/' || page === '/index.html' || page.endsWith('/')) && item.event === 'page_visit';
+            });
+            
+            // Group visits by date and count unique visitors
+            const dailyVisitors = {};
+            indexVisits.forEach(visit => {
+                const date = new Date(visit.timestamp).toISOString().split('T')[0];
+                const visitorId = visit.visitorId || visit.visitor_id || visit.sessionId || visit.session_id;
+                
+                if (!dailyVisitors[date]) {
+                    dailyVisitors[date] = new Set();
+                }
+                if (visitorId) {
+                    dailyVisitors[date].add(visitorId);
+                }
+            });
+            
+            // Fetch registrations and group by date
+            fetch('/api/registrations')
+                .then(response => response.ok ? response.json() : [])
+                .then(registrations => {
+                    // Apply global date filter to registrations if needed
+                    const globalDateFilter = document.getElementById('globalDateFilter').value;
+                    if (globalDateFilter !== 'all') {
+                        registrations = registrations.filter(reg => {
+                            const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                            return regDate === globalDateFilter;
+                        });
+                    }
+                    
+                    // Group registrations by date
+                    const dailyRegistrations = {};
+                    registrations.forEach(reg => {
+                        const date = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                        dailyRegistrations[date] = (dailyRegistrations[date] || 0) + 1;
+                    });
+                    
+                    // Get all unique dates
+                    const allDates = new Set([...Object.keys(dailyVisitors), ...Object.keys(dailyRegistrations)]);
+                    let sortedDates = Array.from(allDates).sort();
+                    
+                    // Apply date range filter
+                    if (dateRange === '1h' || dateRange === '6h' || dateRange === '24h') {
+                        // For hourly filters, show hourly data instead of daily
+                        const now = new Date();
+                        const hoursMap = { '1h': 1, '6h': 6, '24h': 24 };
+                        const hours = hoursMap[dateRange];
+                        const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
+                        
+                        // Group by hour instead of day
+                        const hourlyVisitors = {};
+                        const hourlyRegistrations = {};
+                        
+                        // Re-process visits by hour
+                        indexVisits.forEach(visit => {
+                            const visitTime = new Date(visit.timestamp);
+                            if (visitTime >= cutoffTime) {
+                                const hourKey = visitTime.toISOString().slice(0, 13); // YYYY-MM-DDTHH
+                                const visitorId = visit.visitorId || visit.visitor_id || visit.sessionId || visit.session_id;
+                                
+                                if (!hourlyVisitors[hourKey]) {
+                                    hourlyVisitors[hourKey] = new Set();
+                                }
+                                if (visitorId) {
+                                    hourlyVisitors[hourKey].add(visitorId);
+                                }
+                            }
+                        });
+                        
+                        // Re-process registrations by hour
+                        registrations.forEach(reg => {
+                            const regTime = new Date(reg.timestamp || reg.created_at);
+                            if (regTime >= cutoffTime) {
+                                const hourKey = regTime.toISOString().slice(0, 13); // YYYY-MM-DDTHH
+                                hourlyRegistrations[hourKey] = (hourlyRegistrations[hourKey] || 0) + 1;
+                            }
+                        });
+                        
+                        // Get all unique hours
+                        const allHours = new Set([...Object.keys(hourlyVisitors), ...Object.keys(hourlyRegistrations)]);
+                        const sortedHours = Array.from(allHours).sort();
+                        
+                        // Calculate hourly conversion rates
+                        const conversionData = sortedHours.map(hour => {
+                            const visitors = hourlyVisitors[hour] ? hourlyVisitors[hour].size : 0;
+                            const regs = hourlyRegistrations[hour] || 0;
+                            const rate = visitors > 0 ? (regs / visitors * 100) : 0;
+                            return { date: hour, visitors, registrations: regs, rate, isHourly: true };
+                        });
+                        
+                        renderConversionChart(container, conversionData, true);
+                        return;
+                    } else if (dateRange !== 'all' && !isNaN(dateRange)) {
+                        const cutoffDate = new Date();
+                        cutoffDate.setDate(cutoffDate.getDate() - dateRange);
+                        const cutoffString = cutoffDate.toISOString().split('T')[0];
+                        sortedDates = sortedDates.filter(date => date >= cutoffString);
+                    }
+                    
+                    // Calculate daily conversion rates
+                    const conversionData = sortedDates.map(date => {
+                        const visitors = dailyVisitors[date] ? dailyVisitors[date].size : 0;
+                        const registrations = dailyRegistrations[date] || 0;
+                        const rate = visitors > 0 ? (registrations / visitors * 100) : 0;
+                        return { date, visitors, registrations, rate };
+                    });
+                    
+                    renderConversionChart(container, conversionData, false);
+                })
+                .catch(error => {
+                    console.error('Error fetching registrations for conversion chart:', error);
+                    container.innerHTML = '<p style="text-align: center; color: #e74c3c; padding: 40px;">Error loading conversion data</p>';
+                });
+        }
+        
+        function renderConversionChart(container, conversionData, isHourly) {
+            if (conversionData.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No data available for selected date range</p>';
+                return;
+            }
+            
+            // Generate line chart with SVG
+            const width = container.offsetWidth - 90;
+            const height = 300;
+            const padding = { top: 20, right: 20, bottom: 60, left: 50 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+            
+            // Find max rate for scaling (with minimum of 10% for better visualization)
+            const maxRate = Math.max(...conversionData.map(d => d.rate), 10);
+            
+            // Create SVG
+            let svg = `
+                <div class="line-chart-canvas">
+                    <svg class="line-chart-svg" viewBox="0 0 ${width} ${height}">
+                        <defs>
+                            <linearGradient id="conversionLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="conversionAreaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.05" />
+                            </linearGradient>
+                        </defs>
+            `;
+            
+            // Draw horizontal grid lines and Y-axis labels
+            const gridLines = 5;
+            for (let i = 0; i <= gridLines; i++) {
+                const y = padding.top + (chartHeight / gridLines) * i;
+                const value = (maxRate * (1 - i / gridLines)).toFixed(1);
+                svg += `<line class="line-chart-grid" x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" />`;
+                svg += `<text class="line-chart-y-label" x="${padding.left - 10}" y="${y + 4}">${value}%</text>`;
+            }
+            
+            // Calculate points for line
+            const points = [];
+            const areaPoints = [];
+            conversionData.forEach((data, index) => {
+                const x = padding.left + (index / Math.max(1, conversionData.length - 1)) * chartWidth;
+                const y = padding.top + chartHeight - (data.rate / maxRate) * chartHeight;
+                points.push({ x, y, date: data.date, rate: data.rate, visitors: data.visitors, registrations: data.registrations, isHourly: data.isHourly });
+                areaPoints.push(`${x},${y}`);
+            });
+            
+            // Add area under line
+            const areaPath = `M ${padding.left},${padding.top + chartHeight} L ${areaPoints.join(' L ')} L ${padding.left + chartWidth},${padding.top + chartHeight} Z`;
+            svg += `<path class="line-chart-area" d="${areaPath}" fill="url(#conversionAreaGradient)" />`;
+            
+            // Draw line
+            const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`).join(' ');
+            svg += `<path class="line-chart-line" d="${linePath}" stroke="url(#conversionLineGradient)" />`;
+            
+            // Draw dots
+            points.forEach(p => {
+                svg += `<circle class="line-chart-dot" cx="${p.x}" cy="${p.y}" r="4" data-date="${p.date}" data-rate="${p.rate.toFixed(1)}" data-visitors="${p.visitors}" data-registrations="${p.registrations}" data-hourly="${p.isHourly || false}">
+                    <title>${p.date}: ${p.rate.toFixed(1)}% (${p.registrations}/${p.visitors})</title>
+                </circle>`;
+            });
+            
+            // Draw X-axis labels (show every nth date to avoid crowding)
+            const labelInterval = Math.max(1, Math.floor(conversionData.length / 8));
+            conversionData.forEach((data, index) => {
+                if (index % labelInterval === 0 || index === conversionData.length - 1) {
+                    const x = padding.left + (index / Math.max(1, conversionData.length - 1)) * chartWidth;
+                    let dateLabel;
+                    if (isHourly) {
+                        // Format as "Oct 28, 14:00"
+                        const dt = new Date(data.date + ':00:00Z');
+                        dateLabel = dt.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                    } else {
+                        dateLabel = new Date(data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    }
+                    svg += `<text class="line-chart-label" x="${x}" y="${height - 5}" transform="rotate(-45 ${x} ${height - 5})" style="text-anchor: end;">${dateLabel}</text>`;
+                }
+            });
+            
+            svg += `</svg></div>`;
+            
+            container.innerHTML = svg;
+            
+            // Add hover tooltips
+            const tooltip = document.createElement('div');
+            tooltip.className = 'line-chart-tooltip';
+            container.appendChild(tooltip);
+            
+            const dots = container.querySelectorAll('.line-chart-dot');
+            dots.forEach(dot => {
+                dot.addEventListener('mouseenter', (e) => {
+                    const date = e.target.getAttribute('data-date');
+                    const rate = e.target.getAttribute('data-rate');
+                    const visitors = e.target.getAttribute('data-visitors');
+                    const registrations = e.target.getAttribute('data-registrations');
+                    const isHourlyData = e.target.getAttribute('data-hourly') === 'true';
+                    
+                    let dateLabel;
+                    if (isHourlyData) {
+                        const dt = new Date(date + ':00:00Z');
+                        dateLabel = dt.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                    } else {
+                        dateLabel = new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    }
+                    
+                    tooltip.innerHTML = `<strong>${dateLabel}</strong><br>${rate}% conversion<br>${registrations} registrations / ${visitors} visitors`;
+                    tooltip.style.opacity = '1';
+                });
+                
+                dot.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = (e.pageX - container.offsetLeft + 10) + 'px';
+                    tooltip.style.top = (e.pageY - container.offsetTop - 30) + 'px';
+                });
+                
+                dot.addEventListener('mouseleave', () => {
+                    tooltip.style.opacity = '0';
+                });
+            });
+        }
+
         function displayBarChart(containerId, data) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
@@ -1552,7 +1886,20 @@
             
             // Filter data by date if selected
             let dataToUse = filteredData.filter(item => item.event === 'page_visit');
-            if (dateFilter !== 'all') {
+            
+            if (dateFilter === '1h' || dateFilter === '6h' || dateFilter === '24h') {
+                // Time-based filtering
+                const now = new Date();
+                const hoursMap = { '1h': 1, '6h': 6, '24h': 24 };
+                const hours = hoursMap[dateFilter];
+                const cutoffTime = new Date(now.getTime() - (hours * 60 * 60 * 1000));
+                
+                dataToUse = dataToUse.filter(item => {
+                    const itemTime = new Date(item.timestamp);
+                    return itemTime >= cutoffTime;
+                });
+            } else if (dateFilter !== 'all') {
+                // Date-based filtering
                 dataToUse = dataToUse.filter(item => {
                     const itemDate = new Date(item.timestamp).toISOString().split('T')[0];
                     return itemDate === dateFilter;
