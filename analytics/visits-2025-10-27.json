@@ -3727,5 +3727,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:10:43.910Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761549043897_9untybe7m",
+    "sessionId": "session_1761549043899_ec2q0q4i1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 691,
+    "screenHeight": 829,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "tasneem.elbanna0@gmail.com",
+    "name": "Tasneem"
   }
 ]
