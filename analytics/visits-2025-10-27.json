@@ -1369,5 +1369,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T04:26:36.682Z",
+    "event": "registration",
+    "email": "tamisal2024@gmail.com",
+    "name": "Tami",
+    "firstName": "Tami",
+    "lastName": "",
+    "country": "United States",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": null
   }
 ]
