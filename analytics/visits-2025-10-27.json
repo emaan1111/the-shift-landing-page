@@ -61,5 +61,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T00:16:17.792Z",
+    "event": "registration",
+    "email": "mannansana@icloud.com",
+    "name": "sana",
+    "firstName": "sana",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761524164235_nddqip5gl"
   }
 ]
