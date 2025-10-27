@@ -502,5 +502,26 @@
     "hookVariant": "B",
     "email": "kWQcHVznypE@cDvhN.wBK",
     "name": "qSTWbW"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T01:58:49.855Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761530329848_93kuxjktx",
+    "sessionId": "session_1761530329848_oydz8151n",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "capridreamz@gmail.com",
+    "name": "Sakina",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
