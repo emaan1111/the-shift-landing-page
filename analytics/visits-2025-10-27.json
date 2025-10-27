@@ -2894,5 +2894,12 @@
     "hookVariant": "B",
     "email": "khadeejagoussat@gmail.com",
     "name": "Khadidja Goussat"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:02:05.314Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
