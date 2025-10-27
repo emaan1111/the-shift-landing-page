@@ -472,11 +472,12 @@
                                 <th>Referrals</th>
                                 <th>Visits</th>
                                 <th>Conversion Rate</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody id="leaderboardTable">
                             <tr>
-                                <td colspan="7" class="empty-state">
+                                <td colspan="8" class="empty-state">
                                     <i class="fas fa-users"></i>
                                     <p>No referral data yet</p>
                                 </td>
@@ -606,10 +607,22 @@
             // Count referrals per user
             const referralCounts = {};
             const referralVisits = {};
+            const referredPeople = {}; // Track who was referred by whom
 
             registrations.forEach(r => {
                 if (r.referred_by) {
                     referralCounts[r.referred_by] = (referralCounts[r.referred_by] || 0) + 1;
+                    
+                    // Store referred person details
+                    if (!referredPeople[r.referred_by]) {
+                        referredPeople[r.referred_by] = [];
+                    }
+                    referredPeople[r.referred_by].push({
+                        name: `${r.first_name || ''} ${r.last_name || ''}`.trim(),
+                        email: r.email,
+                        country: r.country || 'N/A',
+                        timestamp: r.timestamp
+                    });
                 }
             });
 
@@ -633,7 +646,8 @@
                         country: referrer.country || 'N/A',
                         referrals: referrals,
                         visits: visits,
-                        conversion: conversion
+                        conversion: conversion,
+                        referredPeople: referredPeople[refId] || []
                     });
                 }
             });
@@ -659,6 +673,14 @@
 
                     const isYou = myRegistrationId && item.id == myRegistrationId;
                     const highlight = isYou ? 'style="background: #fff3cd; font-weight: bold;"' : '';
+                    
+                    // Create referrals details HTML
+                    const referralsDetailsHTML = item.referredPeople.map(person => `
+                        <div style="padding: 8px; border-bottom: 1px solid #eee;">
+                            <strong>${person.name}</strong> (${person.email})<br>
+                            <small style="color: #666;">📍 ${person.country} • ${new Date(person.timestamp).toLocaleDateString()}</small>
+                        </div>
+                    `).join('');
 
                     return `
                         <tr ${highlight}>
@@ -669,6 +691,21 @@
                             <td><strong>${item.referrals}</strong></td>
                             <td>${item.visits}</td>
                             <td>${item.conversion}%</td>
+                            <td>
+                                <button onclick="toggleReferralDetails(${item.id})" class="details-btn" style="padding: 5px 10px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                        <tr id="details-${item.id}" class="referral-details-row" style="display: none;">
+                            <td colspan="8" style="background: #f8f9fa; padding: 15px;">
+                                <div style="max-height: 300px; overflow-y: auto;">
+                                    <h4 style="margin-bottom: 10px; color: var(--primary);">
+                                        <i class="fas fa-users"></i> People Referred (${item.referrals})
+                                    </h4>
+                                    ${referralsDetailsHTML || '<p style="color: #999;">No referrals yet</p>'}
+                                </div>
+                            </td>
                         </tr>
                     `;
                 }).join('');
@@ -693,6 +730,19 @@
             }).catch(err => {
                 alert('Failed to copy: ' + err);
             });
+        }
+
+        function toggleReferralDetails(id) {
+            const detailsRow = document.getElementById(`details-${id}`);
+            const button = event.target;
+            
+            if (detailsRow.style.display === 'none') {
+                detailsRow.style.display = 'table-row';
+                button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide';
+            } else {
+                detailsRow.style.display = 'none';
+                button.innerHTML = '<i class="fas fa-eye"></i> View';
+            }
         }
 
         // Load stats on page load

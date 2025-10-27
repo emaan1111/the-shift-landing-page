@@ -1234,7 +1234,7 @@
                         <div class="step-content">
                             <p class="step-description">Be a light for others! Invite your friends so we can together raise strong, confident Muslims, and you can earn rewards from Allah just by sharing it :)</p>
                             
-                            <p class="step-description">We have gifted you a free spot because we trust you'll share this life-changing journey with other mothers and help us in this mission.</p>
+                            <p class="step-description" style="font-weight: 600;">We have gifted you a free spot because we trust you'll share this life-changing journey with other mothers who need this help and be part this mission to raise a generation of Unshakeable Muslims.</p>
                             
                             <div class="hadith-box">
                                 <p>The Prophet ﷺ said: "Whoever guides someone to goodness will have a reward like the one who did it."</p>
@@ -1680,6 +1680,10 @@ Here's the link to reserve a FREE spot ${referralUrl}`;
                         referralWhatsappBtn.href = whatsappUrl;
                         referralWhatsappBtn.onclick = function(e) {
                             e.preventDefault();
+                            // Track WhatsApp share click
+                            if (typeof trackEvent === 'function') {
+                                trackEvent('share_click', { method: 'whatsapp', referral_id: regId });
+                            }
                             window.open(whatsappUrl, '_blank');
                         };
                     }
@@ -1699,6 +1703,10 @@ Here's the link to reserve a FREE spot`;
                         referralFacebookBtn.href = facebookUrl;
                         referralFacebookBtn.onclick = function(e) {
                             e.preventDefault();
+                            // Track Facebook share click
+                            if (typeof trackEvent === 'function') {
+                                trackEvent('share_click', { method: 'facebook', referral_id: regId });
+                            }
                             window.open(facebookUrl, '_blank', 'width=600,height=400');
                         };
                     }
@@ -1716,6 +1724,10 @@ Join me! Register here: ${referralUrl}`;
                         referralEmailBtn.href = emailUrl;
                         referralEmailBtn.onclick = function(e) {
                             e.preventDefault();
+                            // Track Email share click
+                            if (typeof trackEvent === 'function') {
+                                trackEvent('share_click', { method: 'email', referral_id: regId });
+                            }
                             window.location.href = emailUrl;
                         };
                     }
@@ -1751,6 +1763,12 @@ Join me! Register here: ${referralUrl}`;
             input.setSelectionRange(0, 99999); // For mobile
             
             navigator.clipboard.writeText(input.value).then(() => {
+                // Track copy link click
+                const regId = localStorage.getItem('registrationId');
+                if (typeof trackEvent === 'function') {
+                    trackEvent('share_click', { method: 'copy_link', referral_id: regId });
+                }
+                
                 const button = event.target.closest('button');
                 const originalText = button.innerHTML;
                 button.innerHTML = '<i class="fas fa-check"></i> Copied!';
@@ -1772,6 +1790,12 @@ Join me! Register here: ${referralUrl}`;
             const text = templateDiv.textContent.trim();
             
             navigator.clipboard.writeText(text).then(() => {
+                // Track copy message click
+                const regId = localStorage.getItem('registrationId');
+                if (typeof trackEvent === 'function') {
+                    trackEvent('share_click', { method: 'copy_message', referral_id: regId });
+                }
+                
                 const button = document.getElementById('copyTemplateBtn');
                 const originalHTML = button.innerHTML;
                 button.innerHTML = '<i class="fas fa-check"></i> Copied!';
