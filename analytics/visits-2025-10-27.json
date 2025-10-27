@@ -5618,5 +5618,24 @@
     "email": "aishamalik03@hotmail.co.uk",
     "name": "Aisha",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T11:31:18.780Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761564678778_ep9ucjpy6",
+    "sessionId": "session_1761564678778_o4rcyqbmd",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
+    "screenWidth": 1366,
+    "screenHeight": 1536,
+    "language": "en-US",
+    "hookVariant": "B",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
