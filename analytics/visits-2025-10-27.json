@@ -2765,5 +2765,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761544161294_p9ttwmlui"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:53:06.979Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544161294_p9ttwmlui",
+    "sessionId": "session_1761544386977_dqr50ycdi",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 846,
+    "language": "en-GB",
+    "email": "bintesakeenah3@gmail.com",
+    "name": "Abida",
+    "country": "United Kingdom"
   }
 ]
