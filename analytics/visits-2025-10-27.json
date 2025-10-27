@@ -3470,5 +3470,20 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=rubykhan13@hotmail.co.uk&name=Robina"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:50:33.852Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547833849_wb3c2vrtg",
+    "sessionId": "session_1761547833849_v8do72dyi",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/27.0 Chrome/125.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 504,
+    "screenHeight": 940,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "middy-99@hotmail.com",
+    "name": "Kalsoom"
   }
 ]
