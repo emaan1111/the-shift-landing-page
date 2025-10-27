@@ -2676,5 +2676,12 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761544306697_ljof2nlf7"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:52:06.750Z",
+    "event": "button_click",
+    "buttonName": "Yes, I want to join The Shift Free 3 Day Challenge",
+    "referrer": "Direct"
   }
 ]
