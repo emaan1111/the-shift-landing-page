@@ -4180,5 +4180,20 @@
     "email": "robila.mughal@gmail.com",
     "name": "Robila",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:13:22.895Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552802882_ejzcyll49",
+    "sessionId": "session_1761552802884_orzj9wfph",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "email": "ushuma789@hotmail.com",
+    "name": "Umme"
   }
 ]
