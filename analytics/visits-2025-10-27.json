@@ -442,5 +442,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T01:48:54.849Z",
+    "event": "registration",
+    "email": "kokabmadiha8@gmail.com",
+    "name": "Madiha Kokab ",
+    "firstName": "Madiha",
+    "lastName": "Kokab",
+    "country": "Other",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761529669768_vibkdbqnw"
   }
 ]
