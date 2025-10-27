@@ -5787,5 +5787,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": null
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T11:57:29.998Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761566249997_vblpylyxq",
+    "sessionId": "session_1761566249997_s8fx2fw0p",
+    "referrer": "https://momsshift.com/?email=knazerism@gmail.com",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 428,
+    "screenHeight": 926,
+    "language": "en-US",
+    "email": "knazerism@gmail.com",
+    "name": "Khatera",
+    "country": "United States"
   }
 ]
