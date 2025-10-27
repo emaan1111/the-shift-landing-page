@@ -2020,5 +2020,24 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761542715697_zt6hfszg8"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:25:33.301Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761542715697_zt6hfszg8",
+    "sessionId": "session_1761542733270_gfzk67z5a",
+    "referrer": "https://momsshift.com/?email=hani2148@gmail.com&name=Umme",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-AU",
+    "email": "hani2148@gmail.com",
+    "name": "Umme",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Australia"
   }
 ]
