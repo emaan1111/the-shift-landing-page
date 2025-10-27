@@ -4646,5 +4646,12 @@
     "hookVariant": "B",
     "email": "irfanshireen4@gmail.com",
     "name": "Shireen"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:02:33.478Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
