@@ -5890,5 +5890,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T12:20:01.586Z",
+    "event": "registration",
+    "email": "am_olola@yahoo.com",
+    "name": "Olaide Adebayo",
+    "firstName": "Olaide",
+    "lastName": "Adebayo",
+    "country": "Other",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761567530785_xb2vb05sz"
   }
 ]
