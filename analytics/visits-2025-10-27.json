@@ -4322,5 +4322,26 @@
     "screenHeight": 600,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:37:51.843Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761554271836_ty0rsc7yy",
+    "sessionId": "session_1761554271837_sfoburxvl",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "farrukh.kmr@gmail.com",
+    "name": "Farrukh",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
