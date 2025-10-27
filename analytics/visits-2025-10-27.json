@@ -1663,5 +1663,12 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=alikhadra452@gmail.com&name=Khadra"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T04:51:17.499Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
