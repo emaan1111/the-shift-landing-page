@@ -2908,5 +2908,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:02:18.833Z",
+    "event": "registration",
+    "email": "khadeejagoussat@gmail.com",
+    "name": "Khadidja Goussat",
+    "firstName": "Khadidja",
+    "lastName": "Goussat",
+    "country": "Oman",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761544902231_4dferxv8b"
   }
 ]
