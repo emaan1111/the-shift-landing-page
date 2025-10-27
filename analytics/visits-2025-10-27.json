@@ -3609,5 +3609,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T07:04:12.325Z",
+    "event": "registration",
+    "email": "tasneem.elbanna0@gmail.com",
+    "name": "Tasneem",
+    "firstName": "Tasneem",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761548575643_8gcquevjd"
   }
 ]
