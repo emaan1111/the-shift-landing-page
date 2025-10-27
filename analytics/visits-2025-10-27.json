@@ -5573,5 +5573,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T11:01:42.114Z",
+    "event": "registration",
+    "email": "lamia-x@hotmail.co.uk",
+    "name": "Lamia B",
+    "firstName": "Lamia",
+    "lastName": "B",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761562886425_aelsr42jp"
   }
 ]
