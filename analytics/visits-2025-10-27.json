@@ -3757,5 +3757,12 @@
     "hookVariant": "A",
     "email": "rwarsi1221@gmail.com",
     "name": "Rahma"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:17:23.757Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
