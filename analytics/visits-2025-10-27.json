@@ -4935,5 +4935,20 @@
     "language": "en-GB",
     "hookVariant": "B",
     "email": "wida3232@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:59:43.840Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761559183840_k664h3srk",
+    "sessionId": "session_1761559183840_u5wk2uztc",
+    "referrer": "https://www.google.com/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "ayshasiddiqa2914@gmail.com",
+    "name": "Aysha"
   }
 ]
