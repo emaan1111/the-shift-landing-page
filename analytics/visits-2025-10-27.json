@@ -3544,5 +3544,20 @@
     "hookVariant": "A",
     "email": "leenauk@icloud.com",
     "name": "Leena"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T06:59:26.229Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761520907119_yx56u5q7a",
+    "sessionId": "session_1761548366226_i9xqy9p1i",
+    "referrer": "https://momsshift.com/?email=aliyasmin201@gmail.com&name=jaz",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "email": "aliyasmin201@gmail.com",
+    "name": "jaz",
+    "country": "United Kingdom"
   }
 ]
