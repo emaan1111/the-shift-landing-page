@@ -226,5 +226,12 @@
     "hookVariant": "B",
     "email": "rehanashah817@gmail.com",
     "name": "Hadia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T00:54:09.469Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
