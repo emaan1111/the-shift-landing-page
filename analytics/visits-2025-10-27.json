@@ -550,5 +550,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T02:11:50.690Z",
+    "event": "registration",
+    "email": "salsabella.asmuni@gmail.com",
+    "name": "Nur salsabella binti asmuni",
+    "firstName": "Nur",
+    "lastName": "salsabella binti asmuni",
+    "country": "Malaysia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761531081367_fxriacpsz"
   }
 ]
