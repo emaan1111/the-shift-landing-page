@@ -976,5 +976,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T03:24:07.786Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761535447762_bzypgch6h",
+    "sessionId": "session_1761535447769_5ljlmvpon",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "shieyaam.jacobs@uct.ac.za",
+    "name": "Shieyaam"
   }
 ]
