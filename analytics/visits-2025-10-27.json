@@ -4261,5 +4261,18 @@
     "hookVariant": "A",
     "email": "tasneem.elbanna0@gmail.com",
     "name": "Tasneem"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:20:32.762Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761553232751_qx5xahmqt",
+    "sessionId": "session_1761553232751_v9ybej753",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 802,
+    "language": "en-GB",
+    "hookVariant": "B"
   }
 ]
