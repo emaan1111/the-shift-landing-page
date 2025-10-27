@@ -3823,5 +3823,26 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:29:16.616Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761550156613_upslfyqo8",
+    "sessionId": "session_1761550156613_qkdj5d3gh",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "sammy2011@live.co.uk",
+    "name": "Sameen",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
