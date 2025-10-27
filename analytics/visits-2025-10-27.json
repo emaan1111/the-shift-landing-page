@@ -3801,5 +3801,20 @@
     "email": "rwarsi1221@gmail.com",
     "name": "Rahma",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:28:34.140Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761550114136_ac04oyh3z",
+    "sessionId": "session_1761550114137_c26bm87tf",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-AU",
+    "hookVariant": "A",
+    "email": "mayada_agha@outlook.com",
+    "name": "Mayada"
   }
 ]
