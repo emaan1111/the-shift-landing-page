@@ -3167,5 +3167,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:44:28.779Z",
+    "event": "registration",
+    "email": "tabassum2116@yahoo.com",
+    "name": "Tabassum",
+    "firstName": "Tabassum",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": null
   }
 ]
