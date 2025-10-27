@@ -1685,5 +1685,20 @@
     "email": "rashidahdaud84@yahoo.com",
     "name": "Rashidah",
     "country": "Malaysia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T04:51:47.635Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761540682001_mmg5u8vze",
+    "sessionId": "session_1761540707635_d0ill4wzr",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 440,
+    "screenHeight": 956,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "rashidahdaud84@yahoo.com",
+    "name": "Rashidah"
   }
 ]
