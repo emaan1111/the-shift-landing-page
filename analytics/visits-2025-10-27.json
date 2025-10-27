@@ -4034,5 +4034,20 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:05:54.024Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552354020_as2la53sp",
+    "sessionId": "session_1761552354021_weplz357x",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-AU",
+    "hookVariant": "B",
+    "email": "bernie_1@live.com",
+    "name": "Bea"
   }
 ]
