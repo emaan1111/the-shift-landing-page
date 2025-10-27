@@ -4914,5 +4914,12 @@
     "hookVariant": "B",
     "email": "ayshasiddiqa2914@gmail.com",
     "name": "Aysha"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:58:27.614Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
