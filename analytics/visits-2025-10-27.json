@@ -2966,5 +2966,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:09:27.333Z",
+    "event": "registration",
+    "email": "washiela@live.com",
+    "name": "Washiela Arendse",
+    "firstName": "Washiela",
+    "lastName": "Arendse",
+    "country": "South Africa",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761545325240_d89bdbcly"
   }
 ]
