@@ -386,5 +386,26 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T01:47:49.782Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761529669768_vibkdbqnw",
+    "sessionId": "session_1761529669770_93e53abxy",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "kokabmadiha8@gmail.com",
+    "name": "Kokab",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
