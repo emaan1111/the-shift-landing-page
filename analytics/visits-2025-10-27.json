@@ -4063,5 +4063,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T08:06:27.400Z",
+    "event": "registration",
+    "email": "bernie_1@live.com",
+    "name": "Bea",
+    "firstName": "Bea",
+    "lastName": "",
+    "country": "Australia",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761552354020_as2la53sp"
   }
 ]
