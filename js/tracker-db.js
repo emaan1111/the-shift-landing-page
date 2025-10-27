@@ -1,26 +1,5 @@
-// Firebase-based Analytics Tracker
-// Replaces GitHub-based tracking with Firestore database
-
-// Initialize Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-
-// Import Firebase config - make sure to create this file with your credentials
-// See firebase-config.js.template for the structure
-let firebaseConfig;
-try {
-    // Dynamically load the config
-    const configResponse = await fetch('/firebase-config.js');
-    const configText = await configResponse.text();
-    eval(configResponse);
-} catch (error) {
-    console.error('❌ Could not load Firebase config. Please create js/firebase-config.js with your Firebase credentials.');
-    console.error('See FIREBASE_SETUP.md for instructions.');
-}
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// Database-based Analytics Tracker
+// Replaces GitHub-based tracking with direct database storage via API
 
 // Generate or retrieve persistent visitor ID
 let visitorId = localStorage.getItem('visitorId');
@@ -52,16 +31,16 @@ async function getGeolocationData() {
         
         if (geoResponse.ok) {
             const geoData = await geoResponse.json();
+            console.log('✅ Geolocation data:', geoData);
             return {
                 ipAddress: geoData.ip || 'Unknown',
                 city: geoData.city || 'Unknown',
                 region: geoData.region || 'Unknown',
-                timezone: geoData.timezone || 'Unknown',
                 country: geoData.country_name || 'Unknown',
-                countryCode: geoData.country_code || 'XX'
+                timezone: geoData.timezone || 'Unknown'
             };
-        } else if (geoResponse.status === 429) {
-            console.log('⚠️ Geolocation API rate limited (429)');
+        } else {
+            console.log('⚠️ Geolocation API returned status:', geoResponse.status);
             return null;
         }
     } catch (error) {
@@ -72,9 +51,9 @@ async function getGeolocationData() {
 
 // Track page visit
 async function trackPageVisit() {
-    // Skip if on analytics page or if Firebase not initialized
-    if (window.location.pathname.includes('analytics') || !db) {
-        console.log('⏭️ Tracking skipped - on analytics page or Firebase not ready');
+    // Skip if on analytics page
+    if (window.location.pathname.includes('analytics')) {
+        console.log('⏭️ Tracking skipped - on analytics page');
         return;
     }
     
@@ -82,7 +61,7 @@ async function trackPageVisit() {
     
     const data = {
         page: window.location.pathname,
-        timestamp: serverTimestamp(),
+        timestamp: new Date().toISOString(),
         event: 'page_visit',
         visitorId: visitorId,
         sessionId: sessionId,
@@ -108,6 +87,7 @@ async function trackPageVisit() {
     const utmMedium = getURLParameter('utm_medium');
     const utmCampaign = getURLParameter('utm_campaign');
     const utmContent = getURLParameter('utm_content');
+    const referredBy = getURLParameter('ref'); // Referral ID
     
     if (email) data.email = email;
     if (name) {
@@ -119,6 +99,7 @@ async function trackPageVisit() {
     if (utmMedium) data.utmMedium = utmMedium;
     if (utmCampaign) data.utmCampaign = utmCampaign;
     if (utmContent) data.utmContent = utmContent;
+    if (referredBy) data.referredBy = parseInt(referredBy, 10); // Convert to integer
 
     // Get geolocation
     const geoData = await getGeolocationData();
@@ -131,21 +112,29 @@ async function trackPageVisit() {
         // Prefer URL country parameter, fall back to geolocation
         if (urlCountry) {
             data.country = urlCountry;
-            console.log('✅ Using country from form:', urlCountry);
         } else {
             data.country = geoData.country;
-            data.countryCode = geoData.countryCode;
-            console.log('✅ Using country from geolocation:', geoData.country);
         }
     } else if (urlCountry) {
         data.country = urlCountry;
-        console.log('✅ Using country from form (geolocation failed):', urlCountry);
     }
 
-    // Save to Firestore
+    // Save to database via API
     try {
-        const docRef = await addDoc(collection(db, 'analytics'), data);
-        console.log('✅ Page visit tracked! Document ID:', docRef.id);
+        const response = await fetch('/api/analytics/track', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log('✅ Page visit tracked! ID:', result.id);
+        } else {
+            console.error('❌ Error tracking page visit:', response.status);
+        }
     } catch (error) {
         console.error('❌ Error tracking page visit:', error);
     }
@@ -153,13 +142,11 @@ async function trackPageVisit() {
 
 // Track page exit
 async function trackPageExit() {
-    if (!db) return;
-    
     const duration = Math.round((Date.now() - pageEntryTime) / 1000);
     
     const data = {
         page: window.location.pathname,
-        timestamp: serverTimestamp(),
+        timestamp: new Date().toISOString(),
         event: 'page_exit',
         sessionId: sessionId,
         visitorId: visitorId,
@@ -171,7 +158,9 @@ async function trackPageExit() {
     }
 
     try {
-        await addDoc(collection(db, 'analytics'), data);
+        // Use sendBeacon for reliable exit tracking (doesn't block page unload)
+        const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+        navigator.sendBeacon('/api/analytics/track', blob);
         console.log('✅ Page exit tracked! Duration:', duration, 'seconds');
     } catch (error) {
         console.log('⚠️ Exit tracking error:', error);
@@ -180,11 +169,9 @@ async function trackPageExit() {
 
 // Track button clicks
 async function trackButtonClick(buttonName) {
-    if (!db) return;
-    
     const data = {
         page: window.location.pathname,
-        timestamp: serverTimestamp(),
+        timestamp: new Date().toISOString(),
         event: 'button_click',
         buttonName: buttonName,
         visitorId: visitorId,
@@ -197,8 +184,19 @@ async function trackButtonClick(buttonName) {
     }
 
     try {
-        await addDoc(collection(db, 'analytics'), data);
-        console.log('✅ Button click tracked:', buttonName);
+        const response = await fetch('/api/analytics/track', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            console.log('✅ Button click tracked:', buttonName);
+        } else {
+            console.error('❌ Error tracking button click:', response.status);
+        }
     } catch (error) {
         console.error('❌ Error tracking button click:', error);
     }
@@ -206,11 +204,8 @@ async function trackButtonClick(buttonName) {
 
 // Track registrations
 async function trackRegistration(formData) {
-    if (!db) return;
-    
     const data = {
-        timestamp: serverTimestamp(),
-        event: 'registration',
+        timestamp: new Date().toISOString(),
         visitorId: visitorId,
         sessionId: sessionId,
         ...formData
@@ -221,9 +216,22 @@ async function trackRegistration(formData) {
     }
 
     try {
-        const docRef = await addDoc(collection(db, 'registrations'), data);
-        console.log('✅ Registration tracked! Document ID:', docRef.id);
-        return docRef.id;
+        const response = await fetch('/api/analytics/registration', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log('✅ Registration tracked! ID:', result.id);
+            return result.id;
+        } else {
+            console.error('❌ Error tracking registration:', response.status);
+            return null;
+        }
     } catch (error) {
         console.error('❌ Error tracking registration:', error);
         return null;

@@ -4,9 +4,13 @@ import requests
 import json
 import os
 from datetime import datetime
+import database  # Import our database module
 
 app = Flask(__name__, static_folder='.')
 CORS(app)  # Enable CORS for all routes
+
+# Initialize database on startup
+database.init_db()
 
 # ClickFunnels Configuration
 CLICKFUNNELS_CONFIG = {
@@ -269,118 +273,137 @@ def backup_registration():
 
 @app.route('/api/registrations', methods=['GET'])
 def get_all_registrations():
-    """Get all registrations from backup files and GitHub visits"""
+    """Get all registrations from database (replacing GitHub + backup files)"""
     try:
-        all_registrations = []
+        registrations = database.get_all_registrations()
+        return jsonify(registrations), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# NEW DATABASE ENDPOINTS
+
+@app.route('/api/analytics/track', methods=['POST'])
+def track_analytics():
+    """Track analytics event to database"""
+    try:
+        data = request.json
         
-        # First, load from local backups
-        backup_dir = 'backups'
-        if os.path.exists(backup_dir):
-            from glob import glob
-            backup_files = sorted(glob(os.path.join(backup_dir, 'registrations-*.json')))
-            
-            for backup_file in backup_files:
-                try:
-                    with open(backup_file, 'r') as f:
-                        registrations = json.load(f)
-                        if isinstance(registrations, list):
-                            all_registrations.extend(registrations)
-                except:
-                    pass
+        # Add server timestamp if not present
+        if 'timestamp' not in data:
+            data['timestamp'] = datetime.now().isoformat()
         
-        # Then, try to load registrations from GitHub visits files
-        try:
-            config_path = os.path.join('.', 'js', 'analytics-config.js')
-            if os.path.exists(config_path):
-                with open(config_path, 'r') as f:
-                    content = f.read()
-                    import re
-                    token_match = re.search(r"token:\s*['\"]([^'\"]+)['\"]", content)
-                    owner_match = re.search(r"owner:\s*['\"]([^'\"]+)['\"]", content)
-                    repo_match = re.search(r"repo:\s*['\"]([^'\"]+)['\"]", content)
-                    
-                    if token_match and owner_match and repo_match:
-                        token = token_match.group(1)
-                        owner = owner_match.group(1)
-                        repo = repo_match.group(1)
-                        
-                        # Fetch list of files from GitHub
-                        url = f"https://api.github.com/repos/{owner}/{repo}/contents/analytics"
-                        headers = {
-                            'Authorization': f'token {token}',
-                            'Accept': 'application/vnd.github.v3+json'
-                        }
-                        
-                        response = requests.get(url, headers=headers)
-                        if response.status_code == 200:
-                            files = response.json()
-                            
-                            # Look for visits files that may contain registrations
-                            for file in files:
-                                if 'visits' in file['name'].lower() and file['name'].endswith('.json'):
-                                    try:
-                                        file_url = file['url']
-                                        file_response = requests.get(file_url, headers=headers)
-                                        if file_response.status_code == 200:
-                                            file_data = file_response.json()
-                                            if 'content' in file_data:
-                                                import base64
-                                                decoded_content = base64.b64decode(file_data['content']).decode('utf-8')
-                                                visits = json.loads(decoded_content)
-                                                if isinstance(visits, list):
-                                                    # Extract only registration events
-                                                    for visit in visits:
-                                                        if visit.get('event') == 'registration':
-                                                            reg = {
-                                                                'email': visit.get('email'),
-                                                                'firstName': visit.get('firstName'),
-                                                                'lastName': visit.get('lastName'),
-                                                                'country': visit.get('country'),
-                                                                'city': visit.get('city'),
-                                                                'timestamp': visit.get('timestamp')
-                                                            }
-                                                            # Avoid duplicates
-                                                            if not any(r.get('email') == reg.get('email') and r.get('timestamp') == reg.get('timestamp') for r in all_registrations):
-                                                                all_registrations.append(reg)
-                                    except:
-                                        pass
-        except:
-            pass
+        event_id = database.insert_analytics(data)
         
-        # Sort by timestamp (newest first)
-        all_registrations.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+        return jsonify({
+            'success': True,
+            'id': event_id,
+            'message': 'Event tracked successfully'
+        }), 200
         
-        # Remove duplicates based on email, name, and date (ignoring time)
-        # This handles cases where the same registration is saved multiple times
-        # (e.g., to both GitHub analytics and local backup with slightly different timestamps)
-        from datetime import datetime as dt
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/analytics/registration', methods=['POST'])
+def track_registration():
+    """Track registration to database"""
+    try:
+        data = request.json
         
-        seen = set()
-        unique_registrations = []
+        # Add server timestamp if not present
+        if 'timestamp' not in data:
+            data['timestamp'] = datetime.now().isoformat()
         
-        for reg in all_registrations:
-            if not reg.get('email'):  # Skip if no email
-                continue
-            
-            email = reg.get('email', '').lower().strip()
-            full_name = f"{reg.get('firstName', '')} {reg.get('lastName', '')}".strip().lower()
-            
-            # Extract date only (YYYY-MM-DD) from timestamp to avoid second-level differences
-            timestamp_str = reg.get('timestamp', '')
-            date_only = timestamp_str[:10] if timestamp_str else ''
-            
-            # Create a deduplication key: email + name + date (ignoring exact time)
-            key = (email, full_name, date_only)
-            
-            if key not in seen:
-                seen.add(key)
-                unique_registrations.append(reg)
+        reg_id = database.insert_registration(data)
+        
+        if reg_id:
+            return jsonify({
+                'success': True,
+                'id': reg_id,
+                'message': 'Registration tracked successfully'
+            }), 200
+        else:
+            return jsonify({
+                'success': True,
+                'message': 'Duplicate registration skipped'
+            }), 200
+        
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/analytics/stats', methods=['GET'])
+def get_analytics_stats():
+    """Get analytics statistics"""
+    try:
+        stats = database.get_analytics_stats()
+        return jsonify(stats), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/analytics/events', methods=['GET'])
+def get_analytics_events():
+    """Get analytics events with optional filtering"""
+    try:
+        event_type = request.args.get('event')
+        start_date = request.args.get('start_date')
+        end_date = request.args.get('end_date')
+        limit = request.args.get('limit', type=int)
+        
+        events = database.get_all_analytics(
+            event_type=event_type,
+            start_date=start_date,
+            end_date=end_date,
+            limit=limit
+        )
+        
+        return jsonify(events), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/analytics/event/<int:event_id>', methods=['GET', 'DELETE'])
+def manage_analytics_event(event_id):
+    """Get or delete a specific analytics event"""
+    try:
+        if request.method == 'GET':
+            event = database.get_analytics_event_by_id(event_id)
+            if event:
+                return jsonify(event), 200
             else:
-                # Duplicate found - log it for debugging
-                print(f'⚠️  Duplicate registration removed: {email} ({full_name}) on {date_only}')
+                return jsonify({'error': 'Event not found'}), 404
         
-        return jsonify(unique_registrations), 200
+        elif request.method == 'DELETE':
+            success = database.delete_analytics_event(event_id)
+            if success:
+                return jsonify({
+                    'success': True,
+                    'message': f'Analytics event {event_id} deleted successfully'
+                }), 200
+            else:
+                return jsonify({'error': 'Event not found'}), 404
+    
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/registration/<int:registration_id>', methods=['GET', 'DELETE'])
+def manage_registration(registration_id):
+    """Get or delete a specific registration"""
+    try:
+        if request.method == 'GET':
+            registration = database.get_registration_by_id(registration_id)
+            if registration:
+                return jsonify(registration), 200
+            else:
+                return jsonify({'error': 'Registration not found'}), 404
         
+        elif request.method == 'DELETE':
+            success = database.delete_registration(registration_id)
+            if success:
+                return jsonify({
+                    'success': True,
+                    'message': f'Registration {registration_id} deleted successfully'
+                }), 200
+            else:
+                return jsonify({'error': 'Registration not found'}), 404
+    
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Stats - The Shift</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #a06cd5;
+            --secondary: #ff9eb5;
+            --gradient: linear-gradient(135deg, #a06cd5, #ff9eb5);
+            --dark: #2d1b4e;
+            --light: #f8f5ff;
+            --success: #4caf50;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(160, 108, 213, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .stat-card .icon {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .referral-link-box {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed var(--primary);
+        }
+
+        .referral-link {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .referral-link input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+        .copy-button {
+            padding: 12px 24px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .copy-button:hover {
+            transform: scale(1.05);
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+        }
+
+        .btn-facebook {
+            background: #1877F2;
+        }
+
+        .btn-email {
+            background: #EA4335;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .data-table th {
+            background: var(--gradient);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:hover {
+            background: var(--light);
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .rank-1 {
+            background: var(--gold);
+            color: #fff;
+        }
+
+        .rank-2 {
+            background: var(--silver);
+            color: #fff;
+        }
+
+        .rank-3 {
+            background: var(--bronze);
+            color: #fff;
+        }
+
+        .rank-other {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .loading i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .referral-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .detail-item .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .detail-item .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stat-card .number {
+                font-size: 2rem;
+            }
+
+            .referral-link {
+                flex-direction: column;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+            }
+
+            .share-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="analytics.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Analytics
+            </a>
+            <h1><i class="fas fa-users"></i> Referral Dashboard</h1>
+            <p>Track your referrals and see who's sharing The Shift</p>
+        </div>
+
+        <div id="loading" class="loading">
+            <div><i class="fas fa-spinner"></i></div>
+            <p>Loading referral stats...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <!-- Summary Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="number" id="totalReferrals">0</div>
+                    <div class="label">Total Referrals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-share-nodes"></i></div>
+                    <div class="number" id="totalReferrers">0</div>
+                    <div class="label">Active Referrers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <div class="number" id="totalReferralVisits">0</div>
+                    <div class="label">Referral Visits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-percentage"></i></div>
+                    <div class="number" id="conversionRate">0%</div>
+                    <div class="label">
+                        Referral Conversion 
+                        <span class="tooltip">
+                            <i class="fas fa-info-circle" style="font-size: 0.8rem;"></i>
+                            <span class="tooltiptext">Visits that converted to registrations</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Referral Link -->
+            <div class="section" id="yourLinkSection" style="display: none;">
+                <h2><i class="fas fa-link"></i> Your Referral Link</h2>
+                <div class="referral-link-box">
+                    <p style="margin-bottom: 10px; color: #666;">Share this link to invite others to The Shift Challenge:</p>
+                    <div class="referral-link">
+                        <input type="text" id="referralLinkInput" readonly>
+                        <button class="copy-button" onclick="copyReferralLink(event)">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <div class="share-buttons">
+                        <a href="#" id="whatsappShare" class="share-btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                        </a>
+                        <a href="#" id="facebookShare" class="share-btn btn-facebook" target="_blank">
+                            <i class="fab fa-facebook"></i> Share on Facebook
+                        </a>
+                        <a href="#" id="emailShare" class="share-btn btn-email">
+                            <i class="fas fa-envelope"></i> Share via Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Your Stats -->
+                <div class="referral-details">
+                    <div class="detail-item">
+                        <div class="value" id="yourReferralCount">0</div>
+                        <div class="label">Your Referrals</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="value" id="yourReferralVisits">0</div>
+                        <div class="label">Link Clicks</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="value" id="yourConversionRate">0%</div>
+                        <div class="label">Your Conversion</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="section">
+                <h2><i class="fas fa-trophy"></i> Referral Leaderboard</h2>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Country</th>
+                                <th>Referrals</th>
+                                <th>Visits</th>
+                                <th>Conversion Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardTable">
+                            <tr>
+                                <td colspan="7" class="empty-state">
+                                    <i class="fas fa-users"></i>
+                                    <p>No referral data yet</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Your Referred Users -->
+            <div class="section" id="yourReferralsSection" style="display: none;">
+                <h2><i class="fas fa-user-friends"></i> People You Referred</h2>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Country</th>
+                                <th>Registered</th>
+                            </tr>
+                        </thead>
+                        <tbody id="yourReferralsTable">
+                            <tr>
+                                <td colspan="4" class="empty-state">
+                                    <i class="fas fa-user-plus"></i>
+                                    <p>No referrals yet. Share your link above!</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let myRegistrationId = null;
+
+        async function loadReferralStats() {
+            try {
+                // Get registrations
+                const regResponse = await fetch('/api/registrations');
+                const registrations = await regResponse.json();
+
+                // Get analytics events
+                const eventsResponse = await fetch('/api/analytics/events');
+                const events = await eventsResponse.json();
+
+                // Calculate overall stats
+                const totalReferrals = registrations.filter(r => r.referred_by).length;
+                const referrers = new Set(registrations.filter(r => r.referred_by).map(r => r.referred_by));
+                const totalReferrers = referrers.size;
+                const referralVisits = events.filter(e => e.referred_by && e.event === 'page_visit').length;
+                const conversionRate = referralVisits > 0 ? ((totalReferrals / referralVisits) * 100).toFixed(1) : 0;
+
+                document.getElementById('totalReferrals').textContent = totalReferrals;
+                document.getElementById('totalReferrers').textContent = totalReferrers;
+                document.getElementById('totalReferralVisits').textContent = referralVisits;
+                document.getElementById('conversionRate').textContent = conversionRate + '%';
+
+                // Check if current user has a registration ID
+                myRegistrationId = localStorage.getItem('registrationId');
+                
+                if (myRegistrationId) {
+                    setupYourReferralLink(myRegistrationId);
+                    loadYourReferrals(myRegistrationId, registrations, events);
+                }
+
+                // Build leaderboard
+                buildLeaderboard(registrations, events);
+
+                // Hide loading, show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading referral stats:', error);
+                document.getElementById('loading').innerHTML = '<p style="color: red;">Error loading stats. Please refresh the page.</p>';
+            }
+        }
+
+        function setupYourReferralLink(regId) {
+            const baseUrl = window.location.origin;
+            const referralUrl = `${baseUrl}/?ref=${regId}`;
+            
+            document.getElementById('yourLinkSection').style.display = 'block';
+            document.getElementById('referralLinkInput').value = referralUrl;
+
+            // Setup share buttons
+            const message = `I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 at 11AM-1PM EST for 2-hour transformative sessions. Register here: ${referralUrl}`;
+            document.getElementById('whatsappShare').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}`;
+            
+            const emailSubject = 'Join me for The Shift Challenge!';
+            const emailBody = `I just registered for The Shift Free 3-Day Challenge - a transformative journey for Muslim mothers.\n\nEvent: Nov 6-8, 2025\nTime: 11AM-1PM EST (2 hours daily)\n\nJoin me! Register here: ${referralUrl}`;
+            document.getElementById('emailShare').href = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        }
+
+        function loadYourReferrals(regId, registrations, events) {
+            const yourReferrals = registrations.filter(r => r.referred_by == regId);
+            const yourVisits = events.filter(e => e.referred_by == regId && e.event === 'page_visit').length;
+            const yourConversion = yourVisits > 0 ? ((yourReferrals.length / yourVisits) * 100).toFixed(1) : 0;
+
+            document.getElementById('yourReferralCount').textContent = yourReferrals.length;
+            document.getElementById('yourReferralVisits').textContent = yourVisits;
+            document.getElementById('yourConversionRate').textContent = yourConversion + '%';
+
+            if (yourReferrals.length > 0) {
+                document.getElementById('yourReferralsSection').style.display = 'block';
+                const tbody = document.getElementById('yourReferralsTable');
+                tbody.innerHTML = yourReferrals.map(r => {
+                    const date = new Date(r.timestamp || r.created_at);
+                    return `
+                        <tr>
+                            <td>${r.first_name || ''} ${r.last_name || ''}</td>
+                            <td>${r.email}</td>
+                            <td>${r.country || 'N/A'}</td>
+                            <td>${date.toLocaleDateString()}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        }
+
+        function buildLeaderboard(registrations, events) {
+            // Count referrals per user
+            const referralCounts = {};
+            const referralVisits = {};
+
+            registrations.forEach(r => {
+                if (r.referred_by) {
+                    referralCounts[r.referred_by] = (referralCounts[r.referred_by] || 0) + 1;
+                }
+            });
+
+            events.filter(e => e.referred_by && e.event === 'page_visit').forEach(e => {
+                referralVisits[e.referred_by] = (referralVisits[e.referred_by] || 0) + 1;
+            });
+
+            // Get referrer details
+            const leaderboard = [];
+            Object.keys(referralCounts).forEach(refId => {
+                const referrer = registrations.find(r => r.id == refId);
+                if (referrer) {
+                    const visits = referralVisits[refId] || 0;
+                    const referrals = referralCounts[refId];
+                    const conversion = visits > 0 ? ((referrals / visits) * 100).toFixed(1) : 0;
+                    
+                    leaderboard.push({
+                        id: refId,
+                        name: `${referrer.first_name || ''} ${referrer.last_name || ''}`.trim(),
+                        email: referrer.email,
+                        country: referrer.country || 'N/A',
+                        referrals: referrals,
+                        visits: visits,
+                        conversion: conversion
+                    });
+                }
+            });
+
+            // Sort by referrals (descending)
+            leaderboard.sort((a, b) => b.referrals - a.referrals);
+
+            if (leaderboard.length > 0) {
+                const tbody = document.getElementById('leaderboardTable');
+                tbody.innerHTML = leaderboard.map((item, index) => {
+                    const rank = index + 1;
+                    let rankBadge = '';
+                    
+                    if (rank === 1) {
+                        rankBadge = '<span class="rank-badge rank-1">🥇</span>';
+                    } else if (rank === 2) {
+                        rankBadge = '<span class="rank-badge rank-2">🥈</span>';
+                    } else if (rank === 3) {
+                        rankBadge = '<span class="rank-badge rank-3">🥉</span>';
+                    } else {
+                        rankBadge = `<span class="rank-badge rank-other">${rank}</span>`;
+                    }
+
+                    const isYou = myRegistrationId && item.id == myRegistrationId;
+                    const highlight = isYou ? 'style="background: #fff3cd; font-weight: bold;"' : '';
+
+                    return `
+                        <tr ${highlight}>
+                            <td>${rankBadge}</td>
+                            <td>${item.name}${isYou ? ' <span style="color: var(--primary);">(You!)</span>' : ''}</td>
+                            <td>${item.email}</td>
+                            <td>${item.country}</td>
+                            <td><strong>${item.referrals}</strong></td>
+                            <td>${item.visits}</td>
+                            <td>${item.conversion}%</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        }
+
+        function copyReferralLink(event) {
+            const input = document.getElementById('referralLinkInput');
+            input.select();
+            input.setSelectionRange(0, 99999); // For mobile
+            
+            navigator.clipboard.writeText(input.value).then(() => {
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.background = 'var(--success)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+
+        // Load stats on page load
+        loadReferralStats();
+    </script>
+</body>
+</html>

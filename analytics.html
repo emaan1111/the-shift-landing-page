@@ -109,6 +109,35 @@
             color: var(--primary);
             margin-bottom: 20px;
             font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+
+        .section h2:hover {
+            color: var(--secondary);
+        }
+
+        .section h2 .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .section h2.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+
+        .section-content.collapsed {
+            max-height: 0 !important;
+            opacity: 0;
         }
 
         .data-table {
@@ -169,6 +198,26 @@
             box-shadow: 0 6px 14px rgba(160, 108, 213, 0.35);
         }
 
+        .btn-delete-small {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-delete-small:hover {
+            background: #c0392b;
+        }
+
+        .btn-delete-small:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
         .table-pagination {
             display: flex;
             align-items: center;
@@ -210,12 +259,6 @@
             padding: 20px;
             background: var(--light);
             border-radius: 8px;
-            position: relative;
-            min-height: 250px;
-        }
-        
-        .chart-container canvas {
-            max-height: 350px;
         }
 
         .bar-chart {
@@ -256,6 +299,85 @@
             color: white;
             font-weight: bold;
             font-size: 0.9rem;
+        }
+
+        #hourlyChart {
+            position: relative;
+            padding: 40px 40px 40px 50px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .line-chart-canvas {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .line-chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .line-chart-line {
+            fill: none;
+            stroke: url(#lineGradient);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .line-chart-area {
+            fill: url(#areaGradient);
+            opacity: 0.3;
+        }
+
+        .line-chart-dot {
+            fill: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .line-chart-dot:hover {
+            r: 6;
+            fill: var(--secondary);
+        }
+
+        .line-chart-grid {
+            stroke: #e0e0e0;
+            stroke-width: 1;
+            stroke-dasharray: 5,5;
+        }
+
+        .line-chart-axis {
+            stroke: #999;
+            stroke-width: 2;
+        }
+
+        .line-chart-label {
+            font-size: 12px;
+            fill: #666;
+            text-anchor: middle;
+        }
+
+        .line-chart-y-label {
+            font-size: 12px;
+            fill: #666;
+            text-anchor: end;
+        }
+
+        .line-chart-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
         }
 
         .loading {
@@ -379,8 +501,6 @@
             }
         }
     </style>
-    <!-- Chart.js for line charts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -390,6 +510,9 @@
                 <p>The Shift Challenge - Visitor Statistics</p>
             </div>
             <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="referral-stats.html" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; border: 2px solid white; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                    <i class="fas fa-users"></i> Referral Stats
+                </a>
                 <a href="registrations.html" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; border: 2px solid white; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
                     <i class="fas fa-list"></i> All Registrations
                 </a>
@@ -441,96 +564,150 @@
                 </div>
             </div>
 
-            <!-- Visits Per Hour Chart -->
+            <!-- A/B Test: Hook Variants -->
             <div class="section">
-                <h2><i class="fas fa-chart-line"></i> Visits Per Hour</h2>
-                <div class="chart-container">
-                    <canvas id="visitsPerHourChart" style="max-height: 400px;"></canvas>
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-flask"></i> A/B Test: Hook Variants</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="label">Variant A</div>
+                            <div class="number" id="variantAConversion">0%</div>
+                            <div style="font-size: 0.9rem; color: #999;">
+                                <span id="variantARegistrations">0</span> registrations / <span id="variantAVisits">0</span> visits
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Variant B</div>
+                            <div class="number" id="variantBConversion">0%</div>
+                            <div style="font-size: 0.9rem; color: #999;">
+                                <span id="variantBRegistrations">0</span> registrations / <span id="variantBVisits">0</span> visits
+                            </div>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto; margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Variant</th>
+                                    <th>Total Visits</th>
+                                    <th>Registrations</th>
+                                    <th>Conversion Rate</th>
+                                    <th>Unique Visitors</th>
+                                    <th>Unique Registrants</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="abTestTable"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
-            <!-- A/B Test: Hook Variants -->
+            <!-- Unique Visits by Hour -->
             <div class="section">
-                <h2><i class="fas fa-flask"></i> A/B Test: Hook Variants</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="label">Variant A</div>
-                        <div class="number" id="variantAConversion">0%</div>
-                        <div style="font-size: 0.9rem; color: #999;">
-                            <span id="variantARegistrations">0</span> registrations / <span id="variantAVisits">0</span> visits
-                        </div>
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-clock"></i> Unique Visits by Hour</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="filter-controls">
+                        <select id="hourlyDateFilter" onchange="displayHourlyChart()">
+                            <option value="all">All Dates</option>
+                        </select>
                     </div>
-                    <div class="stat-card">
-                        <div class="label">Variant B</div>
-                        <div class="number" id="variantBConversion">0%</div>
-                        <div style="font-size: 0.9rem; color: #999;">
-                            <span id="variantBRegistrations">0</span> registrations / <span id="variantBVisits">0</span> visits
-                        </div>
+                    <div class="chart-container">
+                        <div id="hourlyChart" style="position: relative; height: 400px;"></div>
                     </div>
                 </div>
-                <div class="table-actions">
-                    <button onclick="exportTableToCSV('abTestTable', 'ab-test-variants')" class="table-export">
-                        <i class="fas fa-download"></i> Export CSV
-                    </button>
+            </div>
+
+            <!-- Button Clicks -->
+            <div class="section">
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-hand-pointer"></i> Popular Buttons</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="chart-container">
+                        <div class="bar-chart" id="buttonClicksChart"></div>
+                    </div>
                 </div>
-                <div style="overflow-x: auto; margin-top: 20px;">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Variant</th>
-                                <th>Total Visits</th>
-                                <th>Registrations</th>
-                                <th>Conversion Rate</th>
-                                <th>Unique Visitors</th>
-                                <th>Unique Registrants</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="abTestTable"></tbody>
-                    </table>
+            </div>
+
+            <!-- Traffic Sources -->
+            <div class="section">
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-external-link-alt"></i> Traffic Sources</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="chart-container">
+                        <div class="bar-chart" id="referrersChart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Index Page Visits by Country -->
+            <div class="section">
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-globe"></i> Index Page Visits by Country</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="chart-container">
+                        <div class="bar-chart" id="countryChart"></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Recent Activity -->
             <div class="section">
-                <h2><i class="fas fa-clock"></i> Recent Activity</h2>
-                <div class="filter-controls">
-                    <select id="pageFilter">
-                        <option value="all">All Pages</option>
-                    </select>
-                    <select id="dateFilter">
-                        <option value="all">All Dates</option>
-                    </select>
-                    <select id="eventFilter">
-                        <option value="all">All Events</option>
-                        <option value="page_visit">Page Visits</option>
-                        <option value="button_click">Button Clicks</option>
-                    </select>
-                    <button onclick="loadData()"><i class="fas fa-sync"></i> Refresh</button>
-                    <button onclick="exportTableToCSV('recentActivity', 'recent-activity')" class="table-export" style="margin-left: auto;">
-                        <i class="fas fa-download"></i> Export CSV
-                    </button>
-                </div>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Event</th>
-                                <th>Page</th>
-                                <th>Details</th>
-                                <th>IP Address</th>
-                                <th>Location</th>
-                                <th>Referrer</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recentActivity"></tbody>
-                    </table>
-                </div>
-                <div class="table-pagination">
-                    <button class="pagination-button" id="prevActivityBtn" onclick="previousActivityPage()"><i class="fas fa-chevron-left"></i> Previous</button>
-                    <span class="pagination-info" id="activityPageInfo">Page 1</span>
-                    <button class="pagination-button" id="nextActivityBtn" onclick="nextActivityPage()"><i class="fas fa-chevron-right"></i> Next</button>
+                <h2 onclick="toggleSection(this)">
+                    <span><i class="fas fa-clock"></i> Recent Activity</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div class="section-content">
+                    <div class="filter-controls">
+                        <select id="pageFilter">
+                            <option value="all">All Pages</option>
+                        </select>
+                        <select id="dateFilter">
+                            <option value="all">All Dates</option>
+                        </select>
+                        <select id="eventFilter">
+                            <option value="all">All Events</option>
+                            <option value="page_visit">Page Visits</option>
+                            <option value="button_click">Button Clicks</option>
+                        </select>
+                        <button onclick="loadData()"><i class="fas fa-sync"></i> Refresh</button>
+                        <button onclick="bulkDeleteSelected()" style="background: #e74c3c;" id="bulkDeleteBtn" disabled>
+                            <i class="fas fa-trash"></i> Delete Selected (<span id="selectedCount">0</span>)
+                        </button>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">
+                                        <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this)">
+                                    </th>
+                                    <th>Time</th>
+                                    <th>Event</th>
+                                    <th>Page</th>
+                                    <th>Details</th>
+                                    <th>IP Address</th>
+                                    <th>Location</th>
+                                    <th>Referrer</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentActivity"></tbody>
+                        </table>
+                        <div id="recentActivityPagination" class="table-pagination"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -558,13 +735,6 @@
         let filteredData = []; // Data after global date filter
         const tableState = {};
         let isResetting = false;
-        
-        // Pagination state
-        const paginationState = {
-            activityCurrentPage: 1,
-            activityRowsPerPage: 20,
-            activityTotalRows: 0
-        };
 
         function applyGlobalFilter() {
             const globalDateFilter = document.getElementById('globalDateFilter').value;
@@ -692,62 +862,16 @@
             dashboard.style.display = 'none';
 
             try {
-                // Get list of analytics files via Flask proxy (with cache-busting)
-                const cacheBuster = `?t=${Date.now()}`;
-                const listUrl = `/api/github/analytics/list${cacheBuster}`;
-
-                let listResponse = await fetch(listUrl, { 
+                // Load from database API instead of GitHub
+                const response = await fetch('/api/analytics/events', { 
                     cache: 'no-store'
                 });
 
-                if (!listResponse.ok && GITHUB_CONFIG.token) {
-                    // Retry without token in case the repo is public or the token is invalid.
-                    console.warn('Analytics list fetch failed, Status:', listResponse.status);
-                    const errorDetail = await listResponse.text();
-                    console.error('Error details:', errorDetail);
+                if (!response.ok) {
+                    throw new Error(`Failed to load analytics data (Status: ${response.status})`);
                 }
 
-                if (listResponse.status === 404) {
-                    loading.style.display = 'none';
-                    updateStatusMessage('No analytics data found yet. Once the tracker logs visits, this dashboard will populate automatically.', 'info');
-                    error.style.display = 'block';
-                    error.textContent = 'No analytics data available yet.';
-                    return;
-                }
-
-                if (!listResponse.ok) {
-                    const errorDetail = await listResponse.text();
-                    console.error('GitHub API Error:', listResponse.status, errorDetail);
-                    throw new Error(`Failed to load analytics data (Status: ${listResponse.status}). ${errorDetail || 'Check your GitHub token and permissions.'}`);
-                }
-
-                const files = await listResponse.json();
-                allData = [];
-
-                // Load each file
-                for (const file of files) {
-                    if (!file.name.endsWith('.json')) {
-                        continue;
-                    }
-
-                    const fileResponse = await fetch(`/api/github/analytics/file?url=${encodeURIComponent(file.url)}&t=${Date.now()}`, { 
-                        cache: 'no-store'
-                    });
-                    if (!fileResponse.ok) {
-                        const detail = await fileResponse.text();
-                        throw new Error(`Failed to load ${file.name}: ${detail}`);
-                    }
-
-                    const fileText = await fileResponse.text();
-                    try {
-                        const fileData = JSON.parse(fileText);
-                        if (Array.isArray(fileData)) {
-                            allData.push(...fileData);
-                        }
-                    } catch (parseError) {
-                        console.error(`Unable to parse analytics file ${file.name}`, parseError);
-                    }
-                }
+                allData = await response.json();
 
                 if (allData.length === 0) {
                     throw new Error('No analytics data found yet. Visit your landing pages to start collecting data!');
@@ -781,11 +905,13 @@
             // Count unique visitors using visitorId (persistent across sessions)
             const uniqueVisitorIds = new Set();
             pageVisits.forEach(visit => {
-                if (visit.visitorId) {
-                    uniqueVisitorIds.add(visit.visitorId);
-                } else if (visit.sessionId) {
+                // Check both camelCase (old GitHub data) and snake_case (database)
+                const visitorId = visit.visitorId || visit.visitor_id;
+                if (visitorId) {
+                    uniqueVisitorIds.add(visitorId);
+                } else if (visit.sessionId || visit.session_id) {
                     // Fallback for old data without visitorId
-                    uniqueVisitorIds.add(visit.sessionId);
+                    uniqueVisitorIds.add(visit.sessionId || visit.session_id);
                 }
             });
             const uniqueVisitors = uniqueVisitorIds.size;
@@ -801,17 +927,20 @@
             // Count unique visitors on index page
             const indexUniqueVisitorIds = new Set();
             indexVisits.forEach(visit => {
-                if (visit.visitorId) {
-                    indexUniqueVisitorIds.add(visit.visitorId);
-                } else if (visit.sessionId) {
+                // Check both camelCase (old GitHub data) and snake_case (database)
+                const visitorId = visit.visitorId || visit.visitor_id;
+                if (visitorId) {
+                    indexUniqueVisitorIds.add(visitorId);
+                } else if (visit.sessionId || visit.session_id) {
                     // Fallback for old data
-                    indexUniqueVisitorIds.add(visit.sessionId);
+                    indexUniqueVisitorIds.add(visit.sessionId || visit.session_id);
                 }
             });
             const indexUniqueVisitors = indexUniqueVisitorIds.size;
 
-            // Fetch actual registration count from API (deduplicated from local + GitHub)
+            // Fetch actual registration count from API and filter by date if needed
             let totalRegistrations = 0;
+            const globalDateFilter = document.getElementById('globalDateFilter').value;
             
             fetch('/api/registrations')
                 .then(response => {
@@ -821,7 +950,16 @@
                     throw new Error('Failed to fetch registrations');
                 })
                 .then(registrations => {
-                    totalRegistrations = Array.isArray(registrations) ? registrations.length : 0;
+                    if (Array.isArray(registrations)) {
+                        // Apply date filter to registrations if a specific date is selected
+                        if (globalDateFilter !== 'all') {
+                            registrations = registrations.filter(reg => {
+                                const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                                return regDate === globalDateFilter;
+                            });
+                        }
+                        totalRegistrations = registrations.length;
+                    }
                     document.getElementById('totalRegistrations').textContent = totalRegistrations;
                     // Recalculate conversion rate with new registration count
                     const summaryConversionRate = indexUniqueVisitors > 0 ? ((totalRegistrations / indexUniqueVisitors) * 100).toFixed(1) : 0;
@@ -835,7 +973,7 @@
                         return page.includes('thank-you') || page.includes('thankyou');
                     });
                     const registrationClicks = buttonClicks.filter(d => {
-                        const button = d.buttonName || '';
+                        const button = d.buttonName || d.button_name || '';
                         return button.toLowerCase().includes('register') || button.toLowerCase().includes('join');
                     });
                     totalRegistrations = Math.max(thankYouVisits.length, registrationClicks.length);
@@ -844,27 +982,50 @@
                     document.getElementById('summaryConversionRate').textContent = summaryConversionRate + '%';
                 });
             
-            // Set initial values that will be updated by API or fallback
-            // Calculate conversion rate (registrations / unique visitors of index page)
-            const summaryConversionRate = indexUniqueVisitors > 0 ? ((totalRegistrations / indexUniqueVisitors) * 100).toFixed(1) : 0;
-
-            // Update stat cards with summary statistics
+            // Set initial values (will be updated by API or fallback)
             document.getElementById('indexVisitors').textContent = indexVisits.length;
             document.getElementById('indexUniqueVisitors').textContent = indexUniqueVisitors;
-            document.getElementById('totalRegistrations').textContent = totalRegistrations;
-            document.getElementById('summaryConversionRate').textContent = summaryConversionRate + '%';
+            document.getElementById('totalRegistrations').textContent = '...';
+            document.getElementById('summaryConversionRate').textContent = '...';
 
             // Populate filters (use filteredData)
             populateFilters();
 
+            // Display hourly chart
+            displayHourlyChart();
+
+            // Button clicks chart
+            const buttonStats = {};
+            buttonClicks.forEach(item => {
+                const button = item.buttonName || item.button_name || 'Unknown';
+                buttonStats[button] = (buttonStats[button] || 0) + 1;
+            });
+            displayBarChart('buttonClicksChart', buttonStats);
+
+            // Referrers chart
+            const referrers = {};
+            data.forEach(item => {
+                const ref = item.referrer === 'Direct' ? 'Direct' : new URL(item.referrer || 'Direct', 'https://example.com').hostname;
+                referrers[ref] = (referrers[ref] || 0) + 1;
+            });
+            displayBarChart('referrersChart', referrers);
+
+            // Index page visits by country
+            const countryStats = {};
+            indexVisits.forEach(item => {
+                const country = item.country || 'Unknown';
+                countryStats[country] = (countryStats[country] || 0) + 1;
+            });
+            displayBarChart('countryChart', countryStats);
+
             // A/B Test: Hook Variants
             displayABTestResults(pageVisits);
-            
-            // Visits Per Hour Chart
-            displayVisitsPerHourChart();
 
             // Recent activity table
             displayRecentActivity(true);
+            
+            // Initialize section heights after content is loaded
+            setTimeout(initializeSections, 100);
         }
 
         function displayABTestResults(pageVisits) {
@@ -876,8 +1037,9 @@
             
             // Count page visits by variant
             filteredData.forEach(event => {
-                const variant = event.hookVariant || 'Unknown';
-                const visitorId = event.visitorId || event.sessionId;
+                // Check both camelCase (old GitHub data) and snake_case (database)
+                const variant = event.hookVariant || event.hook_variant || 'Unknown';
+                const visitorId = event.visitorId || event.visitor_id || event.sessionId || event.session_id;
                 
                 if ((variant === 'A' || variant === 'B') && event.event === 'page_visit') {
                     variantStats[variant].visits += 1;
@@ -894,18 +1056,25 @@
             fetch('/api/registrations')
                 .then(response => response.ok ? response.json() : [])
                 .then(registrations => {
-                    // For each registration, find its variant from the local analytics data
+                    // Apply date filter to registrations if needed
+                    const globalDateFilter = document.getElementById('globalDateFilter').value;
+                    if (globalDateFilter !== 'all') {
+                        registrations = registrations.filter(reg => {
+                            const regDate = new Date(reg.timestamp || reg.created_at).toISOString().split('T')[0];
+                            return regDate === globalDateFilter;
+                        });
+                    }
+                    
+                    // For each registration, get variant directly from registration record
                     registrations.forEach(reg => {
                         const regEmail = reg.email;
-                        // Find matching events in filteredData to get variant info
-                        const matchingEvents = filteredData.filter(e => e.email === regEmail);
-                        if (matchingEvents.length > 0) {
-                            const variant = matchingEvents[0].hookVariant || 'Unknown';
-                            if (variant === 'A' || variant === 'B') {
-                                if (!variantStats[variant].registrants.has(regEmail)) {
-                                    variantStats[variant].registrations += 1;
-                                    variantStats[variant].registrants.add(regEmail);
-                                }
+                        // Check both camelCase (old GitHub data) and snake_case (database)
+                        const variant = reg.hookVariant || reg.hook_variant || 'Unknown';
+                        
+                        if (variant === 'A' || variant === 'B') {
+                            if (!variantStats[variant].registrants.has(regEmail)) {
+                                variantStats[variant].registrations += 1;
+                                variantStats[variant].registrants.add(regEmail);
                             }
                         }
                     });
@@ -913,6 +1082,7 @@
                     // Update stat cards
                     for (const variant of ['A', 'B']) {
                         const stats = variantStats[variant];
+                        // Conversion rate should be registrations / unique visitors
                         const convRate = stats.visitors.size > 0 ? (stats.registrations / stats.visitors.size * 100).toFixed(1) : 0;
                         
                         document.getElementById(`variant${variant}Conversion`).textContent = convRate + '%';
@@ -925,6 +1095,7 @@
                     
                     for (const variant of ['A', 'B']) {
                         const stats = variantStats[variant];
+                        // Conversion rate should be registrations / unique visitors
                         const convRate = stats.visitors.size > 0 ? (stats.registrations / stats.visitors.size * 100).toFixed(1) : 0;
                         
                         // Determine status
@@ -1033,6 +1204,16 @@
                 option.value = date;
                 option.textContent = date;
                 dateFilter.appendChild(option);
+            });
+
+            // Populate hourly date filter
+            const hourlyDateFilter = document.getElementById('hourlyDateFilter');
+            hourlyDateFilter.innerHTML = '<option value="all">All Dates</option>';
+            Array.from(dates).sort().reverse().forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = date;
+                hourlyDateFilter.appendChild(option);
             });
         }
 
@@ -1205,6 +1386,35 @@
             setTimeout(() => URL.revokeObjectURL(link.href), 0);
         }
 
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isCollapsed = content.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // Expand
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.classList.remove('collapsed');
+                header.classList.remove('collapsed');
+            } else {
+                // Collapse
+                content.style.maxHeight = content.scrollHeight + 'px';
+                // Force reflow
+                content.offsetHeight;
+                content.style.maxHeight = '0';
+                content.classList.add('collapsed');
+                header.classList.add('collapsed');
+            }
+        }
+
+        // Initialize all section content heights on page load
+        function initializeSections() {
+            document.querySelectorAll('.section-content').forEach(content => {
+                if (!content.classList.contains('collapsed')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        }
+
         function displayBarChart(containerId, data) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
@@ -1228,6 +1438,141 @@
             if (sorted.length === 0) {
                 container.innerHTML = '<p style="text-align: center; color: #999;">No data available</p>';
             }
+        }
+
+        function displayHourlyChart() {
+            const container = document.getElementById('hourlyChart');
+            const dateFilter = document.getElementById('hourlyDateFilter').value;
+            
+            // Filter data by date if selected
+            let dataToUse = filteredData.filter(item => item.event === 'page_visit');
+            if (dateFilter !== 'all') {
+                dataToUse = dataToUse.filter(item => {
+                    const itemDate = new Date(item.timestamp).toISOString().split('T')[0];
+                    return itemDate === dateFilter;
+                });
+            }
+
+            // Group by hour and count unique visitors
+            const hourlyStats = {};
+            for (let i = 0; i < 24; i++) {
+                hourlyStats[i] = new Set(); // Use Set to track unique visitor IDs
+            }
+
+            dataToUse.forEach(item => {
+                const date = new Date(item.timestamp);
+                const hour = date.getHours();
+                const visitorId = item.visitorId || item.visitor_id;
+                if (visitorId) {
+                    hourlyStats[hour].add(visitorId);
+                }
+            });
+
+            // Convert Sets to counts
+            const hourlyCounts = {};
+            for (let i = 0; i < 24; i++) {
+                hourlyCounts[i] = hourlyStats[i].size;
+            }
+
+            // Find max for scaling
+            const maxCount = Math.max(...Object.values(hourlyCounts), 1);
+
+            // Generate line chart with SVG
+            const width = container.offsetWidth - 90;
+            const height = 300;
+            const padding = { top: 20, right: 20, bottom: 30, left: 40 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+
+            if (maxCount === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No data available for selected date</p>';
+                return;
+            }
+
+            // Create SVG
+            let svg = `
+                <div class="line-chart-canvas">
+                    <svg class="line-chart-svg" viewBox="0 0 ${width} ${height}">
+                        <defs>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#a06cd5;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff9eb5;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a06cd5;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#a06cd5;stop-opacity:0.05" />
+                            </linearGradient>
+                        </defs>
+            `;
+
+            // Draw horizontal grid lines
+            const gridLines = 5;
+            for (let i = 0; i <= gridLines; i++) {
+                const y = padding.top + (chartHeight / gridLines) * i;
+                const value = Math.round(maxCount * (1 - i / gridLines));
+                svg += `<line class="line-chart-grid" x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" />`;
+                svg += `<text class="line-chart-y-label" x="${padding.left - 10}" y="${y + 4}">${value}</text>`;
+            }
+
+            // Calculate points for line
+            const points = [];
+            const areaPoints = [];
+            for (let hour = 0; hour < 24; hour++) {
+                const x = padding.left + (hour / 23) * chartWidth;
+                const count = hourlyCounts[hour];
+                const y = padding.top + chartHeight - (count / maxCount) * chartHeight;
+                points.push({ x, y, hour, count });
+                areaPoints.push(`${x},${y}`);
+            }
+
+            // Add area under line
+            const areaPath = `M ${padding.left},${padding.top + chartHeight} L ${areaPoints.join(' L ')} L ${padding.left + chartWidth},${padding.top + chartHeight} Z`;
+            svg += `<path class="line-chart-area" d="${areaPath}" />`;
+
+            // Draw line
+            const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`).join(' ');
+            svg += `<path class="line-chart-line" d="${linePath}" />`;
+
+            // Draw dots
+            points.forEach(p => {
+                svg += `<circle class="line-chart-dot" cx="${p.x}" cy="${p.y}" r="4" data-hour="${p.hour}" data-count="${p.count}">
+                    <title>${p.hour}:00 - ${p.count} unique visitor${p.count !== 1 ? 's' : ''}</title>
+                </circle>`;
+            });
+
+            // Draw X-axis labels (every 2 hours)
+            for (let hour = 0; hour < 24; hour += 2) {
+                const x = padding.left + (hour / 23) * chartWidth;
+                svg += `<text class="line-chart-label" x="${x}" y="${height - 5}">${hour}:00</text>`;
+            }
+
+            svg += `</svg></div>`;
+
+            container.innerHTML = svg;
+
+            // Add hover tooltips
+            const tooltip = document.createElement('div');
+            tooltip.className = 'line-chart-tooltip';
+            container.appendChild(tooltip);
+
+            const dots = container.querySelectorAll('.line-chart-dot');
+            dots.forEach(dot => {
+                dot.addEventListener('mouseenter', (e) => {
+                    const hour = e.target.getAttribute('data-hour');
+                    const count = e.target.getAttribute('data-count');
+                    tooltip.textContent = `${hour}:00 - ${count} unique visitor${count !== '1' ? 's' : ''}`;
+                    tooltip.style.opacity = '1';
+                });
+
+                dot.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = (e.pageX - container.offsetLeft + 10) + 'px';
+                    tooltip.style.top = (e.pageY - container.offsetTop - 30) + 'px';
+                });
+
+                dot.addEventListener('mouseleave', () => {
+                    tooltip.style.opacity = '0';
+                });
+            });
         }
 
         function displayRecentActivity() {
@@ -1256,32 +1601,44 @@
                 });
             }
 
-            const allRecent = filtered.slice().reverse(); // All rows
-            paginationState.activityTotalRows = allRecent.length;
-            
-            // Calculate pagination
-            const startIdx = (paginationState.activityCurrentPage - 1) * paginationState.activityRowsPerPage;
-            const endIdx = startIdx + paginationState.activityRowsPerPage;
-            const pageData = allRecent.slice(startIdx, endIdx);
-            
-            // Update pagination buttons
-            document.getElementById('prevActivityBtn').disabled = paginationState.activityCurrentPage === 1;
-            document.getElementById('nextActivityBtn').disabled = endIdx >= allRecent.length;
-            const totalPages = Math.ceil(allRecent.length / paginationState.activityRowsPerPage) || 1;
-            document.getElementById('activityPageInfo').textContent = `Page ${paginationState.activityCurrentPage} of ${totalPages} (${allRecent.length} total)`;
+            // Sort by timestamp descending (latest first)
+            filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-            tbody.innerHTML = pageData.map(item => {
+            // Store filtered data and initialize pagination
+            window.recentActivityFiltered = filtered;
+            window.recentActivityPage = window.recentActivityPage || 1;
+            const itemsPerPage = 50;
+            const totalItems = window.recentActivityFiltered.length;
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            
+            // Ensure page is within bounds
+            if (window.recentActivityPage > totalPages) {
+                window.recentActivityPage = totalPages;
+            }
+            if (window.recentActivityPage < 1) {
+                window.recentActivityPage = 1;
+            }
+            
+            const start = (window.recentActivityPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = window.recentActivityFiltered.slice(start, end);
+
+            tbody.innerHTML = pageItems.map(item => {
                 const date = new Date(item.timestamp);
                 const timeStr = date.toLocaleString();
                 const event = item.event === 'button_click' ? '🖱️ Click' : '👁️ Visit';
-                const details = item.buttonName || '-';
+                const details = item.buttonName || item.button_name || '-';
                 const page = item.page || '/';
-                const ipAddress = item.ipAddress || 'N/A';
+                const ipAddress = item.ipAddress || item.ip_address || 'N/A';
                 const location = item.city && item.country ? `${item.city}, ${item.country}` : (item.country || 'Unknown');
                 const referrer = item.referrer === 'Direct' ? 'Direct' : new URL(item.referrer || 'Direct', 'https://example.com').hostname;
+                const eventId = item.id || null;
 
                 return `
                     <tr>
+                        <td>
+                            ${eventId ? `<input type="checkbox" class="event-checkbox" data-event-id="${eventId}" onchange="updateSelectedCount()">` : '-'}
+                        </td>
                         <td>${timeStr}</td>
                         <td>${event}</td>
                         <td>${page}</td>
@@ -1289,120 +1646,172 @@
                         <td>${ipAddress}</td>
                         <td>${location}</td>
                         <td>${referrer}</td>
+                        <td>
+                            ${eventId ? `<button class="btn-delete-small" onclick="deleteAnalyticsEvent(${eventId}, '${event}', '${page}')">🗑️</button>` : '-'}
+                        </td>
                     </tr>
                 `;
             }).join('');
 
-            if (pageData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #999;">No data matches the selected filters</td></tr>';
+            if (pageItems.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: #999;">No data matches the selected filters</td></tr>';
             }
+
+            // Render pagination
+            renderRecentActivityPagination(totalItems, totalPages);
+            
+            // Reset select all checkbox
+            document.getElementById('selectAllCheckbox').checked = false;
+            updateSelectedCount();
         }
 
-        function previousActivityPage() {
-            if (paginationState.activityCurrentPage > 1) {
-                paginationState.activityCurrentPage--;
-                displayRecentActivity();
-                document.querySelector('.data-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function renderRecentActivityPagination(totalItems, totalPages) {
+            const paginationDiv = document.getElementById('recentActivityPagination');
+            
+            if (totalPages <= 1) {
+                paginationDiv.innerHTML = '';
+                return;
             }
+
+            const currentPage = window.recentActivityPage || 1;
+            const itemsPerPage = 50;
+            const start = (currentPage - 1) * itemsPerPage + 1;
+            const end = Math.min(currentPage * itemsPerPage, totalItems);
+
+            paginationDiv.innerHTML = `
+                <button class="pagination-button" ${currentPage === 1 ? 'disabled' : ''} onclick="changeRecentActivityPage(-1)">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span class="pagination-info">
+                    Showing ${start}-${end} of ${totalItems}
+                </span>
+                <button class="pagination-button" ${currentPage === totalPages ? 'disabled' : ''} onclick="changeRecentActivityPage(1)">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            `;
         }
 
-        function nextActivityPage() {
-            const totalPages = Math.ceil(paginationState.activityTotalRows / paginationState.activityRowsPerPage);
-            if (paginationState.activityCurrentPage < totalPages) {
-                paginationState.activityCurrentPage++;
-                displayRecentActivity();
-                document.querySelector('.data-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+        function changeRecentActivityPage(direction) {
+            window.recentActivityPage = (window.recentActivityPage || 1) + direction;
+            displayRecentActivity();
         }
 
-        function displayVisitsPerHourChart() {
-            const pageVisits = filteredData.filter(d => d.event === 'page_visit');
-            
-            // Group by hour
-            const visitsPerHour = {};
-            pageVisits.forEach(visit => {
-                const date = new Date(visit.timestamp);
-                const hour = date.getHours();
-                const hourKey = `${hour.toString().padStart(2, '0')}:00`;
-                visitsPerHour[hourKey] = (visitsPerHour[hourKey] || 0) + 1;
-            });
-            
-            // Create sorted hours array
-            const hours = [];
-            for (let i = 0; i < 24; i++) {
-                const hourKey = i.toString().padStart(2, '0') + ':00';
-                hours.push(hourKey);
-            }
-            
-            // Get data for chart
-            const chartData = hours.map(h => visitsPerHour[h] || 0);
-            
-            // Try to use Chart.js if available, otherwise use simple SVG
-            const canvas = document.getElementById('visitsPerHourChart');
-            if (!canvas) return;
-            
-            try {
-                // Check if Chart.js is loaded
-                if (typeof Chart !== 'undefined') {
-                    const ctx = canvas.getContext('2d');
-                    if (window.visitsPerHourChartInstance) {
-                        window.visitsPerHourChartInstance.destroy();
-                    }
-                    
-                    window.visitsPerHourChartInstance = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: hours,
-                            datasets: [{
-                                label: 'Visits per Hour',
-                                data: chartData,
-                                borderColor: '#a06cd5',
-                                backgroundColor: 'rgba(160, 108, 213, 0.1)',
-                                borderWidth: 3,
-                                fill: true,
-                                tension: 0.4,
-                                pointBackgroundColor: '#a06cd5',
-                                pointBorderColor: '#fff',
-                                pointBorderWidth: 2,
-                                pointRadius: 5,
-                                pointHoverRadius: 7
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: { display: true, position: 'top' }
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: { stepSize: 1 }
-                                }
-                            }
-                        }
-                    });
-                } else {
-                    // Fallback: Show simple bar chart
-                    displayBarChart('visitsPerHourChart', Object.fromEntries(
-                        hours.map((h, i) => [h, chartData[i]])
-                    ));
-                }
-            } catch (e) {
-                console.error('Error creating chart:', e);
-            }
-        }
-
-        // Event filters - reset pagination when filters change
-        ['eventFilter', 'pageFilter', 'dateFilter'].forEach(id => {
-            const elem = document.getElementById(id);
-            if (elem) {
-                elem.addEventListener('change', () => {
-                    paginationState.activityCurrentPage = 1;
-                    displayRecentActivity();
-                });
-            }
+        // Event filters
+        document.getElementById('eventFilter').addEventListener('change', () => {
+            window.recentActivityPage = 1; // Reset to first page
+            displayRecentActivity();
         });
+        document.getElementById('pageFilter').addEventListener('change', () => {
+            window.recentActivityPage = 1; // Reset to first page
+            displayRecentActivity();
+        });
+        document.getElementById('dateFilter').addEventListener('change', () => {
+            window.recentActivityPage = 1; // Reset to first page
+            displayRecentActivity();
+        });
+
+        // Delete analytics event function
+        async function deleteAnalyticsEvent(eventId, eventType, page) {
+            if (!confirm(`Are you sure you want to delete this ${eventType} event on ${page}?\n\nThis action cannot be undone!`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/analytics/event/${eventId}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`✅ ${result.message}`);
+                    
+                    // Reload data
+                    loadData();
+                } else {
+                    const error = await response.json();
+                    alert(`❌ Error: ${error.error || 'Failed to delete'}`);
+                }
+            } catch (error) {
+                console.error('Delete error:', error);
+                alert(`❌ Error: ${error.message}`);
+            }
+        }
+
+        // Make delete function global
+        window.deleteAnalyticsEvent = deleteAnalyticsEvent;
+
+        // Toggle select all checkboxes
+        function toggleSelectAll(checkbox) {
+            const checkboxes = document.querySelectorAll('.event-checkbox');
+            checkboxes.forEach(cb => {
+                cb.checked = checkbox.checked;
+            });
+            updateSelectedCount();
+        }
+
+        // Update selected count
+        function updateSelectedCount() {
+            const checkboxes = document.querySelectorAll('.event-checkbox:checked');
+            const count = checkboxes.length;
+            document.getElementById('selectedCount').textContent = count;
+            document.getElementById('bulkDeleteBtn').disabled = count === 0;
+        }
+
+        // Bulk delete selected events
+        async function bulkDeleteSelected() {
+            const checkboxes = document.querySelectorAll('.event-checkbox:checked');
+            const eventIds = Array.from(checkboxes).map(cb => cb.dataset.eventId);
+            
+            if (eventIds.length === 0) {
+                alert('Please select at least one event to delete');
+                return;
+            }
+
+            if (!confirm(`Are you sure you want to delete ${eventIds.length} selected event(s)?`)) {
+                return;
+            }
+
+            try {
+                let successCount = 0;
+                let failCount = 0;
+
+                // Delete each event
+                for (const eventId of eventIds) {
+                    try {
+                        const response = await fetch(`/api/analytics/event/${eventId}`, {
+                            method: 'DELETE'
+                        });
+
+                        if (response.ok) {
+                            successCount++;
+                        } else {
+                            failCount++;
+                        }
+                    } catch (error) {
+                        console.error(`Error deleting event ${eventId}:`, error);
+                        failCount++;
+                    }
+                }
+
+                // Show results
+                if (failCount === 0) {
+                    alert(`✅ Successfully deleted ${successCount} event(s)`);
+                } else {
+                    alert(`⚠️ Deleted ${successCount} event(s), ${failCount} failed`);
+                }
+
+                // Reload data
+                loadData();
+            } catch (error) {
+                console.error('Bulk delete error:', error);
+                alert(`❌ Error: ${error.message}`);
+            }
+        }
+
+        // Make functions global
+        window.toggleSelectAll = toggleSelectAll;
+        window.updateSelectedCount = updateSelectedCount;
+        window.bulkDeleteSelected = bulkDeleteSelected;
 
         // Load data on page load
         loadData();

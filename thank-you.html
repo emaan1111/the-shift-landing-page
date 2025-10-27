@@ -456,6 +456,96 @@
             margin-right: 10px;
         }
 
+        .referral-link-box {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px dashed var(--primary);
+        }
+
+        .referral-link-box p {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .referral-link {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .referral-link input {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: monospace;
+            background: white;
+        }
+
+        .copy-button {
+            padding: 14px 24px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-button:hover {
+            transform: scale(1.05);
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+
+        .share-buttons-referral {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .share-btn-referral {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn-referral:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-btn-referral.btn-whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn-referral.btn-facebook {
+            background: #1877F2;
+        }
+
+        .share-btn-referral.btn-email {
+            background: #EA4335;
+        }
+
         .btn-community {
             display: inline-flex;
             align-items: center;
@@ -1149,21 +1239,30 @@
                                 <div class="hadith-source">- Sahih Muslim</div>
                             </div>
                             
+                            <div id="referralLinkSection" class="referral-link-box" style="display: none;">
+                                <p style="margin-bottom: 10px; color: #666;">Share this link to invite others to The Shift Challenge:</p>
+                                <div class="referral-link">
+                                    <input type="text" id="referralLinkInput" readonly>
+                                    <button class="copy-button" onclick="copyReferralLink(event)">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="share-buttons-referral">
+                                    <a href="#" class="share-btn-referral btn-whatsapp" id="referralWhatsappBtn" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                                    </a>
+                                    <a href="#" class="share-btn-referral btn-facebook" id="referralFacebookBtn" target="_blank">
+                                        <i class="fab fa-facebook"></i> Share on Facebook
+                                    </a>
+                                    <a href="#" class="share-btn-referral btn-email" id="referralEmailBtn">
+                                        <i class="fas fa-envelope"></i> Share via Email
+                                    </a>
+                                </div>
+                            </div>
+                            
                             <div class="checkbox-container">
                                 <input type="checkbox" id="share-check">
                                 <label for="share-check">I've shared The Shift with others</label>
-                            </div>
-                            
-                            <div class="button-group">
-                                <a href="https://wa.me/?text=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge!%20Join%20me%20Nov%206-8%20at%2011AM-1PM%20EST%20for%202-hour%20transformative%20sessions.%20Register%20here:%20https://yourwebsite.com" target="_blank" class="btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i> Share on WhatsApp
-                                </a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com&quote=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge!%20Join%20me%20Nov%206-8%20for%202-hour%20sessions%20daily!" target="_blank" class="btn-calendar">
-                                    <i class="fab fa-facebook"></i> Share on Facebook
-                                </a>
-                                <a href="mailto:?subject=Join%20me%20for%20The%20Shift%20Challenge!&body=I%20just%20registered%20for%20The%20Shift%20Free%203-Day%20Challenge%20-%20a%20transformative%20journey%20for%20Muslim%20mothers.%0D%0A%0D%0AEvent%3A%20Nov%206-8%2C%202025%0D%0ATime%3A%2011AM-1PM%20EST%20(2%20hours%20daily)%0D%0A%0D%0AJoin%20me!%20Register%20here%3A%20https%3A%2F%2Fyourwebsite.com" class="btn-calendar">
-                                    <i class="fas fa-envelope"></i> Share via Email
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -1525,11 +1624,98 @@
             box.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(box);
         });
+        
+        // Update share links with referral ID
+        function updateShareLinks() {
+            const regId = localStorage.getItem('registrationId');
+            if (regId) {
+                const baseUrl = window.location.origin;
+                const referralUrl = `${baseUrl}/?ref=${regId}`;
+                
+                // Show and populate the referral link box
+                const referralLinkSection = document.getElementById('referralLinkSection');
+                const referralLinkInput = document.getElementById('referralLinkInput');
+                if (referralLinkSection && referralLinkInput) {
+                    referralLinkInput.value = referralUrl;
+                    referralLinkSection.style.display = 'block';
+                    
+                    // Update share buttons inside the referral box
+                    const message = `I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 at 11AM-1PM EST for 2-hour transformative sessions. Register here: ${referralUrl}`;
+                    
+                    const referralWhatsappBtn = document.getElementById('referralWhatsappBtn');
+                    if (referralWhatsappBtn) {
+                        referralWhatsappBtn.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                    }
+                    
+                    const referralFacebookBtn = document.getElementById('referralFacebookBtn');
+                    if (referralFacebookBtn) {
+                        referralFacebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent('I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 for 2-hour sessions daily!')}`;
+                    }
+                    
+                    const referralEmailBtn = document.getElementById('referralEmailBtn');
+                    if (referralEmailBtn) {
+                        const emailSubject = 'Join me for The Shift Challenge!';
+                        const emailBody = `I just registered for The Shift Free 3-Day Challenge - a transformative journey for Muslim mothers.
+
+Event: Nov 6-8, 2025
+Time: 11AM-1PM EST (2 hours daily)
+
+Join me! Register here: ${referralUrl}`;
+                        referralEmailBtn.href = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                    }
+                }
+                
+                // Add "View Your Stats" button if registration ID exists
+                const nextStepsSection = document.querySelector('.next-steps');
+                if (nextStepsSection && !document.getElementById('referralStatsBtn')) {
+                    const statsBtn = document.createElement('a');
+                    statsBtn.id = 'referralStatsBtn';
+                    statsBtn.href = 'referral-stats.html';
+                    statsBtn.className = 'btn-calendar';
+                    statsBtn.innerHTML = '<i class="fas fa-chart-line"></i> View Your Referral Stats';
+                    statsBtn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    statsBtn.style.marginTop = '15px';
+                    statsBtn.style.display = 'block';
+                    statsBtn.style.width = 'fit-content';
+                    statsBtn.style.marginLeft = 'auto';
+                    statsBtn.style.marginRight = 'auto';
+                    
+                    const lastStep = nextStepsSection.querySelector('.step:last-child');
+                    if (lastStep) {
+                        lastStep.appendChild(statsBtn);
+                    }
+                }
+            }
+        }
+        
+        // Copy referral link to clipboard
+        function copyReferralLink(event) {
+            const input = document.getElementById('referralLinkInput');
+            input.select();
+            input.setSelectionRange(0, 99999); // For mobile
+            
+            navigator.clipboard.writeText(input.value).then(() => {
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.background = 'var(--success-color)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+        
+        // Call it after page loads
+        updateShareLinks();
     </script>
     
     <!-- Visitor Tracking Scripts -->
     <script src="js/analytics-config.js"></script>
-    <script src="js/tracker.js"></script>
+    <script src="js/tracker-db.js"></script>
     
     <!-- ClickFunnels Integration -->
     <script src="js/clickfunnels-config.js"></script>

@@ -288,12 +288,34 @@ document.addEventListener('click', function(e) {
     const target = e.target.closest('a, button');
     if (target) {
         const buttonText = target.textContent.trim();
+        const href = target.getAttribute('href') || '';
+        
+        // Track if button text matches these keywords OR if it's a social share link
         if (buttonText.includes('Register') || 
             buttonText.includes('Join') || 
             buttonText.includes('Get') ||
             buttonText.includes('Yes') ||
-            buttonText.includes('Add to Calendar')) {
-            trackButtonClick(buttonText);
+            buttonText.includes('Add to Calendar') ||
+            buttonText.includes('Share') ||
+            href.includes('whatsapp') ||
+            href.includes('facebook') ||
+            href.includes('twitter') ||
+            href.includes('mailto:') ||
+            target.classList.contains('btn-whatsapp') ||
+            target.classList.contains('btn-calendar') ||
+            target.classList.contains('btn-community') ||
+            target.classList.contains('btn-vip')) {
+            
+            // Create a more descriptive button name
+            let trackingName = buttonText;
+            if (href.includes('whatsapp')) trackingName = 'WhatsApp Share';
+            if (href.includes('facebook')) trackingName = 'Facebook Share';
+            if (href.includes('twitter')) trackingName = 'Twitter Share';
+            if (href.includes('mailto:')) trackingName = 'Email Share';
+            if (target.classList.contains('btn-vip')) trackingName = 'VIP Upgrade Button';
+            if (target.classList.contains('btn-community')) trackingName = 'Join Community Button';
+            
+            trackButtonClick(trackingName);
         }
     }
 });

@@ -643,6 +643,12 @@
     </div>
 
     <script>
+        // Get variant from localStorage (set by landing page)
+        const hookVariant = localStorage.getItem('hookVariant') || 'Unknown';
+        const visitorId = localStorage.getItem('visitorId');
+        const firstName = localStorage.getItem('firstName') || '';
+        const email = localStorage.getItem('userEmail') || '';
+
         // Countdown Timer
         let timeLeft = 600; // 10 minutes in seconds
         let countdownInterval;
@@ -677,6 +683,19 @@
 
         function openVipModal() {
             if (!vipModal) return;
+            
+            // Track upsell upgrade attempt
+            if (window.trackEvent) {
+                window.trackEvent({
+                    event: 'upsell_upgrade_clicked',
+                    hookVariant: hookVariant,
+                    firstName: firstName,
+                    email: email,
+                    page: '/upsell.html',
+                    timestamp: new Date().toISOString()
+                });
+            }
+            
             vipModal.classList.add('active');
             vipModal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
@@ -711,6 +730,17 @@
 
         if (declineLink) {
             declineLink.addEventListener('click', () => {
+                // Track upsell decline
+                if (window.trackEvent) {
+                    window.trackEvent({
+                        event: 'upsell_declined',
+                        hookVariant: hookVariant,
+                        firstName: firstName,
+                        email: email,
+                        page: '/upsell.html',
+                        timestamp: new Date().toISOString()
+                    });
+                }
                 shouldWarnOnUnload = false;
             });
         }
@@ -729,10 +759,22 @@
             e.preventDefault();
             e.returnValue = 'Are you sure you want to leave? This exclusive offer will be lost forever!';
         });
+
+        // Track upsell page visit
+        if (window.trackEvent) {
+            window.trackEvent({
+                event: 'page_visit',
+                page: '/upsell.html',
+                hookVariant: hookVariant,
+                firstName: firstName,
+                email: email,
+                timestamp: new Date().toISOString()
+            });
+        }
     </script>
     
     <!-- Visitor Tracking Scripts -->
     <script src="js/analytics-config.js"></script>
-    <script src="js/tracker.js"></script>
+    <script src="js/tracker-db.js"></script>
 </body>
 </html>
