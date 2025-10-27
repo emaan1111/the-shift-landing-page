@@ -4597,5 +4597,18 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:58:47.421Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761555527329_6b2n288mr",
+    "sessionId": "session_1761555527329_0ol6rgqc7",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "screenWidth": 800,
+    "screenHeight": 600,
+    "language": "en-US",
+    "hookVariant": "A"
   }
 ]
