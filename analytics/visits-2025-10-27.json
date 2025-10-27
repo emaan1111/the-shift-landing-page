@@ -4195,5 +4195,12 @@
     "hookVariant": "B",
     "email": "ushuma789@hotmail.com",
     "name": "Umme"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:13:34.448Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
