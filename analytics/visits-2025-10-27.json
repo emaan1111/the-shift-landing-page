@@ -4231,5 +4231,20 @@
     "event": "page_exit",
     "sessionId": "session_1761552802884_orzj9wfph",
     "duration": 28
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T08:13:51.889Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552802882_ejzcyll49",
+    "sessionId": "session_1761552831870_c0v2eeem3",
+    "referrer": "https://momsshift.com/?email=ushuma789@hotmail.com&name=Umme",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/28.0 Chrome/130.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-AU",
+    "email": "ushuma789@hotmail.com",
+    "name": "Umme",
+    "country": "Australia"
   }
 ]
