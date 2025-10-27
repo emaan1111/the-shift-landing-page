@@ -5802,5 +5802,20 @@
     "email": "knazerism@gmail.com",
     "name": "Khatera",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:12:00.089Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567120057_4wydlx3vq",
+    "sessionId": "session_1761567120057_1lb4xcdq6",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "wasimacis_@hotmail.co.uk",
+    "name": "Wasima"
   }
 ]
