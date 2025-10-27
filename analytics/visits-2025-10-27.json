@@ -6123,5 +6123,20 @@
     "email": "bushra_87naz@hoymail.com",
     "name": "B",
     "country": "Germany"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T14:54:43.616Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761554514015_99tqwidzu",
+    "sessionId": "session_1761576883616_xwwee167z",
+    "referrer": "https://momsshift.com/?email=josephine_adamec@hotmail.com&name=Josephine",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 428,
+    "screenHeight": 926,
+    "language": "sv-SE",
+    "email": "josephine_adamec@hotmail.com",
+    "name": "Josephine",
+    "country": "Sweden"
   }
 ]
