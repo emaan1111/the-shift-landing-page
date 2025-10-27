@@ -1936,5 +1936,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:21:58.603Z",
+    "event": "registration",
+    "email": "sumishabeeb@gmail.com",
+    "name": "Sumaya",
+    "firstName": "Sumaya",
+    "lastName": "",
+    "country": "United Arab Emirates",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761542501692_rh3lnbqbp"
   }
 ]
