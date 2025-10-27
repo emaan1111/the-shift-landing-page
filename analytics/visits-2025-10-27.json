@@ -285,5 +285,24 @@
     "hookVariant": "A",
     "email": "sf_solehah@yahoo.com.my",
     "name": "sharifah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T01:08:03.882Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761527283869_eo4v0c9vl",
+    "sessionId": "session_1761527283872_fpla4n7cm",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 15; V2248) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/123.0.6312.118 Mobile Safari/537.36 VivoBrowser/14.6.3.0",
+    "screenWidth": 393,
+    "screenHeight": 869,
+    "language": "en-MY",
+    "hookVariant": "B",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
