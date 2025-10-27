@@ -4107,5 +4107,19 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "robila.mughal@gmail.com"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:09:12.527Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552552523_0wg1xz19t",
+    "sessionId": "session_1761552552524_n68jkaxsz",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "robila.mughal@gmail.com"
   }
 ]
