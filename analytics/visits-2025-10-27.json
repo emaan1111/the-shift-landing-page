@@ -2005,5 +2005,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:25:30.347Z",
+    "event": "registration",
+    "email": "hani2148@gmail.com",
+    "name": "Umme",
+    "firstName": "Umme",
+    "lastName": "",
+    "country": "Australia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761542715697_zt6hfszg8"
   }
 ]
