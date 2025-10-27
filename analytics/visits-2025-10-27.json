@@ -6002,5 +6002,24 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T12:25:26.970Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567787770_lr82of8po",
+    "sessionId": "session_1761567926969_mbi9k4e7v",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 402,
+    "screenHeight": 874,
+    "language": "en-US",
+    "email": "sabina.wazeer@outlook.com",
+    "name": "Sabina",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States"
   }
 ]
