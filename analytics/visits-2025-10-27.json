@@ -6074,5 +6074,24 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "https://321db0af-5dc4-4f21-af09-8dd8f11e9339-00-11u5kpjldgot0.sisko.replit.dev:3000/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arjh%3A"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T12:50:53.627Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567206101_2ogeq3f7s",
+    "sessionId": "session_1761569453624_2o2of0irf",
+    "referrer": "https://momsshift.com/?email=alamiatia@gmail.com&name=Atia",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 320,
+    "screenHeight": 693,
+    "language": "en-US",
+    "email": "alamiatia@gmail.com",
+    "name": "Atia",
+    "ipAddress": "2600:1900:0:2d02::f00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States"
   }
 ]
