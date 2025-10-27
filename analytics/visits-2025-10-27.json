@@ -1026,5 +1026,12 @@
     "event": "button_click",
     "buttonName": "Join Free Mothers Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T03:38:46.613Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
