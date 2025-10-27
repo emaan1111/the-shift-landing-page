@@ -3559,5 +3559,20 @@
     "email": "aliyasmin201@gmail.com",
     "name": "jaz",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:02:55.645Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761548575643_8gcquevjd",
+    "sessionId": "session_1761548575643_pncwuty7f",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "tasneem.elbanna0@gmail.com",
+    "name": "Tasneem"
   }
 ]
