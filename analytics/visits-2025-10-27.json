@@ -770,5 +770,20 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:51:10.706Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761533470692_z7hcsrfac",
+    "sessionId": "session_1761533470693_lz5q0ebqs",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "amgaresh@gmail.com",
+    "name": "Amal"
   }
 ]
