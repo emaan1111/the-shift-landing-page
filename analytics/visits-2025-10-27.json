@@ -991,5 +991,26 @@
     "hookVariant": "A",
     "email": "shieyaam.jacobs@uct.ac.za",
     "name": "Shieyaam"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T03:37:03.273Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761536223271_vg0heeda3",
+    "sessionId": "session_1761536223271_lzfevr7d1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "maryam.mushtaq@vu.edu.pk",
+    "name": "Maryam",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
