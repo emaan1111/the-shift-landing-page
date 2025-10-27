@@ -3011,5 +3011,12 @@
     "hookVariant": "A",
     "email": "rukhshanda.sharif@yahoo.com",
     "name": "rukhshanda"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:16:38.233Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
