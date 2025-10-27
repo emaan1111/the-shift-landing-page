@@ -3624,5 +3624,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761548575643_8gcquevjd"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T07:04:14.860Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761548575643_8gcquevjd",
+    "sessionId": "session_1761548654858_c3u3nhaac",
+    "referrer": "https://momsshift.com/?email=tasneem.elbanna0@gmail.com&name=Tasneem",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "email": "tasneem.elbanna0@gmail.com",
+    "name": "Tasneem",
+    "country": "United Kingdom"
   }
 ]
