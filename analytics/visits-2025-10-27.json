@@ -3720,5 +3720,12 @@
     "hookVariant": "B",
     "email": "sahar_ash@outlook.com",
     "name": "Sa"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:10:40.104Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
