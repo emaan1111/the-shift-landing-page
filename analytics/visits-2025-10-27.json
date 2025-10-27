@@ -893,5 +893,19 @@
     "language": "en-US",
     "hookVariant": "A",
     "email": "norhayati_bte_ahmad@nhgp.com.sg"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:52:05.032Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761533524907_wcumbah9z",
+    "sessionId": "session_1761533524952_vgwa6u9p2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "norhayati_bte_ahmad@nhgp.com.sg"
   }
 ]
