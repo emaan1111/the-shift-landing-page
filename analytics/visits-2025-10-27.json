@@ -4957,5 +4957,24 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T10:00:20.808Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761558789376_362bvmoz6",
+    "sessionId": "session_1761559220807_r1rwnr4j4",
+    "referrer": "https://momsshift.com/?email=ayshasiddiqa2914@gmail.com&name=Aysha",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1536,
+    "screenHeight": 864,
+    "language": "en-GB",
+    "email": "fathimabegam5301@gmail.com",
+    "name": "Fathima",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "India"
   }
 ]
