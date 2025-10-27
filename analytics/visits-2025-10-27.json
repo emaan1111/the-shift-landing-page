@@ -3400,5 +3400,12 @@
     "hookVariant": "B",
     "email": "rubykhan13@hotmail.co.uk",
     "name": "Robina"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:48:12.146Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
