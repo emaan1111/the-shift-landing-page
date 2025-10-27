@@ -5149,5 +5149,20 @@
     "hookVariant": "A",
     "email": "shukrafazal@yahoo.ca",
     "name": "Shukra"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:07:52.058Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761559672054_wc24p4893",
+    "sessionId": "session_1761559672055_7u0d2l6nr",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "shukrafazal@yahoo.ca",
+    "name": "Shukra"
   }
 ]
