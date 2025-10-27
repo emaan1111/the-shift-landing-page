@@ -4865,5 +4865,12 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:23:27.653Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
