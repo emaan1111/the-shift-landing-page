@@ -5238,5 +5238,26 @@
     "hookVariant": "B",
     "email": "ayeshaikhlef@gmail.com",
     "name": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:35:19.403Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761561319403_t7imq5lo1",
+    "sessionId": "session_1761561319403_74zn267l9",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "fr-FR",
+    "hookVariant": "B",
+    "email": "ayeshaikhlef@gmail.com",
+    "name": "A",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
