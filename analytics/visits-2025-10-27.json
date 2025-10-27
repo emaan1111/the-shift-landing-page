@@ -2879,5 +2879,20 @@
     "hookVariant": "B",
     "email": "khadeejagoussat@gmail.com",
     "name": "Khadidja Goussat"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:01:44.804Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544904804_tozy5iwoq",
+    "sessionId": "session_1761544904804_4irbskrbk",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "khadeejagoussat@gmail.com",
+    "name": "Khadidja Goussat"
   }
 ]
