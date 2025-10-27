@@ -654,5 +654,26 @@
     "screenHeight": 732,
     "language": "en-US",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:22:41.512Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761531761511_uu3iwdb6s",
+    "sessionId": "session_1761531761511_bgjst1rwa",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Mobile/15E148 Safari/604.1",
+    "screenWidth": 430,
+    "screenHeight": 932,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "humera_viva19@yahoo.com",
+    "name": "Humera",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
