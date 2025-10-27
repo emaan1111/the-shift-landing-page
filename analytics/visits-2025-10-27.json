@@ -4494,5 +4494,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T08:42:07.199Z",
+    "event": "registration",
+    "email": "josephine_adamec@hotmail.com",
+    "name": "Josephine",
+    "firstName": "Josephine",
+    "lastName": "",
+    "country": "Sweden",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761554514015_99tqwidzu"
   }
 ]
