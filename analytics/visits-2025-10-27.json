@@ -1642,5 +1642,12 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T04:51:08.797Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/?email=alikhadra452@gmail.com&name=Khadra"
   }
 ]
