@@ -2181,5 +2181,24 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:32:11.782Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761543131778_k2vswiz9v",
+    "sessionId": "session_1761543131779_wftf863gv",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "saffia_@hotmail.co.uk",
+    "name": "Saffia",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United Kingdom"
   }
 ]
