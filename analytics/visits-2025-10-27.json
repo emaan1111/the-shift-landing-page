@@ -4697,5 +4697,18 @@
     "hookVariant": "A",
     "email": "khairun29@hotmail.co.uk",
     "name": "Kay"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:04:21.069Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761555860804_nmbtgk5bx",
+    "sessionId": "session_1761555860807_tu5935d0d",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 800,
+    "language": "en-AU",
+    "hookVariant": "B"
   }
 ]
