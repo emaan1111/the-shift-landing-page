@@ -828,5 +828,12 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:51:20.499Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "android-app://com.google.android.gm/"
   }
 ]
