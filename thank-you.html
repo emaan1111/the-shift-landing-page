@@ -1644,12 +1644,22 @@
                     
                     const referralWhatsappBtn = document.getElementById('referralWhatsappBtn');
                     if (referralWhatsappBtn) {
-                        referralWhatsappBtn.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                        referralWhatsappBtn.href = whatsappUrl;
+                        referralWhatsappBtn.onclick = function(e) {
+                            e.preventDefault();
+                            window.open(whatsappUrl, '_blank');
+                        };
                     }
                     
                     const referralFacebookBtn = document.getElementById('referralFacebookBtn');
                     if (referralFacebookBtn) {
-                        referralFacebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent('I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 for 2-hour sessions daily!')}`;
+                        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent('I just registered for The Shift Free 3-Day Challenge! Join me Nov 6-8 for 2-hour sessions daily!')}`;
+                        referralFacebookBtn.href = facebookUrl;
+                        referralFacebookBtn.onclick = function(e) {
+                            e.preventDefault();
+                            window.open(facebookUrl, '_blank', 'width=600,height=400');
+                        };
                     }
                     
                     const referralEmailBtn = document.getElementById('referralEmailBtn');
@@ -1661,7 +1671,12 @@ Event: Nov 6-8, 2025
 Time: 11AM-1PM EST (2 hours daily)
 
 Join me! Register here: ${referralUrl}`;
-                        referralEmailBtn.href = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                        const emailUrl = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                        referralEmailBtn.href = emailUrl;
+                        referralEmailBtn.onclick = function(e) {
+                            e.preventDefault();
+                            window.location.href = emailUrl;
+                        };
                     }
                 }
                 
