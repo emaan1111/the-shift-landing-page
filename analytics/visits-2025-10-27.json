@@ -5710,5 +5710,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T11:51:48.200Z",
+    "event": "registration",
+    "email": "aminahussain@gmail.com",
+    "name": "Amina Hussain",
+    "firstName": "Amina",
+    "lastName": "Hussain",
+    "country": "United States",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761565875831_jw95q903i"
   }
 ]
