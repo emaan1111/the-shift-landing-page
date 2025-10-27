@@ -1575,5 +1575,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T04:49:51.924Z",
+    "event": "registration",
+    "email": "alikhadra452@gmail.com",
+    "name": "Khadra",
+    "firstName": "Khadra",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761540511731_c22sbt9fd"
   }
 ]
