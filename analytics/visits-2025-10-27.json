@@ -4093,5 +4093,19 @@
     "email": "bernie_1@live.com",
     "name": "Bea",
     "country": "Australia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T08:09:08.925Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552548922_85tlej7am",
+    "sessionId": "session_1761552548922_r7xsy8hmx",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "robila.mughal@gmail.com"
   }
 ]
