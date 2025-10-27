@@ -2504,5 +2504,20 @@
     "hookVariant": "A",
     "email": "aakrami06@hotmail.com",
     "name": "Aria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:50:44.273Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544244271_jz7mcauki",
+    "sessionId": "session_1761544244271_azlrbvswt",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "spak_paks@yahoo.com",
+    "name": "Sumaira"
   }
 ]
