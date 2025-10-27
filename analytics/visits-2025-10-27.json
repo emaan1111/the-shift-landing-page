@@ -2654,5 +2654,12 @@
     "screenHeight": 846,
     "language": "en-GB",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:52:04.159Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
