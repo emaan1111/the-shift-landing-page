@@ -3153,5 +3153,12 @@
     "hookVariant": "A",
     "email": "tabassum2116@yahoo.com",
     "name": "Tabassum"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:44:16.562Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
