@@ -1109,5 +1109,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T03:55:48.120Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761537299788_w5jwf3mp0",
+    "sessionId": "session_1761537348120_u1r6rysm0",
+    "referrer": "https://momsshift.com/?email=saabmona@gmail.com&name=Mona",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-CA",
+    "email": "saabmona@gmail.com",
+    "name": "Mona",
+    "country": "Canada"
   }
 ]
