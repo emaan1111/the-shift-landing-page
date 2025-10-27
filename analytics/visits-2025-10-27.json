@@ -5019,5 +5019,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761559166164_ctuehgrub"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:03:30.086Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761559410073_1ozabowte",
+    "sessionId": "session_1761559410074_9l0efdetg",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 320,
+    "screenHeight": 687,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "nardefa179@gmail.com",
+    "name": "Naressa"
   }
 ]
