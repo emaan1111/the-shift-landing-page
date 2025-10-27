@@ -3355,5 +3355,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T06:47:37.755Z",
+    "event": "registration",
+    "email": "fawziyyah.rafiq@gmail.com",
+    "name": "Fawziyyah",
+    "firstName": "Fawziyyah",
+    "lastName": "",
+    "country": "New Zealand",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761547505291_8l64p7fsk"
   }
 ]
