@@ -1229,34 +1229,52 @@
                     <div class="step-box">
                         <div class="step-header">
                             <div class="step-number">2</div>
-                            <h3 class="step-title">Share and Spread the Word</h3>
+                            <h3 class="step-title">Share & Earn Rewards from Allah ﷻ</h3>
                         </div>
                         <div class="step-content">
-                            <p class="step-description">Help other mothers benefit from this transformative experience by sharing with your friends and family.</p>
+                            <p class="step-description">Be a light for others! Invite your friends so we can together raise strong, confident Muslims, and you can earn rewards from Allah just by sharing it :)</p>
+                            
+                            <p class="step-description">We have gifted you a free spot because we trust you'll share this life-changing journey with other mothers and help us in this mission.</p>
                             
                             <div class="hadith-box">
-                                <p>"Whoever guides someone to goodness will have a reward like the one who does it."</p>
-                                <div class="hadith-source">- Sahih Muslim</div>
+                                <p>The Prophet ﷺ said: "Whoever guides someone to goodness will have a reward like the one who did it."</p>
                             </div>
                             
+                            <p style="margin-top: 15px; margin-bottom: 10px; font-weight: 600; color: #333;">Click below 👇 to invite them</p>
+                            
                             <div id="referralLinkSection" class="referral-link-box" style="display: none;">
-                                <p style="margin-bottom: 10px; color: #666;">Share this link to invite others to The Shift Challenge:</p>
-                                <div class="referral-link">
-                                    <input type="text" id="referralLinkInput" readonly>
-                                    <button class="copy-button" onclick="copyReferralLink(event)">
-                                        <i class="fas fa-copy"></i> Copy
-                                    </button>
+                                <!-- Your Message Box -->
+                                <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 10px; margin-bottom: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                        <span style="font-size: 12px; font-weight: 600; color: #495057;">📝 Your Message</span>
+                                        <button id="copyTemplateBtn" onclick="copyTemplateMessage(event)" style="background: #667eea; color: white; border: none; padding: 3px 10px; border-radius: 4px; font-size: 11px; cursor: pointer;">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <div id="templateMessage" style="font-size: 11px; color: #495057; line-height: 1.4; max-height: 100px; overflow-y: auto; padding: 6px; background: white; border-radius: 4px; white-space: pre-wrap;">
+                                        <!-- Message will be inserted by JavaScript -->
+                                    </div>
                                 </div>
-                                <div class="share-buttons-referral">
-                                    <a href="#" class="share-btn-referral btn-whatsapp" id="referralWhatsappBtn" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> Share on WhatsApp
-                                    </a>
-                                    <a href="#" class="share-btn-referral btn-facebook" id="referralFacebookBtn" target="_blank">
-                                        <i class="fab fa-facebook"></i> Share on Facebook
-                                    </a>
-                                    <a href="#" class="share-btn-referral btn-email" id="referralEmailBtn">
-                                        <i class="fas fa-envelope"></i> Share via Email
-                                    </a>
+                                
+                                <!-- Compact Link and Buttons -->
+                                <div style="margin-bottom: 10px;">
+                                    <div class="referral-link" style="margin-bottom: 8px;">
+                                        <input type="text" id="referralLinkInput" readonly style="font-size: 13px; padding: 8px;">
+                                        <button class="copy-button" onclick="copyReferralLink(event)" style="padding: 8px 12px; font-size: 12px;">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <div class="share-buttons-referral" style="gap: 6px;">
+                                        <a href="#" class="share-btn-referral btn-whatsapp" id="referralWhatsappBtn" target="_blank" style="padding: 8px 12px; font-size: 12px;">
+                                            <i class="fab fa-whatsapp"></i> WhatsApp
+                                        </a>
+                                        <a href="#" class="share-btn-referral btn-facebook" id="referralFacebookBtn" target="_blank" style="padding: 8px 12px; font-size: 12px;">
+                                            <i class="fab fa-facebook"></i> Facebook
+                                        </a>
+                                        <a href="#" class="share-btn-referral btn-email" id="referralEmailBtn" style="padding: 8px 12px; font-size: 12px;">
+                                            <i class="fas fa-envelope"></i> Email
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -1646,9 +1664,15 @@ I found this FREE 3 Day Challenge for moms that I am sure you'll love.
 
 It's about how mothers like us shifted from PUSHING their children to pray, read Qur'an, and learn Islam to them wanting it themselves… even if they just want to play games or watch YouTube. Taught by Ustadha Ariba Farheen, who has 20 years exp in helping families
 
-It gave me so much hope, and ways to save our kids from the fitna…so I thought of you.
+It gave me so much hope, and powerful new ways to save our kids from the fitna, so I thought of you.
 
 Here's the link to reserve a FREE spot ${referralUrl}`;
+                    
+                    // Populate the template message box
+                    const templateMessageDiv = document.getElementById('templateMessage');
+                    if (templateMessageDiv) {
+                        templateMessageDiv.textContent = message;
+                    }
                     
                     const referralWhatsappBtn = document.getElementById('referralWhatsappBtn');
                     if (referralWhatsappBtn) {
@@ -1668,7 +1692,7 @@ I found this FREE 3 Day Challenge for moms that I am sure you'll love.
 
 It's about how mothers like us shifted from PUSHING their children to pray, read Qur'an, and learn Islam to them wanting it themselves… even if they just want to play games or watch YouTube. Taught by Ustadha Ariba Farheen, who has 20 years exp in helping families
 
-It gave me so much hope, and ways to save our kids from the fitna…so I thought of you.
+It gave me so much hope, and powerful new ways to save our kids from the fitna, so I thought of you.
 
 Here's the link to reserve a FREE spot`;
                         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}&quote=${encodeURIComponent(facebookMessage)}`;
@@ -1738,6 +1762,45 @@ Join me! Register here: ${referralUrl}`;
                 }, 2000);
             }).catch(err => {
                 alert('Failed to copy: ' + err);
+            });
+        }
+        
+        // Copy template message to clipboard
+        function copyTemplateMessage(event) {
+            event.preventDefault();
+            const templateDiv = document.getElementById('templateMessage');
+            const text = templateDiv.textContent.trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = document.getElementById('copyTemplateBtn');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy message:', err);
+                // Fallback method
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const button = document.getElementById('copyTemplateBtn');
+                    button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    button.style.background = '#28a745';
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                        button.style.background = '#667eea';
+                    }, 2000);
+                } catch (err2) {
+                    alert('Failed to copy message');
+                }
+                document.body.removeChild(textArea);
             });
         }
         
