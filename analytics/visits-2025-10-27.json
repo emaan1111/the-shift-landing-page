@@ -1635,5 +1635,12 @@
     "hookVariant": "A",
     "email": "rashidahdaud84@yahoo.com",
     "name": "Rashidah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T04:51:06.742Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
