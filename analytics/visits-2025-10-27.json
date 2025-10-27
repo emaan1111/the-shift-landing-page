@@ -1457,5 +1457,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T04:42:38.561Z",
+    "event": "registration",
+    "email": "zay_jaymali@hotmail.com",
+    "name": "Zeynep",
+    "firstName": "Zeynep",
+    "lastName": "",
+    "country": "Canada",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761540145150_6s5vhwpe8"
   }
 ]
