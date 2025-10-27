@@ -240,5 +240,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T00:54:36.524Z",
+    "event": "registration",
+    "email": "rehanashah817@gmail.com",
+    "name": "Rehana ",
+    "firstName": "Rehana",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761526432964_lmf90m2b0"
   }
 ]
