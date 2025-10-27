@@ -3888,5 +3888,12 @@
     "email": "sammy2011@live.co.uk",
     "name": "Sameen",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:29:51.632Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
