@@ -835,5 +835,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T02:51:22.032Z",
+    "event": "registration",
+    "email": "amgaresh@gmail.com",
+    "name": "Amal",
+    "firstName": "Amal",
+    "lastName": "",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761533470692_z7hcsrfac"
   }
 ]
