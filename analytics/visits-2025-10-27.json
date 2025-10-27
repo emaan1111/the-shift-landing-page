@@ -3138,5 +3138,20 @@
     "event": "button_click",
     "buttonName": "Join Free Mothers Challenge",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:44:10.658Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547450654_0r48e5908",
+    "sessionId": "session_1761547450655_rwk7jbv8e",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "tabassum2116@yahoo.com",
+    "name": "Tabassum"
   }
 ]
