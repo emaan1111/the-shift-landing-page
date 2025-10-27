@@ -4793,5 +4793,19 @@
     "screenHeight": 1080,
     "language": "en-AU",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:18:05.611Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761556685484_bhmsc14us",
+    "sessionId": "session_1761556685487_d3c8dol7l",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
+    "screenWidth": 1366,
+    "screenHeight": 768,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "ridwana@tayfin.co.za"
   }
 ]
