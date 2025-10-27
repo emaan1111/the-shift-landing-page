@@ -2074,5 +2074,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "android-app://com.google.android.gm/"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:27:15.323Z",
+    "event": "registration",
+    "email": "hhana07@gmail.com",
+    "name": "Farhana",
+    "firstName": "Farhana",
+    "lastName": "",
+    "country": "Singapore",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761521638497_kuz3ipapq"
   }
 ]
