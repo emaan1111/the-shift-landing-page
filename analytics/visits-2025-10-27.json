@@ -2139,5 +2139,26 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761542958722_v8c4cogsz"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:31:55.983Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761543115978_n3ahfqpm2",
+    "sessionId": "session_1761543115980_7ie1dlbq4",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 412,
+    "screenHeight": 915,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "saffia_@hotmail.co.uk",
+    "name": "Saffia",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
