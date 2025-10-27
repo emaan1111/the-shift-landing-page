@@ -3334,5 +3334,12 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:47:06.423Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "https://www.google.com/"
   }
 ]
