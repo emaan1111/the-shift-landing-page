@@ -4710,5 +4710,12 @@
     "screenHeight": 800,
     "language": "en-AU",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:04:33.902Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
