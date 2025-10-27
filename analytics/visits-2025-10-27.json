@@ -1817,5 +1817,20 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=rashidahdaud84@yahoo.com&name=Rashidah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:08:50.886Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541730876_a8khs7wmb",
+    "sessionId": "session_1761541730879_q8n92pu9f",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "galiema.gool@det.nsw.edu.au",
+    "name": "Galiema"
   }
 ]
