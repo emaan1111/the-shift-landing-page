@@ -3131,5 +3131,12 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761546456652_ohucr09td"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:28:23.547Z",
+    "event": "button_click",
+    "buttonName": "Join Free Mothers Challenge",
+    "referrer": "Direct"
   }
 ]
