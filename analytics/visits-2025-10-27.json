@@ -2743,5 +2743,12 @@
     "email": "iqra.asif@live.com",
     "name": "Iqra",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:53:02.928Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
