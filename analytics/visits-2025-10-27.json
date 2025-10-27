@@ -487,5 +487,20 @@
     "hookVariant": "A",
     "email": "kokabmadiha8@gmail.com",
     "name": "Kokab"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T01:58:57.412Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761530337412_at7bdg9p0",
+    "sessionId": "session_1761530337412_0gqc0tvci",
+    "referrer": "https://www.google.com/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 6 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.119 Mobile Safari/537.36 OPR/81.2.4292.78581",
+    "screenWidth": 412,
+    "screenHeight": 892,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "kWQcHVznypE@cDvhN.wBK",
+    "name": "qSTWbW"
   }
 ]
