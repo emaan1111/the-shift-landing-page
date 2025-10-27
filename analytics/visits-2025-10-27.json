@@ -3742,5 +3742,20 @@
     "hookVariant": "A",
     "email": "tasneem.elbanna0@gmail.com",
     "name": "Tasneem"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:17:20.324Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761549440320_rgfr9vch5",
+    "sessionId": "session_1761549440321_48j4y2k6g",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 414,
+    "screenHeight": 896,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "rwarsi1221@gmail.com",
+    "name": "Rahma"
   }
 ]
