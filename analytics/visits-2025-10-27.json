@@ -4165,5 +4165,20 @@
     "email": "robila.mughal@gmail.com",
     "name": "Robila",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T08:09:43.157Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761552583153_l9gto376m",
+    "sessionId": "session_1761552583154_tpdy11su5",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)",
+    "screenWidth": 400,
+    "screenHeight": 400,
+    "language": "en-US",
+    "email": "robila.mughal@gmail.com",
+    "name": "Robila",
+    "country": "United Kingdom"
   }
 ]
