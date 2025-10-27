@@ -5164,5 +5164,12 @@
     "hookVariant": "B",
     "email": "shukrafazal@yahoo.ca",
     "name": "Shukra"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:07:54.523Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
