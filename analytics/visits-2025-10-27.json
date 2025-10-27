@@ -785,5 +785,20 @@
     "hookVariant": "B",
     "email": "amgaresh@gmail.com",
     "name": "Amal"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:51:09.751Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761533469751_1bi8jdvw3",
+    "sessionId": "session_1761533469751_xeu3t4cwe",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "amgaresh@gmail.com",
+    "name": "Amal"
   }
 ]
