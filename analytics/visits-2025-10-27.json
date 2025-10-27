@@ -2425,5 +2425,18 @@
     "hookVariant": "B",
     "email": "aakrami06@hotmail.com",
     "name": "Aria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:48:14.205Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544094120_el4iqwan9",
+    "sessionId": "session_1761544094120_qbv8zte1l",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/143.0.1  Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-GB",
+    "hookVariant": "A"
   }
 ]
