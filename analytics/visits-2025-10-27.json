@@ -3422,5 +3422,12 @@
     "hookVariant": "A",
     "email": "fawziyyah.rafiq@gmail.com",
     "name": "Fawziyyah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:48:25.493Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
