@@ -2800,5 +2800,12 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:53:30.900Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/"
   }
 ]
