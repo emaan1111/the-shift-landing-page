@@ -3529,5 +3529,20 @@
     "email": "middy-99@hotmail.com",
     "name": "Kalsoom",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:53:03.003Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547983001_powntrl80",
+    "sessionId": "session_1761547983001_0b24ylv5v",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "leenauk@icloud.com",
+    "name": "Leena"
   }
 ]
