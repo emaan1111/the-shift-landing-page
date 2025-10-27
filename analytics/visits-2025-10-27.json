@@ -1907,5 +1907,20 @@
     "hookVariant": "A",
     "email": "amna@nexcel.me",
     "name": "Amna"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:21:41.700Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761542501692_rh3lnbqbp",
+    "sessionId": "session_1761542501694_16bargpx5",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 804,
+    "language": "en-AE",
+    "hookVariant": "A",
+    "email": "sumishabeeb@gmail.com",
+    "name": "Sumaya"
   }
 ]
