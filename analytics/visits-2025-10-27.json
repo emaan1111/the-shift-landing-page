@@ -5223,5 +5223,20 @@
     "hookVariant": "A",
     "email": "shukrafazal@yahoo.ca",
     "name": "Shukra"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:35:09.241Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761561309235_p8cg5grf3",
+    "sessionId": "session_1761561309236_9yibh716h",
+    "referrer": "android-app://com.google.android.gm/",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 432,
+    "screenHeight": 960,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "ayeshaikhlef@gmail.com",
+    "name": "A"
   }
 ]
