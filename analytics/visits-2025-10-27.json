@@ -4617,5 +4617,12 @@
     "event": "button_click",
     "buttonName": "Join Our Mothers Community",
     "referrer": "https://momsshift.com/?email=sanagatta@yahoo.com&name=Sana"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T08:59:00.317Z",
+    "event": "button_click",
+    "buttonName": "Join Our Mothers Community",
+    "referrer": "https://momsshift.com/?email=sanagatta@yahoo.com&name=Sana"
   }
 ]
