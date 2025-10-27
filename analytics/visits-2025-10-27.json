@@ -3669,5 +3669,12 @@
     "hookVariant": "B",
     "email": "fatimahnat@yahoo.co.uk",
     "name": "fatimah"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:05:31.550Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "Direct"
   }
 ]
