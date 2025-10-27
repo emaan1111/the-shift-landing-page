@@ -2661,5 +2661,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:52:05.585Z",
+    "event": "registration",
+    "email": "iqra.asif@live.com",
+    "name": "Iqra",
+    "firstName": "Iqra",
+    "lastName": "",
+    "country": "United Kingdom",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761544306697_ljof2nlf7"
   }
 ]
