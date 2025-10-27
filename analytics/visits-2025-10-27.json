@@ -2923,5 +2923,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761544902231_4dferxv8b"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T06:02:21.814Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544902231_4dferxv8b",
+    "sessionId": "session_1761544941813_9z4wsy2x8",
+    "referrer": "https://momsshift.com/?email=khadeejagoussat@gmail.com&name=Khadidja%20Goussat",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-GB",
+    "email": "khadeejagoussat@gmail.com",
+    "name": "Khadidja",
+    "country": "Oman"
   }
 ]
