@@ -4950,5 +4950,12 @@
     "hookVariant": "B",
     "email": "ayshasiddiqa2914@gmail.com",
     "name": "Aysha"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:00:14.942Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
