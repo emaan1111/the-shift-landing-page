@@ -5637,5 +5637,24 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/upsell.html",
+    "timestamp": "2025-10-27T11:37:22.582Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761433392495_v1czdaj71",
+    "sessionId": "session_1761565042581_z2mdtajzj",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-US",
+    "email": "zawjatfaheem@yahoo.com",
+    "name": "Sabah",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States"
   }
 ]
