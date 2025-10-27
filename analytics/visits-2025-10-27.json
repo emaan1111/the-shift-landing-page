@@ -2380,5 +2380,20 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "South Africa"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T05:43:34.193Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761543533317_umx0d10bl",
+    "sessionId": "session_1761543814192_uslexs8im",
+    "referrer": "https://momsshift.com/?email=famod2625@gmail.com&name=Farhana",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 440,
+    "screenHeight": 956,
+    "language": "en-GB",
+    "email": "famod2625@gmail.com",
+    "name": "Farhana",
+    "country": "South Africa"
   }
 ]
