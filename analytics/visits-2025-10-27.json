@@ -2346,5 +2346,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T05:38:50.296Z",
+    "event": "registration",
+    "email": "famod2625@gmail.com",
+    "name": "Farhana",
+    "firstName": "Farhana",
+    "lastName": "",
+    "country": "South Africa",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": null
   }
 ]
