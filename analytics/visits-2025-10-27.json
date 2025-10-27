@@ -1862,5 +1862,20 @@
     "hookVariant": "A",
     "email": "tariq112@uwindsor.ca",
     "name": "Sara"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:11:50.908Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541910892_m46cfjpau",
+    "sessionId": "session_1761541910898_n4j2p9uoj",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "hpwyr@stu.ca",
+    "name": "Abi"
   }
 ]
