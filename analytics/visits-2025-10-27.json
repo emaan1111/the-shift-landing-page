@@ -5656,5 +5656,25 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "United States"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T11:51:15.833Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761565875831_jw95q903i",
+    "sessionId": "session_1761565875831_8je8i0266",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-US",
+    "hookVariant": "A",
+    "email": "aminahussain@gmail.com",
+    "ipAddress": "2600:1900:0:2d02::2e00",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
