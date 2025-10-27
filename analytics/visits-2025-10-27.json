@@ -6060,5 +6060,12 @@
     "screenHeight": 846,
     "language": "en-GB",
     "hookVariant": "A"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:34:43.583Z",
+    "event": "button_click",
+    "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
+    "referrer": "https://321db0af-5dc4-4f21-af09-8dd8f11e9339-00-11u5kpjldgot0.sisko.replit.dev:3000/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arjh%3A"
   }
 ]
