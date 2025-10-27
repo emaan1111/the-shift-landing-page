@@ -4682,5 +4682,20 @@
     "email": "irfanshireen4@gmail.com",
     "name": "Shireen",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T09:04:15.244Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761555855203_sr3cs7a9s",
+    "sessionId": "session_1761555855206_c6i2q63m1",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36 EdgA/141.0.0.0",
+    "screenWidth": 384,
+    "screenHeight": 857,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "khairun29@hotmail.co.uk",
+    "name": "Kay"
   }
 ]
