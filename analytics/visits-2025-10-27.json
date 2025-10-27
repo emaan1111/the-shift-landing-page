@@ -5861,5 +5861,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": "visitor_1761567206101_2ogeq3f7s"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T12:18:50.792Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761567530785_xb2vb05sz",
+    "sessionId": "session_1761567530786_c0byrff9x",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-IE",
+    "hookVariant": "B",
+    "email": "am_olola@yahoo.com",
+    "name": "Fadumo"
   }
 ]
