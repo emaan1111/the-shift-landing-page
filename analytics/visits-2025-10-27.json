@@ -5846,5 +5846,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T12:13:43.068Z",
+    "event": "registration",
+    "email": "alamiatia@gmail.com",
+    "name": "Atia",
+    "firstName": "Atia",
+    "lastName": "",
+    "country": "United States",
+    "city": "",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761567206101_2ogeq3f7s"
   }
 ]
