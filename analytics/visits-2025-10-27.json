@@ -1186,5 +1186,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "B",
     "visitorId": "visitor_1761537685732_h2rhpc4zv"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T04:01:59.564Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761537685732_h2rhpc4zv",
+    "sessionId": "session_1761537719516_dakrwa455",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-US@posix",
+    "email": "hwilson88@proton.me",
+    "name": "Harry",
+    "country": "Australia"
   }
 ]
