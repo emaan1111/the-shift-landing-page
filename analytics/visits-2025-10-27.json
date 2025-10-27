@@ -3705,5 +3705,20 @@
     "email": "asmhamami@gmail.com",
     "name": "asma",
     "country": "United Arab Emirates"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T07:09:32.868Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761548972858_9ws07jqq3",
+    "sessionId": "session_1761548972858_ocppdjxu2",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 832,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "sahar_ash@outlook.com",
+    "name": "Sa"
   }
 ]
