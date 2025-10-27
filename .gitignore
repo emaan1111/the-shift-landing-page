@@ -20,3 +20,9 @@ js/analytics-config.js
 
 # Local registration backups (contains personal data)
 backups/
+
+# Database (contains analytics and user data, should not be in Git)
+analytics.db
+analytics.db-journal
+*.db
+*.db-journal
