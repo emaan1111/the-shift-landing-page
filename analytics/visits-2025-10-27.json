@@ -2864,5 +2864,20 @@
     "screenHeight": 852,
     "language": "nb-NO",
     "hookVariant": "B"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T06:01:42.234Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544902231_4dferxv8b",
+    "sessionId": "session_1761544902231_uqig3p9vd",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/141.0.7390.96 Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-GB",
+    "hookVariant": "B",
+    "email": "khadeejagoussat@gmail.com",
+    "name": "Khadidja Goussat"
   }
 ]
