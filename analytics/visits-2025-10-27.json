@@ -4357,5 +4357,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T08:38:08.583Z",
+    "event": "registration",
+    "email": "farrukh.kmr@gmail.com",
+    "name": "Farrukh",
+    "firstName": "Farrukh",
+    "lastName": "",
+    "country": "India",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "B",
+    "visitorId": "visitor_1761554271836_ty0rsc7yy"
   }
 ]
