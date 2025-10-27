@@ -3895,5 +3895,20 @@
     "event": "button_click",
     "buttonName": "Register now",
     "referrer": "Direct"
+  },
+  {
+    "page": "/index.html",
+    "timestamp": "2025-10-27T07:29:53.332Z",
+    "event": "registration",
+    "email": "mayada.agha@icloud.com",
+    "name": "Mayada Agha",
+    "firstName": "Mayada",
+    "lastName": "Agha",
+    "country": "Australia",
+    "city": "Council Bluffs",
+    "source": "Registration Form - The Shift Landing Page",
+    "clickfunnelsSuccess": true,
+    "hookVariant": "A",
+    "visitorId": "visitor_1761550114136_ac04oyh3z"
   }
 ]
