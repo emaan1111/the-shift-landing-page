@@ -2541,5 +2541,12 @@
     "hookVariant": "B",
     "email": "aakrami06@hotmail.com",
     "name": "Aria"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:51:01.949Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
