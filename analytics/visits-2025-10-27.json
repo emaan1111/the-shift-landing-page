@@ -3182,5 +3182,20 @@
     "clickfunnelsSuccess": true,
     "hookVariant": "A",
     "visitorId": null
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-27T06:44:31.432Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547471432_41tdlrsqw",
+    "sessionId": "session_1761547471432_1rk4trkis",
+    "referrer": "https://momsshift.com/?email=tabassum2116@yahoo.com&name=Tabassum",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 390,
+    "screenHeight": 844,
+    "language": "en-GB",
+    "email": "tabassum2116@yahoo.com",
+    "name": "Tabassum",
+    "country": "United Kingdom"
   }
 ]
