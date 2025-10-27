@@ -584,5 +584,20 @@
     "region": "Iowa",
     "timezone": "America/Chicago",
     "country": "Malaysia"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T02:12:33.010Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761531153007_u6qae3tm5",
+    "sessionId": "session_1761531153007_ihz0nbwpv",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1",
+    "screenWidth": 428,
+    "screenHeight": 926,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "shomaila.nawaz83@gmail.com",
+    "name": "N/A"
   }
 ]
