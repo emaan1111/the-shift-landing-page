@@ -2780,5 +2780,18 @@
     "email": "bintesakeenah3@gmail.com",
     "name": "Abida",
     "country": "United Kingdom"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:53:22.123Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761542958722_v8c4cogsz",
+    "sessionId": "session_1761544402120_7z6cl5ig0",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "nb-NO",
+    "hookVariant": "B"
   }
 ]
