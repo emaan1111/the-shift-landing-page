@@ -1877,5 +1877,20 @@
     "hookVariant": "B",
     "email": "hpwyr@stu.ca",
     "name": "Abi"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T05:13:06.120Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761541986110_a7wvmi04h",
+    "sessionId": "session_1761541986115_r5mvh5wbw",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "screenWidth": 1920,
+    "screenHeight": 1080,
+    "language": "en-US",
+    "hookVariant": "B",
+    "email": "shamreeza.riaz@connect.qut.edu.au",
+    "name": "shamreeza"
   }
 ]
