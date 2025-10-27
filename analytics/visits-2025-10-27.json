@@ -5435,5 +5435,12 @@
     "event": "button_click",
     "buttonName": "Join The 3-Day Mothers Challenge (FREE)",
     "referrer": "Direct"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-27T10:48:59.422Z",
+    "event": "button_click",
+    "buttonName": "Register now",
+    "referrer": "Direct"
   }
 ]
