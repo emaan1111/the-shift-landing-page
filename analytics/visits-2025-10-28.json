@@ -71,5 +71,24 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-28T22:45:44.610Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761550293493_m01epnhx4",
+    "sessionId": "session_1761691544610_o43cixfbc",
+    "referrer": "https://momsshift.com/",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "email": "bushra_87naz@hoymail.com",
+    "name": "B",
+    "ipAddress": "2600:1900:0:2d02::",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "Germany"
   }
 ]
