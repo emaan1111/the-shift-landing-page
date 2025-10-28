@@ -52,5 +52,24 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "s_koli@hotmail.co.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-28T20:52:35.374Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544094120_el4iqwan9",
+    "sessionId": "session_1761684755373_80rz5t9hb",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/143.0.1  Mobile/15E148 Safari/604.1",
+    "screenWidth": 375,
+    "screenHeight": 812,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "ipAddress": "2600:1900:0:2d02::",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
   }
 ]
