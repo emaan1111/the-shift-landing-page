@@ -40,5 +40,19 @@
     "timezone": "America/Chicago",
     "country": "United States",
     "countryCode": "US"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-28T12:56:07.891Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547581364_cewbvpafc",
+    "sessionId": "session_1761656167879_ds4284l0f",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "s_koli@hotmail.co.uk"
   }
 ]
