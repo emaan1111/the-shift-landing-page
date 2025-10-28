@@ -427,5 +427,38 @@ def manage_registration(registration_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/database/reset', methods=['POST'])
+def reset_database():
+    """Delete all analytics events and registrations from database"""
+    try:
+        conn = database.get_db().__enter__()
+        cursor = conn.cursor()
+        
+        # Get counts before deletion
+        cursor.execute('SELECT COUNT(*) FROM analytics')
+        analytics_count = cursor.fetchone()[0]
+        
+        cursor.execute('SELECT COUNT(*) FROM registrations')
+        registrations_count = cursor.fetchone()[0]
+        
+        # Delete all data
+        cursor.execute('DELETE FROM analytics')
+        cursor.execute('DELETE FROM registrations')
+        conn.commit()
+        
+        database.get_db().__exit__(None, None, None)
+        
+        return jsonify({
+            'success': True,
+            'message': f'Database reset successful',
+            'deleted': {
+                'analytics': analytics_count,
+                'registrations': registrations_count
+            }
+        }), 200
+        
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

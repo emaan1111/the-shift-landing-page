@@ -904,11 +904,11 @@
         }
 
         async function resetAllData() {
-            if (!confirm('⚠️ WARNING: This will permanently delete ALL analytics data from GitHub!\n\nAre you absolutely sure you want to continue?')) {
+            if (!confirm('⚠️ WARNING: This will permanently delete ALL analytics data from the DATABASE!\n\nThis includes:\n- All page visits and analytics events\n- All registrations\n\nAre you absolutely sure you want to continue?')) {
                 return;
             }
 
-            if (!confirm('This action cannot be undone. All visitor data, page views, and button clicks will be lost forever.\n\nClick OK to proceed with deletion.')) {
+            if (!confirm('This action cannot be undone. All visitor data, page views, and registrations will be lost forever.\n\nClick OK to proceed with deletion.')) {
                 return;
             }
 
@@ -916,51 +916,30 @@
             const dashboard = document.getElementById('dashboard');
             
             loading.style.display = 'block';
-            loading.innerHTML = '<i class="fas fa-spinner"></i>Deleting all analytics data...';
+            loading.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting all data from database...';
             dashboard.style.display = 'none';
 
             try {
-                // Get list of all analytics files via Flask proxy
-                const listResponse = await fetch('/api/github/analytics/list');
+                // Delete all data from database via new API endpoint
+                const response = await fetch('/api/database/reset', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
                 
-                if (!listResponse.ok) {
-                    throw new Error('Failed to list analytics files');
+                if (!response.ok) {
+                    throw new Error(`Failed to reset database (Status: ${response.status})`);
                 }
 
-                const files = await listResponse.json();
-                let deletedCount = 0;
-
-                // Delete each JSON file via Flask proxy
-                for (const file of files) {
-                    if (!file.name.endsWith('.json')) {
-                        continue;
-                    }
-
-                    const deleteResponse = await fetch('/api/github/analytics/delete', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            path: file.path,
-                            sha: file.sha
-                        })
-                    });
-
-                    if (deleteResponse.ok) {
-                        deletedCount++;
-                        console.log(`✅ Deleted: ${file.name}`);
-                    } else {
-                        console.error(`❌ Failed to delete: ${file.name}`);
-                    }
-                }
-
+                const result = await response.json();
+                
                 // Clear local data
                 allData = [];
                 filteredData = [];
                 
                 // Show success message
-                alert(`✅ Successfully deleted ${deletedCount} analytics file(s).\n\nThe dashboard will now reload with empty data.`);
+                alert(`✅ Successfully deleted:\n- ${result.deleted.analytics} analytics events\n- ${result.deleted.registrations} registrations\n\nThe dashboard will now reload with empty data.`);
                 
                 // Reload the page
                 window.location.reload();
