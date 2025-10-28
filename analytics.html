@@ -1015,8 +1015,15 @@
 
             try {
                 // Load from database API instead of GitHub
-                const response = await fetch('/api/analytics/events', { 
-                    cache: 'no-store'
+                // Add cache-busting parameter to prevent browser caching
+                const cacheBuster = new Date().getTime();
+                const response = await fetch(`/api/analytics/events?_=${cacheBuster}`, { 
+                    cache: 'no-store',
+                    headers: {
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                        'Expires': '0'
+                    }
                 });
 
                 if (!response.ok) {
@@ -1094,7 +1101,14 @@
             let totalRegistrations = 0;
             const globalDateFilter = document.getElementById('globalDateFilter').value;
             
-            fetch('/api/registrations')
+            const cacheBuster = new Date().getTime();
+            fetch(`/api/registrations?_=${cacheBuster}`, {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache'
+                }
+            })
                 .then(response => {
                     if (response.ok) {
                         return response.json();
@@ -1265,7 +1279,14 @@
             }
             
             // Fetch deduplicated registrations from API and assign to variants
-            fetch('/api/registrations')
+            const cacheBuster2 = new Date().getTime();
+            fetch(`/api/registrations?_=${cacheBuster2}`, {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache'
+                }
+            })
                 .then(response => response.ok ? response.json() : [])
                 .then(registrations => {
                     // Apply date filter to registrations if needed
@@ -1658,7 +1679,14 @@
             });
             
             // Fetch registrations and group by date
-            fetch('/api/registrations')
+            const cacheBuster3 = new Date().getTime();
+            fetch(`/api/registrations?_=${cacheBuster3}`, {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache'
+                }
+            })
                 .then(response => response.ok ? response.json() : [])
                 .then(registrations => {
                     // Apply global date filter to registrations if needed
