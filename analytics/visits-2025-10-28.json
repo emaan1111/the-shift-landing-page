@@ -54,5 +54,24 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "s_koli@hotmail.co.uk"
+  },
+  {
+    "page": "/thank-you.html",
+    "timestamp": "2025-10-28T14:25:00.941Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761544306697_ljof2nlf7",
+    "sessionId": "session_1761661500900_3u8f3kojw",
+    "referrer": "https://momsshift.com/?email=iqra.asif@live.com&name=Iqra",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Mobile/15E148 Safari/604.1",
+    "screenWidth": 393,
+    "screenHeight": 852,
+    "language": "en-GB",
+    "email": "iqra.asif@live.com",
+    "name": "Iqra",
+    "ipAddress": "Unknown",
+    "city": "Unknown",
+    "region": "Unknown",
+    "timezone": "Unknown",
+    "country": "United Kingdom"
   }
 ]
