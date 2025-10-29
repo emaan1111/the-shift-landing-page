@@ -108,49 +108,6 @@ def insert_analytics(data):
     
     with get_db() as conn:
         cursor = conn.cursor()
-<<<<<<< HEAD
-        cursor.execute('''
-            INSERT INTO analytics (
-                event, page, timestamp, visitor_id, session_id,
-                email, name, country, city, region, ip_address, timezone,
-                referrer, user_agent, screen_width, screen_height, language,
-                hook_variant, button_name, duration,
-                utm_source, utm_medium, utm_campaign, utm_content
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (
-            data.get('event'),
-            data.get('page'),
-            data.get('timestamp'),
-            data.get('visitorId'),
-            data.get('sessionId'),
-            data.get('email'),
-            data.get('name'),
-            data.get('country'),
-            data.get('city'),
-            data.get('region'),
-            data.get('ipAddress'),
-            data.get('timezone'),
-            data.get('referrer'),
-            data.get('userAgent'),
-            data.get('screenWidth'),
-            data.get('screenHeight'),
-            data.get('language'),
-            data.get('hookVariant'),
-            data.get('buttonName'),
-            data.get('duration'),
-            data.get('utmSource'),
-            data.get('utmMedium'),
-            data.get('utmCampaign'),
-            data.get('utmContent')
-        ))
-        event_id = cursor.lastrowid
-        
-        # Auto-backup every 100 events
-        if event_id % 100 == 0:
-            auto_backup()
-        
-        return event_id
-=======
         try:
             cursor.execute('''
                 INSERT INTO analytics (
@@ -158,8 +115,8 @@ def insert_analytics(data):
                     email, name, country, city, region, ip_address, timezone,
                     referrer, user_agent, screen_width, screen_height, language,
                     hook_variant, button_name, duration,
-                    utm_source, utm_medium, utm_campaign, utm_content, referred_by
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    utm_source, utm_medium, utm_campaign, utm_content
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 data.get('event'),
                 data.get('page'),
@@ -184,8 +141,7 @@ def insert_analytics(data):
                 data.get('utmSource'),
                 data.get('utmMedium'),
                 data.get('utmCampaign'),
-                data.get('utmContent'),
-                data.get('referredBy')
+                data.get('utmContent')
             ))
             event_id = cursor.lastrowid
             
@@ -197,7 +153,6 @@ def insert_analytics(data):
         except Exception as e:
             # Add more context to the error
             raise Exception(f"Database insertion failed: {e}. Data keys: {list(data.keys())}")
->>>>>>> 11b818bbbf6fa7ac132f14b2a70b1846149f0c4e
 
 def insert_registration(data):
     """Insert registration into database"""
