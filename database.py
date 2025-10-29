@@ -195,6 +195,8 @@ def insert_registration(data):
             return cursor.fetchone()[0]
         except psycopg2.IntegrityError:
             # Duplicate registration (same email + timestamp)
+            # Rollback the failed transaction before returning
+            conn.rollback()
             print(f'⚠️  Duplicate registration skipped: {data.get("email")}')
             return None
 
