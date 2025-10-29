@@ -471,67 +471,35 @@
             font-weight: 500;
         }
 
-        .referral-link {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .referral-link input {
-            flex: 1;
-            padding: 14px;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: monospace;
-            background: white;
-        }
-
-        .copy-button {
-            padding: 14px 24px;
-            background: var(--gradient);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .copy-button:hover {
-            transform: scale(1.05);
-        }
-
-        .copy-button:active {
-            transform: scale(0.95);
-        }
-
         .share-buttons-referral {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             flex-wrap: wrap;
             margin-top: 15px;
+            justify-content: center;
         }
 
         .share-btn-referral {
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 16px 32px;
+            border-radius: 10px;
             text-decoration: none;
             color: white;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: transform 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .share-btn-referral:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-btn-referral i {
+            font-size: 1.2rem;
         }
 
         .share-btn-referral.btn-whatsapp {
