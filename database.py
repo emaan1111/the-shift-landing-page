@@ -108,8 +108,8 @@ def insert_analytics(data):
                 email, name, country, city, region, ip_address, timezone,
                 referrer, user_agent, screen_width, screen_height, language,
                 hook_variant, button_name, duration,
-                utm_source, utm_medium, utm_campaign, utm_content, referred_by
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                utm_source, utm_medium, utm_campaign, utm_content
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             data.get('event'),
             data.get('page'),
@@ -134,8 +134,7 @@ def insert_analytics(data):
             data.get('utmSource'),
             data.get('utmMedium'),
             data.get('utmCampaign'),
-            data.get('utmContent'),
-            data.get('referredBy')
+            data.get('utmContent')
         ))
         event_id = cursor.lastrowid
         
@@ -156,8 +155,8 @@ def insert_registration(data):
                     country, city, region, timezone, ip_address,
                     visitor_id, session_id, hook_variant, referrer,
                     utm_source, utm_medium, utm_campaign, utm_content,
-                    referred_by, timestamp
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    timestamp
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 data.get('email'),
                 data.get('firstName'),
@@ -176,7 +175,6 @@ def insert_registration(data):
                 data.get('utmMedium'),
                 data.get('utmCampaign'),
                 data.get('utmContent'),
-                data.get('referredBy'),
                 data.get('timestamp')
             ))
             return cursor.lastrowid
