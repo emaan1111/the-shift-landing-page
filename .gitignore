@@ -21,7 +21,8 @@ js/analytics-config.js
 # Local registration backups (contains personal data)
 backups/
 
-# Database (contains analytics and user data, should not be in Git)
+# Database (now using PostgreSQL via DATABASE_URL)
+# Legacy SQLite files (kept for safety, no longer in use)
 analytics.db
 analytics.db-journal
 *.db
