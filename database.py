@@ -137,7 +137,13 @@ def insert_analytics(data):
             data.get('utmContent'),
             data.get('referredBy')
         ))
-        return cursor.lastrowid
+        event_id = cursor.lastrowid
+        
+        # Auto-backup every 100 events
+        if event_id % 100 == 0:
+            auto_backup()
+        
+        return event_id
 
 def insert_registration(data):
     """Insert registration into database"""
@@ -299,6 +305,40 @@ def get_analytics_event_by_id(event_id):
         cursor.execute('SELECT * FROM analytics WHERE id = ?', (event_id,))
         row = cursor.fetchone()
         return dict(row) if row else None
+
+def auto_backup():
+    """Automatically backup database to JSON files"""
+    import os
+    
+    backup_dir = 'database_backups'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    
+    try:
+        with get_db() as conn:
+            cursor = conn.cursor()
+            
+            # Backup analytics
+            cursor.execute('SELECT * FROM analytics')
+            analytics_rows = cursor.fetchall()
+            analytics_data = [dict(row) for row in analytics_rows]
+            
+            # Backup registrations
+            cursor.execute('SELECT * FROM registrations')
+            registrations_rows = cursor.fetchall()
+            registrations_data = [dict(row) for row in registrations_rows]
+            
+            # Save to latest files
+            import json
+            with open(os.path.join(backup_dir, 'analytics_latest.json'), 'w') as f:
+                json.dump(analytics_data, f, indent=2)
+            
+            with open(os.path.join(backup_dir, 'registrations_latest.json'), 'w') as f:
+                json.dump(registrations_data, f, indent=2)
+            
+            print(f'🔄 Auto-backup: {len(analytics_data)} analytics, {len(registrations_data)} registrations')
+    except Exception as e:
+        print(f'⚠️ Auto-backup failed: {e}')
 
 if __name__ == '__main__':
     # Initialize database when run directly
