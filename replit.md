@@ -20,7 +20,8 @@ Full-stack web application with Flask backend and vanilla JavaScript frontend
 - `README.md` - Project documentation
 
 ## Technologies
-- **Backend**: Flask, Flask-CORS, Requests
+- **Backend**: Flask, Flask-CORS, Requests, psycopg2-binary
+- **Database**: PostgreSQL (Replit-managed, Neon-backed)
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **External APIs**: ClickFunnels API v2
 - **Fonts**: Google Fonts (Playfair Display & Poppins)
@@ -29,6 +30,14 @@ Full-stack web application with Flask backend and vanilla JavaScript frontend
 The site is served using Flask on port 5000. The Flask server handles both static file serving and API endpoints.
 
 ## Recent Changes
+- **2025-10-29**: Migrated from SQLite to PostgreSQL
+  - Completely rewrote database.py to use PostgreSQL (psycopg2)
+  - Created PostgreSQL database using Replit's built-in database service
+  - Updated schema to use PostgreSQL data types (SERIAL, VARCHAR, TIMESTAMPTZ)
+  - Changed query placeholders from `?` to `%s` for PostgreSQL compatibility
+  - Fixed duplicate registration handling with proper transaction rollback
+  - All analytics and registration data now stored in cloud-hosted PostgreSQL
+  - Removed dependency on local SQLite files (analytics.db)
 - **2025-10-24**: Added Flask backend with ClickFunnels integration
   - Created server.py with Flask backend
   - Installed Flask, flask-cors, and requests packages
