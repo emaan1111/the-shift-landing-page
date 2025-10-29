@@ -100,50 +100,60 @@ def init_db():
 
 def insert_analytics(data):
     """Insert analytics event into database"""
+    # Validate required fields
+    if not data.get('event'):
+        raise ValueError(f"Missing required field 'event'. Received data: {list(data.keys())}")
+    if not data.get('timestamp'):
+        raise ValueError(f"Missing required field 'timestamp'. Received data: {list(data.keys())}")
+    
     with get_db() as conn:
         cursor = conn.cursor()
-        cursor.execute('''
-            INSERT INTO analytics (
-                event, page, timestamp, visitor_id, session_id,
-                email, name, country, city, region, ip_address, timezone,
-                referrer, user_agent, screen_width, screen_height, language,
-                hook_variant, button_name, duration,
-                utm_source, utm_medium, utm_campaign, utm_content, referred_by
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (
-            data.get('event'),
-            data.get('page'),
-            data.get('timestamp'),
-            data.get('visitorId'),
-            data.get('sessionId'),
-            data.get('email'),
-            data.get('name'),
-            data.get('country'),
-            data.get('city'),
-            data.get('region'),
-            data.get('ipAddress'),
-            data.get('timezone'),
-            data.get('referrer'),
-            data.get('userAgent'),
-            data.get('screenWidth'),
-            data.get('screenHeight'),
-            data.get('language'),
-            data.get('hookVariant'),
-            data.get('buttonName'),
-            data.get('duration'),
-            data.get('utmSource'),
-            data.get('utmMedium'),
-            data.get('utmCampaign'),
-            data.get('utmContent'),
-            data.get('referredBy')
-        ))
-        event_id = cursor.lastrowid
-        
-        # Auto-backup every 100 events
-        if event_id % 100 == 0:
-            auto_backup()
-        
-        return event_id
+        try:
+            cursor.execute('''
+                INSERT INTO analytics (
+                    event, page, timestamp, visitor_id, session_id,
+                    email, name, country, city, region, ip_address, timezone,
+                    referrer, user_agent, screen_width, screen_height, language,
+                    hook_variant, button_name, duration,
+                    utm_source, utm_medium, utm_campaign, utm_content, referred_by
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                data.get('event'),
+                data.get('page'),
+                data.get('timestamp'),
+                data.get('visitorId'),
+                data.get('sessionId'),
+                data.get('email'),
+                data.get('name'),
+                data.get('country'),
+                data.get('city'),
+                data.get('region'),
+                data.get('ipAddress'),
+                data.get('timezone'),
+                data.get('referrer'),
+                data.get('userAgent'),
+                data.get('screenWidth'),
+                data.get('screenHeight'),
+                data.get('language'),
+                data.get('hookVariant'),
+                data.get('buttonName'),
+                data.get('duration'),
+                data.get('utmSource'),
+                data.get('utmMedium'),
+                data.get('utmCampaign'),
+                data.get('utmContent'),
+                data.get('referredBy')
+            ))
+            event_id = cursor.lastrowid
+            
+            # Auto-backup every 100 events
+            if event_id % 100 == 0:
+                auto_backup()
+            
+            return event_id
+        except Exception as e:
+            # Add more context to the error
+            raise Exception(f"Database insertion failed: {e}. Data keys: {list(data.keys())}")
 
 def insert_registration(data):
     """Insert registration into database"""
