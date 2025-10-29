@@ -115,8 +115,8 @@ def insert_analytics(data):
                     email, name, country, city, region, ip_address, timezone,
                     referrer, user_agent, screen_width, screen_height, language,
                     hook_variant, button_name, duration,
-                    utm_source, utm_medium, utm_campaign, utm_content
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    utm_source, utm_medium, utm_campaign, utm_content, referred_by
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 data.get('event'),
                 data.get('page'),
@@ -141,7 +141,8 @@ def insert_analytics(data):
                 data.get('utmSource'),
                 data.get('utmMedium'),
                 data.get('utmCampaign'),
-                data.get('utmContent')
+                data.get('utmContent'),
+                data.get('referredBy')
             ))
             event_id = cursor.lastrowid
             
@@ -165,8 +166,8 @@ def insert_registration(data):
                     country, city, region, timezone, ip_address,
                     visitor_id, session_id, hook_variant, referrer,
                     utm_source, utm_medium, utm_campaign, utm_content,
-                    timestamp
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    referred_by, timestamp
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 data.get('email'),
                 data.get('firstName'),
@@ -185,6 +186,7 @@ def insert_registration(data):
                 data.get('utmMedium'),
                 data.get('utmCampaign'),
                 data.get('utmContent'),
+                data.get('referredBy'),
                 data.get('timestamp')
             ))
             return cursor.lastrowid
@@ -347,6 +349,81 @@ def auto_backup():
             print(f'🔄 Auto-backup: {len(analytics_data)} analytics, {len(registrations_data)} registrations')
     except Exception as e:
         print(f'⚠️ Auto-backup failed: {e}')
+
+def get_referral_stats(registration_id=None):
+    """Get referral statistics
+    
+    Args:
+        registration_id: If provided, get stats for specific user. If None, get overall stats.
+    
+    Returns:
+        Dictionary with referral statistics
+    """
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        if registration_id:
+            # Stats for a specific referrer
+            cursor.execute('''
+                SELECT COUNT(*) as referral_count
+                FROM registrations
+                WHERE referred_by = ?
+            ''', (registration_id,))
+            referral_count = cursor.fetchone()[0]
+            
+            cursor.execute('''
+                SELECT id, email, first_name, last_name, timestamp
+                FROM registrations
+                WHERE referred_by = ?
+                ORDER BY timestamp DESC
+            ''', (registration_id,))
+            referrals = [dict(row) for row in cursor.fetchall()]
+            
+            cursor.execute('''
+                SELECT COUNT(*) as visit_count
+                FROM analytics
+                WHERE referred_by = ?
+            ''', (registration_id,))
+            visit_count = cursor.fetchone()[0]
+            
+            return {
+                'referrer_id': registration_id,
+                'total_referrals': referral_count,
+                'total_visits': visit_count,
+                'referrals': referrals
+            }
+        else:
+            # Overall referral stats
+            cursor.execute('''
+                SELECT 
+                    referred_by,
+                    COUNT(*) as referral_count
+                FROM registrations
+                WHERE referred_by IS NOT NULL
+                GROUP BY referred_by
+                ORDER BY referral_count DESC
+            ''')
+            top_referrers = [dict(row) for row in cursor.fetchall()]
+            
+            cursor.execute('''
+                SELECT COUNT(*) as total_referrals
+                FROM registrations
+                WHERE referred_by IS NOT NULL
+            ''')
+            total_referrals = cursor.fetchone()[0]
+            
+            cursor.execute('''
+                SELECT COUNT(*) as total_visits
+                FROM analytics
+                WHERE referred_by IS NOT NULL
+            ''')
+            total_visits = cursor.fetchone()[0]
+            
+            return {
+                'total_referrals': total_referrals,
+                'total_visits': total_visits,
+                'top_referrers': top_referrers
+            }
 
 if __name__ == '__main__':
     # Initialize database when run directly
