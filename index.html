@@ -4592,63 +4592,38 @@ Jazakallahu khairan </p>
             currentIndex = (currentIndex + 1) % visitorQueue.length;
         }
 
-        // Function to fetch analytics data from GitHub via Flask proxy
+        // Function to fetch analytics data from database
         async function fetchRecentVisitors() {
             try {
                 console.log('🔍 Fetching recent visitors for social proof...');
                 
-                // Get list of analytics files via Flask proxy
-                const listResponse = await fetch('/api/github/analytics/list');
+                // Fetch recent analytics events from database
+                const response = await fetch('/api/analytics/events?event_type=page_visit&limit=500');
                 
-                if (!listResponse.ok) {
-                    console.error('Failed to fetch analytics files');
+                if (!response.ok) {
+                    console.error('Failed to fetch analytics from database');
                     return;
                 }
                 
-                const files = await listResponse.json();
-                const jsonFiles = files.filter(f => f.name.endsWith('.json'));
+                const data = await response.json();
+                console.log(`📊 Fetched ${data.length} events from database`);
                 
-                // Sort by date (most recent first) and get last 7 days
-                const sortedFiles = jsonFiles
-                    .sort((a, b) => b.name.localeCompare(a.name))
-                    .slice(0, 7);
+                // Filter visitors with valid name from upsell/thank-you visits
+                const visitors = data.filter(entry => {
+                    const hasValidName = entry.name &&
+                        entry.name.trim() !== '' &&
+                        !/@/.test(entry.name);
+                    const visitedRelevantPage = entry.page &&
+                        (entry.page.includes('upsell') || entry.page.includes('thank-you'));
+                    return hasValidName &&
+                        visitedRelevantPage &&
+                        entry.country;
+                });
                 
-                console.log(`📁 Found ${sortedFiles.length} recent analytics files`);
-                
-                let allVisitors = [];
-                
-                // Fetch data from each file via Flask proxy
-                for (const file of sortedFiles) {
-                    try {
-                        const fileResponse = await fetch(`/api/github/analytics/file?url=${encodeURIComponent(file.url)}`);
-                        if (!fileResponse.ok) continue;
-                        
-                        const fileText = await fileResponse.text();
-                        const data = JSON.parse(fileText);
-                        
-                        // Filter visitors with valid name from upsell/thank-you visits
-                        const visitors = data.filter(entry => {
-                            const hasValidName = entry.name &&
-                                entry.name.trim() !== '' &&
-                                !/@/.test(entry.name);
-                            const visitedRelevantPage = entry.page &&
-                                (entry.page.includes('upsell') || entry.page.includes('thank-you'));
-                            return entry.event === 'page_visit' &&
-                                hasValidName &&
-                                visitedRelevantPage &&
-                                entry.country;
-                        });
-                        
-                        allVisitors = allVisitors.concat(visitors);
-                    } catch (err) {
-                        console.error('Error fetching file:', file.name, err);
-                    }
-                }
-                
-                console.log(`👥 Found ${allVisitors.length} total visitors with names`);
+                console.log(`👥 Found ${visitors.length} visitors with names`);
                 
                 // Sort by timestamp (most recent first) and get last 100
-                visitorQueue = allVisitors
+                visitorQueue = visitors
                     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
                     .slice(0, 100);
                 
