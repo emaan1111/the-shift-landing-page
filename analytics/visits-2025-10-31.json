@@ -26,5 +26,19 @@
     "language": "en-GB",
     "hookVariant": "A",
     "email": "s_koli@hotmail.co.uk"
+  },
+  {
+    "page": "/",
+    "timestamp": "2025-10-31T19:03:40.289Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761547581364_cewbvpafc",
+    "sessionId": "session_1761937420259_s6qkogjfu",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 360,
+    "screenHeight": 780,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "s_koli@hotmail.co.uk"
   }
 ]
