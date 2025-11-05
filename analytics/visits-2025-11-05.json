@@ -1,0 +1,23 @@
+[
+  {
+    "page": "/",
+    "timestamp": "2025-11-05T10:29:59.534Z",
+    "event": "page_visit",
+    "visitorId": "visitor_1761411378347_uxa17id6n",
+    "sessionId": "session_1762338599502_2hdfhto65",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+    "screenWidth": 384,
+    "screenHeight": 854,
+    "language": "en-GB",
+    "hookVariant": "A",
+    "email": "fatima.abdulaziz.sule@gmail.com",
+    "name": "Fatima Sule",
+    "ipAddress": "2600:1900:0:2d02::3701",
+    "city": "Council Bluffs",
+    "region": "Iowa",
+    "timezone": "America/Chicago",
+    "country": "United States",
+    "countryCode": "US"
+  }
+]
