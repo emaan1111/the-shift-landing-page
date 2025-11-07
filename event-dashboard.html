@@ -790,7 +790,8 @@
             const options = {
                 hour: 'numeric',
                 minute: '2-digit',
-                hour12: true
+                hour12: true,
+                timeZone: userTimezone
             };
             
             const startTime = eventStartEST.toLocaleTimeString(undefined, options);
@@ -800,8 +801,9 @@
             const timezoneParts = userTimezone.split('/');
             const cityName = timezoneParts[timezoneParts.length - 1].replace(/_/g, ' ');
             
-            // Get timezone abbreviation
-            const tzAbbr = eventStartEST.toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ').pop();
+            // Get timezone abbreviation in user's timezone
+            const tzOptions = { timeZone: userTimezone, timeZoneName: 'short' };
+            const tzAbbr = eventStartEST.toLocaleTimeString('en-US', tzOptions).split(' ').pop();
             
             document.getElementById('eventDateTime').textContent = 
                 `November 6-8, 2025 • ${startTime} - ${endTime} (${cityName} - ${tzAbbr})`;
