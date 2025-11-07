@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting List - The Shift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 10px;
+            padding: 20px;
+            color: #c33;
+            margin: 20px 0;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .timestamp {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Waiting List</h1>
+        <p class="subtitle">People waiting to join The Shift</p>
+
+        <button class="refresh-btn" onclick="loadWaitingList()">🔄 Refresh</button>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalCount">-</div>
+                <div class="stat-label">Total on Waiting List</div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="loading">Loading waiting list...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadWaitingList() {
+            const contentDiv = document.getElementById('content');
+            const totalCountEl = document.getElementById('totalCount');
+            
+            contentDiv.innerHTML = '<div class="loading">Loading waiting list...</div>';
+            
+            try {
+                const response = await fetch('/api/waitinglist');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const entries = await response.json();
+                
+                // Update stats
+                totalCountEl.textContent = entries.length;
+                
+                if (entries.length === 0) {
+                    contentDiv.innerHTML = '<div class="no-data">No entries yet. Be the first to join the waiting list!</div>';
+                    return;
+                }
+                
+                // Create table
+                let html = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>How They Heard</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                entries.forEach(entry => {
+                    const name = `${entry.first_name || ''} ${entry.last_name || ''}`.trim() || 'N/A';
+                    const email = entry.email || 'N/A';
+                    const phone = entry.phone || 'N/A';
+                    const hearAbout = entry.hear_about || 'N/A';
+                    const date = entry.created_at ? new Date(entry.created_at).toLocaleString() : 'N/A';
+                    
+                    html += `
+                        <tr>
+                            <td><strong>${name}</strong></td>
+                            <td>${email}</td>
+                            <td>${phone}</td>
+                            <td>${hearAbout}</td>
+                            <td class="timestamp">${date}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                        </tbody>
+                    </table>
+                `;
+                
+                contentDiv.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading waiting list:', error);
+                contentDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Error loading waiting list:</strong><br>
+                        ${error.message}<br><br>
+                        Make sure the server is running and the database is configured.
+                    </div>
+                `;
+            }
+        }
+        
+        // Load on page load
+        loadWaitingList();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadWaitingList, 30000);
+    </script>
+</body>
+</html>

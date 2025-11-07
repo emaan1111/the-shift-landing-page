@@ -4,7 +4,18 @@ import requests
 import json
 import os
 from datetime import datetime
-import database  # Import our database module
+
+# Try PostgreSQL first, fallback to SQLite
+try:
+    # Check if DATABASE_URL is set
+    if not os.getenv('DATABASE_URL'):
+        raise ValueError("DATABASE_URL not set, using SQLite")
+    import database_unified as database  # Import PostgreSQL database module
+    print("✅ Using PostgreSQL database")
+except (ValueError, Exception) as e:
+    print(f"⚠️  PostgreSQL not available ({e})")
+    print("✅ Using SQLite database (analytics.db)")
+    import database_sqlite as database  # Fallback to SQLite
 
 app = Flask(__name__, static_folder='.')
 CORS(app)  # Enable CORS for all routes
@@ -307,22 +318,20 @@ def manage_registration(registration_id):
 def reset_database():
     """Delete all analytics events and registrations from database"""
     try:
-        conn = database.get_db().__enter__()
-        cursor = conn.cursor()
-        
-        # Get counts before deletion
-        cursor.execute('SELECT COUNT(*) FROM analytics')
-        analytics_count = cursor.fetchone()[0]
-        
-        cursor.execute('SELECT COUNT(*) FROM registrations')
-        registrations_count = cursor.fetchone()[0]
-        
-        # Delete all data
-        cursor.execute('DELETE FROM analytics')
-        cursor.execute('DELETE FROM registrations')
-        conn.commit()
-        
-        database.get_db().__exit__(None, None, None)
+        with database.get_db() as conn:
+            cursor = conn.cursor()
+            
+            # Get counts before deletion
+            cursor.execute('SELECT COUNT(*) as count FROM analytics')
+            analytics_count = cursor.fetchone()['count']
+            
+            cursor.execute('SELECT COUNT(*) as count FROM registrations')
+            registrations_count = cursor.fetchone()['count']
+            
+            # Delete all data
+            cursor.execute('DELETE FROM analytics')
+            cursor.execute('DELETE FROM registrations')
+            # No need to commit - context manager handles it
         
         return jsonify({
             'success': True,
@@ -335,6 +344,107 @@ def reset_database():
         
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/waitinglist', methods=['POST'])
+def add_to_waitinglist():
+    """Add someone to the waiting list"""
+    try:
+        data = request.json
+        
+        # Add server timestamp if not present
+        if 'timestamp' not in data:
+            data['timestamp'] = datetime.now().isoformat()
+        
+        # Insert into database
+        waitlist_id = database.insert_waitinglist(data)
+        
+        if waitlist_id:
+            # Also send to ClickFunnels with waiting list tag
+            try:
+                cf_data = {
+                    'email': data.get('email'),
+                    'firstName': data.get('firstName', ''),
+                    'lastName': data.get('lastName', ''),
+                    'phone': data.get('phone', ''),
+                    'tagIds': [367577],  # Waiting list tag (you'll need to create this in ClickFunnels)
+                    'source': 'The Shift Waiting List',
+                    'hear_about': data.get('hearAbout', '')
+                }
+                
+                # Send to ClickFunnels (non-blocking, don't fail if it doesn't work)
+                requests.post(
+                    f"http://localhost:{request.environ.get('SERVER_PORT', 5000)}/api/clickfunnels/contact",
+                    json=cf_data,
+                    timeout=5
+                )
+            except:
+                pass  # Don't fail if ClickFunnels integration fails
+            
+            return jsonify({
+                'success': True,
+                'id': waitlist_id,
+                'message': 'Successfully added to waiting list'
+            }), 200
+        else:
+            return jsonify({
+                'success': True,
+                'message': 'Already on waiting list'
+            }), 200
+        
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/waitinglist', methods=['GET'])
+def get_waitinglist():
+    """Get all waiting list entries"""
+    try:
+        entries = database.get_all_waitinglist()
+        return jsonify(entries), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/settings', methods=['GET'])
+def get_settings():
+    """Get all settings"""
+    try:
+        settings = database.get_all_settings()
+        return jsonify(settings), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/settings/<key>', methods=['GET'])
+def get_setting(key):
+    """Get a specific setting"""
+    try:
+        value = database.get_setting(key)
+        if value is not None:
+            return jsonify({'key': key, 'value': value}), 200
+        else:
+            return jsonify({'error': 'Setting not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/settings/<key>', methods=['PUT', 'POST'])
+def update_setting(key):
+    """Update a setting"""
+    try:
+        data = request.json
+        value = data.get('value')
+        
+        if value is None:
+            return jsonify({'error': 'Value is required'}), 400
+        
+        database.set_setting(key, str(value))
+        
+        return jsonify({
+            'success': True,
+            'key': key,
+            'value': value,
+            'message': f'Setting {key} updated successfully'
+        }), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

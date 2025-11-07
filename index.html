@@ -4845,6 +4845,32 @@ Jazakallahu khairan </p>
     <script src="js/clickfunnels-config.js"></script>
     <script src="js/clickfunnels-integration.js"></script>
 
+    <!-- Site Closed Check -->
+    <script>
+        // Check if site is closed and redirect to closed page
+        (async function checkSiteClosed() {
+            try {
+                // Don't check if we're already on the closed page or if there's a bypass parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('bypass') || window.location.pathname.includes('closed.html')) {
+                    return;
+                }
+                
+                const response = await fetch('/api/settings/site_closed');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.value === 'true') {
+                        // Site is closed, redirect to closed page
+                        window.location.href = '/closed.html';
+                    }
+                }
+            } catch (error) {
+                // If there's an error checking the setting, don't redirect
+                console.log('Could not check site status:', error);
+            }
+        })();
+    </script>
+
     <script>
         // Exit Intent Popup Handler
         let exitModalShown = false;

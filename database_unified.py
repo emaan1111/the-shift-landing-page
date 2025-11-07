@@ -110,6 +110,47 @@ def init_db():
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_registrations_timestamp ON registrations(timestamp)')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_registrations_referred_by ON registrations(referred_by)')
         
+        # Waiting list table
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS waiting_list (
+                id SERIAL PRIMARY KEY,
+                email TEXT NOT NULL UNIQUE,
+                first_name TEXT,
+                last_name TEXT,
+                phone TEXT,
+                hear_about TEXT,
+                page TEXT,
+                user_agent TEXT,
+                timestamp TIMESTAMP NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_waitinglist_email ON waiting_list(email)')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_waitinglist_timestamp ON waiting_list(timestamp)')
+        
+        # Settings table for site configuration
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS settings (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        
+        # Initialize default settings if they don't exist
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('site_closed', 'false')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('closed_message', 'Registration is currently closed. Join our waiting list to be notified when we open again!')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
         print('✅ Database initialized successfully!')
 
 def insert_analytics(data):
@@ -433,6 +474,105 @@ def auto_backup():
             print(f'🔄 Auto-backup: {len(analytics_data)} analytics, {len(registrations_data)} registrations')
     except Exception as e:
         print(f'⚠️ Auto-backup failed: {e}')
+
+def insert_waitinglist(data):
+    """Insert waiting list entry into database"""
+    if not data.get('email'):
+        raise ValueError("Email is required")
+    if not data.get('timestamp'):
+        data['timestamp'] = datetime.now().isoformat()
+    
+    with get_db() as conn:
+        cursor = conn.cursor()
+        try:
+            cursor.execute('''
+                INSERT INTO waiting_list (
+                    email, first_name, last_name, phone, hear_about,
+                    page, user_agent, timestamp
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (email) DO NOTHING
+                RETURNING id
+            ''', (
+                data.get('email'),
+                data.get('firstName'),
+                data.get('lastName'),
+                data.get('phone'),
+                data.get('hearAbout'),
+                data.get('page'),
+                data.get('userAgent'),
+                data.get('timestamp')
+            ))
+            
+            result = cursor.fetchone()
+            return result['id'] if result else None
+        except Exception as e:
+            print(f"Error inserting waiting list entry: {e}")
+            raise
+
+def get_all_waitinglist():
+    """Get all waiting list entries"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT * FROM waiting_list
+            ORDER BY created_at DESC
+        ''')
+        rows = cursor.fetchall()
+        
+        # Convert to list of dicts and format timestamps
+        entries = []
+        for row in rows:
+            entry = dict(row)
+            if 'timestamp' in entry and entry['timestamp']:
+                entry['timestamp'] = entry['timestamp'].isoformat()
+            if 'created_at' in entry and entry['created_at']:
+                entry['created_at'] = entry['created_at'].isoformat()
+            entries.append(entry)
+        
+        return entries
+
+def get_waitinglist_count():
+    """Get count of waiting list entries"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) as count FROM waiting_list')
+        result = cursor.fetchone()
+        return result['count'] if result else 0
+
+def get_setting(key):
+    """Get a setting value by key"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT value FROM settings WHERE key = %s', (key,))
+        result = cursor.fetchone()
+        return result['value'] if result else None
+
+def set_setting(key, value):
+    """Set a setting value"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            INSERT INTO settings (key, value, updated_at)
+            VALUES (%s, %s, CURRENT_TIMESTAMP)
+            ON CONFLICT (key) 
+            DO UPDATE SET value = EXCLUDED.value, updated_at = CURRENT_TIMESTAMP
+        ''', (key, value))
+        return True
+
+def get_all_settings():
+    """Get all settings"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT key, value, updated_at FROM settings')
+        rows = cursor.fetchall()
+        
+        settings = {}
+        for row in rows:
+            settings[row['key']] = {
+                'value': row['value'],
+                'updated_at': row['updated_at'].isoformat() if row['updated_at'] else None
+            }
+        return settings
 
 if __name__ == '__main__':
     # Initialize database when run directly
