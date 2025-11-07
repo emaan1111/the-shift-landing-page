@@ -288,6 +288,15 @@
             </div>
             <div class="stat-item">
                 <div class="stat-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="uniqueOptins">0</h3>
+                    <p>Unique Participants</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
                     <i class="fas fa-clock"></i>
                 </div>
                 <div class="stat-content">
@@ -368,6 +377,7 @@
                         loading.style.display = 'none';
                         noData.style.display = 'block';
                         document.getElementById('totalOptins').textContent = '0';
+                        document.getElementById('uniqueOptins').textContent = '0';
                         document.getElementById('todayOptins').textContent = '0';
                     } else {
                         displayOptins(allOptins);
@@ -415,6 +425,10 @@
 
         function updateStats(optins) {
             document.getElementById('totalOptins').textContent = optins.length;
+
+            // Count unique participants (unique emails)
+            const uniqueEmails = new Set(optins.map(optin => optin.email.toLowerCase()));
+            document.getElementById('uniqueOptins').textContent = uniqueEmails.size;
 
             // Count today's opt-ins
             const today = new Date();
