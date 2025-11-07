@@ -169,6 +169,30 @@ def init_db():
             ON CONFLICT (key) DO NOTHING
         ''')
         
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('offer_enabled', 'false')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('offer_headline', '🎁 Exclusive Bonus Offer - Limited Time!')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('offer_cta_text', 'Claim Your Bonus Now')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('offer_cta_link', '#')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
         print('✅ Database initialized successfully!')
 
 def insert_analytics(data):

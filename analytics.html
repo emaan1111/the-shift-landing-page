@@ -719,6 +719,54 @@
                         <div id="questionsLinkStatus" style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;"></div>
                     </div>
                 </div>
+                
+                <!-- Offer Settings -->
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px); margin-top: 20px;">
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4rem; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-gift"></i> Special Offer Settings
+                    </h3>
+                    
+                    <!-- Offer Toggle -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 20px;">
+                        <div>
+                            <h4 style="color: white; margin-bottom: 5px; font-size: 1.1rem;">Show Offer on Event Dashboard</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Display a prominent offer banner with image, headline, and CTA button</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="offerEnabledToggle" onchange="toggleOffer()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <!-- Offer Headline -->
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: white; display: block; margin-bottom: 8px; font-weight: 600;">
+                            <i class="fas fa-heading"></i> Offer Headline
+                        </label>
+                        <input type="text" id="offerHeadlineInput" placeholder="🎁 Exclusive Bonus Offer - Limited Time!" style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-size: 0.95rem;">
+                    </div>
+                    
+                    <!-- Offer CTA Text -->
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: white; display: block; margin-bottom: 8px; font-weight: 600;">
+                            <i class="fas fa-mouse-pointer"></i> Button Text
+                        </label>
+                        <input type="text" id="offerCTATextInput" placeholder="Claim Your Bonus Now" style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-size: 0.95rem;">
+                    </div>
+                    
+                    <!-- Offer CTA Link -->
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: white; display: block; margin-bottom: 8px; font-weight: 600;">
+                            <i class="fas fa-link"></i> Button Link (URL)
+                        </label>
+                        <input type="text" id="offerCTALinkInput" placeholder="https://your-offer-page.com" style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-size: 0.95rem;">
+                    </div>
+                    
+                    <button onclick="updateOfferSettings()" style="background: linear-gradient(135deg, #ffd700, #ffa500); color: #333; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: 700; transition: all 0.3s ease; font-size: 1rem;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(255,215,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-save"></i> Save Offer Settings
+                    </button>
+                    <div id="offerSettingsStatus" style="margin-top: 10px; font-size: 0.9rem; text-align: center;"></div>
+                </div>
             </div>
             
             <!-- Global Date Filter -->
@@ -1058,8 +1106,120 @@
                     const questionsData = await questionsResponse.json();
                     document.getElementById('questionsLinkInput').value = questionsData.value || '';
                 }
+                
+                // Load offer settings
+                loadOfferSettings();
             } catch (error) {
                 console.error('Error loading event links:', error);
+            }
+        }
+
+        // Load offer settings
+        async function loadOfferSettings() {
+            try {
+                // Load offer enabled
+                const offerEnabledResponse = await fetch('/api/settings/offer_enabled');
+                if (offerEnabledResponse.ok) {
+                    const offerEnabledData = await offerEnabledResponse.json();
+                    document.getElementById('offerEnabledToggle').checked = offerEnabledData.value === 'true';
+                }
+                
+                // Load offer headline
+                const offerHeadlineResponse = await fetch('/api/settings/offer_headline');
+                if (offerHeadlineResponse.ok) {
+                    const offerHeadlineData = await offerHeadlineResponse.json();
+                    document.getElementById('offerHeadlineInput').value = offerHeadlineData.value || '';
+                }
+                
+                // Load offer CTA text
+                const offerCTATextResponse = await fetch('/api/settings/offer_cta_text');
+                if (offerCTATextResponse.ok) {
+                    const offerCTATextData = await offerCTATextResponse.json();
+                    document.getElementById('offerCTATextInput').value = offerCTATextData.value || '';
+                }
+                
+                // Load offer CTA link
+                const offerCTALinkResponse = await fetch('/api/settings/offer_cta_link');
+                if (offerCTALinkResponse.ok) {
+                    const offerCTALinkData = await offerCTALinkResponse.json();
+                    document.getElementById('offerCTALinkInput').value = offerCTALinkData.value || '';
+                }
+            } catch (error) {
+                console.error('Error loading offer settings:', error);
+            }
+        }
+
+        // Toggle offer enabled
+        async function toggleOffer() {
+            const toggle = document.getElementById('offerEnabledToggle');
+            const newValue = toggle.checked ? 'true' : 'false';
+            
+            try {
+                const response = await fetch('/api/settings/offer_enabled', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: newValue })
+                });
+                
+                if (response.ok) {
+                    const status = toggle.checked ? 'Offer is now VISIBLE on event dashboard' : 'Offer is now HIDDEN from event dashboard';
+                    showNotification(status, 'success');
+                } else {
+                    toggle.checked = !toggle.checked;
+                    showNotification('Failed to update offer visibility', 'error');
+                }
+            } catch (error) {
+                console.error('Error toggling offer:', error);
+                toggle.checked = !toggle.checked;
+                showNotification('Error updating offer visibility', 'error');
+            }
+        }
+
+        // Update offer settings
+        async function updateOfferSettings() {
+            const headline = document.getElementById('offerHeadlineInput').value.trim();
+            const ctaText = document.getElementById('offerCTATextInput').value.trim();
+            const ctaLink = document.getElementById('offerCTALinkInput').value.trim();
+            const status = document.getElementById('offerSettingsStatus');
+            
+            if (!headline || !ctaText || !ctaLink) {
+                status.textContent = '❌ Please fill in all fields';
+                status.style.color = '#fca5a5';
+                return;
+            }
+            
+            try {
+                // Update all settings
+                const headlineResponse = await fetch('/api/settings/offer_headline', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: headline })
+                });
+                
+                const ctaTextResponse = await fetch('/api/settings/offer_cta_text', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: ctaText })
+                });
+                
+                const ctaLinkResponse = await fetch('/api/settings/offer_cta_link', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: ctaLink })
+                });
+                
+                if (headlineResponse.ok && ctaTextResponse.ok && ctaLinkResponse.ok) {
+                    status.textContent = '✓ Offer settings updated successfully!';
+                    status.style.color = '#86efac';
+                    showNotification('Offer settings updated!', 'success');
+                } else {
+                    status.textContent = '❌ Failed to update some settings';
+                    status.style.color = '#fca5a5';
+                }
+            } catch (error) {
+                console.error('Error updating offer settings:', error);
+                status.textContent = '❌ Error updating settings';
+                status.style.color = '#fca5a5';
             }
         }
 

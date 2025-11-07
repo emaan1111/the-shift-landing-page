@@ -98,6 +98,99 @@
             opacity: 0.95;
         }
 
+        /* Offer Section */
+        .offer-section {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            overflow: hidden;
+            animation: shimmer 3s ease-in-out infinite;
+            border: 3px solid #ffa500;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 20px 50px rgba(255, 165, 0, 0.6);
+            }
+        }
+
+        .offer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: center;
+        }
+
+        .offer-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .offer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .offer-details {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .offer-details h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .btn-offer {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-offer:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
+        }
+
+        .btn-offer i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-offer:hover i {
+            transform: translateX(5px);
+        }
+
         /* No Replays Alert */
         .no-replays-alert {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
@@ -404,6 +497,23 @@
             .time-value {
                 font-size: 2rem;
             }
+
+            .offer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-details {
+                padding: 25px;
+            }
+
+            .offer-details h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn-offer {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -421,6 +531,22 @@
         <div class="welcome-banner">
             <h1>Welcome to The Shift Challenge! 🎉</h1>
             <p>Get ready for a transformative journey that will change your parenting forever</p>
+        </div>
+
+        <!-- Offer Section (Hidden by default, controlled by settings) -->
+        <div class="offer-section" id="offerSection" style="display: none;">
+            <div class="offer-content">
+                <div class="offer-image">
+                    <img src="img/offer.avif" alt="Special Offer">
+                </div>
+                <div class="offer-details">
+                    <h2 id="offerHeadline">🎁 Exclusive Bonus Offer - Limited Time!</h2>
+                    <a href="#" id="offerCTA" class="btn-offer" target="_blank">
+                        Claim Your Bonus Now
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- No Replays Alert -->
@@ -592,6 +718,39 @@
                     const questionsLink = document.getElementById('questionsLink');
                     if (questionsData.value && questionsData.value !== '#') {
                         questionsLink.href = questionsData.value;
+                    }
+                }
+
+                // Load offer settings
+                const offerEnabledResponse = await fetch('/api/settings/offer_enabled');
+                if (offerEnabledResponse.ok) {
+                    const offerEnabledData = await offerEnabledResponse.json();
+                    
+                    if (offerEnabledData.value === 'true') {
+                        // Show offer section
+                        document.getElementById('offerSection').style.display = 'block';
+                        
+                        // Load offer headline
+                        const offerHeadlineResponse = await fetch('/api/settings/offer_headline');
+                        if (offerHeadlineResponse.ok) {
+                            const offerHeadlineData = await offerHeadlineResponse.json();
+                            document.getElementById('offerHeadline').textContent = offerHeadlineData.value;
+                        }
+                        
+                        // Load offer CTA text
+                        const offerCTATextResponse = await fetch('/api/settings/offer_cta_text');
+                        if (offerCTATextResponse.ok) {
+                            const offerCTATextData = await offerCTATextResponse.json();
+                            const ctaButton = document.getElementById('offerCTA');
+                            ctaButton.innerHTML = offerCTATextData.value + ' <i class="fas fa-arrow-right"></i>';
+                        }
+                        
+                        // Load offer CTA link
+                        const offerCTALinkResponse = await fetch('/api/settings/offer_cta_link');
+                        if (offerCTALinkResponse.ok) {
+                            const offerCTALinkData = await offerCTALinkResponse.json();
+                            document.getElementById('offerCTA').href = offerCTALinkData.value;
+                        }
                     }
                 }
             } catch (error) {
