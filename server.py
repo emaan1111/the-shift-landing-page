@@ -449,9 +449,10 @@ def get_zoom_optins():
     """Get all Zoom opt-in entries"""
     try:
         entries = database.get_all_zoom_optins()
-        return jsonify(entries), 200
+        return jsonify({'success': True, 'optins': entries}), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        print(f"Error getting Zoom opt-ins: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/settings', methods=['GET'])
 def get_settings():
