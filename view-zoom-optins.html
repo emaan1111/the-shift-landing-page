@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Opt-ins - The Shift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .stats-bar {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .stat-content h3 {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .stat-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .actions-bar {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        thead th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9ff;
+        }
+
+        tbody td {
+            padding: 18px 20px;
+            color: #333;
+        }
+
+        .email-cell {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date-cell {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .no-data i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .actions-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            thead th,
+            tbody td {
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-video"></i>
+                Zoom Opt-ins
+            </h1>
+            <p>View all participants who confirmed joining the Zoom sessions</p>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalOptins">0</h3>
+                    <p>Total Opt-ins</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="todayOptins">0</h3>
+                    <p>Today</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions Bar -->
+        <div class="actions-bar">
+            <div class="search-box">
+                <i class="fas fa-search" style="color: #999;"></i>
+                <input type="text" id="searchInput" placeholder="Search by name or email..." onkeyup="filterTable()">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="exportToCSV()">
+                    <i class="fas fa-download"></i>
+                    Export CSV
+                </button>
+                <button class="btn btn-secondary" onclick="loadOptins()">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </button>
+                <a href="analytics.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <div id="loading" class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading opt-ins...
+            </div>
+            <div id="noData" class="no-data" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>No Opt-ins Yet</h3>
+                <p>Zoom opt-ins will appear here once people start joining</p>
+            </div>
+            <table id="optinsTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Opted In</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="optinsBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let allOptins = [];
+
+        async function loadOptins() {
+            const loading = document.getElementById('loading');
+            const noData = document.getElementById('noData');
+            const table = document.getElementById('optinsTable');
+            
+            loading.style.display = 'block';
+            noData.style.display = 'none';
+            table.style.display = 'none';
+
+            try {
+                const response = await fetch('/api/zoom-optin');
+                const data = await response.json();
+
+                if (data.success && data.optins) {
+                    allOptins = data.optins;
+                    
+                    if (allOptins.length === 0) {
+                        loading.style.display = 'none';
+                        noData.style.display = 'block';
+                        document.getElementById('totalOptins').textContent = '0';
+                        document.getElementById('todayOptins').textContent = '0';
+                    } else {
+                        displayOptins(allOptins);
+                        updateStats(allOptins);
+                        loading.style.display = 'none';
+                        table.style.display = 'table';
+                    }
+                } else {
+                    throw new Error('Failed to load opt-ins');
+                }
+            } catch (error) {
+                console.error('Error loading opt-ins:', error);
+                loading.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error loading opt-ins. Please refresh the page.';
+            }
+        }
+
+        function displayOptins(optins) {
+            const tbody = document.getElementById('optinsBody');
+            tbody.innerHTML = '';
+
+            optins.forEach((optin, index) => {
+                const row = document.createElement('tr');
+                
+                const optinDate = new Date(optin.optin_timestamp);
+                const formattedDate = optinDate.toLocaleString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><strong>${escapeHtml(optin.name)}</strong></td>
+                    <td class="email-cell">${escapeHtml(optin.email)}</td>
+                    <td class="date-cell">${formattedDate}</td>
+                    <td><span class="badge badge-success">Confirmed</span></td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function updateStats(optins) {
+            document.getElementById('totalOptins').textContent = optins.length;
+
+            // Count today's opt-ins
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            const todayCount = optins.filter(optin => {
+                const optinDate = new Date(optin.optin_timestamp);
+                optinDate.setHours(0, 0, 0, 0);
+                return optinDate.getTime() === today.getTime();
+            }).length;
+            
+            document.getElementById('todayOptins').textContent = todayCount;
+        }
+
+        function filterTable() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = allOptins.filter(optin => {
+                return optin.name.toLowerCase().includes(searchTerm) ||
+                       optin.email.toLowerCase().includes(searchTerm);
+            });
+
+            displayOptins(filtered);
+        }
+
+        function exportToCSV() {
+            if (allOptins.length === 0) {
+                alert('No data to export');
+                return;
+            }
+
+            let csv = 'Name,Email,Opted In\n';
+            
+            allOptins.forEach(optin => {
+                const optinDate = new Date(optin.optin_timestamp);
+                const formattedDate = optinDate.toLocaleString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+                
+                csv += `"${optin.name}","${optin.email}","${formattedDate}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `zoom-optins-${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load opt-ins on page load
+        loadOptins();
+    </script>
+</body>
+</html>
