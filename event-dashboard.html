@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Shift Challenge - Event Dashboard. Access your live sessions and important information.">
+    <title>The Shift - Event Dashboard</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a06cd5;
+            --primary-dark: #8554b8;
+            --secondary: #ff9eb5;
+            --accent: #7ce0f7;
+            --text-dark: #333;
+            --text-light: #666;
+            --light-bg: #faf9ff;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #a06cd5, #ff9eb5);
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --error-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--light-bg);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Welcome Section */
+        .welcome-banner {
+            background: var(--gradient);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(160, 108, 213, 0.3);
+        }
+
+        .welcome-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .welcome-banner p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* No Replays Alert */
+        .no-replays-alert {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .no-replays-alert h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .no-replays-alert h2 i {
+            font-size: 2.5rem;
+        }
+
+        .no-replays-alert p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Event Details Card */
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-card h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .detail-content h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-content p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Zoom Button */
+        .zoom-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-zoom {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #2d8cff, #0066cc);
+            color: white;
+            padding: 25px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(45, 140, 255, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-zoom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(45, 140, 255, 0.6);
+        }
+
+        .btn-zoom i {
+            font-size: 2rem;
+        }
+
+        /* Community Button */
+        .community-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-community {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(160, 108, 213, 0.3);
+        }
+
+        .btn-community:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(160, 108, 213, 0.5);
+        }
+
+        /* Class Rules */
+        .rules-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .rules-card h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: var(--light-bg);
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .rule-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(160, 108, 213, 0.2);
+        }
+
+        .rule-number {
+            background: var(--gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .rule-content {
+            flex: 1;
+        }
+
+        .rule-content h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .rule-content p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .countdown-section h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 100px;
+            border: 2px solid var(--primary);
+        }
+
+        .time-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .no-replays-alert h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .event-details {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-zoom {
+                padding: 20px 35px;
+                font-size: 1.2rem;
+            }
+
+            .rules-card,
+            .event-card {
+                padding: 25px;
+            }
+
+            .time-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">The Shift</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Welcome to The Shift Challenge! 🎉</h1>
+            <p>Get ready for a transformative journey that will change your parenting forever</p>
+        </div>
+
+        <!-- No Replays Alert -->
+        <div class="no-replays-alert">
+            <h2>
+                <i class="fas fa-exclamation-triangle"></i>
+                NO REPLAYS
+                <i class="fas fa-exclamation-triangle"></i>
+            </h2>
+            <p>This is a LIVE event only! Make sure to attend all sessions to get the full transformation.</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section">
+            <h3>⏰ Next Session Starts In:</h3>
+            <div class="countdown-timer" id="countdown">
+                <div class="time-box">
+                    <span class="time-value" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="event-card">
+            <h2>📅 Event Schedule</h2>
+            <div class="event-details">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Dates</h3>
+                        <p>November 6-8, 2025</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Time</h3>
+                        <p>11:00 AM - 1:00 PM EST</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 3px;">4:00 PM - 6:00 PM UK</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Platform</h3>
+                        <p>Zoom (Live)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zoom Join Button -->
+            <div class="zoom-section">
+                <a href="#" id="zoomLink" class="btn-zoom">
+                    <i class="fas fa-video"></i>
+                    Join Zoom Session
+                </a>
+                <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> The Zoom link will be activated 15 minutes before the session starts
+                </p>
+            </div>
+        </div>
+
+        <!-- Community Section -->
+        <div class="community-section">
+            <a href="https://www.facebook.com/share/g/16Efp4crCe/" id="communityLink" target="_blank" class="btn-community">
+                <i class="fas fa-users"></i>
+                Join Our Mothers Community
+            </a>
+        </div>
+
+        <!-- Questions Section -->
+        <div class="community-section" style="margin-top: 20px;">
+            <a href="#" id="questionsLink" target="_blank" class="btn-community" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                <i class="fas fa-question-circle"></i>
+                Submit Questions for Day 2 Laser Coaching
+            </a>
+        </div>
+
+        <!-- Class Rules -->
+        <div class="rules-card">
+            <h2>
+                <i class="fas fa-clipboard-list"></i>
+                Class Rules
+            </h2>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <div class="rule-number">1</div>
+                    <div class="rule-content">
+                        <h3>Be Seated Properly</h3>
+                        <p>Sit at a table and chair with a pen and paper. No sofas or beds please - this helps you stay focused and engaged!</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">2</div>
+                    <div class="rule-content">
+                        <h3>Turn On Your Camera</h3>
+                        <p>Keep your camera on during the session. This creates accountability and helps build our community connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Shift. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set your event date here (YEAR, MONTH-1, DAY, HOUR, MINUTE)
+        // Note: Month is 0-indexed (0 = January, 10 = November)
+        const eventDate = new Date(2025, 10, 6, 11, 0, 0); // November 6, 2025, 11:00 AM EST
+
+        // Load settings from API
+        async function loadSettings() {
+            try {
+                // Load Zoom link
+                const zoomResponse = await fetch('/api/settings/zoom_link');
+                if (zoomResponse.ok) {
+                    const zoomData = await zoomResponse.json();
+                    const zoomLink = document.getElementById('zoomLink');
+                    
+                    // Store the zoom link for later use
+                    window.actualZoomLink = zoomData.value || '#';
+                    
+                    // Check if event is within 15 minutes or has started
+                    const now = new Date();
+                    const fifteenMinutesBefore = new Date(eventDate.getTime() - 15 * 60 * 1000);
+                    
+                    if (now >= fifteenMinutesBefore) {
+                        zoomLink.href = window.actualZoomLink;
+                        zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
+                    }
+                }
+
+                // Load community link
+                const communityResponse = await fetch('/api/settings/community_link');
+                if (communityResponse.ok) {
+                    const communityData = await communityResponse.json();
+                    const communityLink = document.getElementById('communityLink');
+                    if (communityData.value && communityData.value !== '#') {
+                        communityLink.href = communityData.value;
+                    }
+                }
+
+                // Load questions form link
+                const questionsResponse = await fetch('/api/settings/questions_form_link');
+                if (questionsResponse.ok) {
+                    const questionsData = await questionsResponse.json();
+                    const questionsLink = document.getElementById('questionsLink');
+                    if (questionsData.value && questionsData.value !== '#') {
+                        questionsLink.href = questionsData.value;
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading settings:', error);
+            }
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                // Event has started or passed
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                
+                // Enable Zoom link
+                const zoomLink = document.getElementById('zoomLink');
+                if (window.actualZoomLink && window.actualZoomLink !== '#') {
+                    zoomLink.href = window.actualZoomLink;
+                    zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
+                }
+                return;
+            }
+
+            // Check if within 15 minutes of event
+            const fifteenMinutes = 15 * 60 * 1000;
+            if (diff <= fifteenMinutes) {
+                const zoomLink = document.getElementById('zoomLink');
+                if (window.actualZoomLink && window.actualZoomLink !== '#') {
+                    zoomLink.href = window.actualZoomLink;
+                    zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
+                }
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Zoom link management
+        const zoomLink = document.getElementById('zoomLink');
+        zoomLink.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('The Zoom link will be available 15 minutes before the session starts. Please check back soon!');
+            }
+        });
+
+        // Questions link management
+        const questionsLink = document.getElementById('questionsLink');
+        questionsLink.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('The questions form will be available soon. Please check back on Day 2 of the event!');
+            }
+        });
+
+        // Load settings on page load
+        loadSettings();
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

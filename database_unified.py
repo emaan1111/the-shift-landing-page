@@ -151,6 +151,24 @@ def init_db():
             ON CONFLICT (key) DO NOTHING
         ''')
         
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('zoom_link', 'https://zoom.us/j/YOUR_MEETING_ID')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('community_link', 'https://www.facebook.com/share/g/16Efp4crCe/')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('questions_form_link', 'https://forms.gle/YOUR_FORM_ID')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
         print('✅ Database initialized successfully!')
 
 def insert_analytics(data):
