@@ -129,6 +129,20 @@ def init_db():
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_waitinglist_email ON waiting_list(email)')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_waitinglist_timestamp ON waiting_list(timestamp)')
         
+        # Zoom opt-ins table for tracking who clicked Join Zoom
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS zoom_optins (
+                id SERIAL PRIMARY KEY,
+                email TEXT NOT NULL,
+                name TEXT NOT NULL,
+                optin_timestamp TIMESTAMP NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_zoom_optins_email ON zoom_optins(email)')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_zoom_optins_timestamp ON zoom_optins(optin_timestamp)')
+        
         # Settings table for site configuration
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS settings (
@@ -578,6 +592,57 @@ def get_waitinglist_count():
     with get_db() as conn:
         cursor = conn.cursor()
         cursor.execute('SELECT COUNT(*) as count FROM waiting_list')
+        result = cursor.fetchone()
+        return result['count'] if result else 0
+
+def insert_zoom_optin(data):
+    """Insert a Zoom opt-in entry"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        try:
+            cursor.execute('''
+                INSERT INTO zoom_optins (email, name, optin_timestamp)
+                VALUES (%s, %s, %s)
+                RETURNING id
+            ''', (
+                data.get('email'),
+                data.get('name'),
+                data.get('optin_timestamp')
+            ))
+            
+            result = cursor.fetchone()
+            return result['id'] if result else None
+        except Exception as e:
+            print(f"Error inserting Zoom opt-in: {e}")
+            raise
+
+def get_all_zoom_optins():
+    """Get all Zoom opt-in entries"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT * FROM zoom_optins
+            ORDER BY optin_timestamp DESC
+        ''')
+        rows = cursor.fetchall()
+        
+        # Convert to list of dicts and format timestamps
+        entries = []
+        for row in rows:
+            entry = dict(row)
+            if 'optin_timestamp' in entry and entry['optin_timestamp']:
+                entry['optin_timestamp'] = entry['optin_timestamp'].isoformat()
+            if 'created_at' in entry and entry['created_at']:
+                entry['created_at'] = entry['created_at'].isoformat()
+            entries.append(entry)
+        
+        return entries
+
+def get_zoom_optins_count():
+    """Get count of Zoom opt-in entries"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) as count FROM zoom_optins')
         result = cursor.fetchone()
         return result['count'] if result else 0
 

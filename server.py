@@ -403,6 +403,43 @@ def get_waitinglist():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/zoom-optin', methods=['POST'])
+def zoom_optin():
+    """Save Zoom opt-in (name and email before joining)"""
+    try:
+        data = request.json
+        
+        # Validate required fields
+        if not data.get('email'):
+            return jsonify({'success': False, 'error': 'Email is required'}), 400
+        if not data.get('name'):
+            return jsonify({'success': False, 'error': 'Name is required'}), 400
+        
+        # Add timestamp if not provided
+        if not data.get('optin_timestamp'):
+            data['optin_timestamp'] = datetime.utcnow().isoformat()
+        
+        # Insert into database
+        optin_id = database.insert_zoom_optin(data)
+        
+        if optin_id:
+            return jsonify({'success': True, 'id': optin_id}), 200
+        else:
+            return jsonify({'success': False, 'error': 'Failed to save opt-in'}), 500
+            
+    except Exception as e:
+        print(f"Error saving Zoom opt-in: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/zoom-optin', methods=['GET'])
+def get_zoom_optins():
+    """Get all Zoom opt-in entries"""
+    try:
+        entries = database.get_all_zoom_optins()
+        return jsonify(entries), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/api/settings', methods=['GET'])
 def get_settings():
     """Get all settings"""

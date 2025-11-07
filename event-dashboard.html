@@ -247,44 +247,6 @@
             text-align: center;
         }
 
-        .event-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .detail-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            flex-shrink: 0;
-        }
-
-        .detail-content h3 {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 5px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .detail-content p {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
         /* Zoom Button */
         .zoom-section {
             text-align: center;
@@ -414,49 +376,177 @@
             color: var(--text-light);
         }
 
-        /* Countdown Timer */
-        .countdown-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        /* Zoom Opt-in Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
         }
 
-        .countdown-section h3 {
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.4s ease;
+            overflow: hidden;
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .modal-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin: 0;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .class-rules-mini {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .class-rules-mini h3 {
+            font-size: 1.1rem;
             color: var(--primary-dark);
-            font-size: 1.5rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .class-rules-mini ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .class-rules-mini li {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
             margin-bottom: 20px;
         }
 
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .time-box {
-            background: var(--light-bg);
-            padding: 20px;
-            border-radius: 15px;
-            min-width: 100px;
-            border: 2px solid var(--primary);
-        }
-
-        .time-value {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
+        .form-group label {
             display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
         }
 
-        .time-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn-modal {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modal-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-modal-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 108, 213, 0.4);
+        }
+
+        .btn-modal-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-modal-secondary {
+            background: #f0f0f0;
+            color: var(--text-dark);
+        }
+
+        .btn-modal-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .close-modal {
+            color: white;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
         }
 
         /* Footer */
@@ -478,10 +568,6 @@
                 font-size: 1.5rem;
                 flex-direction: column;
                 gap: 10px;
-            }
-
-            .event-details {
-                grid-template-columns: 1fr;
             }
 
             .btn-zoom {
@@ -513,6 +599,27 @@
             .btn-offer {
                 padding: 15px 30px;
                 font-size: 1.2rem;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                max-width: 90%;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -559,72 +666,19 @@
             <p>This is a LIVE event only! Make sure to attend all sessions to get the full transformation.</p>
         </div>
 
-        <!-- Countdown Timer -->
-        <div class="countdown-section">
-            <h3>⏰ Next Session Starts In:</h3>
-            <div class="countdown-timer" id="countdown">
-                <div class="time-box">
-                    <span class="time-value" id="days">00</span>
-                    <span class="time-label">Days</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-value" id="hours">00</span>
-                    <span class="time-label">Hours</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-value" id="minutes">00</span>
-                    <span class="time-label">Minutes</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-value" id="seconds">00</span>
-                    <span class="time-label">Seconds</span>
-                </div>
-            </div>
-        </div>
-
         <!-- Event Details -->
         <div class="event-card">
             <h2>📅 Event Schedule</h2>
-            <div class="event-details">
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <div class="detail-content">
-                        <h3>Dates</h3>
-                        <p>November 6-8, 2025</p>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="far fa-clock"></i>
-                    </div>
-                    <div class="detail-content">
-                        <h3>Time</h3>
-                        <p>11:00 AM - 1:00 PM EST</p>
-                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 3px;">4:00 PM - 6:00 PM UK</p>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="detail-content">
-                        <h3>Platform</h3>
-                        <p>Zoom (Live)</p>
-                    </div>
-                </div>
-            </div>
+            <p style="text-align: center; font-size: 1.3rem; color: var(--text-dark); font-weight: 600; margin-bottom: 25px;" id="eventDateTime">
+                November 6-8, 2025 • 11:00 AM - 1:00 PM EST
+            </p>
 
             <!-- Zoom Join Button -->
             <div class="zoom-section">
-                <a href="#" id="zoomLink" class="btn-zoom">
+                <button onclick="showZoomOptinModal()" class="btn-zoom">
                     <i class="fas fa-video"></i>
                     Join Zoom Session
-                </a>
-                <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem;">
-                    <i class="fas fa-info-circle"></i> The Zoom link will be activated 15 minutes before the session starts
-                </p>
+                </button>
             </div>
         </div>
 
@@ -669,15 +723,88 @@
         </div>
     </div>
 
+    <!-- Zoom Opt-in Modal -->
+    <div id="zoomOptinModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeZoomOptinModal()">&times;</span>
+                <h2>✨ You Are Just One Shift Away! ✨</h2>
+                <p>Please confirm your details to join the session</p>
+            </div>
+            <div class="modal-body">
+                <!-- Class Rules -->
+                <div class="class-rules-mini">
+                    <h3><i class="fas fa-clipboard-list"></i> Quick Reminder - Class Rules</h3>
+                    <ul>
+                        <li><strong>Be Seated Properly:</strong> Sit at a table and chair with pen and paper</li>
+                        <li><strong>Turn On Your Camera:</strong> Keep it on for accountability and connection</li>
+                    </ul>
+                </div>
+
+                <!-- Form -->
+                <form id="zoomOptinForm" onsubmit="submitZoomOptin(event)">
+                    <div class="form-group">
+                        <label for="optinName">
+                            <i class="fas fa-user"></i> Your Name *
+                        </label>
+                        <input type="text" id="optinName" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="optinEmail">
+                            <i class="fas fa-envelope"></i> Your Email *
+                        </label>
+                        <input type="email" id="optinEmail" name="email" required placeholder="Enter your email address">
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="button" class="btn-modal btn-modal-secondary" onclick="closeZoomOptinModal()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-modal btn-modal-primary" id="submitOptinBtn">
+                            <i class="fas fa-video"></i> Join Zoom Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>© 2025 The Shift. All rights reserved.</p>
     </footer>
 
     <script>
-        // Set your event date here (YEAR, MONTH-1, DAY, HOUR, MINUTE)
-        // Note: Month is 0-indexed (0 = January, 10 = November)
-        const eventDate = new Date(2025, 10, 6, 11, 0, 0); // November 6, 2025, 11:00 AM EST
+        // Event date in EST (UTC-5)
+        // November 6-8, 2025, 11:00 AM - 1:00 PM EST
+        const eventStartEST = new Date('2025-11-06T11:00:00-05:00');
+        const eventEndEST = new Date('2025-11-06T13:00:00-05:00');
+        
+        // Display event time in user's local timezone
+        function displayLocalEventTime() {
+            const options = {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                timeZoneName: 'short'
+            };
+            
+            const startTime = eventStartEST.toLocaleString(undefined, options);
+            const endTime = eventEndEST.toLocaleTimeString(undefined, { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                timeZoneName: 'short' 
+            });
+            
+            document.getElementById('eventDateTime').textContent = 
+                `November 6-8, 2025 • ${eventStartEST.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })} - ${endTime}`;
+        }
+        
+        displayLocalEventTime();
 
         // Load settings from API
         async function loadSettings() {
@@ -686,19 +813,8 @@
                 const zoomResponse = await fetch('/api/settings/zoom_link');
                 if (zoomResponse.ok) {
                     const zoomData = await zoomResponse.json();
-                    const zoomLink = document.getElementById('zoomLink');
-                    
                     // Store the zoom link for later use
                     window.actualZoomLink = zoomData.value || '#';
-                    
-                    // Check if event is within 15 minutes or has started
-                    const now = new Date();
-                    const fifteenMinutesBefore = new Date(eventDate.getTime() - 15 * 60 * 1000);
-                    
-                    if (now >= fifteenMinutesBefore) {
-                        zoomLink.href = window.actualZoomLink;
-                        zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
-                    }
                 }
 
                 // Load community link
@@ -758,56 +874,82 @@
             }
         }
 
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date();
-            const diff = eventDate - now;
-
-            if (diff <= 0) {
-                // Event has started or passed
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                
-                // Enable Zoom link
-                const zoomLink = document.getElementById('zoomLink');
-                if (window.actualZoomLink && window.actualZoomLink !== '#') {
-                    zoomLink.href = window.actualZoomLink;
-                    zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
-                }
-                return;
-            }
-
-            // Check if within 15 minutes of event
-            const fifteenMinutes = 15 * 60 * 1000;
-            if (diff <= fifteenMinutes) {
-                const zoomLink = document.getElementById('zoomLink');
-                if (window.actualZoomLink && window.actualZoomLink !== '#') {
-                    zoomLink.href = window.actualZoomLink;
-                    zoomLink.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
-                }
-            }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        // Modal functions
+        function showZoomOptinModal() {
+            document.getElementById('zoomOptinModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
 
-        // Zoom link management
-        const zoomLink = document.getElementById('zoomLink');
-        zoomLink.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert('The Zoom link will be available 15 minutes before the session starts. Please check back soon!');
+        function closeZoomOptinModal() {
+            document.getElementById('zoomOptinModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('zoomOptinModal');
+            if (event.target === modal) {
+                closeZoomOptinModal();
             }
-        });
+        }
+
+        // Submit Zoom opt-in form
+        async function submitZoomOptin(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitOptinBtn');
+            const name = document.getElementById('optinName').value.trim();
+            const email = document.getElementById('optinEmail').value.trim();
+            
+            if (!name || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Disable button while submitting
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            
+            try {
+                // Save opt-in to database
+                const response = await fetch('/api/zoom-optin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        optin_timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Close modal
+                    closeZoomOptinModal();
+                    
+                    // Redirect to Zoom
+                    if (window.actualZoomLink && window.actualZoomLink !== '#') {
+                        window.open(window.actualZoomLink, '_blank');
+                    } else {
+                        alert('Zoom link is not yet available. Please check back later!');
+                    }
+                    
+                    // Reset form
+                    document.getElementById('zoomOptinForm').reset();
+                } else {
+                    alert('Error saving your information. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting opt-in:', error);
+                alert('Error connecting to server. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-video"></i> Join Zoom Now';
+            }
+        }
 
         // Questions link management
         const questionsLink = document.getElementById('questionsLink');
@@ -820,10 +962,6 @@
 
         // Load settings on page load
         loadSettings();
-
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
