@@ -679,6 +679,27 @@
                             </a>
                         </div>
                     </div>
+                    
+                    <!-- No Replays Alert Toggle -->
+                    <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; backdrop-filter: blur(10px);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <div>
+                                <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">
+                                    <i class="fas fa-exclamation-triangle"></i> Show "NO REPLAYS" Alert
+                                </h3>
+                                <p style="opacity: 0.9; font-size: 0.9rem;">
+                                    Display prominent warning banner on event dashboard
+                                </p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="noReplaysToggle" onchange="toggleNoReplays()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div id="noReplaysStatus" style="opacity: 0.8; font-size: 0.85rem; margin-top: 10px;">
+                            <i class="fas fa-spinner fa-spin"></i> Loading...
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Event Links Settings -->
@@ -766,6 +787,25 @@
                         <i class="fas fa-save"></i> Save Offer Settings
                     </button>
                     <div id="offerSettingsStatus" style="margin-top: 10px; font-size: 0.9rem; text-align: center;"></div>
+                </div>
+                
+                <!-- No Replays Alert Settings -->
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px); margin-top: 20px;">
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.4rem; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-exclamation-triangle"></i> No Replays Alert
+                    </h3>
+                    
+                    <!-- No Replays Toggle -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <div>
+                            <h4 style="color: white; margin-bottom: 5px; font-size: 1.1rem;">Show "NO REPLAYS" Alert</h4>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Display prominent warning banner on event dashboard</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="noReplaysToggle" onchange="toggleNoReplays()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
             
@@ -1079,8 +1119,86 @@
                 status.style.color = '#ef4444';
             }
             
+            // Load No Replays alert setting
+            loadNoReplaysAlert();
+            
             // Load event links
             loadEventLinks();
+        }
+
+        // Load No Replays alert setting
+        async function loadNoReplaysAlert() {
+            try {
+                const response = await fetch('/api/settings/no_replays_alert');
+                if (response.ok) {
+                    const data = await response.json();
+                    const toggle = document.getElementById('noReplaysToggle');
+                    const status = document.getElementById('noReplaysStatus');
+                    
+                    const isEnabled = data.value === 'true';
+                    toggle.checked = isEnabled;
+                    
+                    if (isEnabled) {
+                        status.innerHTML = '<i class="fas fa-check-circle"></i> Alert is VISIBLE on event dashboard';
+                        status.style.color = '#10b981';
+                    } else {
+                        status.innerHTML = '<i class="fas fa-eye-slash"></i> Alert is HIDDEN from event dashboard';
+                        status.style.color = '#fbbf24';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading No Replays alert setting:', error);
+                const status = document.getElementById('noReplaysStatus');
+                status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error loading setting';
+                status.style.color = '#ef4444';
+            }
+        }
+
+        // Toggle No Replays alert
+        async function toggleNoReplays() {
+            const toggle = document.getElementById('noReplaysToggle');
+            const status = document.getElementById('noReplaysStatus');
+            const originalState = toggle.checked;
+            
+            // Disable toggle during update
+            toggle.disabled = true;
+            status.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            
+            try {
+                const response = await fetch('/api/settings/no_replays_alert', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        value: toggle.checked ? 'true' : 'false'
+                    })
+                });
+                
+                if (response.ok) {
+                    if (toggle.checked) {
+                        status.innerHTML = '<i class="fas fa-check-circle"></i> Alert is VISIBLE on event dashboard';
+                        status.style.color = '#10b981';
+                        showNotification('No Replays alert is now visible', 'success');
+                    } else {
+                        status.innerHTML = '<i class="fas fa-eye-slash"></i> Alert is HIDDEN from event dashboard';
+                        status.style.color = '#fbbf24';
+                        showNotification('No Replays alert is now hidden', 'success');
+                    }
+                } else {
+                    throw new Error('Failed to update setting');
+                }
+            } catch (error) {
+                console.error('Error updating No Replays alert setting:', error);
+                // Revert toggle state
+                toggle.checked = !originalState;
+                status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error updating setting. Please try again.';
+                status.style.color = '#ef4444';
+                
+                alert('Failed to update setting. Please try again.');
+            } finally {
+                toggle.disabled = false;
+            }
         }
 
         // Load event links
@@ -1144,6 +1262,13 @@
                     const offerCTALinkData = await offerCTALinkResponse.json();
                     document.getElementById('offerCTALinkInput').value = offerCTALinkData.value || '';
                 }
+                
+                // Load no replays alert setting
+                const noReplaysResponse = await fetch('/api/settings/no_replays_alert');
+                if (noReplaysResponse.ok) {
+                    const noReplaysData = await noReplaysResponse.json();
+                    document.getElementById('noReplaysToggle').checked = noReplaysData.value === 'true';
+                }
             } catch (error) {
                 console.error('Error loading offer settings:', error);
             }
@@ -1175,6 +1300,32 @@
             }
         }
 
+        // Toggle No Replays alert
+        async function toggleNoReplays() {
+            const toggle = document.getElementById('noReplaysToggle');
+            const newValue = toggle.checked ? 'true' : 'false';
+            
+            try {
+                const response = await fetch('/api/settings/no_replays_alert', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: newValue })
+                });
+                
+                if (response.ok) {
+                    const status = toggle.checked ? 'NO REPLAYS alert is now VISIBLE' : 'NO REPLAYS alert is now HIDDEN';
+                    showNotification(status, 'success');
+                } else {
+                    toggle.checked = !toggle.checked;
+                    showNotification('Failed to update alert visibility', 'error');
+                }
+            } catch (error) {
+                console.error('Error toggling no replays alert:', error);
+                toggle.checked = !toggle.checked;
+                showNotification('Error updating alert visibility', 'error');
+            }
+        }
+
         // Update offer settings
         async function updateOfferSettings() {
             const headline = document.getElementById('offerHeadlineInput').value.trim();
@@ -1188,13 +1339,22 @@
                 return;
             }
             
+            status.textContent = '⏳ Saving...';
+            status.style.color = '#fbbf24';
+            
             try {
-                // Update all settings
+                // Update all settings sequentially with error handling
                 const headlineResponse = await fetch('/api/settings/offer_headline', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ value: headline })
                 });
+                
+                if (!headlineResponse.ok) {
+                    const errorData = await headlineResponse.json();
+                    console.error('Headline update failed:', errorData);
+                    throw new Error('Failed to update headline');
+                }
                 
                 const ctaTextResponse = await fetch('/api/settings/offer_cta_text', {
                     method: 'PUT',
@@ -1202,24 +1362,33 @@
                     body: JSON.stringify({ value: ctaText })
                 });
                 
+                if (!ctaTextResponse.ok) {
+                    const errorData = await ctaTextResponse.json();
+                    console.error('CTA text update failed:', errorData);
+                    throw new Error('Failed to update CTA text');
+                }
+                
                 const ctaLinkResponse = await fetch('/api/settings/offer_cta_link', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ value: ctaLink })
                 });
                 
-                if (headlineResponse.ok && ctaTextResponse.ok && ctaLinkResponse.ok) {
-                    status.textContent = '✓ Offer settings updated successfully!';
-                    status.style.color = '#86efac';
-                    showNotification('Offer settings updated!', 'success');
-                } else {
-                    status.textContent = '❌ Failed to update some settings';
-                    status.style.color = '#fca5a5';
+                if (!ctaLinkResponse.ok) {
+                    const errorData = await ctaLinkResponse.json();
+                    console.error('CTA link update failed:', errorData);
+                    throw new Error('Failed to update CTA link');
                 }
+                
+                status.textContent = '✓ Offer settings updated successfully!';
+                status.style.color = '#86efac';
+                showNotification('Offer settings updated!', 'success');
+                
             } catch (error) {
                 console.error('Error updating offer settings:', error);
-                status.textContent = '❌ Error updating settings';
+                status.textContent = `❌ Error: ${error.message}`;
                 status.style.color = '#fca5a5';
+                showNotification('Failed to update offer settings', 'error');
             }
         }
 

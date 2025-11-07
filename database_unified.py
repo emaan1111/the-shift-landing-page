@@ -207,6 +207,12 @@ def init_db():
             ON CONFLICT (key) DO NOTHING
         ''')
         
+        cursor.execute('''
+            INSERT INTO settings (key, value)
+            VALUES ('no_replays_alert', 'true')
+            ON CONFLICT (key) DO NOTHING
+        ''')
+        
         print('✅ Database initialized successfully!')
 
 def insert_analytics(data):

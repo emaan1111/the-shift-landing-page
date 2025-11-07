@@ -640,8 +640,9 @@
             <p>Get ready for a transformative journey that will change your parenting forever</p>
         </div>
 
-        <!-- No Replays Alert -->
-        <div class="no-replays-alert">
+        <!-- No Replays Alert (Hidden by default, controlled by settings) -->
+                <!-- No Replays Alert (Hidden by default, controlled by settings) -->
+        <div class="no-replays-alert" id="noReplaysAlert" style="display: none;">
             <h2>
                 <i class="fas fa-exclamation-triangle"></i>
                 NO REPLAYS
@@ -783,25 +784,27 @@
         
         // Display event time in user's local timezone
         function displayLocalEventTime() {
+            // Get user's timezone
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
             const options = {
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
                 hour: 'numeric',
                 minute: '2-digit',
-                timeZoneName: 'short'
+                hour12: true
             };
             
-            const startTime = eventStartEST.toLocaleString(undefined, options);
-            const endTime = eventEndEST.toLocaleTimeString(undefined, { 
-                hour: 'numeric', 
-                minute: '2-digit',
-                timeZoneName: 'short' 
-            });
+            const startTime = eventStartEST.toLocaleTimeString(undefined, options);
+            const endTime = eventEndEST.toLocaleTimeString(undefined, options);
+            
+            // Format timezone name for display (e.g., "America/New_York" -> "New York")
+            const timezoneParts = userTimezone.split('/');
+            const cityName = timezoneParts[timezoneParts.length - 1].replace(/_/g, ' ');
+            
+            // Get timezone abbreviation
+            const tzAbbr = eventStartEST.toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ').pop();
             
             document.getElementById('eventDateTime').textContent = 
-                `November 6-8, 2025 • ${eventStartEST.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })} - ${endTime}`;
+                `November 6-8, 2025 • ${startTime} - ${endTime} (${cityName} - ${tzAbbr})`;
         }
         
         displayLocalEventTime();
@@ -867,6 +870,29 @@
                             const offerCTALinkData = await offerCTALinkResponse.json();
                             document.getElementById('offerCTA').href = offerCTALinkData.value;
                         }
+                    }
+                }
+                
+                // Load No Replays alert setting
+                const noReplaysResponse = await fetch('/api/settings/no_replays_alert');
+                if (noReplaysResponse.ok) {
+                    const noReplaysData = await noReplaysResponse.json();
+                    
+                    if (noReplaysData.value === 'true') {
+                        // Show No Replays alert
+                        document.getElementById('noReplaysAlert').style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading settings:', error);
+            }
+        }                // Load No Replays alert setting
+                const noReplaysResponse = await fetch('/api/settings/no_replays_alert');
+                if (noReplaysResponse.ok) {
+                    const noReplaysData = await noReplaysResponse.json();
+                    if (noReplaysData.value === 'true') {
+                        // Show No Replays alert
+                        document.getElementById('noReplaysAlert').style.display = 'block';
                     }
                 }
             } catch (error) {
