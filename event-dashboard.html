@@ -888,18 +888,6 @@
             } catch (error) {
                 console.error('Error loading settings:', error);
             }
-        }                // Load No Replays alert setting
-                const noReplaysResponse = await fetch('/api/settings/no_replays_alert');
-                if (noReplaysResponse.ok) {
-                    const noReplaysData = await noReplaysResponse.json();
-                    if (noReplaysData.value === 'true') {
-                        // Show No Replays alert
-                        document.getElementById('noReplaysAlert').style.display = 'block';
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading settings:', error);
-            }
         }
 
         // Modal functions

@@ -4,24 +4,37 @@ import requests
 import json
 import os
 from datetime import datetime
+import sys
 
-# Try PostgreSQL first, fallback to SQLite
+# PostgreSQL database only - no fallback
 try:
     # Check if DATABASE_URL is set
     if not os.getenv('DATABASE_URL'):
-        raise ValueError("DATABASE_URL not set, using SQLite")
+        print("❌ ERROR: DATABASE_URL environment variable is not set!")
+        print("Please set DATABASE_URL to your PostgreSQL connection string.")
+        print("Example: export DATABASE_URL='postgresql://user:password@localhost:5432/dbname'")
+        sys.exit(1)
+    
     import database_unified as database  # Import PostgreSQL database module
     print("✅ Using PostgreSQL database")
-except (ValueError, Exception) as e:
-    print(f"⚠️  PostgreSQL not available ({e})")
-    print("✅ Using SQLite database (analytics.db)")
-    import database_sqlite as database  # Fallback to SQLite
+except ImportError as e:
+    print(f"❌ ERROR: Failed to import database module: {e}")
+    print("Make sure psycopg2 is installed: pip install psycopg2-binary")
+    sys.exit(1)
+except Exception as e:
+    print(f"❌ ERROR: Database initialization failed: {e}")
+    sys.exit(1)
 
 app = Flask(__name__, static_folder='.')
 CORS(app)  # Enable CORS for all routes
 
 # Initialize database on startup
-database.init_db()
+try:
+    database.init_db()
+    print("✅ Database initialized successfully")
+except Exception as e:
+    print(f"❌ ERROR: Failed to initialize database: {e}")
+    sys.exit(1)
 
 # Geolocation cache to prevent rate limiting
 geolocation_cache = {}
@@ -484,4 +497,6 @@ def update_setting(key):
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Use port 5001 if 5000 is taken by AirPlay Receiver
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=True)
